@@ -38,7 +38,7 @@ public class DBManager {
 			e1.printStackTrace();
 		} 
 		
-		System.out.println("dataBase connection successful");
+		
 		return conn;
 	}
 	
