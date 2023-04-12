@@ -1,3 +1,4 @@
+<%@page import="util.DBManager"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -7,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%DBManager.getConnection();%>
 <h1>hello world!</h1>
 </body>
 </html>
