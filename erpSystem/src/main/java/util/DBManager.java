@@ -33,12 +33,12 @@ public class DBManager {
 		try {
 			
 			conn = contextBind().getConnection();
+			System.out.println("connected success!");
 		} catch (SQLException e1) {
 			System.out.println("fail to DBconnection");
 			e1.printStackTrace();
 		} 
-		
-		
+
 		return conn;
 	}
 	

@@ -81,12 +81,12 @@ public class ProductCategoryDAO {
 			return;
 
 		String sql = "UPDATE product_category SET"+
-				" product_category_id=?, product_category_name=?";
+				"product_category_name=? WHERE product_category_id=?";
 
 		try {
 			this.pstmt = this.conn.prepareStatement(sql);
-			this.pstmt.setInt(1, 	productCategoryDto.getId());
-			this.pstmt.setString(2, productCategoryDto.getName());
+			this.pstmt.setString(1, productCategoryDto.getName());
+			this.pstmt.setInt(2, 	productCategoryDto.getId());
 
 			this.pstmt.execute();
 		} catch (SQLException e) {

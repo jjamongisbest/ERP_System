@@ -96,18 +96,20 @@ public class ProductDAO {
 			return;
 
 		String sql = "UPDATE product SET"+
-				" product_id=?, product_name=?, product_memo=?, product_handle_date=?, product_stock=?, product_pipe_line=?, product_price=?, product_category_id=?";
+				"product_name=?, product_memo=?, product_handle_date=?, product_stock=?, product_pipe_line=?, product_price=?, product_category_id=?"+
+				"WHERE product_id=?";
 
 		try {
 			this.pstmt = this.conn.prepareStatement(sql);
-			this.pstmt.setInt(1, 	productDto.getId());
-			this.pstmt.setString(2, productDto.getName());
-			this.pstmt.setString(3, productDto.getMemo());
-			this.pstmt.setString(4, productDto.getHandleDate());
-			this.pstmt.setString(5, productDto.getStock());
-			this.pstmt.setString(6, productDto.getPipeLine());
-			this.pstmt.setString(7, productDto.getPrice());
-			this.pstmt.setInt(8, 	productDto.getCategoryId());
+			
+			this.pstmt.setString(1, productDto.getName());
+			this.pstmt.setString(2, productDto.getMemo());
+			this.pstmt.setString(3, productDto.getHandleDate());
+			this.pstmt.setString(4, productDto.getStock());
+			this.pstmt.setString(5, productDto.getPipeLine());
+			this.pstmt.setString(6, productDto.getPrice());
+			this.pstmt.setInt(7, 	productDto.getCategoryId());
+			this.pstmt.setInt(8, 	productDto.getId());
 
 			this.pstmt.execute();
 		} catch (SQLException e) {

@@ -67,7 +67,7 @@ public class OrderProductDAO {
 				int detailsId		 = this.rs.getInt(1);
 				int productId		 = this.rs.getInt(2);
 				int orderId			 = this.rs.getInt(3);
-				String product	 = this.rs.getString(4);
+				String product	  	 = this.rs.getString(4);
 				String quantity		 = this.rs.getString(5);
 				orderProduct = new OrderProduct(detailsId, productId, orderId, product, quantity);
 			}
@@ -89,15 +89,16 @@ public class OrderProductDAO {
 			return;
 
 		String sql = "UPDATE order_product SET"+
-				" order_details_id=?, product_id=?, order_id=?, order_product=?, order_quantity=?";
+					 "product_id=?, order_id=?, order_product=?, order_quantity=?"+
+					 "WHERE order_details_id=?";
 
 		try {
 			this.pstmt = this.conn.prepareStatement(sql);
-			this.pstmt.setInt(1, 	orderProductDto.getDetailsId());
-			this.pstmt.setInt(2, 	orderProductDto.getProductId());
-			this.pstmt.setInt(3, 	orderProductDto.getOrderId());
-			this.pstmt.setString(4, orderProductDto.getOrderProduct());
-			this.pstmt.setString(5, orderProductDto.getQuantity());
+			this.pstmt.setInt(1, 	orderProductDto.getProductId());
+			this.pstmt.setInt(2, 	orderProductDto.getOrderId());
+			this.pstmt.setString(3, orderProductDto.getOrderProduct());
+			this.pstmt.setString(4, orderProductDto.getQuantity());
+			this.pstmt.setInt(5, 	orderProductDto.getDetailsId());
 
 			this.pstmt.execute();
 		} catch (SQLException e) {
