@@ -48,7 +48,7 @@ public class CustomerGradeDAO {
 	}
 
 	// R
-	public CustomerGrade readCustomerGradeById(int id) {
+	public CustomerGrade getCustomerGradeById(int id) {
 		CustomerGrade customerGrade = null;
 
 		this.conn = DBManager.getConnection();
@@ -76,7 +76,7 @@ public class CustomerGradeDAO {
 		return customerGrade;
 	}
 	//R
-	public ArrayList<CustomerGrade> readCustomerGrade() {
+	public ArrayList<CustomerGrade> getCustomerGrade() {
 		ArrayList<CustomerGrade> list = new ArrayList<>();
 
 		this.conn = DBManager.getConnection();
