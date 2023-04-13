@@ -3,15 +3,16 @@ package customer;
 public class Customer {
 	
 	private int id,gradeId;
-	private String name,address,phone,gender;
+	private String password, name,address,phone,gender;
 	
-	public Customer(int id, int gradeId, String name, String address, String phone, String gender) {
+	public Customer(int id, int gradeId, String name, String address, String phone, String gender, String password) {
 		this.id = id;
 		this.gradeId = gradeId;
 		this.name = name;
 		this.address = address;
 		this.phone = phone;
 		this.gender = gender;
+		this.password = password;
 	}
 	public Customer(CustomerDTO customerDto) {
 		this.id = customerDto.getId();
@@ -20,6 +21,7 @@ public class Customer {
 		this.address = customerDto.getAddress();
 		this.phone = customerDto.getPhone();
 		this.gender = customerDto.getGender();
+		this.password = customerDto.getPassword();
 	}
 	public int getId() {
 		return id;
@@ -38,6 +40,9 @@ public class Customer {
 	}
 	public String getGender() {
 		return gender;
+	}
+	public String getPassword() {
+		return password;
 	}
 
 }

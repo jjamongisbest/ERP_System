@@ -20,8 +20,9 @@ public class RegistAction implements Action{
 		String address = request.getParameter("address");
 		String phone = request.getParameter("phone");
 		String gender = request.getParameter("gender");
+		String password = request.getParameter("password");
 		
-		CustomerDTO CustomerDto = new CustomerDTO(id, gradeId, name, address, phone, gender);
+		CustomerDTO CustomerDto = new CustomerDTO(id, gradeId, name, address, phone, gender, password);
 		
 		CustomerDAO customerDao = CustomerDAO.getinstnace();
 		

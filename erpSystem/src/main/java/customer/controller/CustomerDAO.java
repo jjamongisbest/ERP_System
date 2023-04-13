@@ -30,7 +30,7 @@ public class CustomerDAO {
 		this.conn = DBManager.getConnection();
 
 		if (this.conn != null) {
-			String str = "INSERT INTO customer VALUES(?,?,?,?,?,?)";
+			String str = "INSERT INTO customer VALUES(?,?,?,?,?,?,?)";
 
 			try {
 				this.pstmt = conn.prepareStatement(str);
@@ -41,7 +41,8 @@ public class CustomerDAO {
 				this.pstmt.setString(4, customer.getAddress());
 				this.pstmt.setString(5, customer.getPhone());
 				this.pstmt.setString(6, customer.getGender());
-
+				this.pstmt.setString(6, customer.getPassword());
+				
 				this.pstmt.execute();
 
 			} catch (Exception e) {
@@ -72,8 +73,9 @@ public class CustomerDAO {
 				String address = this.rs.getString(4);
 				String phone = this.rs.getString(5);
 				String gender = this.rs.getString(6);
+				String password = this.rs.getString(7);
 				
-				customer = new Customer(id, gradeId, name, address, phone, gender);		
+				customer = new Customer(id, gradeId, name, address, phone, gender,password);		
 
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -104,8 +106,10 @@ public class CustomerDAO {
 					String address = this.rs.getString(4);
 					String phone = this.rs.getString(5);
 					String gender = this.rs.getString(6);
+					String password = this.rs.getString(7);
+					
 								
-					list.add(new Customer(id, gradeId, name, address, phone, gender));
+					list.add(new Customer(id, gradeId, name, address, phone, gender,password));
 				}
 					
 			} catch (Exception e) {

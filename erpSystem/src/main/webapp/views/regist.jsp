@@ -17,11 +17,21 @@
 <form method="POST" action="../service">
 <input type="hidden" name="command" value="regist">
 
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
+<div>
+<p>아이디</p>
+</div>
+<div>
+
+</div>
+<div>
+
+</div>
+<div>
+
+</div>
+<div>
+
+</div>
 
 </form>
 
