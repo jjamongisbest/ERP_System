@@ -36,7 +36,7 @@
 	<!--Header mapping-->
 	<servlet>
 		<servlet-name>header</servlet-name>
-		<servlet-class>/views/header.jsp</servlet-class>
+		<jsp-file>/views/header.jsp</jsp-file>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>header</servlet-name>

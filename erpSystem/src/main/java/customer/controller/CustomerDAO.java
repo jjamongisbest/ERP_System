@@ -41,7 +41,7 @@ public class CustomerDAO {
 				this.pstmt.setString(4, customer.getAddress());
 				this.pstmt.setString(5, customer.getPhone());
 				this.pstmt.setString(6, customer.getGender());
-				this.pstmt.setString(6, customer.getPassword());
+				this.pstmt.setString(7, customer.getPassword());
 				
 				this.pstmt.execute();
 
