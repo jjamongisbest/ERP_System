@@ -1,12 +1,7 @@
-
-
-
 CREATE TABLE customer_grade(
 customer_grade_id INT(6) PRIMARY KEY,
 customer_grade CHAR(6) NOT NULL
 );
-
-
 
 CREATE TABLE customer(
 customer_id INT(6) PRIMARY KEY,
@@ -15,17 +10,14 @@ customer_name VARCHAR(50) NOT NULL,
 customer_address VARCHAR(100) NOT NULL,
 customer_phone VARCHAR(50) NOT NULL,
 customer_gender VARCHAR(50) NOT NULL,
+customer_password VARCHAR(50),
 FOREIGN KEY (customer_grade_id) REFERENCES customer_grade(customer_grade_id)
 );
-
-
 
 CREATE TABLE board_category(
 board_category_id INT(2) PRIMARY KEY,
 board_category_name VARCHAR(10) NOT NULL
 );
-
-
 
 CREATE TABLE board(
 board_id INT(6) PRIMARY KEY,
@@ -39,14 +31,10 @@ FOREIGN KEY (board_writer_id) REFERENCES customer(customer_id),
 FOREIGN KEY (board_category_id) REFERENCES board_category(board_category_id)
 );
 
-
-
 CREATE TABLE product_category(
 Product_category_id INT(6) PRIMARY KEY,
 Product_category_name VARCHAR(50)
 );
-
-
 
 CREATE TABLE product(
 product_id INT(6) PRIMARY KEY,
@@ -60,8 +48,6 @@ product_category_id INT(6),
 FOREIGN KEY (product_category_id) REFERENCES product_category(product_category_id)
 );
 
-
-
 CREATE TABLE sales_order(
 order_id INT(6) PRIMARY KEY,
 customer_id INT(6),
@@ -70,8 +56,6 @@ order_total_price VARCHAR(50) NOT NULL,
 order_status CHAR(2) NOT NULL,
 FOREIGN KEY (customer_id) REFERENCES customer(customer_id)
 );
-
-
 
 CREATE TABLE order_product(
 order_details_id INT(6) PRIMARY KEY,
@@ -82,8 +66,6 @@ order_quantity VARCHAR(10) NOT NULL,
 FOREIGN KEY (product_id) REFERENCES product(product_id),
 FOREIGN KEY (order_id) REFERENCES sales_order(order_id)
 );
-
-
 
 CREATE TABLE customer_log(
 change_date DATE NOT NULL,
