@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div class="membership">
+	<div>
 		<c:choose>
 			<c:when test="${empty session}">
 				<a id="join" href="join">회원가입</a>
