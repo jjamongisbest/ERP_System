@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
+	<footer>
+		<div>
+			<p>Copyright 2023. All pictures cannot be copied without permission.</p>
+		</div>
+	</footer>
 </body>
 </html>
