@@ -7,10 +7,11 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<c:import url="header"/>
 <body>
 
 <h1>hello world!</h1>
 
-
 </body>
+<c:import url="footer"/>
 </html>
