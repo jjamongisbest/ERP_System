@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 import customer.Customer;
 import customer.controller.CustomerDAO;
 
-public class dropCustomer implements Action{
+public class DropCustomerAction implements Action{
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -19,17 +19,9 @@ public class dropCustomer implements Action{
 		CustomerDAO customerDao = CustomerDAO.getinstnace();
 		HttpSession session = request.getSession();
 
-		customerDao.deleteCustomer(customerDto);
 
 		response.sendRedirect("index.jsp");
 		
-		
-		
-		
-		
-		
 	}
-	
-	
 
 }
