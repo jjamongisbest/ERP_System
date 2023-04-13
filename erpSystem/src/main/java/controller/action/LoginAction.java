@@ -17,18 +17,14 @@ public class LoginAction implements Action {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
 
-		String id = request.getParameter("id");
+		int id = Integer.parseInt(request.getParameter("id"));
 		String password = request.getParameter("password");
 
 		System.out.println("ID : " + id);
 		
 		CustomerDAO dao = CustomerDAO.getinstnace();
-		Customer cus = dao.readCustomerByid(id);
-		
-		if(id == null || id.isEmpty()) {
-			
-		}
-
+		Customer cus = dao.getCustomerById(id);
+	
 	}
 
 }

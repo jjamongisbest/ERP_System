@@ -6,8 +6,7 @@
 <meta charset="UTF-8">
 <title>log-in</title>
 </head>
-<jsp:include page="header"></jsp:include>
-
+<c:import url="header"/>
 <body>
 
 	<form action="../service" method="POST">
@@ -28,6 +27,5 @@
 
 	<script src="../resources/loginCheck.js"></script>
 </body>
-
-<jsp:include page="footer"></jsp:include>
+<c:import url="footer"/>
 </html>

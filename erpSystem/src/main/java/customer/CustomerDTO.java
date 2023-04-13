@@ -3,15 +3,24 @@ package customer;
 public class CustomerDTO {
 	
 	private int id,gradeId;
-	private String name,address,phone,gender;
+	private String password, name,address,phone,gender;
 	
-	public CustomerDTO(int id, int graderId, String name, String address, String phone, String gender) {
+	public CustomerDTO(int id, int graderId, String name, String address, String phone, String gender, String password) {
 		this.id = id;
 		this.gradeId = graderId;
 		this.name = name;
 		this.address = address;
 		this.phone = phone;
 		this.gender = gender;
+		this.password = password;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public int getId() {
