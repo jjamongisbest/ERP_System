@@ -61,11 +61,15 @@ public class CustomerGradeDAO {
 				this.pstmt.setInt(1, id);
 				this.rs = this.pstmt.executeQuery();
 
-				int gradeId = this.rs.getInt(1);
-				String grade = this.rs.getString(2);
+				while (this.rs.next()) {
 
-				customerGrade = new CustomerGrade(gradeId, grade);
+					int gradeId = this.rs.getInt(1);
+					String grade = this.rs.getString(2);
+					customerGrade = new CustomerGrade(gradeId, grade);
+				}
+
 			} catch (Exception e) {
+				System.out.println("error customer grade READ!");
 				e.printStackTrace();
 			} finally {
 				DBManager.closeConnection(conn, pstmt, rs);
@@ -75,7 +79,8 @@ public class CustomerGradeDAO {
 
 		return customerGrade;
 	}
-	//R
+
+	// R
 	public ArrayList<CustomerGrade> getCustomerGrade() {
 		ArrayList<CustomerGrade> list = new ArrayList<>();
 
@@ -88,10 +93,10 @@ public class CustomerGradeDAO {
 
 				this.rs = this.pstmt.executeQuery();
 
-				while(this.rs.next()) {
+				while (this.rs.next()) {
 					int gradeId = this.rs.getInt(1);
-					String grade = this.rs.getString(2);	
-					
+					String grade = this.rs.getString(2);
+
 					list.add(new CustomerGrade(gradeId, grade));
 				}
 
@@ -141,7 +146,6 @@ public class CustomerGradeDAO {
 			try {
 				this.pstmt = conn.prepareStatement(str);
 
-				
 				this.pstmt.setInt(1, customerGrade.getGradeId());
 
 				this.pstmt.execute();

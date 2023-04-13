@@ -2,6 +2,7 @@ package controller;
 
 import controller.action.Action;
 import controller.action.LogoutAction;
+import controller.action.RegistAction;
 import controller.action.LoginAction;
 
 
@@ -22,6 +23,9 @@ public class ActionFactory {
 			action = new LogoutAction();
 		else if(command.equals("login"))
 			action = new LoginAction();
+		else if(command.equals("regist")) {
+			action = new RegistAction();
+		}
 
 		
 		return action;
