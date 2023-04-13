@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import sales_order.SalesOrder;
 import sales_order.SalesOrderDTO;
@@ -76,6 +77,38 @@ public class SalesOrderDAO {
 			}
 		}
 		return order;
+	}
+	
+	public ArrayList<SalesOrder> getSalesOrderByCustomerID(int custId) {
+		ArrayList<SalesOrder> list = new ArrayList<SalesOrder>();
+		
+		this.conn = DBManager.getConnection();
+		
+		if (this.conn != null) {
+			String sql = "SELECT * FROM sales_order WHERE customer_id=?";
+
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.pstmt.setInt(1, custId);
+				this.rs = this.pstmt.executeQuery();
+
+				while (this.rs.next()) {
+					int orderId = this.rs.getInt(1);
+					String date = this.rs.getString(3);
+					String total = this.rs.getString(4);
+					String status = this.rs.getString(5);
+
+					SalesOrder order = new SalesOrder(orderId, custId, date, total, status);
+					list.add(order);
+				}
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.closeConnection(this.conn, this.pstmt, this.rs);
+			}
+		}
+		return list;
 	}
 
 }
