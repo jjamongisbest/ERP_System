@@ -115,6 +115,7 @@ public class CustomerDAO {
 		
 		return customer;
 	}
+	
 	public ArrayList<Customer> getCustomer() {
 		ArrayList<Customer> list = new ArrayList<Customer>();
 		
