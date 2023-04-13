@@ -9,6 +9,7 @@
 <jsp:include page="header"></jsp:include>
 
 <body>
+
 	<form action="../service" method="POST">
 		<input type="hidden" name="command" value="login"> 
 		<h2>로그인</h2>
@@ -25,7 +26,7 @@
 		%>
 	</form>
 
-	<script src="../resource/loginCheck.js"></script>
+	<script src="../resources/loginCheck.js"></script>
 </body>
 
 <jsp:include page="footer"></jsp:include>
