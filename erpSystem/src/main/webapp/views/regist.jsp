@@ -27,6 +27,7 @@
 	String address = request.getParameter("address");
 	String phone = request.getParameter("phone");
 	String gender = request.getParameter("gender");
+	
 	%>
 
 	<section>
