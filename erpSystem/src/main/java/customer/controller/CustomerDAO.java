@@ -63,7 +63,9 @@ public class CustomerDAO {
 				this.pstmt = this.conn.prepareStatement(str);
 				this.rs = this.pstmt.executeQuery();
 				
-				customerId = this.rs.getInt(1);
+				while(this.rs.next()) {
+					customerId = this.rs.getInt(1);					
+				}
 				
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -91,15 +93,18 @@ public class CustomerDAO {
 				this.pstmt.setInt(1, customerId);
 				this.rs = this.pstmt.executeQuery();
 				
-				int id = this.rs.getInt(1);
-				int gradeId = this.rs.getInt(2);
-				String name = this.rs.getString(3);
-				String address = this.rs.getString(4);
-				String phone = this.rs.getString(5);
-				String gender = this.rs.getString(6);
-				String password = this.rs.getString(7);
 				
-				customer = new Customer(id, gradeId, name, address, phone, gender,password);		
+				while(this.rs.next()) {
+					int id = this.rs.getInt(1);
+					int gradeId = this.rs.getInt(2);
+					String name = this.rs.getString(3);
+					String address = this.rs.getString(4);
+					String phone = this.rs.getString(5);
+					String gender = this.rs.getString(6);
+					String password = this.rs.getString(7);
+					
+					customer = new Customer(id, gradeId, name, address, phone, gender,password);							
+				}
 
 			} catch (Exception e) {
 				e.printStackTrace();

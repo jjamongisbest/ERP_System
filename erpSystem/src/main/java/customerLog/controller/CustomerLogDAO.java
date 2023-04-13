@@ -65,13 +65,16 @@ public class CustomerLogDAO {
 				this.pstmt.setInt(1, id);
 				this.rs = this.pstmt.executeQuery();
 
-				String date = this.rs.getString(1);
-				int logId = this.rs.getInt(2);
-				int customerId = this.rs.getInt(3);
-				int preGradeId = this.rs.getInt(4);
-				int postGradeId = this.rs.getInt(5);
-
-				customerLog = new CustomerLog(logId, customerId, preGradeId, postGradeId, date);
+				while(this.rs.next()) {
+					String date = this.rs.getString(1);
+					int logId = this.rs.getInt(2);
+					int customerId = this.rs.getInt(3);
+					int preGradeId = this.rs.getInt(4);
+					int postGradeId = this.rs.getInt(5);
+					
+					customerLog = new CustomerLog(logId, customerId, preGradeId, postGradeId, date);
+					
+				}
 
 			} catch (Exception e) {
 				e.printStackTrace();
