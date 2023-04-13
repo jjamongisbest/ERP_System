@@ -24,7 +24,8 @@ public class LoginAction implements Action {
 		
 		CustomerDAO dao = CustomerDAO.getinstnace();
 		Customer cus = dao.getCustomerById(id);
+		
+		if(id = null || id.isEmpty()) {}
 	
 	}
-
 }
