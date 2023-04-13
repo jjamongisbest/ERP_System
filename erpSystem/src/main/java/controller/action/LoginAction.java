@@ -23,7 +23,7 @@ public class LoginAction implements Action {
 		System.out.println("ID : " + id);
 		
 		CustomerDAO dao = CustomerDAO.getinstnace();
-		Customer cus = dao.readCustomerByid(id);
+		Customer cus = dao.getCustomerById(id);
 	
 	}
 
