@@ -21,7 +21,7 @@ Customer customer = (Customer) session.getAttribute("log");
 			</c:when>
 			<c:otherwise>
 				<a id="mypage" href="mypage?custid=<%=customer.getId()%>">
-					마이페이지</a>
+					마이페이지</a>			
 				<a id="logout" onclick="sendCommand('logout')">로그아웃</a>
 			</c:otherwise>
 		</c:choose>
