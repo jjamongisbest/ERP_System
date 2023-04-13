@@ -7,8 +7,8 @@
 <title>log-in</title>
 </head>
 <jsp:include page="header"></jsp:include>
-<body>
 
+<body>
 	<form action="../service" method="POST">
 		<input type="hidden" name="command" value="login"> 
 		<h2>로그인</h2>
@@ -26,8 +26,7 @@
 	</form>
 
 	<script src="../resource/loginCheck.js"></script>
-
-
 </body>
+
 <jsp:include page="footer"></jsp:include>
 </html>
