@@ -52,7 +52,7 @@ public class CustomerLogDAO {
 	}
 
 	// R
-	public CustomerLog readCustomerLogByLogId(int id) {
+	public CustomerLog getCustomerLogByLogId(int id) {
 		CustomerLog customerLog = null;
 
 		this.conn = DBManager.getConnection();
@@ -85,7 +85,7 @@ public class CustomerLogDAO {
 	}
 
 	// R
-	public ArrayList<CustomerLog> readCustomerLog() {
+	public ArrayList<CustomerLog> getCustomerLog() {
 		ArrayList<CustomerLog> list = new ArrayList<>();
 
 		this.conn = DBManager.getConnection();

@@ -52,8 +52,32 @@ public class CustomerDAO {
 			}
 		}
 	}
+	public int getCustomerId() {
+		int customerId = 1;
+		
+		this.conn=DBManager.getConnection();
+		if(this.conn != null) {
+			String str = "SELECT MAX(customer_id) FROM customer";
+			
+			try {
+				this.pstmt = this.conn.prepareStatement(str);
+				this.rs = this.pstmt.executeQuery();
+				
+				customerId = this.rs.getInt(1);
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.closeConnection(conn, pstmt, rs);
+			}
+			
+			
+		}
+		
+		return customerId+1;
+	}
 	// R
-	public Customer readCustomerByid(int customerId) {
+	public Customer getCustomerById(int customerId) {
 		Customer customer = null;
 		
 		this.conn = DBManager.getConnection();
@@ -86,7 +110,7 @@ public class CustomerDAO {
 		
 		return customer;
 	}
-	public ArrayList<Customer> readCustomer() {
+	public ArrayList<Customer> getCustomer() {
 		ArrayList<Customer> list = new ArrayList<Customer>();
 		
 		this.conn = DBManager.getConnection();
