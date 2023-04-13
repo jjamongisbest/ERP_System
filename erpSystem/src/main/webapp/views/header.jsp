@@ -1,3 +1,4 @@
+<%@page import="customer.Customer"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -7,6 +8,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+<%
+Customer customer = (Customer) session.getAttribute("log");
+%>
+
 	<div>
 		<c:choose>
 			<c:when test="${empty sessionScope.log}">
@@ -14,7 +20,8 @@
 				<a id="login" href="login">로그인</a>
 			</c:when>
 			<c:otherwise>
-				<a id="mypage" href="myPage">마이페이지</a>
+				<a id="mypage" href="mypage?custid=<%=customer.getId()%>">
+					마이페이지</a>
 				<a id="logout" onclick="sendCommand('logout')">로그아웃</a>
 			</c:otherwise>
 		</c:choose>
