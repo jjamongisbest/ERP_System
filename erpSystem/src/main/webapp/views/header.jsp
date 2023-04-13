@@ -10,7 +10,7 @@
 	<div>
 		<c:choose>
 			<c:when test="${empty sessionScope.log}">
-				<a id="join" href="join">회원가입</a>
+				<a id="regist" href="regist">회원가입</a>
 				<a id="login" href="login">로그인</a>
 			</c:when>
 			<c:otherwise>

@@ -41,7 +41,7 @@ public class CustomerDAO {
 				this.pstmt.setString(4, customer.getAddress());
 				this.pstmt.setString(5, customer.getPhone());
 				this.pstmt.setString(6, customer.getGender());
-				this.pstmt.setString(6, customer.getPassword());
+				this.pstmt.setString(7, customer.getPassword());
 				
 				this.pstmt.execute();
 
@@ -53,7 +53,7 @@ public class CustomerDAO {
 		}
 	}
 	public int getCustomerId() {
-		int customerId = 1;
+		int customerId = -1;
 		
 		this.conn=DBManager.getConnection();
 		if(this.conn != null) {
@@ -63,7 +63,9 @@ public class CustomerDAO {
 				this.pstmt = this.conn.prepareStatement(str);
 				this.rs = this.pstmt.executeQuery();
 				
-				customerId = this.rs.getInt(1);
+				while(this.rs.next()) {
+					customerId = this.rs.getInt(1);					
+				}
 				
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -74,7 +76,7 @@ public class CustomerDAO {
 			
 		}
 		
-		return customerId+1;
+		return customerId + 1;
 	}
 	// R
 	public Customer getCustomerById(int customerId) {
@@ -101,7 +103,6 @@ public class CustomerDAO {
 					
 					customer = new Customer(customerId, gradeId, name, address, phone, gender,password);				
 				}
-				
 
 			} catch (Exception e) {
 				e.printStackTrace();
