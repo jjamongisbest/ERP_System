@@ -9,13 +9,13 @@
 <body>
 	<div>
 		<c:choose>
-			<c:when test="${empty session}">
+			<c:when test="${empty sessionScope.log}">
 				<a id="join" href="join">회원가입</a>
 				<a id="login" href="login">로그인</a>
 			</c:when>
 			<c:otherwise>
 				<a id="mypage" href="myPage">마이페이지</a>
-				<a id="logout" onclick="sendCommand(logout)">로그아웃</a>
+				<a id="logout" onclick="sendCommand('logout')">로그아웃</a>
 			</c:otherwise>
 		</c:choose>
 	</div>

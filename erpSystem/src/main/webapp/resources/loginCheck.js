@@ -26,6 +26,6 @@ function checkValues(htmlForm) {
 		location.href = url;
 	}
 	else {
-		htmlForm.submit();
+		htmlForm.submit()
 	}
 }
