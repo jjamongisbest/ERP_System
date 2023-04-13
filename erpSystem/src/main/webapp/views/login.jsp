@@ -8,6 +8,7 @@
 </head>
 <c:import url="header"/>
 <body>
+
 	<form action="../service" method="POST">
 		<input type="hidden" name="command" value="login"> 
 		<h2>로그인</h2>
