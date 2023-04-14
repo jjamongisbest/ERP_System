@@ -35,6 +35,8 @@
 	ArrayList<Board> blist = boarddao.getBoardByCustomerId(userId);
 	%>
 
+	<div class="container">
+
 	<div class="cust_info">
 		<section>
 			<h2><%=customer.getName()%>(<%=customer.getId()%>)님
@@ -113,6 +115,8 @@
 	
 	<div class="button">
 	<input type="button" value="회원탈퇴" onclick="location.href='../service?command=dropCustomer'">
+	</div>
+	
 	</div>
 
 </body>

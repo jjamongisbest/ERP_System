@@ -1,17 +1,46 @@
 @charset "UTF-8";
 
-order-thead {
+.container {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.cust_info {
+  grid-column: 1 / span 2;
+}
+
+.my-order {
+  grid-column: 1;
+}
+
+.my-board {
+  grid-column: 2;
+}
+
+.button {
+  grid-column: 1 / span 2;
+  text-align: center;
+}
+
+.order-thead {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 1fr;
   background-color: #f0f0f0;
   font-weight: bold;
 }
 
-order-thead div {
+.order-thead div {
   padding: 10px;
   text-align: center;
-  border: 1px solid #ccc;
+  border-right: 1px solid black;
 }
+
+.order-thead div:last-child {
+  border-right: none;
+}
+
 
 .order-tbody {
   display: grid;
@@ -23,25 +52,23 @@ order-thead div {
 .my-board {
 display: grid;
 grid-template-columns: 25% 60% 15%;
-background-color: #f0f0f0;
-font-weight: bold;
 }
 
 .board-thead div {
 padding: 10px;
 text-align: center;
-border: 1px solid #ccc;
 }
 
-.board-tbody {
-display: grid;
-grid-template-columns: 25% 60% 15%;
-gap: 10px;
-margin-top: 10px;
+.board-thead {
+  display: grid;
+  grid-template-columns: 25% 60% 15%;
+  gap: 10px;
+  margin-top: 10px;
+  background-color: #f0f0f0;
+  font-weight: bold;
 }
 
-.board-tbody div {
-padding: 10px;
-text-align: center;
-border: 1px solid #ccc;
+.board-thead div {
+  padding: 10px;
+  text-align: center;
 }
