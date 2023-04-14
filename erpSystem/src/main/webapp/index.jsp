@@ -15,7 +15,7 @@ System.out.println(session.getAttribute("log"));
 %>
 
 <h1>hello world!</h1>
-
+<c:import url="product"/>
 </body>
 <c:import url="footer"/>
 </html>

@@ -76,6 +76,7 @@
 		<url-pattern>/regist</url-pattern>
 	</servlet-mapping>
 
+
 	<!-- DropCustomer mapping -->
 	<servlet>
 		<servlet-name>dropCustomer</servlet-name>
@@ -97,6 +98,7 @@
 		<url-pattern>/product</url-pattern>
 	</servlet-mapping>
 	
+	
 		<!--ProductList mapping -->
 	<servlet>
 		<servlet-name>productList</servlet-name>
@@ -104,7 +106,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>productList</servlet-name>
-		<url-pattern>/productlist</url-pattern>
+		<url-pattern>/productList</url-pattern>
 	</servlet-mapping>
 	
 	
@@ -227,6 +229,5 @@
 		<servlet-name>reviewDetail</servlet-name>
 		<url-pattern>/reviewDetail</url-pattern>
 	</servlet-mapping>
-
 
 </web-app>
