@@ -75,5 +75,15 @@
 		<servlet-name>regist</servlet-name>
 		<url-pattern>/regist</url-pattern>
 	</servlet-mapping>
+	
+		<!--Mypage mapping-->
+	<servlet>
+		<servlet-name>mypage</servlet-name>
+		<jsp-file>/views/mypage.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>mypage</servlet-name>
+		<url-pattern>/mypage</url-pattern>
+	</servlet-mapping>
 
 </web-app>

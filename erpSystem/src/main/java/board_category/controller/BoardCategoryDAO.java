@@ -18,7 +18,7 @@ public class BoardCategoryDAO {
 
 	private static BoardCategoryDAO instance = new BoardCategoryDAO();
 
-	public BoardCategoryDAO getInstance() {
+	public static BoardCategoryDAO getInstance() {
 		return instance;
 	}
 
