@@ -75,5 +75,17 @@
 		<servlet-name>regist</servlet-name>
 		<url-pattern>/regist</url-pattern>
 	</servlet-mapping>
-
+	
+	
+	<!--Product mapping-->
+	<servlet>
+		<servlet-name>product</servlet-name>
+		<jsp-file>/views/product.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>product</servlet-name>
+		<url-pattern>/product</url-pattern>
+	</servlet-mapping>
+	
+	
 </web-app>

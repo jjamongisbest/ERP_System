@@ -1,9 +1,10 @@
 package controller;
 
 import controller.action.Action;
-import controller.action.LogoutAction;
-import controller.action.RegistAction;
 import controller.action.LoginAction;
+import controller.action.LogoutAction;
+import controller.action.ProductAction;
+import controller.action.RegistAction;
 
 
 public class ActionFactory {
@@ -18,16 +19,16 @@ public class ActionFactory {
 	public Action getAction(String command) {
 		Action action = null;
 		
-
 		if(command.equals("logout"))
 			action = new LogoutAction();
 		else if(command.equals("login"))
 			action = new LoginAction();
-		else if(command.equals("regist")) {
+		else if(command.equals("regist"))
 			action = new RegistAction();
-		}
-
+		else if(command.equals("product"))
+			action = new ProductAction();
 		
+
 		return action;
 	}
 }

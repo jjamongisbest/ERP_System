@@ -26,7 +26,6 @@ public class BoardDAO {
 	}
 
 	// C
-
 	public void createBoard(BoardDTO dto) {
 		Board board = new Board(dto);
 

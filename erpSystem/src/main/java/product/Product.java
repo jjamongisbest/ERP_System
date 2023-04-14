@@ -53,8 +53,10 @@ public class Product {
 	public int getCategoryId() {
 		return categoryId;
 	}
-	
-	
-	
-	
+
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", name=" + name + ", memo=" + memo + ", handleDate=" + handleDate + ", stock="
+				+ stock + ", pipeLine=" + pipeLine + ", price=" + price + ", categoryId=" + categoryId + "]";
+	}
 }
