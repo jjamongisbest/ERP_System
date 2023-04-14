@@ -15,26 +15,10 @@ public class OrderProduct {
 		this.quantity = quantity;
 	}
 
-	public int getDetailsId() {
-		return detailsId;
-	}
+	public int getDetailsId() 		{return detailsId;}
+	public int getProductId() 		{return productId;}
+	public int getOrderId() 		{return orderId;}
+	public String getOrderProduct() {return orderProduct;}
+	public String getQuantity() 	{return quantity;}
 
-	public int getProductId() {
-		return productId;
-	}
-
-	public int getOrderId() {
-		return orderId;
-	}
-
-	public String getOrderProduct() {
-		return orderProduct;
-	}
-
-	public String getQuantity() {
-		return quantity;
-	}
-	
-	
-	
 }

@@ -1,4 +1,4 @@
-package sales_order.controller;
+package salesOrder.controller;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,8 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import sales_order.SalesOrder;
-import sales_order.SalesOrderDTO;
+import salesOrder.SalesOrder;
+import salesOrder.SalesOrderDTO;
 import util.DBManager;
 
 public class SalesOrderDAO {

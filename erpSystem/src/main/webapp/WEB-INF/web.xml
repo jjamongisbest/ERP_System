@@ -88,4 +88,15 @@
 	</servlet-mapping>
 	
 	
+	<!--OrderDetail mapping-->
+	<servlet>
+		<servlet-name>orderDetail</servlet-name>
+		<jsp-file>/views/orderDetail.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>orderDetail</servlet-name>
+		<url-pattern>/orderDetail</url-pattern>
+	</servlet-mapping>
+	
+	
 </web-app>

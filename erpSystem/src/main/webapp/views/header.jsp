@@ -12,7 +12,6 @@
 <%
 Customer customer = (Customer) session.getAttribute("log");
 %>
-
 	<div>
 		<c:choose>
 			<c:when test="${empty sessionScope.log}">

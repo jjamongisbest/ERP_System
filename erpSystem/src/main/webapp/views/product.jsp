@@ -11,8 +11,8 @@
 <body>
 
 	<form method="POST" action="../service">
-		<input type="hidden" name="command" value="product"> <input
-			type="text" name="keyword" required placeholder="상품을 검색해주세요">
+		<input type="hidden" name="command" value="product"> 
+		<input type="text" name="keyword" required placeholder="상품을 검색해주세요">
 		<input type="submit" value="검색">
 	</form>
 	<c:if test="${not empty searchProduct}">
@@ -24,7 +24,11 @@
 			</tr>
 			<c:forEach var="items" items="${searchProduct}">
 				<tr>
-					<td><c:out value="${items.name }" /></td>
+					<td>
+						<a href="../service?command=orderDetail&productId=${items.id}">
+							<c:out value="${items.name}"/>
+						</a>
+					</td>
 					<td><c:out value="${items.price }" /></td>
 					<td><c:out value="${items.stock }" /></td>
 				</tr>

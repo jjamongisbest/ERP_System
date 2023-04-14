@@ -1,6 +1,6 @@
 package product;
 
-public class Product {
+public class Product{
 	private int id;
 	private String name;
 	private String memo;
@@ -22,41 +22,20 @@ public class Product {
 		this.categoryId = categoryId;
 	}
 
-	public int getId() {
-		return id;
-	}
+	public int getId() {return id;}
+	
+	public String getName() {return name;}
+	
+	public String getMemo() {return memo;}
+	
+	public String getHandleDate() {return handleDate;}
+	
+	public String getStock() {return stock;}
+	
+	public String getPipeLine() {return pipeLine;}
+	
+	public String getPrice() {return price;}
 
-	public String getName() {
-		return name;
-	}
-
-	public String getMemo() {
-		return memo;
-	}
-
-	public String getHandleDate() {
-		return handleDate;
-	}
-
-	public String getStock() {
-		return stock;
-	}
-
-	public String getPipeLine() {
-		return pipeLine;
-	}
-
-	public String getPrice() {
-		return price;
-	}
-
-	public int getCategoryId() {
-		return categoryId;
-	}
-
-	@Override
-	public String toString() {
-		return "Product [id=" + id + ", name=" + name + ", memo=" + memo + ", handleDate=" + handleDate + ", stock="
-				+ stock + ", pipeLine=" + pipeLine + ", price=" + price + ", categoryId=" + categoryId + "]";
-	}
+	public int getCategoryId() {return categoryId;}
+	
 }

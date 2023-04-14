@@ -19,6 +19,7 @@ public class Service extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String command = request.getParameter("command");
+		
 		ActionFactory factory = ActionFactory.getInstance();
 		Action action = factory.getAction(command);			 
 		

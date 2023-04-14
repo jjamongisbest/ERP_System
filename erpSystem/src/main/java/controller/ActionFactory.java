@@ -1,8 +1,10 @@
 package controller;
 
 import controller.action.Action;
+import controller.action.BasketAction;
 import controller.action.LoginAction;
 import controller.action.LogoutAction;
+import controller.action.OrderDetailAction;
 import controller.action.ProductAction;
 import controller.action.RegistAction;
 
@@ -27,8 +29,11 @@ public class ActionFactory {
 			action = new RegistAction();
 		else if(command.equals("product"))
 			action = new ProductAction();
-		
-
+		else if(command.equals("orderDetail"))
+			action = new OrderDetailAction();
+		else if(command.equals("basket"))
+			action = new BasketAction();
+			
 		return action;
 	}
 }

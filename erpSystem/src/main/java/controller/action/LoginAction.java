@@ -35,12 +35,14 @@ public class LoginAction implements Action {
 	    if (cus != null && password.equals(cus.getPassword())) {
 	        HttpSession session = request.getSession();
 	        session.setAttribute("log", cus);
+//	        getCustomerBascket(request);
 	        response.sendRedirect("/");
 	    } else {
 	        request.setAttribute("message", "회원 정보가 올바르지 않습니다.");
 	        request.getRequestDispatcher("login").forward(request, response);
 	    }
-
 	}
-
+	
+	
+	
 }
