@@ -9,40 +9,30 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<c:import url="header"/>
+<c:import url="header" />
 <body>
 
-	<%
 	
-
-	int id = Integer.valueOf(request.getParameter("id"));
-	
-	
-	String password = request.getParameter("password");
-
-	%>
-
 	<section>
-		<form method="POST" action="../service">
-			<input type="hidden" name="command" value="regist"> 	
-
-			<div>
-				<p>아이디</p>
-				<input type="text" id="id" name="id" value="<%=id != 0 ? id : ""%>"
-						<%=id == 0 ? "autofocus" : ""%>>
-			</div>
-			<div>
-				<p>비밀번호</p>
-				<input type="text" id="password" name="password" value="<%=password != null ? password : ""%>"
-						<%=password == null ? "autofocus" : ""%>>
-			</div>
-			<input type="button" value="등록" onclick="checkValues(form)">
-
-		</form>
+		<form action="../service" method="POST">
+		<input type="hidden" name="command" value="dropCustomer"> 
+		<h2>로그인</h2>
+		<label for="id">아이디:</label> <input type="text" id="id" name="id">
+		<label for="password">비밀번호:</label> <input type="text" id="password"
+			name="password"> <input type="submit" value="로그인"
+			onclick="checkValues(form)">
+		<%
+		if (request.getAttribute("message") != null) {
+		%>
+		<p>${message}</p>
+		<%
+		}
+		%>
+	</form>
 
 
 	</section>
-	<script src="resources/registCheck.js"></script>
+	<script src="resources/dropCustomer.js"></script>
 </body>
-<c:import url="footer"/>
+<c:import url="footer" />
 </html>

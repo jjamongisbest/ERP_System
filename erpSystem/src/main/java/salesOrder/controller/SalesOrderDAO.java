@@ -48,6 +48,30 @@ public class SalesOrderDAO {
 			}
 		}
 	}
+	
+	public int getSalesOrderId() {
+		int salesOrderId = -1;
+		
+		this.conn=DBManager.getConnection();
+		if(this.conn != null) {
+			String str = "SELECT MAX(customer_id) FROM sales_order";
+			
+			try {
+				this.pstmt = this.conn.prepareStatement(str);
+				this.rs = this.pstmt.executeQuery();
+				
+				while(this.rs.next()) {
+					salesOrderId = this.rs.getInt(1);					
+				}
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.closeConnection(conn, pstmt, rs);
+			}	
+		}
+		return salesOrderId + 1;
+	}
 
 	// R
 	public SalesOrder getSalesOrderById(int id) {

@@ -1,6 +1,6 @@
 <%@page import="customer.Customer"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<%
+	<%
 Customer customer = (Customer) session.getAttribute("log");
 %>
 	<div>
@@ -19,13 +19,18 @@ Customer customer = (Customer) session.getAttribute("log");
 				<a id="login" href="login">로그인</a>
 			</c:when>
 			<c:otherwise>
-				<a id="mypage" href="mypage?custid=<%=customer.getId()%>">
-					마이페이지</a>
+				<a id="mypage" href="mypage?custid=<%=customer.getId()%>"> 마이페이지</a>
 				<a id="logout" onclick="sendCommand('logout')">로그아웃</a>
+
 			</c:otherwise>
 		</c:choose>
+		<a id="logout" href="announce">공지사항</a> 
+		<a id="logout" href="inquiry">1:1문의</a>
+		<a id="logout" href="review">후기글</a>
 	</div>
-	<h1><a id="banner" href="/">발주사이트</a></h1>
+	<h1>
+		<a id="banner" href="/">발주사이트</a>
+	</h1>
 	<script src="resources/validation.js"></script>
 </body>
 </html>
