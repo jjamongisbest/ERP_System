@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import board.Board;
 import board.BoardDTO;
@@ -116,7 +117,7 @@ public class BoardDAO {
 	// D
 	public void deleteBoard(BoardDTO dto) {
 		this.conn = DBManager.getConnection();
-		if(this.conn != null) {
+		if (this.conn != null) {
 			String sql = "DELETE FROM board WHERE board_id =?";
 
 			try {
@@ -124,7 +125,7 @@ public class BoardDAO {
 
 				this.pstmt.setInt(1, dto.getId());
 
-				this.pstmt.execute();		
+				this.pstmt.execute();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			} finally {
@@ -134,5 +135,37 @@ public class BoardDAO {
 
 	}
 
+	public ArrayList<Board> getBoardByCustomerId(int custId) {
+		ArrayList<Board> list = new ArrayList<Board>();
+
+		this.conn = DBManager.getConnection();
+
+		if (this.conn != null) {
+			String sql = "SELECT * FROM board WHERE board_writer_id = ?";
+
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.pstmt.setInt(1, custId);
+				this.rs = this.pstmt.executeQuery();
+
+				while (this.rs.next()) {
+					int id = this.rs.getInt(1);
+					String title = this.rs.getString(2);
+					String main = this.rs.getString(3);
+					String modi = this.rs.getString(4);
+					String regi = this.rs.getString(5);
+					int cate = this.rs.getInt(7);
+
+					Board board = new Board(id, title, main, modi, regi, custId, cate);
+					list.add(board);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.closeConnection(this.conn, this.pstmt, this.rs);
+			}
+		}
+		return list;
+	}
 
 }

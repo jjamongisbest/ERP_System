@@ -15,7 +15,6 @@ public class DropCustomerAction implements Action{
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
 		CustomerDAO customerDao = CustomerDAO.getinstnace();
 		HttpSession session = request.getSession();
 
