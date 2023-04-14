@@ -97,6 +97,16 @@
 		<url-pattern>/product</url-pattern>
 	</servlet-mapping>
 	
+		<!--ProductList mapping -->
+	<servlet>
+		<servlet-name>productList</servlet-name>
+		<jsp-file>/views/productList.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>productList</servlet-name>
+		<url-pattern>/productlist</url-pattern>
+	</servlet-mapping>
+	
 	
 	<!--OrderDetail mapping-->
 	<servlet>
