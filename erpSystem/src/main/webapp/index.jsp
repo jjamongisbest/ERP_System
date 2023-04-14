@@ -9,13 +9,19 @@
 </head>
 <c:import url="header"/>
 <body>
-
 <%
-System.out.println(session.getAttribute("log"));
+/* System.out.println(session.getAttribute("log")); */
 %>
 
 <h1>hello world!</h1>
-
+<c:import url="product"/>
 </body>
 <c:import url="footer"/>
 </html>
+
+<!-- 마이페이지 -->
+<!-- 관리자페이지 -->
+<!-- 장바구니 -->
+<!-- 주문하기 -->
+<!-- 주문하기 -->
+<!-- 주문하기 -->

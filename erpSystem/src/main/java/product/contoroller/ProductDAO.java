@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import product.Product;
 import product.ProductDTO;
@@ -80,12 +81,47 @@ public class ProductDAO {
 			}
 
 		} catch (SQLException e) {
-			System.out.println("error by READ");
+			System.out.println("error by READ(byId)");
 			e.printStackTrace();
 		}
 		DBManager.closeConnection(this.conn, this.pstmt, this.rs);
 
 		return product;
+	}
+	
+	//Read
+	public ArrayList<Product> getProductList() {
+		ArrayList<Product> list = new ArrayList<>();
+		this.conn = DBManager.getConnection();
+
+		if(this.conn == null)
+			return null;
+
+		String sql = "SELECT * FROM product";
+
+		try {
+			this.pstmt = this.conn.prepareStatement(sql);
+			this.rs = this.pstmt.executeQuery();
+
+			while(this.rs.next()) {
+				int productId 	 =this.rs.getInt(1);
+				String name		 =this.rs.getString(2);
+				String memo		 =this.rs.getString(3);
+				String handleDate=this.rs.getString(4);
+				String stock	 =this.rs.getString(5);
+				String pipeLine	 =this.rs.getString(6);
+				String price	 =this.rs.getString(7);
+				int categoryId	 =this.rs.getInt(8);
+				list.add(new Product(productId, name, memo, handleDate, stock, pipeLine, price, categoryId));
+			}
+
+		} catch (SQLException e) {
+			System.out.println("error by READ(list)");
+			e.printStackTrace();
+		}
+		DBManager.closeConnection(this.conn, this.pstmt, this.rs);
+
+		return list;
 	}
 
 	//Update

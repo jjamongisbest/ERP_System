@@ -1,4 +1,4 @@
-package board_category.controller;
+package boardCategory.controller;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

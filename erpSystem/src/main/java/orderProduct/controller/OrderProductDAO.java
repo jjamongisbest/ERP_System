@@ -80,6 +80,40 @@ public class OrderProductDAO {
 
 		return orderProduct;
 	}
+	
+	//Read
+	public OrderProduct getOrderProductByProductId(int id) {
+		OrderProduct orderProduct = null;
+		this.conn = DBManager.getConnection();
+
+		if(this.conn == null)
+			return null;
+
+		String sql = "SELECT * FROM order_product WHERE product_id=?";
+
+		try {
+			this.pstmt = this.conn.prepareStatement(sql);
+			this.pstmt.setInt(1, id);
+			this.rs = this.pstmt.executeQuery();
+
+			while(this.rs.next()) {
+				int detailsId		 = this.rs.getInt(1);
+				int productId		 = this.rs.getInt(2);
+				int orderId			 = this.rs.getInt(3);
+				String product	  	 = this.rs.getString(4);
+				String quantity		 = this.rs.getString(5);
+				orderProduct = new OrderProduct(detailsId, productId, orderId, product, quantity);
+			}
+
+		} catch (SQLException e) {
+			System.out.println("error by READ");
+			e.printStackTrace();
+		}
+		DBManager.closeConnection(this.conn, this.pstmt, this.rs);
+
+		return orderProduct;
+	}
+
 
 	//Update
 	public void setOrderProduct(OrderProductDTO orderProductDto) {

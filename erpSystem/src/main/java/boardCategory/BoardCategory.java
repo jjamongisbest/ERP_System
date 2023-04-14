@@ -1,4 +1,4 @@
-package board_category;
+package boardCategory;
 
 public class BoardCategory {
 

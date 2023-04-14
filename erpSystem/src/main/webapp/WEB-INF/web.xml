@@ -76,6 +76,7 @@
 		<url-pattern>/regist</url-pattern>
 	</servlet-mapping>
 
+
 	<servlet>
 		<servlet-name>dropCustomer</servlet-name>
 		<jsp-file>/views/dropCustomer.jsp</jsp-file>
@@ -84,5 +85,19 @@
 		<servlet-name>dropCustomer</servlet-name>
 		<url-pattern>/dropCustomer</url-pattern>
 	</servlet-mapping>
+
+
+	
+	<!--Product mapping-->
+	<servlet>
+		<servlet-name>product</servlet-name>
+		<jsp-file>/views/product.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>product</servlet-name>
+		<url-pattern>/product</url-pattern>
+	</servlet-mapping>
+	
+	
 
 </web-app>
