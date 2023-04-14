@@ -87,8 +87,8 @@
 	</servlet-mapping>
 
 
-	
-	<!--Product mapping-->
+
+	<!--Product mapping -->
 	<servlet>
 		<servlet-name>product</servlet-name>
 		<jsp-file>/views/product.jsp</jsp-file>
@@ -97,7 +97,102 @@
 		<servlet-name>product</servlet-name>
 		<url-pattern>/product</url-pattern>
 	</servlet-mapping>
-	
-	
+
+
+	<!-- announce-->
+	<servlet>
+		<servlet-name>announce</servlet-name>
+		<jsp-file>/views/announce.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>announce</servlet-name>
+		<url-pattern>/announce</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>announceWrite</servlet-name>
+		<jsp-file>/views/announceWrite.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>announceWrite</servlet-name>
+		<url-pattern>/announceWrite</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>announceDetail</servlet-name>
+		<jsp-file>/views/announceDetail.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>announceDetail</servlet-name>
+		<url-pattern>/announceDetail</url-pattern>
+	</servlet-mapping>
+
+
+	<!-- inquiry -->
+	<servlet>
+		<servlet-name>inquiry</servlet-name>
+		<jsp-file>/views/inquiry.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>inquiry</servlet-name>
+		<url-pattern>/inquiry</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet>
+		<servlet-name>inquiryWrite</servlet-name>
+		<jsp-file>/views/inquiryWrite.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>inquiryWrite</servlet-name>
+		<url-pattern>/inquiryWrite</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>inquiryDetail</servlet-name>
+		<jsp-file>/views/inquiryDetail.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>inquiryDetail</servlet-name>
+		<url-pattern>/inquiryDetail</url-pattern>
+	</servlet-mapping>
+
+
+	<!-- review -->
+
+	<servlet>
+		<servlet-name>review</servlet-name>
+		<jsp-file>/views/review.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>review</servlet-name>
+		<url-pattern>/review</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet>
+		<servlet-name>reviewWrite</servlet-name>
+		<jsp-file>/views/reviewWrite.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>reviewWrite</servlet-name>
+		<url-pattern>/reviewWrite</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>reviewDetail</servlet-name>
+		<jsp-file>/views/reviewDetail.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>reviewDetail</servlet-name>
+		<url-pattern>/reviewDetail</url-pattern>
+	</servlet-mapping>
+
+
 
 </web-app>

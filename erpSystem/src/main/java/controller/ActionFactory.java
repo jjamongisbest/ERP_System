@@ -1,48 +1,44 @@
 package controller;
 
 import controller.action.Action;
-<<<<<<< HEAD
+import controller.action.BoardAction;
 import controller.action.DropCustomerAction;
 import controller.action.LogoutAction;
 import controller.action.RegistAction;
-=======
->>>>>>> refs/remotes/origin/main
+
 import controller.action.LoginAction;
 import controller.action.LogoutAction;
 import controller.action.ProductAction;
 import controller.action.RegistAction;
 
-
 public class ActionFactory {
 	private static final ActionFactory instance = new ActionFactory();
-	
-	private ActionFactory() {}
-	
+
+	private ActionFactory() {
+	}
+
 	public static ActionFactory getInstance() {
 		return instance;
 	}
-	
+
 	public Action getAction(String command) {
 		Action action = null;
-		
-		if(command.equals("logout"))
+
+		if (command.equals("logout"))
 			action = new LogoutAction();
-		else if(command.equals("login"))
+		else if (command.equals("login"))
 			action = new LoginAction();
-<<<<<<< HEAD
-		else if(command.equals("regist")) 
-=======
-		else if(command.equals("regist"))
->>>>>>> refs/remotes/origin/main
+
+		else if (command.equals("regist"))
 			action = new RegistAction();
-<<<<<<< HEAD
-		else if(command.equals("dropCustomer")) 
+
+		else if (command.equals("dropCustomer"))
 			action = new DropCustomerAction();
-=======
-		else if(command.equals("product"))
+
+		else if (command.equals("product"))
 			action = new ProductAction();
->>>>>>> refs/remotes/origin/main
-		
+		else if (command.equals("board"))
+			action = new BoardAction();
 
 		return action;
 	}

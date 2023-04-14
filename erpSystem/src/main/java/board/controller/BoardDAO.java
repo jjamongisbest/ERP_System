@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import board.Board;
 import board.BoardDTO;
@@ -53,6 +54,32 @@ public class BoardDAO {
 			}
 		}
 	}
+	public int getBoardId() {
+		int boardrId = -1;
+		
+		this.conn=DBManager.getConnection();
+		if(this.conn != null) {
+			String str = "SELECT MAX(board_id) FROM board";
+			
+			try {
+				this.pstmt = this.conn.prepareStatement(str);
+				this.rs = this.pstmt.executeQuery();
+				
+				while(this.rs.next()) {
+					boardrId = this.rs.getInt(1);					
+				}
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.closeConnection(conn, pstmt, rs);
+			}
+			
+			
+		}
+		
+		return boardrId + 1;
+	}
 
 	// R
 
@@ -86,7 +113,40 @@ public class BoardDAO {
 
 		return board;
 	}
+	//R
+	public ArrayList<Board> getBoard(int categoryId) {
+		ArrayList<Board> list = new ArrayList<Board>();
+		this.conn = DBManager.getConnection();
+		if (this.conn != null) {
+			String sql = "SELECT * FROM board where board_category_id = ?";
 
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.pstmt.setInt(1, categoryId);
+			
+				this.rs = this.pstmt.executeQuery();
+
+				while (this.rs.next()) {
+					int id = this.rs.getInt(1);
+					String title = this.rs.getString(2);
+					String main = this.rs.getString(3);
+					String modiDate = this.rs.getString(4);
+					String regiDate = this.rs.getString(5);
+					int writer = this.rs.getInt(6);
+					int category = this.rs.getInt(7);
+
+					list.add(new Board(id, title, main, modiDate, regiDate, writer, category));
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.closeConnection(this.conn, this.pstmt, this.rs);
+			}
+		}
+
+		return list;
+	}
+	
 	// U
 	public void updateBoard(BoardDTO dto) {
 		Board board = new Board(dto);
