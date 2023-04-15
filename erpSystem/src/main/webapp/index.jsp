@@ -7,13 +7,14 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<c:import url="header"/>
 <body>
+<jsp:include page="header"/>
 
 <%
 System.out.println(session.getAttribute("log"));
 %>
 
+<c:import url="main"/>
+
 </body>
-<c:import url="footer"/>
 </html>
