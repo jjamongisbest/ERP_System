@@ -4,14 +4,12 @@ function sendCommand(command){
 
 function insertBasket(){
      alert("장바구니에 추가되었습니다.");
-  	//////////////////////
-  	// 기능 추가 예정///////
-  	/////////////////////
+  	location.href = '../service?command=basket';
 }
 
 function send(page){
 	if(page === "login"){
-		alert("로그인 후 이용가능")		
+		alert("로그인 후 이용가능");	
 	}
-	location.href = `../${page}`;
+	location.href = `/${page}`;
 }

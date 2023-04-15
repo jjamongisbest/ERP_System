@@ -84,18 +84,18 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>dropCustomer</servlet-name>
-		<url-pattern>/dropCustomer</url-pattern>
+		<url-pattern>/dropcustomer</url-pattern>
 	</servlet-mapping>
 
 
-	<!--Product mapping -->
+	<!--SearchProduct mapping -->
 	<servlet>
-		<servlet-name>product</servlet-name>
-		<jsp-file>/views/product.jsp</jsp-file>
+		<servlet-name>searchProduct</servlet-name>
+		<jsp-file>/views/searchProduct.jsp</jsp-file>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>product</servlet-name>
-		<url-pattern>/product</url-pattern>
+		<servlet-name>searchProduct</servlet-name>
+		<url-pattern>/searchproduct</url-pattern>
 	</servlet-mapping>
 	
 	
@@ -106,18 +106,18 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>productList</servlet-name>
-		<url-pattern>/productList</url-pattern>
+		<url-pattern>/productlist</url-pattern>
 	</servlet-mapping>
 	
 	
-	<!--OrderDetail mapping-->
+	<!--ProductDetail mapping-->
 	<servlet>
-		<servlet-name>orderDetail</servlet-name>
-		<jsp-file>/views/orderDetail.jsp</jsp-file>
+		<servlet-name>productDetail</servlet-name>
+		<jsp-file>/views/productDetail.jsp</jsp-file>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>orderDetail</servlet-name>
-		<url-pattern>/orderDetail</url-pattern>
+		<servlet-name>productDetail</servlet-name>
+		<url-pattern>/productdetail</url-pattern>
 	</servlet-mapping>
 	
 
@@ -150,7 +150,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>announceWrite</servlet-name>
-		<url-pattern>/announceWrite</url-pattern>
+		<url-pattern>/announcewrite</url-pattern>
 	</servlet-mapping>
 
 	
@@ -161,7 +161,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>announceDetail</servlet-name>
-		<url-pattern>/announceDetail</url-pattern>
+		<url-pattern>/announcedetail</url-pattern>
 	</servlet-mapping>
 
 
@@ -183,7 +183,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>inquiryWrite</servlet-name>
-		<url-pattern>/inquiryWrite</url-pattern>
+		<url-pattern>/inquirywrite</url-pattern>
 	</servlet-mapping>
 
 	
@@ -194,7 +194,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>inquiryDetail</servlet-name>
-		<url-pattern>/inquiryDetail</url-pattern>
+		<url-pattern>/inquirydetail</url-pattern>
 	</servlet-mapping>
 
 
@@ -216,7 +216,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>reviewWrite</servlet-name>
-		<url-pattern>/reviewWrite</url-pattern>
+		<url-pattern>/reviewwrite</url-pattern>
 	</servlet-mapping>
 
 	
@@ -227,7 +227,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>reviewDetail</servlet-name>
-		<url-pattern>/reviewDetail</url-pattern>
+		<url-pattern>/reviewdetail</url-pattern>
 	</servlet-mapping>
 
 </web-app>

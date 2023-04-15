@@ -36,7 +36,7 @@
 			%>
 			<tr>
 				<td><%=board.getId()%></td>
-				<td><a href="reviewDetail?id=<%=board.getId()%>"><%=board.getTitle()%></a></td>
+				<td><a href="reviewdetail?id=<%=board.getId()%>"><%=board.getTitle()%></a></td>
 				<td><%=board.getWriter()%></td>
 				<td><%=board.getReigisteredDate()%></td>
 
@@ -51,7 +51,7 @@
 		<%
 		if (session.getAttribute("log") != null) {
 		%>
-		<a href="reviewWrite">글쓰기</a>
+		<a href="reviewwrite">글쓰기</a>
 		<%
 		}
 		%>

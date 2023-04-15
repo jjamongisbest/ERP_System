@@ -6,7 +6,7 @@ import controller.action.BoardAction;
 import controller.action.DropCustomerAction;
 import controller.action.LoginAction;
 import controller.action.LogoutAction;
-import controller.action.OrderDetailAction;
+import controller.action.ProductDetailAction;
 import controller.action.ProductAction;
 import controller.action.RegistAction;
 
@@ -38,8 +38,8 @@ public class ActionFactory {
 		else if (command.equals("product"))
 			action = new ProductAction();
 		
-		else if(command.equals("orderDetail"))
-			action = new OrderDetailAction();
+		else if(command.equals("productDetail"))
+			action = new ProductDetailAction();
 		
 		else if(command.equals("basket"))
 			action = new BasketAction();

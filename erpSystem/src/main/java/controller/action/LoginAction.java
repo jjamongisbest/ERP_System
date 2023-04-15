@@ -2,6 +2,7 @@ package controller.action;
 
 import java.io.IOException;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import customer.Customer;
 import customer.controller.CustomerDAO;
+import salesOrder.controller.SalesOrderDAO;
 
 public class LoginAction implements Action {
 
@@ -35,7 +37,7 @@ public class LoginAction implements Action {
 	    if (cus != null && password.equals(cus.getPassword())) {
 	        HttpSession session = request.getSession();
 	        session.setAttribute("log", cus);
-//	        getCustomerBascket(request);
+	        getCustomerBascket(request);
 	        response.sendRedirect("/");
 	    } else {
 	        request.setAttribute("message", "회원 정보가 올바르지 않습니다.");
@@ -44,5 +46,10 @@ public class LoginAction implements Action {
 	}
 	
 	
-	
+	private void getCustomerBascket(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		Customer customer = (Customer)session.getAttribute("log");
+		
+		int customerId = customer.getId();
+	}
 }

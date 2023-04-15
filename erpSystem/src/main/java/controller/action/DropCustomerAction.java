@@ -25,7 +25,7 @@ public class DropCustomerAction implements Action {
 			password = request.getParameter("password");
 		} catch (NumberFormatException e) {
 			request.setAttribute("message", "ID는 숫자로 입력해주세요.");
-			request.getRequestDispatcher("dropCustomer").forward(request, response);
+			request.getRequestDispatcher("dropcustomer").forward(request, response);
 			return;
 		}
 		
@@ -42,11 +42,11 @@ public class DropCustomerAction implements Action {
 			
 			CustomerDTO customerDto = new CustomerDTO(id, gradeId, name, address, phone, gender, password);
 			customerDao.deleteCustomer(customerDto);
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("/");
 		}
 		else {
 			request.setAttribute("message", "회원 정보가 올바르지 않습니다.");
-	        request.getRequestDispatcher("dropCustomer").forward(request, response);
+	        request.getRequestDispatcher("dropcustomer").forward(request, response);
 		}
 	}
 }

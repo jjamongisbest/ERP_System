@@ -2,7 +2,7 @@
  * 
  */
 function checkValues(htmlForm) {
-	let url = "announceWrite?";
+	let url = "announcewrite?";
 
 	const title = document.getElementById("title").value;
 	const main = document.getElementById("main").value;
@@ -33,7 +33,7 @@ function checkValues(htmlForm) {
 	}
 }
 function reviewCheckValues(htmlForm) {
-	let url = "reviewWrite?";
+	let url = "reviewwrite?";
 
 	const title = document.getElementById("title").value;
 	const main = document.getElementById("main").value;
@@ -63,7 +63,7 @@ function reviewCheckValues(htmlForm) {
 	}
 }
 function inquiryCheckValues(htmlForm) {
-	let url = "inquirtWrite?";
+	let url = "inquirywrite?";
 
 	const title = document.getElementById("title").value;
 	const main = document.getElementById("main").value;

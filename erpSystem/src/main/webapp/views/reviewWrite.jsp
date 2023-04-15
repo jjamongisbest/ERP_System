@@ -41,7 +41,7 @@ int categoryId=13;
 
 			</table>
 
-			<input type="button" onclick="reviewCheckValues(form)">
+			<input type="button" onclick="reviewCheckValues(form)" value="등록">
 
 		</form>
 

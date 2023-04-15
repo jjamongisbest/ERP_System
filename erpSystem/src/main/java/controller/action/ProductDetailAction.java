@@ -11,7 +11,7 @@ import product.contoroller.ProductDAO;
 import productCategory.ProductCategory;
 import productCategory.controller.ProductCategoryDAO;
 
-public class OrderDetailAction implements Action{
+public class ProductDetailAction implements Action{
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -30,7 +30,7 @@ public class OrderDetailAction implements Action{
 		
 		request.setAttribute("targetProduct", product);
 		request.setAttribute("productCategory", category);
-		request.getRequestDispatcher("/orderDetail").forward(request, response);
+		request.getRequestDispatcher("/productdetail").forward(request, response);
 	}
 	
 	private Product getTargetProductById(int id) {

@@ -25,7 +25,7 @@
 			<c:forEach var="items" items="${searchProduct}">
 				<tr>
 					<td>
-						<a href="../service?command=orderDetail&productId=${items.id}">
+						<a href="../service?command=productDetail&productId=${items.id}">
 							<c:out value="${items.name}"/>
 						</a>
 					</td>

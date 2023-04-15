@@ -36,7 +36,7 @@
 			%>
 			<tr>
 				<td><%=board.getId()%></td>
-				<td><a href="inquiryDetail?id=<%=board.getId()%>"><%=board.getTitle()%></a></td>
+				<td><a href="inquirydetail?id=<%=board.getId()%>"><%=board.getTitle()%></a></td>
 				<td><%=board.getWriter()%></td>
 				<td><%=board.getReigisteredDate()%></td>
 

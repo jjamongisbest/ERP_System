@@ -10,10 +10,10 @@
 <body>
 	<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwCgJHYjahGUbGoTxda45yy-VwyECKbM_E2w&usqp=CAU">
 	<br>
-	<c:out value="${requestScope.targetProduct.getName() }" /><br>
-	<c:out value="${requestScope.targetProduct.getPrice() }" /><br>
-	<c:out value="${requestScope.targetProduct.getPipeLine() }" /><br>
-	<c:out value="${requestScope.productCategory.getName() }" />
+	<c:out value="상품 이름 : ${requestScope.targetProduct.getName() }" /><br>
+	<c:out value="상품 가격 : ${requestScope.targetProduct.getPrice() }" /><br>
+	<c:out value="공급처 : ${requestScope.targetProduct.getPipeLine() }" /><br>
+	<c:out value="분류 : ${requestScope.productCategory.getName() }" />
 	
 	<c:set var="prodcuct" value="${requestScope.targetProduct.getStock()}" />
 	<c:set var="max" value="${requestScope.targetProduct.getStock()}" />
@@ -27,8 +27,8 @@
 			</c:when>
 			<c:otherwise>
 				<c:out value="${sessionScope.log }"/>
-				<input type="button" value="장바구니 추가" onclick="insertBasket()">
-				<input type="submit" value="바로구매" onclick="insertBasket('')">
+				<input type="button" value="장바구니 추가" onclick="insertBasket('구현해야함')">
+				<input type="submit" value="바로구매" onclick="insertBasket('구현해야함')">
 			</c:otherwise>
 		</c:choose>
 	</form>

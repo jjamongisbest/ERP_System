@@ -142,6 +142,7 @@ public class OrderProductDAO {
 		DBManager.closeConnection(this.conn, this.pstmt);
 	}
 
+	
 	//Delete
 	public void removeOrderProductById(int id) {
 		this.conn = DBManager.getConnection();

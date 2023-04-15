@@ -36,7 +36,7 @@
 			%>
 			<tr>
 				<td><%=board.getId() %></td>
-				<td><a href="announceDetail?id=<%=board.getId() %>"><%=board.getTitle() %></a></td>
+				<td><a href="announcedetail?id=<%=board.getId() %>"><%=board.getTitle() %></a></td>
 				<td><%=board.getWriter() %></td>
 				<td><%=board.getReigisteredDate() %></td>
 
@@ -54,7 +54,7 @@
 			
 			if(customer.getId()==99999){
 				%>
-		<a href="announceWrite">글쓰기</a>
+		<a href="announcewrite">글쓰기</a>
 		<%
 			}
 			%>
