@@ -7,8 +7,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<c:import url="header"/>
 <body>
+<c:import url="header"/>
 
 <%
 System.out.println(session.getAttribute("log"));
@@ -16,6 +16,9 @@ System.out.println(session.getAttribute("log"));
 
 <h1>hello world!</h1>
 <c:import url="searchproduct"/>
+
+<c:import url="main"/>
+
+
 </body>
-<c:import url="footer"/>
 </html>

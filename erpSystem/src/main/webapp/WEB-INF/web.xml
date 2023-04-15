@@ -229,5 +229,15 @@
 		<servlet-name>reviewDetail</servlet-name>
 		<url-pattern>/reviewdetail</url-pattern>
 	</servlet-mapping>
+	
+		<!-- main mapping -->
+	<servlet>
+		<servlet-name>main</servlet-name>
+		<jsp-file>/views/main.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>main</servlet-name>
+		<url-pattern>/main</url-pattern>
+	</servlet-mapping>
 
 </web-app>
