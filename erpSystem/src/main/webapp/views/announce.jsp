@@ -19,6 +19,23 @@
 
 	<section>
 	<h1>공지사항</h1>
+	
+	<%
+		if(session.getAttribute("log") != null){
+			Customer customer = (Customer)session.getAttribute("log");
+			
+			if(customer.getId()==99999){
+				%>
+		<a href="announcewrite">글쓰기</a>
+		<%
+			}
+			%>
+
+		<% 
+		}
+		%>
+	
+	
 		<table>
 
 			<tr>
@@ -48,21 +65,7 @@
 
 		</table>
 
-		<%
-		if(session.getAttribute("log") != null){
-			Customer customer = (Customer)session.getAttribute("log");
-			
-			if(customer.getId()==99999){
-				%>
-		<a href="announcewrite">글쓰기</a>
-		<%
-			}
-			%>
-
-		<% 
-		}
-		%>
-
+		
 
 
 	</section>

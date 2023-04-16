@@ -28,7 +28,7 @@ public class BoardCategoryDAO {
 		this.conn = DBManager.getConnection();
 
 		if (this.conn != null) {
-			String sql = "SELECT board_category_name FROM board_category WHERE board_id = ?";
+			String sql = "SELECT board_category_name FROM board_category WHERE board_category_id = ?";
 
 			try {
 				this.pstmt = this.conn.prepareStatement(sql);

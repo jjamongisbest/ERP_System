@@ -2,21 +2,20 @@
  * 
  */
 function checkValues(htmlForm) {
-	let url = "dropCustomer?";
+	let url = "dropcustomer?";
 
-	const id = document.getElementById("id").value;
+
+
 	const password = document.getElementById("password").value;
-
+	
+	
 	let check = true;
 
-	if (id !== "") { url += "&id=" + id; }
+
 	if (password !== "") { url += "&password=" + password; }
 
-	if (id === "") {
-		alert('아이디를 입력해주세요.');
-		check = false;
-	}
-	else if (password === "") {
+
+	if (password === "") {
 		alert('비밀번호를 입력해주세요.');
 		check = false;
 	}
@@ -25,6 +24,11 @@ function checkValues(htmlForm) {
 		location.href = url;
 	}
 	else {
+		var UP;
+		UP = confirm("정말 탈퇴 하시겠습니까?");
+	}
+
+	if (UP) {
 		htmlForm.submit()
 	}
 }

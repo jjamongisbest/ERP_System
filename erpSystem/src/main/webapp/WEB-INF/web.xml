@@ -230,6 +230,18 @@
 		<url-pattern>/reviewdetail</url-pattern>
 	</servlet-mapping>
 	
+		<!-- BoardModify mapping -->
+	
+	<servlet>
+		<servlet-name>boardModify</servlet-name>
+		<jsp-file>/views/boardModify.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>boardModify</servlet-name>
+		<url-pattern>/boardmodify</url-pattern>
+	</servlet-mapping>
+	
+	
 		<!-- main mapping -->
 	<servlet>
 		<servlet-name>main</servlet-name>
@@ -239,5 +251,26 @@
 		<servlet-name>main</servlet-name>
 		<url-pattern>/main</url-pattern>
 	</servlet-mapping>
+	
+		<!-- main mapping -->
+	<servlet>
+		<servlet-name>adminPage</servlet-name>
+		<jsp-file>/views/adminPage.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>adminPage</servlet-name>
+		<url-pattern>/adminpage</url-pattern>
+	</servlet-mapping>
+	
+		<!-- main mapping -->
+	<servlet>
+		<servlet-name>orderConfirmation</servlet-name>
+		<jsp-file>/views/orderConfirmation.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>orderConfirmation</servlet-name>
+		<url-pattern>/orderconfirmation</url-pattern>
+	</servlet-mapping>
+	
 
 </web-app>

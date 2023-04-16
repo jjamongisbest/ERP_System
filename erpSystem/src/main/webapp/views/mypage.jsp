@@ -114,7 +114,7 @@
 	</div>
 	
 	<div class="button">
-	<input type="button" value="회원탈퇴" onclick="location.href='../service?command=dropCustomer'">
+	<input type="button" value="회원탈퇴" onclick="location.href='dropcustomer'">
 	</div>
 	
 	</div>
