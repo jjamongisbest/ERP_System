@@ -192,7 +192,7 @@ public class CustomerDAO {
 			try {
 				this.pstmt = conn.prepareStatement(str);				
 				this.pstmt.setInt(1, customer.getId());
-				this.pstmt.setString(2, customer.getPassword());
+				
 
 				this.pstmt.execute();
 

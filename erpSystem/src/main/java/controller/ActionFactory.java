@@ -3,9 +3,12 @@ package controller;
 import controller.action.Action;
 import controller.action.BasketAction;
 import controller.action.BoardAction;
+import controller.action.BoardDeleteAction;
+import controller.action.BoardModifyAction;
 import controller.action.DropCustomerAction;
 import controller.action.LoginAction;
 import controller.action.LogoutAction;
+import controller.action.OrderConfirmationAction;
 import controller.action.ProductDetailAction;
 import controller.action.ProductAction;
 import controller.action.RegistAction;
@@ -46,6 +49,16 @@ public class ActionFactory {
 		
 		else if (command.equals("board"))
 			action = new BoardAction();
+		
+		else if (command.equals("boardModify"))
+			action = new BoardModifyAction();
+		
+		else if (command.equals("boardDelete"))
+			action = new BoardDeleteAction();
+		
+		else if (command.equals("orderConfirmation"))
+			action = new OrderConfirmationAction();
+		
 		
 		return action;
 	}

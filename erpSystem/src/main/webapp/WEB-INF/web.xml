@@ -230,7 +230,19 @@
 		<url-pattern>/reviewdetail</url-pattern>
 	</servlet-mapping>
 	
-		<!-- main mapping -->
+	
+	<!-- BoardModify mapping -->
+	<servlet>
+		<servlet-name>boardModify</servlet-name>
+		<jsp-file>/views/boardModify.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>boardModify</servlet-name>
+		<url-pattern>/boardmodify</url-pattern>
+	</servlet-mapping>
+	
+	
+	<!-- main mapping -->
 	<servlet>
 		<servlet-name>main</servlet-name>
 		<jsp-file>/views/main.jsp</jsp-file>
@@ -240,6 +252,7 @@
 		<url-pattern>/main</url-pattern>
 	</servlet-mapping>
 	
+
 
 	<!-- order mapping -->
 	<servlet>
@@ -261,6 +274,7 @@
 		<url-pattern>/board</url-pattern>
 	</servlet-mapping>
 	
+	
 		<!-- boardView mapping -->
 	<servlet>
 		<servlet-name>boardView</servlet-name>
@@ -271,6 +285,7 @@
 		<url-pattern>/boardview</url-pattern>
 	</servlet-mapping>
 
+
 		<!-- boardWrite mapping -->
 	<servlet>
 		<servlet-name>boardWrite</servlet-name>
@@ -279,6 +294,28 @@
 	<servlet-mapping>
 		<servlet-name>boardWrite</servlet-name>
 		<url-pattern>/boardwrite</url-pattern>
+	</servlet-mapping>
+
+
+	<!-- adminPage mapping -->
+	<servlet>
+		<servlet-name>adminPage</servlet-name>
+		<jsp-file>/views/adminPage.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>adminPage</servlet-name>
+		<url-pattern>/adminpage</url-pattern>
+	</servlet-mapping>
+
+	
+	<!-- orderConfirmation mapping -->
+	<servlet>
+		<servlet-name>orderConfirmation</servlet-name>
+		<jsp-file>/views/orderConfirmation.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>orderConfirmation</servlet-name>
+		<url-pattern>/orderconfirmation</url-pattern>
 	</servlet-mapping>
 
 </web-app>

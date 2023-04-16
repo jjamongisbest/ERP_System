@@ -9,14 +9,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<c:import url="header" />
-<%
-	System.out.println(session.getAttribute("log"));
-%>
-	<c:import url="searchproduct"/>
+<h1>hello world!</h1>
+<c:import url="main" />
 
-	<h1>hello world!</h1>
-	<c:import url="searchproduct" />
-	<c:import url="main" />
 </body>
 </html>

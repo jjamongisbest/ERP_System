@@ -158,23 +158,24 @@ public class BoardDAO {
 			try {
 				this.pstmt = this.conn.prepareStatement(sql);
 
-				this.pstmt.setString(1, dto.getTitle());
-				this.pstmt.setString(2, dto.getMain());
-				this.pstmt.setString(3, dto.getModifiedDate());
-				this.pstmt.setInt(4, dto.getCategoryId());
+				this.pstmt.setString(1, board.getTitle());
+				this.pstmt.setString(2, board.getMain());
+				this.pstmt.setString(3, board.getModifiedDate());
+				this.pstmt.setInt(4, board.getCategoryId());
 				this.pstmt.setInt(5, board.getId());
 
 				this.pstmt.execute();
 			} catch (SQLException e) {
 				e.printStackTrace();
+			
 			} finally {
-				DBManager.closeConnection(this.conn, this.pstmt, this.rs);
+				DBManager.closeConnection(this.conn, this.pstmt);
 			}
 		}
 	}
 
 	// D
-	public void deleteBoard(BoardDTO dto) {
+	public void deleteBoard(int id) {
 		this.conn = DBManager.getConnection();
 		if (this.conn != null) {
 			String sql = "DELETE FROM board WHERE board_id =?";
@@ -182,13 +183,13 @@ public class BoardDAO {
 			try {
 				this.pstmt = this.conn.prepareStatement(sql);
 
-				this.pstmt.setInt(1, dto.getId());
+				this.pstmt.setInt(1, id);
 
 				this.pstmt.execute();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			} finally {
-				DBManager.closeConnection(this.conn, this.pstmt, this.rs);
+				DBManager.closeConnection(this.conn, this.pstmt);
 			}
 		}
 

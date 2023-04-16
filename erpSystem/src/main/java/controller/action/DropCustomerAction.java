@@ -17,23 +17,16 @@ public class DropCustomerAction implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 
-		int id = 0;
-		String password = "";
+		
+		String password = request.getParameter("password");
 
-		try {
-			id = Integer.parseInt(request.getParameter("id"));
-			password = request.getParameter("password");
-		} catch (NumberFormatException e) {
-			request.setAttribute("message", "ID는 숫자로 입력해주세요.");
-			request.getRequestDispatcher("dropcustomer").forward(request, response);
-			return;
-		}
 		
 		CustomerDAO customerDao = CustomerDAO.getinstnace();
 		HttpSession session = request.getSession();
 		Customer customer = (Customer) session.getAttribute("log");
 		
 		if(customer != null && password.equals(customer.getPassword())) {
+			int id = customer.getId();
 			int gradeId = customer.getGradeId();
 			String name = customer.getName();
 			String address = customer.getAddress();
@@ -42,6 +35,7 @@ public class DropCustomerAction implements Action {
 			
 			CustomerDTO customerDto = new CustomerDTO(id, gradeId, name, address, phone, gender, password);
 			customerDao.deleteCustomer(customerDto);
+			session.removeAttribute("log");
 			response.sendRedirect("/");
 		}
 		else {
