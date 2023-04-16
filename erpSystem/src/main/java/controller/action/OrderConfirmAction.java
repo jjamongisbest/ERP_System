@@ -6,21 +6,22 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import board.controller.BoardDAO;
+import salesOrder.controller.SalesOrderDAO;
 
-public class BoardDeleteAction implements Action {
+public class OrderConfirmAction implements Action{
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		BoardDAO boardDao = BoardDAO.getInstance();
-
-		int id = Integer.valueOf(request.getParameter("id"));
-		int categoryId = Integer.valueOf(request.getParameter("categoryId"));
-
-		boardDao.deleteBoard(id);
-
+		
+		int salesOrderId = Integer.parseInt(request.getParameter("salesOrderId"));
+		
+		System.out.println(salesOrderId);
+		
+		SalesOrderDAO salesOrderDao = SalesOrderDAO.getInstance();
+		
+		salesOrderDao.update(salesOrderId);
+		
 		response.sendRedirect("index.jsp");
-
 	}
 
 }

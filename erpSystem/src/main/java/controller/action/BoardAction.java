@@ -38,12 +38,8 @@ public class BoardAction implements Action {
 
 		boardDao.createBoard(boardDto);
 
-		if (categoryId == 11)
-			response.sendRedirect("announce");
-		else if (categoryId == 12)
-			response.sendRedirect("inquiry");
-		else if (categoryId == 13)
-			response.sendRedirect("review");
+		response.sendRedirect("index.jsp");
+
 	}
 
 }

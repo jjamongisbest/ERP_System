@@ -8,9 +8,9 @@ import controller.action.BoardModifyAction;
 import controller.action.DropCustomerAction;
 import controller.action.LoginAction;
 import controller.action.LogoutAction;
-import controller.action.OrderConfirmationAction;
-import controller.action.ProductDetailAction;
+import controller.action.OrderConfirmAction;
 import controller.action.ProductAction;
+import controller.action.ProductDetailAction;
 import controller.action.RegistAction;
 
 public class ActionFactory {
@@ -57,7 +57,7 @@ public class ActionFactory {
 			action = new BoardDeleteAction();
 		
 		else if (command.equals("orderConfirmation"))
-			action = new OrderConfirmationAction();
+			action = new OrderConfirmAction();
 		
 		
 		return action;

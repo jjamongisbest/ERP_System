@@ -1,3 +1,6 @@
+<%@page import="salesOrder.SalesOrder"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="salesOrder.controller.SalesOrderDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -6,32 +9,63 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<c:import url="header" />
 <body>
-	<form method="POST" action="../service">
-		<input type="hidden" name="command" value="orderConfirmation"> 
-		<input type="text" name="keyword" required placeholder="회원아이디를 입력하세요">
-		<input type="submit" value="검색">
-	</form>
-	<c:if test="${not empty searchOrder}">
+	<%
+	SalesOrderDAO salesOrderDao = SalesOrderDAO.getInstance();
+	ArrayList<SalesOrder> list = salesOrderDao.getSalesOrderByCustomerID();
+	
+
+	String vpage = request.getParameter("vpage");
+	if (vpage == null) {
+		vpage = "1";
+	}
+
+	int selPage = Integer.parseInt(vpage);
+	int total = salesOrderDao.getTotalCountByCategory();
+	int lastPage = (int) Math.ceil((double) total / 10);
+	%>
+	<section>
 		<table>
 			<tr>
 				<td>주문번호</td>
 				<td>구매아이디</td>
 				<td>결제금액</td>
+				<td>주문일자</td>
 				<td>결제상태</td>
 			</tr>
-			<c:forEach var="items" items="${searchOrder}">
-				<tr>
-					<td><a
-						href="../service?command=productDetail&productId=${items.id}">
-							<c:out value="${items.name}" />
-					</a></td>
-					<td><c:out value="${items.price }" /></td>
-					<td><c:out value="${items.stock }" /></td>
-				</tr>
-			</c:forEach>
+			<%
+			for (SalesOrder salesOrder : list) {
+			%>
+			<tr>
+				<td><%=salesOrder.getId()%></td>
+				<td><%=salesOrder.getCustomerId()%></td>
+				<td><%=salesOrder.getTotal()%></td>
+				<td><%=salesOrder.getDate()%></td>
+				<td><a onclick="checkValues()" href="../service?command=orderConfirmation&salesOrderId=<%=salesOrder.getId() %>" ><%=salesOrder.getStatus()%></a></td>
+				
+			</tr>
+
+			<%
+			}
+			%>
+
+
 		</table>
-	</c:if>
+		<div style="width: 600px; text-align: center; margin-top: 10px;">
+
+			<%
+			for (int i = 1; i <= lastPage; i++) {
+			%>
+			<a href="orderConfirmation?vpage=<%=i%>"><%=i%></a>
+			<%
+			}
+			%>
+
+		</div>
+	</section>
 
 </body>
+<script src="resources/orderConfirmation.js"></script>
+<c:import url="footer" />
 </html>

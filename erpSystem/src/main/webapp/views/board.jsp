@@ -4,7 +4,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="board.controller.BoardDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,27 +14,25 @@
 <c:import url="header" />
 <body>
 
-<%
+	<%
 	int categoryId = Integer.parseInt(request.getParameter("cate"));
-	
+
 	String vpage = request.getParameter("vpage");
-	if( vpage == null ) {
+	if (vpage == null) {
 		vpage = "1";
 	}
-	
+
 	int selPage = Integer.parseInt(vpage);
 
 	BoardDAO boardDao = BoardDAO.getInstance();
 	int total = boardDao.getTotalCountByCategory(categoryId);
 
 	int lastPage = (int) Math.ceil((double) total / 10);
-	
+
 	ArrayList<Board> list = boardDao.getPostsPerPage(categoryId, selPage);
-	
+
 	BoardCategoryDAO boardCategoryDao = BoardCategoryDAO.getInstance();
 	String category = boardCategoryDao.getCategoryNameById(categoryId);
-	
-	System.out.println(category);
 	%>
 
 	<section>
@@ -43,9 +41,16 @@
 			<%
 			if (session.getAttribute("log") != null) {
 				Customer customer = (Customer) session.getAttribute("log");
-				if (customer.getId() == 99999) {
+				if (categoryId == 11) {
+
+					if (customer.getId() == 99999) {
 			%>
-			<a href="boardwrite">글쓰기</a>
+			<a href="boardwrite?categoryId=<%=categoryId%>">글쓰기</a>
+			<%
+			}
+			} else {
+			%>
+			<a href="boardwrite?categoryId=<%=categoryId%>">글쓰기</a>
 			<%
 			}
 			}

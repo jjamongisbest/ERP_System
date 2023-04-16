@@ -12,7 +12,7 @@ import board.BoardDTO;
 import board.controller.BoardDAO;
 import customer.Customer;
 
-public class BoardModifyAction implements Action{
+public class BoardModifyAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -38,16 +38,8 @@ public class BoardModifyAction implements Action{
 
 		boardDao.updateBoard(boardDto);
 
-		
-		
-		
-		if (categoryId == 11)
-			response.sendRedirect("announce");
-		else if (categoryId == 12)
-			response.sendRedirect("inquiry");
-		else if (categoryId == 13)
-			response.sendRedirect("review");
-		
+		response.sendRedirect("index.jsp");
+
 	}
 
 }
