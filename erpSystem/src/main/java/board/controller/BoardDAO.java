@@ -226,5 +226,68 @@ public class BoardDAO {
 		}
 		return list;
 	}
+	
+	public int getTotalCountByCategory(int cateCode) {
+		int max = 0;
+		
+		this.conn = DBManager.getConnection();
+		
+		if(this.conn != null) {
+			String sql = "SELECT COUNT(*) count FROM board WHERE board_category_id =?";
+			
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.pstmt.setInt(1, cateCode);
+				this.rs = this.pstmt.executeQuery();
+				
+				 if (this.rs.next()) {
+		                max = this.rs.getInt("count");
+		            }
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.closeConnection(this.conn, this.pstmt, this.rs);
+			}
+		}
+		
+		return max;
+	}
+	
+	public ArrayList<Board> getPostsPerPage(int cateCode, int page){
+		ArrayList<Board> list = new ArrayList<Board>();
+		
+		this.conn = DBManager.getConnection();
+		
+		if(this.conn != null) {
+			String sql = "SELECT * FROM board WHERE board_category_id = ? ORDER BY board_id ASC LIMIT ?,10";
+			
+			try {
+	            this.pstmt = this.conn.prepareStatement(sql);
+	            this.pstmt.setInt(1, cateCode);
+	            this.pstmt.setInt(2, (page - 1) * 10); 
+	            this.rs = this.pstmt.executeQuery();
+	            
+	            while(this.rs.next()) {
+	            	int id = this.rs.getInt(1);
+					String title = this.rs.getString(2);
+					String main = this.rs.getString(3);
+					String modi = this.rs.getString(4);
+					String regi = this.rs.getString(5);
+					int writer = this.rs.getInt(6);
+					
+					Board board = new Board(id, title, main, modi, regi, writer, cateCode);
+					list.add(board);
+
+	            }
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.closeConnection(this.conn, this.pstmt, this.rs);
+			}
+		
+		}
+		
+		return list;
+	}
 
 }
