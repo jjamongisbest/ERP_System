@@ -123,6 +123,39 @@ public class ProductDAO {
 
 		return list;
 	}
+	
+	public ArrayList<Product> getProductsByCategory(int cateId){
+		ArrayList<Product> list = new ArrayList<>();
+		this.conn = DBManager.getConnection();
+		
+		if(this.conn != null) {
+			String sql = "SELECT * FROM product WHERE product_category_id = ?";
+			
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.pstmt.setInt(1, cateId);
+				this.rs = this.pstmt.executeQuery();
+				
+				while(this.rs.next()) {
+					int productId 	 =this.rs.getInt(1);
+					String name		 =this.rs.getString(2);
+					String memo		 =this.rs.getString(3);
+					String handleDate=this.rs.getString(4);
+					String stock	 =this.rs.getString(5);
+					String pipeLine	 =this.rs.getString(6);
+					String price	 =this.rs.getString(7);		
+					
+					Product product = new Product(productId, name, memo, handleDate, stock, pipeLine, price, cateId);
+					list.add(product);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.closeConnection(this.conn, this.pstmt, this.rs);
+			}
+		}
+		return list;
+	}
 
 	//Update
 	public void setProduct(ProductDTO productDto) {

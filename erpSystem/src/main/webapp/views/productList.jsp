@@ -14,8 +14,9 @@
 <body>
 
 	<%
+	int cateId = Integer.parseInt(request.getParameter("code"));
 	ProductDAO dao = ProductDAO.getInstance();
-	ArrayList<Product> list = dao.getProductList();
+	ArrayList<Product> list = dao.getProductsByCategory(cateId);
 	%>
 
 	<div class="container">
