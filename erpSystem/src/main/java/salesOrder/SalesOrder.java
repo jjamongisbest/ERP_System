@@ -16,6 +16,13 @@ public class SalesOrder{
 		this.status = status;
 	}
 	
+	public SalesOrder(int custId, String date, String total, String status) {
+		this.customerId = custId;
+		this.date = date;
+		this.total = total;
+		this.status = status;
+	}
+	
 	public SalesOrder(SalesOrderDTO dto) {
 		this.id = dto.getId();
 		this.customerId = dto.getCustomerId();

@@ -16,9 +16,6 @@ System.out.println(session.getAttribute("log"));
 
 <h1>hello world!</h1>
 <c:import url="searchproduct"/>
-
 <c:import url="main"/>
-
-
 </body>
 </html>

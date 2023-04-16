@@ -29,7 +29,6 @@
 	String gender = request.getParameter("gender");
 	
 	%>
-
 	<section>
 		<form method="POST" action="../service">
 			<input type="hidden" name="command" value="regist"> 
@@ -61,12 +60,12 @@
 			</div>
 			<div>
 				<p>성별</p>
-				<input type="text" id="gender" name="gender" value="<%=gender != null ? gender : ""%>"
-						<%=gender == null ? "autofocus" : ""%>>
+				<select id="gender" name="gender">
+					<option value="Male">남자</option>
+					<option value="Female">여자</option>
+				</select>
 			</div>
-
 			<input type="button" value="등록" onclick="checkValues(form)">
-
 		</form>
 
 

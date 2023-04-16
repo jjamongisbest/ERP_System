@@ -49,6 +49,7 @@
 		</table>
 
 		<%
+		System.out.println(session.getAttribute("log"));
 		if (session.getAttribute("log") != null) {
 		%>
 		<a href="reviewwrite">글쓰기</a>
@@ -61,5 +62,5 @@
 	</section>
 
 </body>
-<c:import url="footer" />
+
 </html>

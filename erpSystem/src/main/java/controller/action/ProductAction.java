@@ -24,7 +24,6 @@ public class ProductAction implements Action{
 		
 		request.setAttribute("searchProduct", getSearchProduct());
 		request.getRequestDispatcher("/").forward(request, response);
-
 	}
 	
 	private List<Product> getSearchProduct() {

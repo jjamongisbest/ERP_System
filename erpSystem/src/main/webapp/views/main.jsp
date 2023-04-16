@@ -32,10 +32,10 @@
 		<div class="banner">
 			<img src="../resources/images/salesBanner.jpg" width = 100% height=600>
 		</div>
-		<div class="footer">
+		<!-- <div class="footer">
 			<p>Copyright 2021. DDRRDDDD All pictures cannot be copied without
 				permission.</p>
-		</div>
+		</div> -->
 	</div>
 
 </body>

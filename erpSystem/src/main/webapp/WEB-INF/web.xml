@@ -239,5 +239,15 @@
 		<servlet-name>main</servlet-name>
 		<url-pattern>/main</url-pattern>
 	</servlet-mapping>
+	
+	<!-- order mapping -->
+	<servlet>
+		<servlet-name>order</servlet-name>
+		<jsp-file>/views/order.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>order</servlet-name>
+		<url-pattern>/order</url-pattern>
+	</servlet-mapping>
 
 </web-app>

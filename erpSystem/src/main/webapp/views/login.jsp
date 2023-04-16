@@ -13,7 +13,7 @@
 		<input type="hidden" name="command" value="login"> 
 		<h2>로그인</h2>
 		<label for="id">아이디:</label> <input type="text" id="id" name="id">
-		<label for="password">비밀번호:</label> <input type="text" id="password" name="password"> 
+		<label for="password">비밀번호:</label> <input type="password" id="password" name="password"> 
 		<input type="submit" value="로그인" onclick="checkValues(form)">
 		<%
 		if (request.getAttribute("message") != null) {

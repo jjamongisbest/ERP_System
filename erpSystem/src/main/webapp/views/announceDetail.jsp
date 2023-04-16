@@ -34,5 +34,5 @@ Board board = boardDao.getBoardById(id);
 </section>
 
 </body>
-<c:import url="footer" />
+
 </html>

@@ -19,16 +19,16 @@
 	<c:set var="max" value="${requestScope.targetProduct.getStock()}" />
 	<form method="POST" action="../service">
 		<input type="hidden" name="command" value="basket">
-		<input type="number" name="count" value="0" min="0" max="${max}" required>
+		<input type="number" name="count" value="1" min="0" max="${max}" required>
 		<c:choose>
 			<c:when test="${empty sessionScope.log }">
 				<input type="button" value="장바구니 추가" onclick="send('login')">
-				<input type="submit" value="바로구매" onclick="send('login')">
+				<input type="button" value="바로구매" onclick="send('login')">
 			</c:when>
 			<c:otherwise>
 				<c:out value="${sessionScope.log }"/>
-				<input type="button" value="장바구니 추가" onclick="insertBasket('구현해야함')">
-				<input type="submit" value="바로구매" onclick="insertBasket('구현해야함')">
+				<input type="submit" value="장바구니 추가" onclick="insertBasket()">
+				<input type="submit" value="바로구매" onclick="send('login')">
 			</c:otherwise>
 		</c:choose>
 	</form>

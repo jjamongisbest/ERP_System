@@ -1,8 +1,8 @@
 package controller.action;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import customer.Customer;
 import customer.controller.CustomerDAO;
+import salesOrder.SalesOrder;
 import salesOrder.controller.SalesOrderDAO;
 
 public class LoginAction implements Action {
@@ -50,6 +51,17 @@ public class LoginAction implements Action {
 		HttpSession session = request.getSession();
 		Customer customer = (Customer)session.getAttribute("log");
 		
-		int customerId = customer.getId();
+		SalesOrderDAO orderDao = SalesOrderDAO.getInstance();
+		SalesOrder order = orderDao.getOrderByNoStatusAndId(customer.getId());
+		
+		if(order == null) {
+			int id = customer.getId();
+			String date = String.valueOf(LocalDate.now());
+			String total ="$0.0";
+			String status = "N";
+			order = new SalesOrder(id, date, total, status);
+		}
+		
+		request.getServletContext().setAttribute("basket", order);
 	}
 }

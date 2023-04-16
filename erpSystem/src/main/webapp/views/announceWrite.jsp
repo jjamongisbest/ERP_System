@@ -49,5 +49,5 @@ int categoryId=11;
 
 	<script src="resources/boardCheck.js"></script>
 </body>
-<c:import url="footer" />
+
 </html>

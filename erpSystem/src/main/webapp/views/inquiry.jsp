@@ -50,7 +50,7 @@
 		<%
 		if (session.getAttribute("log") != null) {
 		%>
-		<a href="inquiryWrite">글쓰기</a>
+		<a href="inquirywrite">글쓰기</a>
 		<%
 		}
 		%>
@@ -58,5 +58,5 @@
 	</section>
 
 </body>
-<c:import url="footer" />
+
 </html>

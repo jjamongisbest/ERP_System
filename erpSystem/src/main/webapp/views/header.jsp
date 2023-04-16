@@ -15,12 +15,18 @@
 	%>
 	<div class="container">
 		<div class="header">
-			<section class="logo">
+			<!-- <section class="logo">
 				<img src="../resources/images/banner2.jpg">
 			</section>
 			<section class="banner">
 				<img src="../resources/images/banner.jpg">
-			</section>
+			</section> -->
+			<a class="logo" href="index.jsp">
+				<img src="../resources/images/banner2.jpg">
+			</a>
+			<a class="banner" href="index.jsp">
+				<img src="../resources/images/banner.jpg">
+			</a>
 		</div>
 		<section class="nav-list">
 			<nav>
