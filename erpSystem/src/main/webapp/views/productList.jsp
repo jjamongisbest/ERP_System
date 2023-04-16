@@ -14,15 +14,16 @@
 <body>
 
 	<%
+	int cateId = Integer.parseInt(request.getParameter("code"));
 	ProductDAO dao = ProductDAO.getInstance();
-	ArrayList<Product> list = dao.getProductList();
+	ArrayList<Product> list = dao.getProductsByCategory(cateId);
 	%>
 
 	<div class="container">
 		<%for (Product target : list) { %>
 		<div class="card">
 			<img src="../resources/images/noimage.jpg" width="200" height="200">
-			<h3><a href="product"><%= target.getName() %></a></h3>
+			<h3><a href="productdetail"><%= target.getName() %></a></h3>
 			<p><%= target.getPrice() %>원</p>
 			<p> 수량: <%= target.getStock() %> 개</p>		
 		</div>

@@ -240,6 +240,7 @@
 		<url-pattern>/main</url-pattern>
 	</servlet-mapping>
 	
+
 	<!-- order mapping -->
 	<servlet>
 		<servlet-name>order</servlet-name>
@@ -248,6 +249,36 @@
 	<servlet-mapping>
 		<servlet-name>order</servlet-name>
 		<url-pattern>/order</url-pattern>
+	</servlet-mapping>
+	
+		<!-- board mapping -->
+	<servlet>
+		<servlet-name>board</servlet-name>
+		<jsp-file>/views/board.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>board</servlet-name>
+		<url-pattern>/board</url-pattern>
+	</servlet-mapping>
+	
+		<!-- boardView mapping -->
+	<servlet>
+		<servlet-name>boardView</servlet-name>
+		<jsp-file>/views/boardView.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>boardView</servlet-name>
+		<url-pattern>/boardview</url-pattern>
+	</servlet-mapping>
+
+		<!-- boardWrite mapping -->
+	<servlet>
+		<servlet-name>boardWrite</servlet-name>
+		<jsp-file>/views/boardWrite.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>boardWrite</servlet-name>
+		<url-pattern>/boardwrite</url-pattern>
 	</servlet-mapping>
 
 </web-app>

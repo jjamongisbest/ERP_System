@@ -1,3 +1,6 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="boardCategory.controller.BoardCategoryDAO"%>
+<%@page import="boardCategory.BoardCategory"%>
 <%@page import="customer.Customer"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -12,6 +15,9 @@
 
 	<%
 	Customer customer = (Customer) session.getAttribute("log");
+	
+	BoardCategoryDAO boardcateDao = BoardCategoryDAO.getInstance();
+	ArrayList<BoardCategory> list = boardcateDao.getBoardCategoryAll();
 	%>
 	<div class="container">
 		<div class="header">
@@ -42,9 +48,9 @@
 							<li><a id="logout" onclick="sendCommand('logout')">로그아웃</a></li>
 						</c:otherwise>
 					</c:choose>
-					<li><a href="announce">공지사항</a></li>
-					<li><a href="inquiry">1:1문의</a></li>
-					<li><a href="review">후기글</a></li>
+					<% for(BoardCategory target : list) { %>
+						<li><a href="board?cate=<%=target.getId()%>"><%=target.getName() %></a></li>
+					<%} %>
 					<li><form>
 							<section class="search-box">
 								<input type="text" placeholder="주문할 것 pickka!">

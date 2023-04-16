@@ -10,19 +10,10 @@
 </head>
 <body>
 	<c:import url="header" />
-
-	<%
-	if (application.getAttribute("basket") != null) {
-		SalesOrder order = (SalesOrder) application.getAttribute("basket");
-
-		for (String name : order.basket.keySet()) {
-			System.out.println(name);
-			System.out.println(order.basket.get(name));
-
-		}
-	}
+<%
 	System.out.println(session.getAttribute("log"));
-	%>
+%>
+	<c:import url="searchproduct"/>
 
 	<h1>hello world!</h1>
 	<c:import url="searchproduct" />

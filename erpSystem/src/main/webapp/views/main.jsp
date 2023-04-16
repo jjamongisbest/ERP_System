@@ -10,6 +10,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="../resources/main.css">
 </head>
+<c:import url="header" />
 <body>
 
 	<%
@@ -23,14 +24,16 @@
 			for (ProductCategory target : list) {
 			%>
 			<section class="box">
-				<div class="list"><%=target.getName()%></div>
+				<div class="list">
+					<a href="productlist?code=<%=target.getId()%>"><%=target.getName()%></a>
+				</div>
 			</section>
 			<%
 			}
 			%>
 		</div>
 		<div class="banner">
-			<img src="../resources/images/salesBanner.jpg" width = 100% height=600>
+			<img src="../resources/images/salesBanner.jpg" width=100% height=600>
 		</div>
 		<!-- <div class="footer">
 			<p>Copyright 2021. DDRRDDDD All pictures cannot be copied without
