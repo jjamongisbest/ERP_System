@@ -10,6 +10,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="../resources/main.css">
 </head>
+<c:import url="header" />
 <body>
 
 	<%

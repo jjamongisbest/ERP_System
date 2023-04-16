@@ -13,49 +13,68 @@
 <c:import url="header" />
 <body>
 	<%
+	String vpage = request.getParameter("vpage");
+	if( vpage == null ) {
+		vpage = "1";
+	}
+	
+	int selPage = Integer.parseInt(vpage);
+	
 	BoardDAO boardDao = BoardDAO.getInstance();
-	ArrayList<Board> list = boardDao.getBoard(12);
+	ArrayList<Board> list = boardDao.getPostsPerPage(12, selPage);
+	
+	int total = boardDao.getTotalCountByCategory(12);
+	int lastPage = (int) Math.ceil((double) total / 10);
 	%>
 
 	<section>
-		<h1>1:1 문의</h1>
-		<table>
-
+	<div class="notice-header">
+		<h1>1대1 문의</h1>
+		<%
+		if (session.getAttribute("log") != null) {
+			Customer customer = (Customer) session.getAttribute("log");
+			if (customer.getId() == 99999) {
+		%>
+		<a href="announcewrite">글쓰기</a>
+		<%
+			}
+		}
+		%>
+	</div>
+	<table>
+		<thead>
 			<tr>
-				<td>No.</td>
-
-				<td>Title</td>
-
-				<td>Name</td>
-
-				<td>Date</td>
-
+				<th>No.</th>
+				<th>Title</th>
+				<th>Name</th>
+				<th>Date</th>
 			</tr>
+		</thead>
+		<tbody>
 			<%
 			for (Board board : list) {
 			%>
 			<tr>
 				<td><%=board.getId()%></td>
-				<td><a href="inquirydetail?id=<%=board.getId()%>"><%=board.getTitle()%></a></td>
+				<td><a href="announcedetail?id=<%=board.getId()%>"><%=board.getTitle()%></a></td>
 				<td><%=board.getWriter()%></td>
 				<td><%=board.getReigisteredDate()%></td>
-
 			</tr>
 			<%
 			}
 			%>
-
-
-		</table>
+		</tbody>
+	</table>
+	<div style="width: 600px; text-align: center; margin-top: 10px;">
 		<%
-		if (session.getAttribute("log") != null) {
+		for (int i = 1; i <= lastPage; i++) {
 		%>
-		<a href="inquiryWrite">글쓰기</a>
+		<a href="inquiry?vpage=<%=i%>"><%=i%></a>
 		<%
 		}
 		%>
-
-	</section>
+	</div>
+</section>
 
 </body>
 <c:import url="footer" />

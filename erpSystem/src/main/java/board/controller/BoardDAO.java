@@ -259,7 +259,7 @@ public class BoardDAO {
 		this.conn = DBManager.getConnection();
 		
 		if(this.conn != null) {
-			String sql = "SELECT * FROM board WHERE board_category_id = ? ORDER BY board_id ASC LIMIT ?,10";
+			String sql = "SELECT * FROM board WHERE board_category_id = ? ORDER BY board_id DESC LIMIT ?,10";
 			
 			try {
 	            this.pstmt = this.conn.prepareStatement(sql);
