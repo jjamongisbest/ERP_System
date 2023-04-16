@@ -1,3 +1,4 @@
+<%@page import="salesOrder.SalesOrder"%>
 <%@page import="util.DBManager"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -8,14 +9,23 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:import url="header"/>
+	<c:import url="header" />
 
-<%
-System.out.println(session.getAttribute("log"));
-%>
+	<%
+	if (application.getAttribute("basket") != null) {
+		SalesOrder order = (SalesOrder) application.getAttribute("basket");
 
-<h1>hello world!</h1>
-<c:import url="searchproduct"/>
-<c:import url="main"/>
+		for (String name : order.basket.keySet()) {
+			System.out.println(name);
+			System.out.println(order.basket.get(name));
+
+		}
+	}
+	System.out.println(session.getAttribute("log"));
+	%>
+
+	<h1>hello world!</h1>
+	<c:import url="searchproduct" />
+	<c:import url="main" />
 </body>
 </html>

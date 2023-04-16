@@ -14,11 +14,19 @@ public class OrderProduct {
 		this.orderProduct = orderProduct;
 		this.quantity = quantity;
 	}
+	
+	public OrderProduct(int productId, int orderId, String orderProduct, String quantity) {
+		this.productId = productId;
+		this.orderId = orderId;
+		this.orderProduct = orderProduct;
+		this.quantity = quantity;
+	}
 
 	public int getDetailsId() 		{return detailsId;}
 	public int getProductId() 		{return productId;}
 	public int getOrderId() 		{return orderId;}
 	public String getOrderProduct() {return orderProduct;}
 	public String getQuantity() 	{return quantity;}
+	
 
 }

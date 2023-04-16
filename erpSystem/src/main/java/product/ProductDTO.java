@@ -21,6 +21,17 @@ public class ProductDTO {
 		this.price = price;
 		this.categoryId = categoryId;
 	}
+	
+	public ProductDTO(Product product) {
+		this.id = product.getId();
+		this.name = product.getName();
+		this.memo = product.getMemo();
+		this.handleDate = product.getHandleDate();
+		this.stock = product.getStock();
+		this.pipeLine = product.getPipeLine();
+		this.price = product.getPrice();
+		this.categoryId = product.getCategoryId();
+	}
 
 	public int getId() {
 		return id;

@@ -137,7 +137,7 @@ public class ProductDAO {
 
 		try {
 			this.pstmt = this.conn.prepareStatement(sql);
-			
+			System.out.println("asdasd");
 			this.pstmt.setString(1, productDto.getName());
 			this.pstmt.setString(2, productDto.getMemo());
 			this.pstmt.setString(3, productDto.getHandleDate());
