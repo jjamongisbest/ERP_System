@@ -13,7 +13,7 @@ public class SalesOrder{
 	private int total;
 	private String status;
 	
-	public HashMap<Integer, Integer> basket = new HashMap<>();
+	private HashMap<Integer, Integer> cart = new HashMap<>();
 	
 	public SalesOrder(int id, int custId, String date, int total, String status) {
 		this.id = id;
@@ -44,16 +44,16 @@ public class SalesOrder{
 	public int getTotal() {return total;}
 	public String getStatus() {return status;}
 
-	public void insertBasket(int id, int quantity) {
-		Integer count = basket.get(id);
+	public void insertCart(int id, int quantity) {
+		Integer count = cart.get(id);
 		if(count == null)
 			count = 0;
 		
-		basket.put(id, quantity+count);
+		cart.put(id, quantity+count);
 	}
 	
-	public HashMap<Integer, Integer> getBasket(){
-		return this.basket;
+	public HashMap<Integer, Integer> getCart(){
+		return this.cart;
 	}
 	
 	public int getTotalPrice(List<Product> list) {
@@ -62,7 +62,7 @@ public class SalesOrder{
 			return 0;
 		
 		for(Product product : list) {
-			int quantity = basket.get(product.getId());
+			int quantity = cart.get(product.getId());
 			this.total += product.getPrice() * quantity;	
 		}
 		return this.total;

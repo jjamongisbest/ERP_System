@@ -24,7 +24,7 @@ public class SalesOrderDAO {
 	public static SalesOrderDAO getInstance() {
 		return instance;
 	}
-
+	
 	// C
 	public void createSalesOrder(SalesOrderDTO dto) {
 		SalesOrder order = new SalesOrder(dto);
@@ -36,11 +36,13 @@ public class SalesOrderDAO {
 			try {
 				this.pstmt = this.conn.prepareStatement(sql);
 
-				this.pstmt.setInt(1, order.getId());
-				this.pstmt.setInt(2, order.getCustomerId());
+				this.pstmt.setInt(1, 	order.getId());
+				this.pstmt.setInt(2, 	order.getCustomerId());
 				this.pstmt.setString(3, order.getDate());
-				this.pstmt.setInt(5, order.getTotal());
-				this.pstmt.setString(6, order.getStatus());
+				this.pstmt.setInt(4, 	order.getTotal());
+				this.pstmt.setString(5, order.getStatus());
+				
+				this.pstmt.execute();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			} finally {
@@ -60,9 +62,9 @@ public class SalesOrderDAO {
 				this.pstmt = this.conn.prepareStatement(str);
 				this.rs = this.pstmt.executeQuery();
 
-				while (this.rs.next()) {
+				while (this.rs.next())
 					salesOrderId = this.rs.getInt(1);
-				}
+				
 
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -261,6 +263,35 @@ public class SalesOrderDAO {
 				this.pstmt = this.conn.prepareStatement(sql);
 
 				this.pstmt.setInt(1, id);
+				
+				this.pstmt.execute();
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.closeConnection(this.conn, this.pstmt);
+			}
+		}
+
+	}
+	
+	//UP
+	public void updateSalesOrder(SalesOrderDTO orderDto) {
+
+		this.conn = DBManager.getConnection();
+		if (this.conn != null) {
+			String sql = "UPDATE sales_order SET "+
+						 "customer_id=?, order_date=?, order_total_price=?, order_status=?"+
+						 " WHERE order_id=? ";
+
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+				
+				this.pstmt.setInt(1, 	orderDto.getCustomerId());
+				this.pstmt.setString(2, orderDto.getDate());
+				this.pstmt.setInt(3, 	orderDto.getTotal());
+				this.pstmt.setString(4, orderDto.getStatus());
+				this.pstmt.setInt(5, 	orderDto.getId());
 				
 				this.pstmt.execute();
 

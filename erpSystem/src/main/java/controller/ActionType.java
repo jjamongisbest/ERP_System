@@ -1,15 +1,15 @@
 package controller;
 
 import controller.action.Action;
-import controller.action.BasketAction;
 import controller.action.BoardAction;
 import controller.action.BoardDeleteAction;
 import controller.action.BoardModifyAction;
-import controller.action.CustomerLogAction;
+import controller.action.CartAction;
 import controller.action.DropCustomerAction;
 import controller.action.DropItemAction;
 import controller.action.LoginAction;
 import controller.action.LogoutAction;
+import controller.action.OrderAction;
 import controller.action.OrderConfirmAction;
 import controller.action.ProductAction;
 import controller.action.ProductDetailAction;
@@ -21,10 +21,11 @@ public enum ActionType {
 	LOG_OUT("logout",  new LogoutAction()),
 	
 	REGIST ("regist",  new RegistAction()),
-	BASKET ("basket",  new BasketAction()),
+	BASKET ("basket",  new CartAction()),
 	
 	PRODUCT("product", new ProductAction()),
 	BOARD  ("board",   new BoardAction()),
+	ORDER  ("order",   new OrderAction()),
 	
 	BOARD_MODIFY("boardModify",     new BoardModifyAction()),
 	BOARD_DELETE("boardDelete",     new BoardDeleteAction()),
@@ -32,7 +33,6 @@ public enum ActionType {
 	DROP_CUSTOMER("dropCustomer",   new DropCustomerAction()),
 	DROP_ITEM("dropitem", 			new DropItemAction()),
 	
-	CUSTOMER_LOG("customerlog",		new CustomerLogAction()),
 	PRODUCT_DETAIL("productDetail", new ProductDetailAction()),
 	ORDER_CONF("orderConfirmation", new OrderConfirmAction())
 	;

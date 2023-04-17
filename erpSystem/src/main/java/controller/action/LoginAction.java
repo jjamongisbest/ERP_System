@@ -55,14 +55,11 @@ public class LoginAction implements Action {
 		SalesOrder order = orderDao.getOrderByNoStatusAndId(customer.getId());
 		
 		if(order == null) {
-			int customerId = customer.getId();
+			int newId = orderDao.getSalesOrderId();
 			String date = String.valueOf(LocalDate.now());
-			int total = 0;
-			String status = "N";
-			order = new SalesOrder(customerId, date, total, status);
+			order = new SalesOrder(newId, customer.getId(), date, 0, "N");
 		}
-		
-		request.getServletContext().setAttribute("basket", order);
+		request.getSession().setAttribute("cart", order);
 	}
 
 }

@@ -72,11 +72,15 @@
 				<%
 				if (target.getStatus().equals("Y")) {
 				%>
-				배송완료
+				결제완료
 				<%
-				} else {
+				}else if(target.getStatus().equals("D")){
 				%>
 				배송중
+				<%
+				}else{
+				%>
+				결제 전
 				<%
 				}
 				%>
@@ -96,12 +100,12 @@
 
 	<div class="my-board">
 		<div class="board-thead">
+			<% if(board != null) {%>
 			<div style="width: 25%">등록일자</div>
 			<div style="width: 60%">제목</div>
 			<div style="width: 15%">게시판</div>
 		</div>
 		<div class="board-tbody">
-			<% if(board != null) {%>
 			<% for (Board target : blist) { %>
 			<div><%=target.getReigisteredDate() %></div>
 			<div><%=target.getTitle() %></div>

@@ -11,8 +11,6 @@
 </head>
 <c:import url="header" />
 <body>
-
-	
 	<section>
 		<form action="../service" method="POST">
 		<input type="hidden" name="command" value="dropCustomer"> 
@@ -26,9 +24,7 @@
 		<%
 		}
 		%>
-	</form>
-
-
+		</form>
 	</section>
 	<script src="resources/dropCustomer.js"></script>
 </body>
