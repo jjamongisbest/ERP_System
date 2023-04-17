@@ -1,3 +1,4 @@
+
 CREATE TABLE customer_grade(
 customer_grade_id INT(6) PRIMARY KEY,
 customer_grade CHAR(6) NOT NULL
@@ -64,7 +65,7 @@ order_details_id INT(6) PRIMARY KEY AUTO_INCREMENT,
 product_id INT(6),
 order_id INT(6),
 order_product VARCHAR(50) NOT NULL,
-order_quantity VARCHAR(10) NOT NULL,
+order_quantity INT(10) NOT NULL,
 FOREIGN KEY (product_id) REFERENCES product(product_id),
 FOREIGN KEY (order_id) REFERENCES sales_order(order_id)
 );
