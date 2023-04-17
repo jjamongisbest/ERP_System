@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import customerGrade.CustomerGrade;
 import salesOrder.SalesOrder;
 import salesOrder.SalesOrderDTO;
+import salesView.MonthlySalesView;
 import salesView.SalesView;
 import util.DBManager;
 
@@ -229,7 +230,7 @@ public class SalesOrderDAO {
 		return total;
 	}
 
-	
+	// use in draw graph
 	public ArrayList<SalesView> getSalesTotal(){
 		ArrayList<SalesView> list = new ArrayList<SalesView>();
 		
@@ -249,7 +250,7 @@ public class SalesOrderDAO {
 					SalesView view = new SalesView(grade, total);
 					list.add(view);
 				}
-			} catch (Exception e) {
+			} catch (SQLException e) {
 				e.printStackTrace();
 			} finally {
 				DBManager.closeConnection(this.conn, this.pstmt, this.rs);
@@ -259,6 +260,36 @@ public class SalesOrderDAO {
 		return list;
 	}
 	
+	public ArrayList<MonthlySalesView> getMonthlySalesTotal(){
+		ArrayList<MonthlySalesView> list = new ArrayList<MonthlySalesView>();
+		
+		this.conn = DBManager.getConnection();
+		
+		if(this.conn != null) {
+			String sql = "SELECT * FROM monthly_sales_total";
+			
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.rs = this.pstmt.executeQuery();
+				
+				while(this.rs.next()) {
+					int month = this.rs.getInt(1);
+					int total = this.rs.getInt(2);
+					
+					MonthlySalesView temp = new MonthlySalesView(month, total);
+					list.add(temp);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.closeConnection(this.conn, this.pstmt, this.rs);
+			}
+		}
+		
+		return list;
+	}
+	
+	//////////// up to use in draw graph///////////////////
 
 	public int getTotalCountByCategory() {
 		int max = 0;

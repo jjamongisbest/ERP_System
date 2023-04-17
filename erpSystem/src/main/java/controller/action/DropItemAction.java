@@ -20,10 +20,9 @@ public class DropItemAction implements Action{
 			return;
 		
 		String tmp = request.getParameter("target");
-		System.out.println(tmp);
 		int productId = Integer.parseInt(tmp);
 		order.getBasket().remove(productId);
-		
+	
 		response.sendRedirect("order");
 	}
 

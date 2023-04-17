@@ -8,6 +8,8 @@ import controller.action.BoardModifyAction;
 import controller.action.CustomerLogAction;
 import controller.action.DropCustomerAction;
 import controller.action.GetSalesTotal;
+import controller.action.DropItemAction;
+import controller.action.GetMonthlySalesTotal;
 import controller.action.LoginAction;
 import controller.action.LogoutAction;
 import controller.action.OrderConfirmAction;
@@ -23,13 +25,11 @@ public enum ActionType {
 	BASKET ("basket",  new BasketAction()),
 	PRODUCT("product", new ProductAction()),
 	BOARD  ("board",   new BoardAction()),
-	BOARD_MODIFY("boardModify",     new BoardModifyAction()),
-	BOARD_DELETE("boardDelete",     new BoardDeleteAction()),
-	DROP_CUSTOMER("dropCustomer",   new DropCustomerAction()),
+	CUSTOMER_LOG("customerlog",		new CustomerLogAction()),
 	PRODUCT_DETAIL("productDetail", new ProductDetailAction()),
 	ORDER_CONF("orderConfirmation", new OrderConfirmAction()),
-	CUSTOMER_LOG("customerlog",		new CustomerLogAction()),
-	GET_SALES_TOTAL("salesTotal" , new GetSalesTotal())
+	GET_SALES_TOTAL("salesTotal" , new GetSalesTotal()),
+	GET_MONTH_SALES_TOTAL("monthlyTotal", new GetMonthlySalesTotal())
 	;
 	
 	private String command;
