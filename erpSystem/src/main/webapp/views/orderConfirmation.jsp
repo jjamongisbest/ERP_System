@@ -14,7 +14,6 @@
 	<%
 	SalesOrderDAO salesOrderDao = SalesOrderDAO.getInstance();
 	ArrayList<SalesOrder> list = salesOrderDao.getSalesOrderByCustomerID();
-	
 
 	String vpage = request.getParameter("vpage");
 	if (vpage == null) {
@@ -26,32 +25,32 @@
 	int lastPage = (int) Math.ceil((double) total / 10);
 	%>
 	<section>
-		<table>
-			<tr>
-				<td>주문번호</td>
-				<td>구매아이디</td>
-				<td>결제금액</td>
-				<td>주문일자</td>
-				<td>결제상태</td>
-			</tr>
-			<%
-			for (SalesOrder salesOrder : list) {
-			%>
-			<tr>
-				<td><%=salesOrder.getId()%></td>
-				<td><%=salesOrder.getCustomerId()%></td>
-				<td><%=salesOrder.getTotal()%></td>
-				<td><%=salesOrder.getDate()%></td>
-				<td><a onclick="checkValues()" href="../service?command=orderConfirmation&salesOrderId=<%=salesOrder.getId() %>" ><%=salesOrder.getStatus()%></a></td>
-				
-			</tr>
+		<formmethod="POST" action="../service">
+			<table>
+				<tr>
+					<td>주문번호</td>
+					<td>구매아이디</td>
+					<td>결제금액</td>
+					<td>주문일자</td>
+					<td>결제상태</td>
+				</tr>
+				<%
+				for (SalesOrder salesOrder : list) {
+				%>
+				<tr>
+					<td><%=salesOrder.getId()%></td>
+					<td><%=salesOrder.getCustomerId()%></td>
+					<td><%=salesOrder.getTotal()%></td>
+					<td><%=salesOrder.getDate()%></td>
+					<td><a onclick="checkValues('<%=salesOrder.getId()%>')"
+						><%=salesOrder.getStatus()%></a></td>
+				</tr>
 
-			<%
-			}
-			%>
-
-
-		</table>
+				<%
+				}
+				%>
+			</table>
+		</form>
 		<div style="width: 600px; text-align: center; margin-top: 10px;">
 
 			<%

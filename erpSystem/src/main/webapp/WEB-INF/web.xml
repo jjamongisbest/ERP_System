@@ -287,11 +287,11 @@
 
 	<!-- adminPage mapping -->
 	<servlet>
-		<servlet-name>adminPage</servlet-name>
-		<jsp-file>/views/adminPage.jsp</jsp-file>
+		<servlet-name>adminpage</servlet-name>
+		<jsp-file>/views/adminpage.jsp</jsp-file>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>adminPage</servlet-name>
+		<servlet-name>adminpage</servlet-name>
 		<url-pattern>/adminpage</url-pattern>
 	</servlet-mapping>
 
@@ -305,5 +305,7 @@
 		<servlet-name>orderConfirmation</servlet-name>
 		<url-pattern>/orderconfirmation</url-pattern>
 	</servlet-mapping>
-
+	
+	
+	
 </web-app>
