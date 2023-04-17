@@ -80,7 +80,7 @@
 			<%
 			for (int i = 1; i <= lastPage; i++) {
 			%>
-			<a href="board?vpage=<%=i%>"><%=i%></a>
+			<a href="board?vpage=<%=i%>&cate=<%=categoryId%>"><%=i%></a>
 			<%
 			}
 			%>
