@@ -36,6 +36,7 @@ VALUES
 
 INSERT INTO customer(customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password)
 VALUES
+(99999, 4, 'Admin', '서울시 강남구 역삼동 123번지', '010-9999-9999', '여자', '1234');
 (100101, 2, '김영희', '서울시 강남구 역삼동 123번지', '010-1234-5678', '여자', '123'),
 (100102, 3, '홍길동', '서울시 마포구 서교동 456번지', '010-9876-5432', '남자', '456'),
 (100103, 1, '이순신', '서울시 강서구 화곡동 789번지', '010-1111-2222', '남자', '789'),

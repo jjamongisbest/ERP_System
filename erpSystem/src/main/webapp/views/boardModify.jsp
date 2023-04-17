@@ -10,7 +10,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<c:import url="header" />
+
 <body>
 
 <%
@@ -65,6 +65,7 @@ String name = boardCategoryDao.getCategoryNameById(categoryId);
 	</section>
 
 	<script src="resources/boardCheck.js"></script>
+	
 </body>
-<c:import url="footer" />
+
 </html>
