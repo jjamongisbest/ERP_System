@@ -7,627 +7,82 @@ insert into board_category values (11,"NOTICE");
 insert into board_category values (12,"REVIEW");
 insert into board_category values (13,"Q&A");
 
-Insert into product_category values (20, "Grains/Cereals");
-Insert into product_category values (21, "Meat");
-Insert into product_category values (22, "Seafood");
-Insert into product_category values (23, "Vegetables");
-Insert into product_category values (24, "Fruits");
-Insert into product_category values (25, "Dairy");
-Insert into product_category values (26, "Processed Foods");
-Insert into product_category values (27, "Snacks");
-Insert into product_category values (28, "Beverages");
-Insert into product_category values (29, "Seasonings/Condiments");
+INSERT INTO product_category (product_category_id, product_category_name) VALUES 
+(1, '과일'),
+(2, '채소'),
+(3, '유제품'),
+(4, '육류'),
+(5, '해산물'),
+(6, '음료'),
+(7, '간식'),
+(8, '빵'),
+(9, '발효식품'),
+(10, '조미료'),
+(11, '곡류'),
+(12,'식용유');
 
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300001, 'Wiberg Cure', 'purus sit amet nulla quisque arcu libero rutrum ac lobortis vel dapibus', '2023/01/05', 83, 'Bleu, red-cheeked cordon', '$13.53', 26);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300002, 'Banana - Green', 'parturient montes nascetur ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et', '2022/08/15', 13, 'Lesser masked weaver', '$6.25', 26);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300003, 'Cheese - Manchego, Spanish', 'lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea', '2022/09/06', 81, 'Blue-faced booby', '$21.79', 25);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300004, 'Creme De Menth - White', 'turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum donec ut', '2022/11/13', 86, 'Crow, american', '$25.61', 29);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300005, 'Coffee - French Vanilla Frothy', 'et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue', '2023/01/11', 4, 'White-winged tern', '$24.58', 22);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300006, 'Cheese - Cheddar, Old White', 'porta volutpat quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque', '2023/02/25', 43, 'Long-nosed bandicoot', '$8.43', 27);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300007, 'Durian Fruit', 'tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus', '2022/11/16', 0, 'House crow', '$27.71', 22);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300008, 'Corn - On The Cob', 'erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin', '2022/05/15', 35, 'Striped skunk', '$28.25', 23);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300009, 'Coriander - Seed', 'molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum', '2022/09/23', 71, 'Emu', '$7.06', 23);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300010, 'Red Currant Jelly', 'donec posuere metus vitae ipsum aliquam non mauris morbi non lectus aliquam sit amet diam in magna bibendum imperdiet', '2022/08/14', 34, 'Lily trotter', '$17.00', 28);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300011, 'Cake - Lemon Chiffon', 'tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante', '2023/04/09', 37, 'Toddy cat', '$3.06', 23);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300012, 'Kohlrabi', 'blandit ultrices enim lorem ipsum dolor sit amet consectetuer adipiscing', '2022/04/28', 11, 'White-tailed jackrabbit', '$15.16', 21);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300013, 'Appetizer - Sausage Rolls', 'etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat', '2023/01/04', 94, 'Possum, western pygmy', '$11.30', 28);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300014, 'Lamb - Leg, Diced', 'velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque', '2022/10/19', 11, 'Galapagos penguin', '$5.95', 22);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300015, 'Container - Foam Dixie 12 Oz', 'consequat morbi a ipsum integer a nibh in quis justo maecenas rhoncus', '2023/01/18', 24, 'Macaque, pig-tailed', '$9.97', 21);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300016, 'Sauce - Hp', 'dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis', '2022/11/05', 82, 'African buffalo', '$7.66', 24);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300017, 'Pork - Side Ribs', 'pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla pede ullamcorper augue a suscipit', '2022/05/29', 48, 'Lemur, ring-tailed', '$14.62', 20);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300018, 'Pail With Metal Handle 16l White', 'suscipit ligula in lacus curabitur at ipsum ac tellus semper interdum mauris ullamcorper purus sit amet nulla quisque arcu', '2022/11/12', 90, 'Boa, columbian rainbow', '$8.33', 25);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300019, 'Vaccum Bag - 14x20', 'vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio odio elementum eu', '2022/06/05', 64, 'Eland, common', '$15.56', 22);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300020, 'Lamb Rack - Ontario', 'lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum', '2023/04/07', 1, 'Corella, long-billed', '$13.37', 27);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300021, 'Fruit Mix - Light', 'et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit', '2022/08/02', 17, 'Australian magpie', '$5.77', 22);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300022, 'Shiratamako - Rice Flour', 'sed magna at nunc commodo placerat praesent blandit nam nulla integer pede justo lacinia eget tincidunt eget tempus vel', '2022/06/20', 70, 'Eagle owl (unidentified)', '$10.73', 29);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300023, 'Potatoes - Yukon Gold, 80 Ct', 'varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit', '2022/04/28', 26, 'Horned lark', '$10.12', 28);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300024, 'Mayonnaise', 'commodo placerat praesent blandit nam nulla integer pede justo lacinia eget tincidunt eget tempus vel pede morbi porttitor lorem id', '2022/11/26', 93, 'Baboon, savanna', '$19.25', 26);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300025, 'Ham - Proscuitto', 'at nunc commodo placerat praesent blandit nam nulla integer pede justo lacinia eget tincidunt', '2022/04/13', 86, 'Violet-crested turaco', '$22.93', 28);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300026, 'Oven Mitt - 13 Inch', 'suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus aenean', '2023/03/27', 29, 'Skink, african', '$26.22', 25);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300027, 'Wine - Trimbach Pinot Blanc', 'sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas rhoncus aliquam', '2023/01/27', 48, 'Deer, white-tailed', '$9.08', 21);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300028, 'Tomatoes - Heirloom', 'aliquam non mauris morbi non lectus aliquam sit amet diam in magna', '2022/07/29', 29, 'Horned lark', '$21.76', 29);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300029, 'Snapple Raspberry Tea', 'volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus', '2022/11/07', 39, 'Booby, blue-faced', '$10.09', 21);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300030, 'Sauce - Balsamic Viniagrette', 'libero convallis eget eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis', '2022/08/22', 58, 'Two-toed sloth', '$12.96', 21);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300031, 'Wine - Mondavi Coastal Private', 'sapien iaculis congue vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc donec', '2022/10/22', 100, 'Antelope, roan', '$8.46', 20);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300032, 'Soup - Campbells Chili Veg', 'elementum nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla', '2022/06/09', 99, 'American black bear', '$27.90', 24);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300033, 'Rhubarb', 'lectus pellentesque at nulla suspendisse potenti cras in purus eu', '2022/12/12', 90, 'Cape wild cat', '$3.93', 24);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300034, 'Tart Shells - Savory, 3', 'sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum', '2022/08/20', 35, 'Common dolphin', '$1.31', 29);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300035, 'Bread - Raisin', 'magna at nunc commodo placerat praesent blandit nam nulla integer pede justo lacinia', '2023/01/17', 96, 'Black spider monkey', '$20.32', 27);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300036, 'Hipnotiq Liquor', 'fusce congue diam id ornare imperdiet sapien urna pretium nisl', '2022/11/29', 47, 'Long-finned pilot whale', '$29.60', 27);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300037, 'Wine - Mondavi Coastal Private', 'elit ac nulla sed vel enim sit amet nunc viverra dapibus nulla', '2022/12/08', 62, 'Dik, kirk''s dik', '$18.49', 20);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300038, 'Bread - Sour Batard', 'pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in', '2022/10/13', 93, 'Chilean flamingo', '$5.79', 21);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300039, 'Rice - Wild', 'pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices enim lorem ipsum dolor', '2022/07/17', 95, 'Fox, bat-eared', '$2.58', 27);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300040, 'Salmon - Atlantic, Fresh, Whole', 'eget tempus vel pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus in est risus auctor sed tristique in', '2022/04/15', 29, 'Goose, cereopsis', '$2.78', 29);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300041, 'Tea Leaves - Oolong', 'neque libero convallis eget eleifend luctus ultricies eu nibh quisque', '2022/11/26', 46, 'Dragon, komodo', '$9.97', 28);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300042, 'Beer - Molson Excel', 'suscipit ligula in lacus curabitur at ipsum ac tellus semper interdum mauris', '2022/09/16', 100, 'Red-shouldered glossy starling', '$23.01', 24);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300043, 'Steamers White', 'quis justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec', '2022/08/05', 75, 'Crowned hawk-eagle', '$29.84', 28);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300044, 'Beer - Camerons Cream Ale', 'mi nulla ac enim in tempor turpis nec euismod scelerisque quam', '2022/05/21', 67, 'Land iguana', '$16.13', 20);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300045, 'Grapes - Black', 'sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor', '2022/05/20', 90, 'Yellow-headed caracara', '$20.63', 20);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300046, 'Yeast - Fresh, Fleischman', 'vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet consectetuer adipiscing elit proin interdum mauris', '2023/01/03', 65, 'Eagle, pallas''s fish', '$2.11', 23);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300047, 'Steampan Lid', 'ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna', '2023/03/08', 48, 'Hoopoe, eurasian', '$23.30', 20);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300048, 'Yogurt - Blueberry, 175 Gr', 'nulla pede ullamcorper augue a suscipit nulla elit ac nulla sed vel enim sit amet nunc viverra dapibus nulla', '2023/02/21', 15, 'Porcupine, african', '$19.08', 23);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300049, 'Flour - All Purpose', 'vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque', '2023/02/25', 89, 'Southern black-backed gull', '$10.34', 26);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300050, 'Juice - Tomato, 10 Oz', 'nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet', '2022/07/14', 57, 'Beaver, eurasian', '$5.65', 28);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300051, 'Pepper - Sorrano', 'in est risus auctor sed tristique in tempus sit amet', '2023/02/23', 61, 'Pintail, white-cheeked', '$19.54', 20);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300052, 'Wine - Zinfandel California 2002', 'sagittis nam congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero', '2022/09/01', 59, 'Shrew, mandras tree', '$22.35', 28);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300053, 'Pork - Butt, Boneless', 'felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices', '2022/10/20', 72, 'Otter, african clawless', '$4.30', 24);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300054, 'Lamb Rack - Ontario', 'justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra', '2023/02/13', 2, 'Black-tailed tree creeper', '$23.70', 21);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300055, 'Lobak', 'integer non velit donec diam neque vestibulum eget vulputate ut', '2022/12/03', 21, 'Porcupine, african', '$21.05', 28);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300056, 'Wine - Cave Springs Dry Riesling', 'quam sapien varius ut blandit non interdum in ante vestibulum ante ipsum primis in faucibus orci luctus', '2022/07/07', 4, 'Boar, wild', '$28.69', 21);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300057, 'Potatoes - Mini White 3 Oz', 'in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus', '2022/06/05', 18, 'Saddle-billed stork', '$28.12', 26);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300058, 'Wine - White, Ej Gallo', 'platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur', '2023/02/02', 60, 'Spotted hyena', '$6.27', 21);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300059, 'Cleaner - Comet', 'orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a', '2022/04/28', 1, 'Duck, white-faced whistling', '$14.79', 24);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300060, 'Onions - Green', 'curae mauris viverra diam vitae quam suspendisse potenti nullam porttitor lacus at turpis', '2022/09/26', 67, 'Egyptian goose', '$11.72', 28);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300061, 'Radish - Black, Winter, Organic', 'duis bibendum felis sed interdum venenatis turpis enim blandit mi in', '2023/03/12', 78, 'Lizard, frilled', '$24.84', 24);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300062, 'Pork Ham Prager', 'erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum', '2023/03/10', 61, 'Tiger', '$28.30', 20);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300063, 'Ranchero - Primerba, Paste', 'est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum', '2022/09/05', 48, 'Egret, cattle', '$6.29', 23);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300064, 'Wine - Red, Cabernet Merlot', 'felis sed interdum venenatis turpis enim blandit mi in porttitor pede justo eu massa donec dapibus duis at velit eu', '2022/12/09', 36, 'Magnificent frigate bird', '$20.62', 29);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300065, 'Toamtoes 6x7 Select', 'donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac', '2022/09/23', 65, 'Mule deer', '$12.90', 25);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300066, 'Straw - Regular', 'erat id mauris vulputate elementum nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt', '2022/04/14', 35, 'Honey badger', '$27.67', 22);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300067, 'Higashimaru Usukuchi Soy', 'libero nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh in quis', '2023/01/28', 32, 'Egyptian viper', '$24.65', 22);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300068, 'Cattail Hearts', 'vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget', '2022/05/26', 2, 'White-mantled colobus', '$16.62', 27);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300069, 'Veal - Liver', 'dui vel sem sed sagittis nam congue risus semper porta', '2023/04/06', 49, 'Wapiti, elk,', '$9.11', 27);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300070, 'Cup - 6oz, Foam', 'bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel', '2022/12/20', 68, 'Steenbuck', '$4.10', 23);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300071, 'Zucchini - Mini, Green', 'vestibulum sed magna at nunc commodo placerat praesent blandit nam nulla integer pede justo lacinia eget tincidunt eget tempus vel', '2022/10/13', 84, 'Prehensile-tailed porcupine', '$20.32', 27);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300072, 'Bread - Corn Muffaleta Onion', 'sit amet nulla quisque arcu libero rutrum ac lobortis vel dapibus at diam nam tristique', '2023/04/03', 55, 'Tarantula, salmon pink bird eater', '$4.94', 29);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300073, 'Cheese - Boursin, Garlic / Herbs', 'ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec', '2022/07/21', 35, 'Crowned eagle', '$21.05', 24);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300074, 'Bread - Bistro White', 'pellentesque ultrices phasellus id sapien in sapien iaculis congue vivamus', '2022/06/13', 55, 'Helmeted guinea fowl', '$7.77', 22);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300075, 'Wine - White, Ej Gallo', 'sit amet consectetuer adipiscing elit proin interdum mauris non ligula pellentesque ultrices phasellus id sapien in sapien iaculis congue vivamus', '2022/12/06', 88, 'Woylie', '$2.98', 21);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300076, 'Lamb - Whole Head Off,nz', 'dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat', '2022/07/09', 61, 'Giant girdled lizard', '$7.01', 25);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300077, 'Carbonated Water - Orange', 'faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam', '2022/08/29', 87, 'Rhea, greater', '$27.49', 22);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300078, 'Pineapple - Golden', 'luctus et ultrices posuere cubilia curae mauris viverra diam vitae quam', '2022/10/27', 96, 'Rhea, common', '$9.22', 24);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300079, 'Bar Energy Chocchip', 'non mauris morbi non lectus aliquam sit amet diam in magna', '2022/07/05', 54, 'Screamer, crested', '$15.20', 20);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300080, 'Bread - Roll, Canadian Dinner', 'donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet', '2022/09/30', 95, 'Admiral, indian red', '$5.39', 24);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300081, 'Beans - Black Bean, Dry', 'ornare consequat lectus in est risus auctor sed tristique in tempus sit amet sem fusce', '2022/11/28', 78, 'Cormorant (unidentified)', '$21.91', 23);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300082, 'Muffin Mix - Morning Glory', 'cursus id turpis integer aliquet massa id lobortis convallis tortor risus dapibus augue vel accumsan tellus', '2022/08/30', 94, 'Pronghorn', '$6.62', 21);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300083, 'Sambuca Cream', 'tortor duis mattis egestas metus aenean fermentum donec ut mauris eget', '2022/10/29', 100, 'Gecko, ring-tailed', '$6.66', 22);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300084, 'Poppy Seed', 'turpis eget elit sodales scelerisque mauris sit amet eros suspendisse', '2022/04/25', 55, 'Stork, openbill', '$24.81', 23);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300085, 'Noodles - Steamed Chow Mein', 'eleifend donec ut dolor morbi vel lectus in quam fringilla rhoncus mauris enim leo rhoncus sed vestibulum', '2022/09/14', 47, 'Trotter, lily', '$5.65', 23);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300086, 'Wine - White, Lindemans Bin 95', 'augue vestibulum ante ipsum primis in faucibus orci luctus et', '2022/10/07', 68, 'Cormorant, javanese', '$25.37', 29);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300087, 'Soup Campbells', 'vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis orci', '2022/08/30', 95, 'Gull, lava', '$1.62', 25);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300088, 'Juice - Orange', 'nisi nam ultrices libero non mattis pulvinar nulla pede ullamcorper augue a suscipit nulla elit ac', '2022/06/06', 76, 'Eurasian hoopoe', '$17.31', 21);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300089, 'Lidsoupcont Rp12dn', 'ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin', '2023/02/06', 47, 'Snake, buttermilk', '$13.54', 29);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300090, 'Cheese - Woolwich Goat, Log', 'in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin', '2023/02/11', 37, 'Racer, blue', '$8.31', 28);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300091, 'Cranberries - Fresh', 'turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam', '2022/05/11', 88, 'Saddle-billed stork', '$24.76', 28);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300092, 'Cheese - Grie Des Champ', 'nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu', '2023/03/14', 25, 'Monitor, white-throated', '$4.25', 23);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300093, 'Knife Plastic - White', 'vestibulum ante ipsum primis in faucibus orci luctus et ultrices', '2023/03/02', 49, 'Grey fox', '$1.19', 25);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300094, 'Venison - Denver Leg Boneless', 'nunc nisl duis bibendum felis sed interdum venenatis turpis enim blandit mi in', '2022/10/14', 58, 'Eurasian badger', '$4.62', 22);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300095, 'Wine - Shiraz South Eastern', 'quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante', '2022/08/07', 40, 'Peacock, indian', '$27.88', 26);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300096, 'Asparagus - White, Fresh', 'porttitor lacus at turpis donec posuere metus vitae ipsum aliquam non mauris morbi non lectus aliquam', '2022/12/08', 74, 'Dove, laughing', '$2.37', 24);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300097, 'Capers - Pickled', 'sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum', '2022/05/01', 89, 'Sage hen', '$6.24', 23);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300098, 'Ostrich - Fan Fillet', 'aliquam erat volutpat in congue etiam justo etiam pretium iaculis', '2022/07/06', 2, 'Squirrel, richardson''s ground', '$12.68', 22);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300099, 'Eel Fresh', 'erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut', '2022/07/01', 87, 'Wallaby, whip-tailed', '$22.49', 21);
-insert into product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id) values (300100, 'Salt - Seasoned', 'cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis', '2023/02/24', 23, 'Squirrel, grey-footed', '$20.75', 20);
+INSERT INTO product (product_id, product_name, product_memo, product_handle_date, product_stock, product_pipe_line, product_price, product_category_id, product_img)
+VALUES 
+(300101, '김치', '배추를 김치양념으로 발효시킨 음식', '2023-04-17', 100, '김치공장', 5000, 9, '../resources/images/kimchi.jpg'),
+(300102, '된장', '콩을 발효시켜 만든 고추장과 유사한 음식', '2023-04-17', 200, '된장공장', 3000, 9, '../resources/images/doenjang.jpg'),
+(300103, '쌀', '식사를 할 때 주로 먹는 곡물', '2023-04-17', 500, '쌀공장', 30000, 2, '../resources/images/rice.jpg'),
+(300104, '고추장', '고추를 발효시켜 만든 매운 양념', '2023-04-17', 50, '고추장공장', 7000, 9, '../resources/images/gochujang.jpg'),
+(300105, '된장찌개용 두부', '된장찌개를 만들 때 사용하는 두부', '2023-04-17', 30, '두부공장', 5000, 11, '../resources/images/tofu.jpg'),
+(300106, '김', '바다에서 채취한 조류로 만든 건강식품', '2023-04-17', 100, '김공장', 10000, 7, '../resources/images/kim.jpg'),
+(300107, '콩나물', '콩을 싹트게 발아시킨 녹색 식재료', '2023-04-17', 50, '콩나물공장', 3000, 2, '../resources/images/kongnamul.jpg'),
+(300108, '대파', '양파과의 여러해살이풀로 재배되는 식재료', '2023-04-17', 80, '대파농장', 2000, 2, '../resources/images/daepa.jpg'),
+(300109, '참기름', '참숯으로 볶은 후 짜낸 기름', '2023-04-17', 20, '참기름공장', 15000, 12, '../resources/images/sesame_oil.jpg'),
+(300110, '고구마', '감자과의 열매로 수확되는 뿌리작물', '2023-04-17', 150, '고구마공장', 5000, 2, '../resources/images/sweet_potato.jpg');
+
+INSERT INTO customer(customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password)
+VALUES
+(100101, 2, '김영희', '서울시 강남구 역삼동 123번지', '010-1234-5678', '여자', '123'),
+(100102, 3, '홍길동', '서울시 마포구 서교동 456번지', '010-9876-5432', '남자', '456'),
+(100103, 1, '이순신', '서울시 강서구 화곡동 789번지', '010-1111-2222', '남자', '789'),
+(100104, 2, '박지성', '서울시 강동구 천호동 1010번지', '010-5555-6666', '남자', '1010'),
+(100105, 4, '김연아', '서울시 송파구 잠실동 1111번지', '010-9999-8888', '여자', '1111'),
+(100106, 1, '손흥민', '서울시 강남구 삼성동 1212번지', '010-3333-4444', '남자', '1212'),
+(100107, 3, '유재석', '서울시 서초구 반포동 1313번지', '010-7777-8888', '남자', '1313'),
+(100108, 4, '박명수', '서울시 관악구 신림동 1414번지', '010-1212-3434', '남자', '1414'),
+(100109, 1, '아이유', '서울시 강북구 미아동 1515번지', '010-5656-7878', '여자', '1515'),
+(100110, 3, '방탄소년단', '서울시 강동구 상일동 1616번지', '010-2323-4545', '남자', '1616');
+
+INSERT INTO board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id)
+VALUES
+(1, '공지사항 제목입니다.', '안녕하세요. 식품 홈페이지의 공지사항입니다.', '2022-04-15', '2022-04-15', 100101, 11),
+(2, '오늘 먹은 제품 후기', '오늘 먹은 제품이 맛있어서 후기를 남깁니다. 추천합니다!', '2022-04-16', '2022-04-16', 100102, 12),
+(3, '1:1문의합니다.', '식품 홈페이지에 대해서 궁금한 점이 있어서 문의드립니다.', '2022-04-17', '2022-04-17', 100103, 13),
+(4, '제품 사용법 문의합니다.', '제품 사용법이 잘 이해가 가지 않아서 문의드립니다.', '2022-04-17', '2022-04-17', 100104, 13),
+(5, '식품 홈페이지 리뉴얼 소식', '안녕하세요. 식품 홈페이지가 리뉴얼되었습니다. 새로운 기능들도 많이 추가되었으니 이용해보세요!', '2022-04-18', '2022-04-18', 100101, 11),
+(6, '오늘 먹은 제품 후기2', '오늘 먹은 제품이 맛있어서 후기를 남깁니다. 추천합니다!', '2022-04-18', '2022-04-18', 100102, 12),
+(7, '1:1문의2', '식품 홈페이지에 대해서 궁금한 점이 있어서 문의드립니다.', '2022-04-19', '2022-04-19', 100103, 13),
+(8, '제품 사용법 문의2', '제품 사용법이 잘 이해가 가지 않아서 문의드립니다.', '2022-04-19', '2022-04-19', 100104, 13),
+(9, '신제품 출시 소식', '안녕하세요. 신제품이 출시되었습니다. 많은 이용 부탁드립니다!', '2022-04-20', '2022-04-20', 100101, 11),
+(10, '오늘 먹은 제품 후기3', '오늘 먹은 제품이 맛있어서 후기를 남깁니다. 추천합니다!', '2022-04-20', '2022-04-20', 100102, 12);
+
+INSERT INTO order_product (product_id, order_id, order_product, order_quantity)
+VALUES 
+(300101, 10001, '김치', 5),
+(300102, 10001, '된장', 3),
+(300103, 10002, '쌀', 2),
+(300104, 10002, '고추장', 1),
+(300105, 10003, '된장찌개용 두부', 4),
+(300106, 10003, '김', 2),
+(300107, 10004, '콩나물', 3),
+(300108, 10004, '대파', 2),
+(300109, 10005, '참기름', 1),
+(300110, 10005, '고구마', 3);
 
 
-
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100001, 3, 'Baudic', 'Suite 100', '310-292-4217', 'Male', 'xCsirC1HF6');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100002, 2, 'Lockhart', 'Room 1359', '159-553-7514', 'Female', 'CKH7mZDmNFH');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100003, 3, 'Greenalf', 'Apt 119', '564-245-5285', 'Female', 'VGX3xEpbdqf');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100004, 4, 'Tiron', '13th Floor', '732-806-1424', 'Female', '9qiexAJp3zd');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100005, 3, 'Clemon', '10th Floor', '919-859-0349', 'Male', 'NTWZhjj');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100006, 4, 'Mouton', 'Apt 875', '407-574-8611', 'Female', 'fodBeP5xc');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100007, 3, 'Parminter', 'Room 138', '945-980-0084', 'Female', 'zJGycw0Q7');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100008, 2, 'Lowndsbrough', '9th Floor', '626-115-7567', 'Female', '5aApzftDX0');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100009, 3, 'Reddick', 'Room 1657', '610-441-3857', 'Female', 'b3Kd7w');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100010, 1, 'Vasey', 'Suite 83', '816-387-8137', 'Male', 'XaIvCXq');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100011, 2, 'Harbour', 'Room 456', '610-976-6115', 'Female', '9LwZmwLvNoN');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100012, 3, 'Lemon', '14th Floor', '222-875-8502', 'Male', '2Jvu78tfbK');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100013, 1, 'Castro', 'Apt 45', '426-715-0410', 'Female', 'H5lPiW');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100014, 4, 'Havvock', 'Room 1838', '846-920-2529', 'Male', '9KzyFb6K64');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100015, 1, 'Lebourn', 'Room 998', '506-549-0571', 'Male', 'v0intTIbXuN');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100016, 4, 'Boydle', 'PO Box 83590', '159-694-7570', 'Male', 'ViJDrqz');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100017, 4, 'Toffts', 'PO Box 17808', '165-751-5774', 'Male', 'Fv5VHoG');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100018, 4, 'Doodson', 'Room 17', '557-255-4085', 'Male', 'HV9l2jn0FHrh');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100019, 1, 'Moreing', 'PO Box 79342', '802-975-7037', 'Male', 'SGm59Rn');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100020, 1, 'Geldeard', 'Suite 73', '740-926-2349', 'Female', 'VTERGKiJ5Gq');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100021, 4, 'Willoughby', 'PO Box 63316', '857-978-9301', 'Female', 'TMYYUjC');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100022, 4, 'Eva', 'Room 964', '940-278-7701', 'Female', 'Hjy6rvTK');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100023, 1, 'Siburn', 'Room 1150', '148-925-3804', 'Female', 'ZxAoKXKgOAB');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100024, 2, 'Nouch', 'Room 1575', '152-560-9680', 'Female', 'QzS8fQZh2i');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100025, 1, 'Salmon', 'PO Box 55928', '763-569-5171', 'Female', 'M7x386E');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100026, 1, 'Drakeley', '11th Floor', '334-559-2528', 'Male', 'DQtb6QfaJIq');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100027, 4, 'Osorio', 'Room 1297', '285-845-0655', 'Male', '3nJXxkOf');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100028, 2, 'Juorio', 'Apt 1249', '882-866-0230', 'Female', 'AfqExAvO6qz');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100029, 1, 'Carrett', 'Suite 28', '632-806-1413', 'Female', 'nSx4j9r7dtZl');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100030, 1, 'Romaynes', 'Apt 557', '145-497-9378', 'Male', '4iTbChtMYE');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100031, 3, 'Drews', '13th Floor', '618-574-3384', 'Male', 'zKTbA0');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100032, 4, 'Melliard', 'Apt 1315', '543-395-1465', 'Male', 'NYmiDdFUfj');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100033, 4, 'Muccino', '10th Floor', '248-457-7376', 'Female', 'JimKhU4j');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100034, 3, 'Aleso', 'Apt 76', '651-903-2033', 'Female', 'aLVxCSM');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100035, 1, 'Merrgan', '17th Floor', '689-813-1979', 'Male', 'GPkBBgVB7z');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100036, 2, 'Figgures', 'Apt 1158', '362-765-3355', 'Female', 'XSylonJpCa');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100037, 4, 'Ribbon', 'PO Box 82133', '655-345-9745', 'Male', 'mSDgpWzWE');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100038, 2, 'Thurstance', 'Room 102', '339-901-0934', 'Male', 'EE3WO7');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100039, 4, 'Grealy', 'PO Box 9326', '401-465-7394', 'Female', 'wT5XtC47b');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100040, 4, 'O''Sesnane', 'Suite 92', '633-426-0956', 'Male', 'ThDN17hqTkg');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100041, 1, 'Norquay', 'PO Box 53953', '921-176-7505', 'Male', 'g2D5EO5');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100042, 2, 'Reboulet', 'Apt 162', '257-552-6952', 'Male', 'JU3sCAO7w');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100043, 4, 'Petyanin', '7th Floor', '895-922-5892', 'Male', 'MCjZw9mIQd8G');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100044, 1, 'Ewestace', 'Apt 850', '811-678-3046', 'Female', 'Tcasud');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100045, 2, 'Shilleto', 'Apt 173', '525-209-6272', 'Male', 'ndzN8myx');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100046, 4, 'Wonham', '2nd Floor', '168-167-3062', 'Female', '53Ed58');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100047, 1, 'Sporgeon', 'Suite 73', '202-973-0118', 'Female', 'LpJONGzLTih');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100048, 3, 'Mullins', '18th Floor', '597-624-4481', 'Female', 'TdNWDKgV9mzN');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100049, 2, 'McAne', 'PO Box 15605', '131-624-0659', 'Female', 'PWdbOB');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100050, 2, 'McCorry', '19th Floor', '459-637-3843', 'Female', 'yQ5at7i');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100051, 3, 'Perree', '20th Floor', '280-223-3480', 'Male', 'oXlSJZ4');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100052, 1, 'Hazelgreave', 'Room 1631', '312-523-9377', 'Male', 'm5mNwF');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100053, 4, 'Rounce', 'Room 1507', '886-336-9342', 'Male', 'HtFvYt9aba');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100054, 3, 'Claiden', 'Apt 738', '491-687-0744', 'Female', 'CKpFHiEPdV');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100055, 1, 'Desaur', 'Apt 1398', '548-436-1834', 'Female', 'XxHznagh6e');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100056, 3, 'Eneas', 'Apt 1529', '783-177-1625', 'Female', 'sHe7du');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100057, 1, 'Errichi', 'Apt 157', '772-688-1316', 'Male', '1wGWKHfX2kn');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100058, 3, 'Shuttleworth', 'Room 160', '731-426-5136', 'Male', 'dQEzS99tim');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100059, 3, 'Behnke', '15th Floor', '735-119-3015', 'Male', 'lOGjmxb');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100060, 4, 'Eynaud', 'PO Box 68706', '612-621-2046', 'Male', 'UoSTUs');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100061, 1, 'Fillingham', '19th Floor', '613-853-0856', 'Female', 'DmrVUQ7p');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100062, 3, 'Dart', 'Room 1765', '968-153-3419', 'Female', 'njuPT7P0xZ');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100063, 3, 'Jaquet', 'PO Box 65529', '535-736-6799', 'Male', 'uX7GefGcWi');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100064, 3, 'Wilkison', 'Room 1589', '989-272-9549', 'Female', 'pGSt5Pix');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100065, 1, 'Zecchii', 'Room 1936', '817-445-0668', 'Male', 'JCT88Nlzw');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100066, 2, 'McCaghan', 'PO Box 31611', '136-393-4046', 'Female', 'K54giTD');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100067, 4, 'Lathwood', 'Suite 81', '835-756-1665', 'Female', 'gfOGipj');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100068, 3, 'Hawyes', 'Apt 676', '416-106-0937', 'Male', 'VV0Fu1yAL42W');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100069, 1, 'McGrouther', 'PO Box 26047', '542-645-9770', 'Male', 'POgoNUtGl5n');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100070, 4, 'Betts', 'PO Box 65466', '614-386-8702', 'Female', '1CdgVXNs');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100071, 1, 'Broadbent', 'Suite 50', '223-569-5026', 'Male', 'V2ngODAolv');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100072, 3, 'Indge', 'Room 483', '839-479-6104', 'Female', '5Yf34KqdYP');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100073, 2, 'Udden', 'Apt 1904', '621-755-6159', 'Male', 'CXsZOyZpwO7');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100074, 1, 'Brandes', '7th Floor', '158-109-0473', 'Male', 'w8zHhVM6R');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100075, 1, 'Clipston', 'Suite 40', '989-673-8394', 'Female', 'XxHjC2TMHr');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100076, 4, 'Lindhe', 'Room 1710', '858-569-7173', 'Male', 'hbMDFTceGwPa');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100077, 1, 'Crean', 'PO Box 29999', '679-159-1892', 'Male', '2QDkI2');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100078, 1, 'Ashdown', 'Room 1842', '624-247-4965', 'Male', 'CNh8KScMe');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100079, 4, 'Clowney', '9th Floor', '899-411-9534', 'Male', 'pHU8Gtjn');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100080, 1, 'Jiras', 'Apt 223', '766-833-5463', 'Male', 'E4VGwU7T3CWF');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100081, 1, 'Gorsse', 'Apt 614', '756-109-9443', 'Male', 'sgsdqX03XX5o');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100082, 1, 'McKennan', 'Apt 1663', '724-661-7960', 'Female', '8A1GJg');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100083, 4, 'Jouning', 'Room 1136', '113-375-6767', 'Male', '2egvNf');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100084, 2, 'Gehringer', 'Apt 189', '816-981-3920', 'Male', 'HfxgjJHuJXA');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100085, 1, 'Daton', 'PO Box 999', '439-733-6821', 'Female', 'S9afJpriOugY');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100086, 1, 'Chidgey', '1st Floor', '550-200-5899', 'Male', 'bCvBccT');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100087, 1, 'Bligh', '13th Floor', '169-417-6700', 'Female', 'oNFIGwQ');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100088, 4, 'Mossbee', 'Apt 1836', '156-901-9390', 'Female', 'bNGZmj2ry4G');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100089, 4, 'Worrill', 'Suite 25', '550-534-4836', 'Male', 'udsHky5JdNwk');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100090, 3, 'MacKessock', '12th Floor', '609-335-6678', 'Female', '3HqWVOfFw8');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100091, 1, 'Loynton', 'Suite 63', '784-368-0905', 'Male', 'RihUHE');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100092, 3, 'Sergeaunt', 'Suite 79', '419-734-6554', 'Female', 'BwrqYw0cE');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100093, 3, 'Oret', 'PO Box 32160', '241-178-1656', 'Male', 'r9Nlh78Emx');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100094, 2, 'Gellier', 'Apt 1760', '886-578-4953', 'Female', 'bM04UyL');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100095, 3, 'Baskerfield', 'Room 1366', '350-362-4110', 'Female', 'aPj0a7UIfe');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100096, 3, 'Hansberry', '17th Floor', '990-470-7155', 'Female', 'V52ANM');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100097, 4, 'Scherme', 'Suite 95', '330-156-4990', 'Female', 'eZ24x8hLtzpX');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100098, 2, 'Conkey', 'Suite 34', '424-202-5528', 'Male', '4RqK29fY1');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100099, 3, 'Scalia', 'Room 1205', '287-613-1133', 'Male', 'bAijGHI');
-insert into customer (customer_id, customer_grade_id, customer_name, customer_address, customer_phone, customer_gender, customer_password) values (100100, 3, 'Canizares', 'PO Box 63671', '986-499-8813', 'Female', 'ItILjmde');
-
-
-
-# BOARD
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200001, 'Inspector Bellamy (Bellamy)', 'lectus in est risus auctor sed tristique in tempus sit amet sem fusce consequat nulla nisl nunc', '2023/02/23', '2023/02/23', 100048, 11);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200002, 'Everything Must Go', 'in faucibus orci luctus et ultrices posuere cubilia curae duis faucibus accumsan odio curabitur convallis duis consequat dui nec', '2022/05/16', '2022/05/16', 100085, 12);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200003, 'Private Lives of Elizabeth and Essex, The', 'curabitur convallis duis consequat dui nec nisi volutpat eleifend donec ut dolor morbi', '2022/10/23', '2022/10/23', 100070, 13);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200004, 'Sidewalls (Medianeras)', 'a ipsum integer a nibh in quis justo maecenas rhoncus aliquam lacus morbi quis tortor id', '2022/07/18', '2022/07/18', 100077, 11);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200005, 'The Land Before Time XII: The Great Day of the Flyers', 'maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio', '2022/09/26', '2022/09/26', 100024, 13);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200006, 'Incredible Journey, The', 'ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo in blandit', '2022/12/10', '2022/12/10', 100055, 11);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200007, 'Regret to Inform', 'donec vitae nisi nam ultrices libero non mattis pulvinar nulla pede ullamcorper augue a suscipit nulla', '2022/08/22', '2022/08/22', 100020, 11);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200008, 'Aftermath: Population Zero', 'ullamcorper augue a suscipit nulla elit ac nulla sed vel enim sit', '2023/04/05', '2023/04/05', 100013, 12);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200009, 'Sam''s Song', 'sapien iaculis congue vivamus metus arcu adipiscing molestie hendrerit at vulputate', '2022/12/30', '2022/12/30', 100072, 12);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200010, 'Harmagedon', 'ligula vehicula consequat morbi a ipsum integer a nibh in', '2023/02/23', '2023/02/23', 100019, 13);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200011, 'Winning', 'vestibulum sit amet cursus id turpis integer aliquet massa id', '2022/04/30', '2022/04/30', 100082, 12);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200012, 'Thief of Paris, The (Le voleur)', 'lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum', '2022/12/14', '2022/12/14', 100008, 12);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200013, 'Egg and I, The', 'sit amet consectetuer adipiscing elit proin risus praesent lectus vestibulum quam sapien varius ut blandit non interdum in ante', '2022/06/28', '2022/06/28', 100039, 11);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200014, 'Pups', 'pellentesque quisque porta volutpat erat quisque erat eros viverra eget congue eget', '2022/06/13', '2022/06/13', 100068, 13);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200015, 'Club Sandwich', 'faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum', '2022/04/19', '2022/04/19', 100040, 12);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200016, 'West Is West', 'consequat lectus in est risus auctor sed tristique in tempus sit', '2023/01/27', '2023/01/27', 100039, 13);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200017, 'Last Frontier, The', 'rhoncus sed vestibulum sit amet cursus id turpis integer aliquet massa id lobortis', '2023/02/01', '2023/02/01', 100044, 13);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200018, 'By the Pricking of My Thumbs (Mon petit doigt m''a dit...)', 'arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc', '2022/10/31', '2022/10/31', 100064, 13);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200019, 'Tinpis Run', 'amet nulla quisque arcu libero rutrum ac lobortis vel dapibus', '2022/09/09', '2022/09/09', 100100, 13);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200020, 'Hell''s Highway', 'sapien a libero nam dui proin leo odio porttitor id consequat in', '2022/10/18', '2022/10/18', 100067, 12);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200021, 'Street Fighter II: The Animated Movie (Sutorîto Faitâ II gekijô-ban)', 'convallis tortor risus dapibus augue vel accumsan tellus nisi eu orci', '2022/10/04', '2022/10/04', 100022, 11);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200022, 'Hitman''s Run', 'malesuada in imperdiet et commodo vulputate justo in blandit ultrices enim lorem ipsum', '2022/12/12', '2022/12/12', 100066, 12);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200023, 'Eddie and the Cruisers', 'curae mauris viverra diam vitae quam suspendisse potenti nullam porttitor lacus', '2022/07/14', '2022/07/14', 100054, 13);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200024, 'Land of the Lost', 'in ante vestibulum ante ipsum primis in faucibus orci luctus et', '2023/01/09', '2023/01/09', 100082, 12);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200025, 'Cialo', 'id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac diam cras', '2022/04/26', '2022/04/26', 100034, 13);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200026, 'Beloved Berlin Wall (Liebe Mauer)', 'sapien varius ut blandit non interdum in ante vestibulum ante ipsum primis in faucibus orci luctus', '2023/02/11', '2023/02/11', 100049, 13);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200027, 'Tom and Jerry: The Lost Dragon', 'venenatis non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus', '2022/06/19', '2022/06/19', 100071, 13);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200028, 'Retroactive', 'bibendum felis sed interdum venenatis turpis enim blandit mi in porttitor pede justo eu massa donec dapibus duis', '2022/09/05', '2022/09/05', 100008, 13);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200029, 'Young Adam', 'nunc nisl duis bibendum felis sed interdum venenatis turpis enim blandit', '2022/12/21', '2022/12/21', 100020, 11);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200030, 'Tyler Perry''s A Madea Christmas', 'aenean fermentum donec ut mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus', '2022/12/07', '2022/12/07', 100064, 11);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200031, 'Bhaag Milka Bhaag', 'luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur', '2022/09/24', '2022/09/24', 100015, 11);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200032, 'Jay Mohr: Funny for a Girl', 'odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque volutpat dui', '2023/01/06', '2023/01/06', 100051, 11);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200033, 'Taxi 3', 'augue vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec', '2023/02/11', '2023/02/11', 100085, 11);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200034, 'Amityville: A New Generation', 'eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor', '2023/02/28', '2023/02/28', 100017, 13);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200035, 'Cane Toads: The Conquest', 'nec nisi volutpat eleifend donec ut dolor morbi vel lectus in quam fringilla', '2023/03/09', '2023/03/09', 100059, 12);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200036, 'Crucible, The', 'diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit', '2022/12/04', '2022/12/04', 100033, 12);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200037, 'Mom''s Night Out', 'eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum', '2022/04/30', '2022/04/30', 100022, 12);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200038, 'I aionia epistrofi tou Antoni Paraskeva', 'convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque', '2022/06/17', '2022/06/17', 100076, 11);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200039, 'Run All Night', 'nunc donec quis orci eget orci vehicula condimentum curabitur in libero ut massa volutpat convallis', '2022/07/29', '2022/07/29', 100030, 11);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200040, 'I''m Not Scared (Io non ho paura)', 'id massa id nisl venenatis lacinia aenean sit amet justo morbi ut odio', '2023/02/23', '2023/02/23', 100072, 12);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200041, 'Habana Blues', 'ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam porttitor lacus at turpis donec', '2022/12/26', '2022/12/26', 100060, 12);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200042, 'Green Fire', 'lorem ipsum dolor sit amet consectetuer adipiscing elit proin risus praesent lectus vestibulum quam sapien varius', '2022/04/18', '2022/04/18', 100002, 12);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200043, 'Ugly, The', 'pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis', '2022/10/30', '2022/10/30', 100007, 13);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200044, 'Letters from Iwo Jima', 'pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas', '2022/08/25', '2022/08/25', 100019, 12);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200045, 'Pool of London', 'amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere', '2022/07/31', '2022/07/31', 100100, 12);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200046, 'Beach Red', 'faucibus orci luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet', '2022/04/18', '2022/04/18', 100090, 12);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200047, 'Keeping the Faith', 'proin eu mi nulla ac enim in tempor turpis nec', '2023/03/10', '2023/03/10', 100020, 11);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200048, 'Sleepover', 'fringilla rhoncus mauris enim leo rhoncus sed vestibulum sit amet cursus id turpis integer aliquet massa', '2023/02/26', '2023/02/26', 100052, 11);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200049, 'Hereafter', 'nisl duis bibendum felis sed interdum venenatis turpis enim blandit mi', '2022/05/14', '2022/05/14', 100030, 12);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200050, 'Pledge This!', 'sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis', '2022/05/01', '2022/05/01', 100020, 12);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200051, 'Freedomfighters (Libertarias)', 'consequat varius integer ac leo pellentesque ultrices mattis odio donec vitae', '2022/05/18', '2022/05/18', 100047, 13);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200052, '9 Month Stretch (9 mois ferme)', 'ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem', '2023/02/28', '2023/02/28', 100069, 11);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200053, 'Luke and Lucy: The Texas Rangers (Suske en Wiske: De Texas rakkers)', 'rutrum at lorem integer tincidunt ante vel ipsum praesent blandit', '2022/05/26', '2022/05/26', 100078, 13);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200054, 'Tales from the Crypt Presents: Bordello of Blood', 'porttitor lorem id ligula suspendisse ornare consequat lectus in est risus auctor sed tristique in tempus sit amet sem fusce', '2022/07/16', '2022/07/16', 100055, 13);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200055, 'Beautiful Darling', 'semper rutrum nulla nunc purus phasellus in felis donec semper sapien a libero', '2022/10/12', '2022/10/12', 100009, 12);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200056, 'Arena', 'lectus vestibulum quam sapien varius ut blandit non interdum in', '2022/06/15', '2022/06/15', 100008, 11);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200057, 'Family Band: The Cowsills Story ', 'eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus', '2022/06/12', '2022/06/12', 100099, 13);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200058, 'Wishing Stairs (Yeogo goedam 3: Yeowoo gyedan)', 'massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida', '2023/01/22', '2023/01/22', 100005, 11);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200059, 'Black Dog', 'vel pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus in est risus auctor sed tristique in tempus', '2022/04/14', '2022/04/14', 100047, 12);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200060, 'Chaos', 'rhoncus mauris enim leo rhoncus sed vestibulum sit amet cursus id turpis integer aliquet massa id lobortis convallis', '2022/04/25', '2022/04/25', 100065, 11);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200061, 'Generale Della Rovere, Il', 'ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor', '2023/02/07', '2023/02/07', 100050, 11);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200062, 'Smoke Signals', 'magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien', '2023/01/29', '2023/01/29', 100076, 12);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200063, 'State Affairs (Une affaire d''état)', 'potenti cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus', '2022/07/08', '2022/07/08', 100009, 13);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200064, 'Apache Territory ', 'pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et', '2023/04/11', '2023/04/11', 100060, 12);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200065, 'The Land Before Time VIII: The Big Freeze', 'duis faucibus accumsan odio curabitur convallis duis consequat dui nec nisi volutpat eleifend', '2022/09/02', '2022/09/02', 100016, 13);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200066, 'Last Tycoon, The', 'ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices mattis odio donec vitae', '2022/11/09', '2022/11/09', 100063, 12);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200067, 'Election (Hak se wui)', 'vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas rhoncus', '2022/04/20', '2022/04/20', 100050, 12);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200068, 'Musicwood', 'praesent id massa id nisl venenatis lacinia aenean sit amet justo morbi ut odio cras mi', '2023/03/10', '2023/03/10', 100024, 12);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200069, 'Betty Boop''s Hallowe''en Party', 'sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent', '2023/03/30', '2023/03/30', 100097, 11);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200070, 'Warlords, The (Tau ming chong)', 'sed interdum venenatis turpis enim blandit mi in porttitor pede justo eu massa donec dapibus duis', '2022/09/25', '2022/09/25', 100090, 13);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200071, 'City Island', 'adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy', '2022/12/09', '2022/12/09', 100022, 13);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200072, 'Sexy Baby', 'lorem ipsum dolor sit amet consectetuer adipiscing elit proin interdum mauris non ligula pellentesque', '2022/12/16', '2022/12/16', 100029, 13);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200073, 'Chains (Catene)', 'sem praesent id massa id nisl venenatis lacinia aenean sit amet justo morbi', '2023/02/20', '2023/02/20', 100011, 11);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200074, 'Beyond the Border', 'eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper sapien', '2022/08/16', '2022/08/16', 100065, 13);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200075, 'Treasure Island', 'sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla', '2022/10/16', '2022/10/16', 100005, 11);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200076, 'Loneliest Planet, The', 'ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis', '2023/04/08', '2023/04/08', 100014, 11);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200077, 'Court-Martial of Billy Mitchell, The', 'sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum', '2022/11/04', '2022/11/04', 100006, 11);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200078, 'Walk Like a Man', 'ligula vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas rhoncus aliquam lacus', '2022/07/10', '2022/07/10', 100036, 12);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200079, 'Weird Science', 'ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia', '2023/01/15', '2023/01/15', 100097, 12);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200080, 'Volcano High (Whasango)', 'nisi nam ultrices libero non mattis pulvinar nulla pede ullamcorper augue a suscipit nulla elit', '2023/02/20', '2023/02/20', 100071, 11);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200081, 'Seas Beneath', 'eu orci mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula vehicula', '2022/11/15', '2022/11/15', 100034, 13);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200082, 'North and South, Book I', 'lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum', '2023/02/12', '2023/02/12', 100083, 12);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200083, 'Drugstore Cowboy', 'felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl', '2022/04/19', '2022/04/19', 100095, 13);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200084, 'Me Two (Personne aux deux personnes, La)', 'quam fringilla rhoncus mauris enim leo rhoncus sed vestibulum sit amet cursus id', '2022/06/06', '2022/06/06', 100001, 13);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200085, 'Bank, The', 'vel augue vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec', '2023/01/28', '2023/01/28', 100084, 13);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200086, 'Mummies: Secrets of the Pharaohs (a.k.a. Mummies 3D)', 'potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa', '2023/02/16', '2023/02/16', 100021, 13);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200087, 'Left Behind', 'luctus et ultrices posuere cubilia curae duis faucibus accumsan odio curabitur convallis duis consequat dui nec nisi volutpat', '2022/10/21', '2022/10/21', 100091, 12);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200088, 'Forbidden Christ, The (Cristo proibito, Il)', 'maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque', '2022/04/18', '2022/04/18', 100069, 13);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200089, 'Random Harvest', 'lobortis sapien sapien non mi integer ac neque duis bibendum morbi non', '2022/04/21', '2022/04/21', 100031, 12);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200090, 'Spencer''s Mountain', 'nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in', '2023/02/26', '2023/02/26', 100075, 12);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200091, 'Raising Arizona', 'id lobortis convallis tortor risus dapibus augue vel accumsan tellus nisi eu', '2022/07/12', '2022/07/12', 100075, 12);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200092, 'Minus Man, The', 'tempus vel pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus in est risus auctor sed tristique in', '2022/05/31', '2022/05/31', 100095, 11);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200093, 'New World, The', 'turpis donec posuere metus vitae ipsum aliquam non mauris morbi non lectus aliquam sit amet diam in magna bibendum', '2022/08/13', '2022/08/13', 100086, 11);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200094, 'Contact High', 'in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam', '2022/11/16', '2022/11/16', 100086, 13);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200095, 'Enduring Love', 'non lectus aliquam sit amet diam in magna bibendum imperdiet', '2022/05/09', '2022/05/09', 100018, 13);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200096, 'Tempest, The', 'duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh', '2022/07/11', '2022/07/11', 100012, 13);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200097, 'Sophie Scholl: The Final Days (Sophie Scholl - Die letzten Tage)', 'adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc', '2023/02/27', '2023/02/27', 100055, 11);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200098, 'The Raid 2: Berandal', 'ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus etiam vel', '2023/03/03', '2023/03/03', 100035, 12);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200099, '42nd Street', 'duis faucibus accumsan odio curabitur convallis duis consequat dui nec nisi volutpat eleifend donec ut dolor morbi vel lectus in', '2022/09/02', '2022/09/02', 100086, 13);
-insert into board (board_id, board_title, board_main, board_modified_date, board_registered_date, board_writer_id, board_category_id) values (200100, 'Billy the Kid', 'id lobortis convallis tortor risus dapibus augue vel accumsan tellus nisi eu', '2023/01/18', '2023/01/18', 100083, 12);
-
-#SALES_ORDER
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400001, 100061, '2022-05-24', '$128.14', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400002, 100022, '2023-03-28', '$59.46', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400003, 100094, '2023-01-05', '$16.33', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400004, 100025, '2022-06-25', '$104.42', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400005, 100010, '2023-04-07', '$85.82', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400006, 100027, '2022-04-20', '$142.00', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400007, 100069, '2022-07-29', '$153.94', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400008, 100062, '2022-09-15', '$119.78', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400009, 100021, '2022-04-24', '$82.96', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400010, 100051, '2022-09-13', '$134.87', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400011, 100086, '2022-11-23', '$198.64', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400012, 100049, '2023-03-17', '$102.90', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400013, 100087, '2022-10-24', '$193.51', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400014, 100024, '2022-12-08', '$123.61', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400015, 100017, '2023-02-12', '$119.38', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400016, 100064, '2023-04-04', '$145.40', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400017, 100062, '2022-04-12', '$20.54', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400018, 100097, '2022-12-20', '$73.32', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400019, 100095, '2022-06-09', '$31.90', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400020, 100005, '2022-11-21', '$14.63', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400021, 100097, '2022-07-25', '$101.05', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400022, 100050, '2022-12-14', '$79.77', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400023, 100049, '2022-10-27', '$193.58', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400024, 100045, '2022-05-08', '$28.89', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400025, 100037, '2022-11-10', '$116.02', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400026, 100079, '2022-10-28', '$179.18', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400027, 100076, '2023-03-03', '$52.45', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400028, 100083, '2022-05-29', '$166.17', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400029, 100022, '2023-04-05', '$18.56', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400030, 100062, '2022-06-12', '$36.88', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400031, 100090, '2022-06-17', '$170.95', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400032, 100033, '2023-03-01', '$113.06', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400033, 100095, '2023-01-22', '$194.91', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400034, 100052, '2022-09-19', '$16.54', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400035, 100038, '2022-09-06', '$199.01', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400036, 100087, '2022-05-07', '$154.98', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400037, 100062, '2023-03-23', '$160.84', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400038, 100058, '2023-01-22', '$119.28', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400039, 100001, '2022-11-26', '$23.58', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400040, 100022, '2022-10-20', '$188.30', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400041, 100077, '2023-01-07', '$113.74', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400042, 100010, '2022-05-12', '$70.16', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400043, 100099, '2022-09-08', '$131.83', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400044, 100080, '2023-02-19', '$135.88', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400045, 100013, '2022-07-08', '$101.00', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400046, 100077, '2023-01-09', '$108.71', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400047, 100041, '2023-01-09', '$99.82', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400048, 100017, '2022-10-23', '$3.44', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400049, 100044, '2022-12-23', '$159.05', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400050, 100075, '2022-08-27', '$12.76', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400051, 100018, '2022-08-05', '$39.78', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400052, 100018, '2022-08-22', '$117.49', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400053, 100055, '2022-06-12', '$132.44', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400054, 100089, '2023-02-26', '$164.58', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400055, 100083, '2022-11-20', '$67.43', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400056, 100018, '2022-10-17', '$157.93', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400057, 100011, '2022-07-16', '$161.68', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400058, 100010, '2022-08-16', '$86.19', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400059, 100004, '2022-09-15', '$164.37', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400060, 100011, '2022-08-16', '$22.21', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400061, 100048, '2022-05-26', '$62.38', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400062, 100042, '2023-03-04', '$70.70', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400063, 100099, '2022-08-01', '$13.61', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400064, 100018, '2022-07-04', '$135.53', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400065, 100089, '2022-05-08', '$167.97', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400066, 100075, '2022-08-11', '$47.11', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400067, 100077, '2022-07-17', '$67.39', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400068, 100026, '2022-05-19', '$165.69', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400069, 100047, '2022-12-13', '$129.22', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400070, 100093, '2022-04-23', '$65.29', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400071, 100076, '2022-09-26', '$69.66', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400072, 100081, '2023-02-16', '$14.37', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400073, 100047, '2022-11-22', '$38.37', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400074, 100007, '2022-12-21', '$30.81', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400075, 100071, '2022-06-09', '$183.90', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400076, 100048, '2022-09-17', '$52.81', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400077, 100044, '2022-07-13', '$28.70', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400078, 100015, '2023-03-07', '$166.04', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400079, 100067, '2022-09-07', '$13.93', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400080, 100078, '2022-08-01', '$141.49', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400081, 100087, '2022-12-17', '$72.58', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400082, 100048, '2023-03-18', '$195.28', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400083, 100002, '2022-06-27', '$182.94', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400084, 100004, '2022-10-13', '$2.28', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400085, 100042, '2022-05-25', '$133.40', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400086, 100029, '2022-04-23', '$53.32', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400087, 100077, '2022-04-13', '$42.43', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400088, 100037, '2022-11-11', '$83.87', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400089, 100066, '2023-02-11', '$21.08', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400090, 100013, '2022-10-21', '$126.67', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400091, 100082, '2023-02-01', '$113.97', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400092, 100061, '2022-07-30', '$11.53', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400093, 100063, '2022-05-02', '$57.28', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400094, 100090, '2022-05-27', '$94.21', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400095, 100009, '2023-03-13', '$26.78', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400096, 100100, '2022-11-19', '$94.69', 'Y');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400097, 100067, '2022-07-27', '$38.22', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400098, 100086, '2023-03-18', '$7.89', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400099, 100019, '2022-12-07', '$122.99', 'N');
-insert into sales_order (order_id, customer_id, order_date, order_total_price, order_status) values (400100, 100075, '2022-12-22', '$192.07', 'Y');
-
-#ORDER_PRODUCT
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500001, 300080, 400001, 'Lettuce - Arugula', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500002, 300003, 400002, 'Squash - Pepper', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500003, 300037, 400003, 'Ecolab - Balanced Fusion', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500004, 300031, 400004, 'Cleaner - Lime Away', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500005, 300027, 400005, 'Five Alive Citrus', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500006, 300029, 400006, 'Crackers - Trio', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500007, 300091, 400007, 'Containter - 3oz Microwave Rect.', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500008, 300060, 400008, 'Appetizer - Veg Assortment', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500009, 300050, 400009, 'Wine - Rioja Campo Viejo', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500010, 300019, 400010, 'Cheese - Feta', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500011, 300044, 400011, 'Sage - Fresh', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500012, 300090, 400012, 'Bread - Pita, Mini', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500013, 300005, 400013, 'Orange Roughy 6/8 Oz', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500014, 300088, 400014, 'Vinegar - Raspberry', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500015, 300099, 400015, 'Pork - Loin, Center Cut', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500016, 300072, 400016, 'Tomatoes - Cherry, Yellow', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500017, 300010, 400017, 'Potatoes - Parissienne', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500018, 300008, 400018, 'Plastic Wrap', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500019, 300085, 400019, 'Cherries - Bing, Canned', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500020, 300045, 400020, 'Rice - Jasmine Sented', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500021, 300014, 400021, 'Bar Bran Honey Nut', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500022, 300070, 400022, 'Wine - Zonnebloem Pinotage', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500023, 300018, 400023, 'Oil - Pumpkinseed', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500024, 300092, 400024, 'Praline Paste', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500025, 300082, 400025, 'Rabbit - Legs', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500026, 300062, 400026, 'Pop - Club Soda Can', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500027, 300083, 400027, 'Lidsoupcont Rp12dn', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500028, 300091, 400028, 'Coffee - Espresso', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500029, 300047, 400029, 'Croissants Thaw And Serve', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500030, 300056, 400030, 'Kohlrabi', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500031, 300065, 400031, 'Apricots - Halves', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500032, 300020, 400032, 'Wine - Montecillo Rioja Crianza', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500033, 300040, 400033, 'Veal - Leg, Provimi - 50 Lb Max', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500034, 300076, 400034, 'Crab - Dungeness, Whole', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500035, 300018, 400035, 'Appetiser - Bought', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500036, 300073, 400036, 'Wine - Taylors Reserve', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500037, 300045, 400037, 'Corn - On The Cob', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500038, 300091, 400038, 'Nutmeg - Ground', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500039, 300053, 400039, 'Lotus Root', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500040, 300005, 400040, 'Brandy Apricot', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500041, 300017, 400041, 'Tarragon - Primerba, Paste', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500042, 300007, 400042, 'Cheese - Goat', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500043, 300078, 400043, 'Coffee Caramel Biscotti', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500044, 300026, 400044, 'Taro Leaves', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500045, 300056, 400045, 'Crab - Blue, Frozen', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500046, 300029, 400046, 'Thyme - Lemon, Fresh', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500047, 300089, 400047, 'Yoghurt Tubes', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500048, 300092, 400048, 'Sausage - Breakfast', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500049, 300022, 400049, 'Durian Fruit', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500050, 300059, 400050, 'Anchovy In Oil', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500051, 300054, 400051, 'Pasta - Lasagna, Dry', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500052, 300069, 400052, 'Beef - Tenderloin', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500053, 300061, 400053, 'Wine - Champagne Brut Veuve', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500054, 300069, 400054, 'Appetizer - Sausage Rolls', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500055, 300024, 400055, 'Tomatoes - Vine Ripe, Yellow', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500056, 300068, 400056, 'Capon - Breast, Double, Wing On', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500057, 300006, 400057, 'Caviar - Salmon', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500058, 300093, 400058, 'Nantucket Orange Juice', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500059, 300070, 400059, 'Cleaner - Pine Sol', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500060, 300044, 400060, 'Juice - Apple, 1.36l', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500061, 300019, 400061, 'Puree - Guava', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500062, 300100, 400062, 'Chick Peas - Dried', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500063, 300052, 400063, 'Pepper - Paprika, Hungarian', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500064, 300068, 400064, 'Durian Fruit', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500065, 300037, 400065, 'Pasta - Canelloni', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500066, 300082, 400066, 'Chocolate - Dark Callets', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500067, 300030, 400067, 'Creme De Banane - Marie', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500068, 300042, 400068, 'Cakes Assorted', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500069, 300039, 400069, 'Sprouts - Pea', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500070, 300029, 400070, 'Wine - Casablanca Valley', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500071, 300052, 400071, 'Fruit Mix - Light', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500072, 300047, 400072, 'Mushroom - Porcini Frozen', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500073, 300012, 400073, 'Bay Leaf Fresh', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500074, 300026, 400074, 'Cheese - Wine', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500075, 300078, 400075, 'Tart Shells - Savory, 3', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500076, 300078, 400076, 'Potatoes - Idaho 100 Count', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500077, 300001, 400077, 'Lamb - Racks, Frenched', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500078, 300010, 400078, 'Couscous', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500079, 300071, 400079, 'Cookie Dough - Peanut Butter', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500080, 300028, 400080, 'Wine - Sawmill Creek Autumn', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500081, 300062, 400081, 'Pineapple - Canned, Rings', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500082, 300009, 400082, 'Sprouts - Baby Pea Tendrils', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500083, 300100, 400083, 'Plasticknivesblack', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500084, 300003, 400084, 'Wine - Winzer Krems Gruner', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500085, 300071, 400085, 'Cheese - Gouda Smoked', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500086, 300080, 400086, 'Onions - Red Pearl', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500087, 300082, 400087, 'Muffin Mix - Corn Harvest', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500088, 300039, 400088, 'Dried Cranberries', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500089, 300072, 400089, 'Lentils - Green Le Puy', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500090, 300027, 400090, 'Sesame Seed Black', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500091, 300081, 400091, 'Beans - Black Bean, Canned', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500092, 300098, 400092, 'Yogurt - Assorted Pack', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500093, 300074, 400093, 'Pork - Bacon, Sliced', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500094, 300040, 400094, 'Wine - Toasted Head', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500095, 300031, 400095, 'Bread - Roll, Italian', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500096, 300065, 400096, 'Buttons', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500097, 300088, 400097, 'Lobster - Canned Premium', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500098, 300043, 400098, 'Mace Ground', 'N');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500099, 300089, 400099, 'Pasta - Fett Alfredo, Single Serve', 'Y');
-insert into order_product (order_details_id, product_id, order_id, order_product, order_quantity) values (500100, 300076, 400100, 'Ocean Spray - Ruby Red', 'Y');
-
-#CUSTOMER_LOG
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-08-16', 600001, 100048, 2, 1);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2023-04-11', 600002, 100050, 3, 2);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-10-25', 600003, 100029, 1, 1);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-12-22', 600004, 100037, 2, 2);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2023-02-14', 600005, 100070, 3, 2);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2023-02-26', 600006, 100082, 2, 1);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-06-26', 600007, 100003, 2, 4);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-12-27', 600008, 100042, 3, 2);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-06-13', 600009, 100021, 3, 1);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2023-01-15', 600010, 100095, 2, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2023-01-23', 600011, 100087, 1, 1);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-08-25', 600012, 100056, 3, 1);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-07-19', 600013, 100086, 1, 2);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-11-29', 600014, 100090, 3, 4);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-12-15', 600015, 100028, 1, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-07-20', 600016, 100057, 2, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-07-10', 600017, 100086, 1, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2023-04-07', 600018, 100017, 2, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-10-05', 600019, 100039, 1, 1);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2023-02-08', 600020, 100019, 2, 1);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2023-02-24', 600021, 100065, 2, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2023-03-10', 600022, 100008, 1, 4);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-05-13', 600023, 100003, 3, 1);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-09-03', 600024, 100008, 4, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2023-04-06', 600025, 100003, 2, 2);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-08-19', 600026, 100040, 2, 1);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2023-01-27', 600027, 100067, 4, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2023-03-16', 600028, 100075, 3, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-11-15', 600029, 100058, 3, 2);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-11-10', 600030, 100062, 3, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-11-24', 600031, 100008, 3, 4);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-07-28', 600032, 100058, 1, 1);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-10-21', 600033, 100021, 4, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2023-02-10', 600034, 100042, 2, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-07-11', 600035, 100068, 2, 4);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-10-29', 600036, 100082, 2, 4);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-09-06', 600037, 100045, 2, 2);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2023-03-13', 600038, 100015, 3, 4);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-10-01', 600039, 100098, 2, 2);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-05-07', 600040, 100067, 4, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2023-02-17', 600041, 100033, 3, 1);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-11-28', 600042, 100021, 2, 4);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-08-08', 600043, 100040, 2, 2);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2023-01-16', 600044, 100063, 4, 4);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-08-21', 600045, 100008, 3, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2023-02-01', 600046, 100093, 3, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-07-01', 600047, 100046, 3, 2);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-12-05', 600048, 100050, 3, 2);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-08-30', 600049, 100089, 1, 1);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-11-21', 600050, 100007, 1, 4);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-12-22', 600051, 100096, 4, 4);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2023-02-06', 600052, 100067, 2, 4);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-09-28', 600053, 100045, 2, 1);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2023-04-05', 600054, 100052, 2, 1);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-10-15', 600055, 100079, 4, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2023-01-16', 600056, 100047, 1, 2);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-07-01', 600057, 100008, 3, 2);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-07-31', 600058, 100027, 1, 4);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-05-06', 600059, 100002, 4, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-06-26', 600060, 100017, 3, 1);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-10-16', 600061, 100006, 1, 1);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-04-29', 600062, 100020, 3, 4);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-06-01', 600063, 100032, 1, 1);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-12-26', 600064, 100022, 4, 1);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-04-28', 600065, 100059, 3, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-07-26', 600066, 100069, 4, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-07-14', 600067, 100024, 3, 2);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-05-04', 600068, 100022, 2, 4);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2023-01-23', 600069, 100074, 1, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-05-01', 600070, 100082, 4, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-06-30', 600071, 100049, 3, 1);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2023-02-24', 600072, 100038, 2, 1);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-10-11', 600073, 100020, 1, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2023-04-07', 600074, 100071, 1, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-07-05', 600075, 100085, 2, 1);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-04-27', 600076, 100041, 3, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-05-21', 600077, 100013, 4, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-12-13', 600078, 100040, 4, 2);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-10-20', 600079, 100021, 1, 4);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-04-28', 600080, 100070, 3, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-11-05', 600081, 100055, 2, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-05-24', 600082, 100019, 3, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-10-30', 600083, 100048, 2, 2);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2023-02-04', 600084, 100002, 2, 1);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2023-01-12', 600085, 100091, 2, 1);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2023-04-01', 600086, 100061, 1, 2);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2023-02-26', 600087, 100009, 2, 2);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-10-26', 600088, 100057, 2, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-06-22', 600089, 100063, 1, 2);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-06-25', 600090, 100052, 1, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-06-27', 600091, 100078, 4, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-06-24', 600092, 100023, 4, 1);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2023-03-19', 600093, 100030, 1, 4);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2023-01-15', 600094, 100067, 4, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2023-04-07', 600095, 100035, 4, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-10-13', 600096, 100093, 2, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2023-02-28', 600097, 100028, 2, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-08-03', 600098, 100048, 1, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2023-01-14', 600099, 100050, 3, 3);
-insert into customer_log (change_date, change_log_id, customer_id, pre_grade_id, post_grade_id) values ('2022-09-05', 600100, 100088, 2, 3);
+INSERT INTO sales_order (order_id, customer_id, order_date, order_total_price, order_status)
+VALUES 
+  (400101, 100101, '2023-04-17', 50000, 'Y'),
+  (400102, 100102, '2023-04-16', 25000, 'N'),
+  (400103, 100103, '2023-04-15', 30000, 'D'),
+  (400104, 100104, '2023-04-14', 45000, 'Y'),
+  (400105, 100105, '2023-04-13', 10000, 'N'),
+  (400106, 100106, '2023-04-12', 15000, 'D'),
+  (400107, 100107, '2023-04-11', 20000, 'Y'),
+  (400108, 100108, '2023-04-10', 40000, 'Y'),
+  (400109, 100109, '2023-04-09', 35000, 'N'),
+  (400110, 1001010, '2023-04-08', 60000, 'N');
