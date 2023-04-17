@@ -15,13 +15,10 @@
 	<div>
 		<p>등급별총매출</p>
 	</div>
+		
 	
 	<div>
-		<a>상품등록/삭제/수정</a>
-	</div>
-	
-	<div>
-		<p>주문 확인</p>
+		<a href="orderconfirmation">주문총확인</a>
 	</div>
 
 </body>

@@ -42,7 +42,7 @@
 					<td><%=salesOrder.getCustomerId()%></td>
 					<td><%=salesOrder.getTotal()%></td>
 					<td><%=salesOrder.getDate()%></td>
-					<td><a onclick="checkValues('<%=salesOrder.getId()%>')"
+					<td><a onclick="checkValues('<%=salesOrder.getId()%>','<%=salesOrder.getStatus() %>')"
 						><%=salesOrder.getStatus()%></a></td>
 				</tr>
 
@@ -67,4 +67,5 @@
 </body>
 <script src="resources/orderConfirmation.js"></script>
 <c:import url="footer" />
+
 </html>

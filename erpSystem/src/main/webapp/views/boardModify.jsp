@@ -9,37 +9,38 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="../resources/boardWrite.css">
 </head>
-
+<c:import url="header" />
 <body>
 
-<%
+	<%
+	int id = Integer.valueOf(request.getParameter("id"));
 
-int id = Integer.valueOf(request.getParameter("id"));
+	BoardDAO boardDao = BoardDAO.getInstance();
 
+	Board board = boardDao.getBoardById(id);
 
-BoardDAO boardDao = BoardDAO.getInstance();
+	int categoryId = board.getCategoryId();
 
-Board board = boardDao.getBoardById(id);
+	String title = board.getTitle();
+	String main = board.getMain();
 
-int categoryId = board.getCategoryId();
+	BoardCategoryDAO boardCategoryDao = BoardCategoryDAO.getInstance();
 
-String title = board.getTitle();
-String main = board.getMain();
-
-BoardCategoryDAO boardCategoryDao = BoardCategoryDAO.getInstance();
-
-String name = boardCategoryDao.getCategoryNameById(categoryId);
-
-%>
+	String name = boardCategoryDao.getCategoryNameById(categoryId);
+	%>
 	<section>
 
-		<h1><%=name %> 수정</h1>
+		<h1><%=name%>
+			수정
+		</h1>
 
-		<form method="POST" action="../service">
-			<input type="hidden" name="command" value="boardModify">
-			<input type="hidden" name="categoryId" id="categoryId" value=<%=categoryId %>>
-			<input type="hidden" name="id" id="id" value=<%=id %>>
+		<form method="POST" action="../service" class="write">
+			<input type="hidden" name="command" value="boardModify"> <input
+				type="hidden" name="categoryId" id="categoryId"
+				value=<%=categoryId%>> <input type="hidden" name="id"
+				id="id" value=<%=id%>>
 
 			<table>
 				<tr>
@@ -50,22 +51,19 @@ String name = boardCategoryDao.getCategoryNameById(categoryId);
 				</tr>
 				<tr>
 					<th>Content</th>
-					<td><input id="main" name="main"
-						value="<%=main != null ? main : ""%>"
-						<%=main == null ? "autofocus" : ""%>></td>
+					<td><textarea id="main" name="main"><%=main%></textarea></td>
 				</tr>
-
 
 			</table>
 
-			<input type="button" onclick="boardCheckModify(form)" value="수정하기">
+			<input type="button" onclick="boardCheckModify(form)" value="수정" class="button">
 
 		</form>
 
 	</section>
 
 	<script src="resources/boardCheck.js"></script>
-	
-</body>
 
+</body>
+<c:import url="footer" />
 </html>

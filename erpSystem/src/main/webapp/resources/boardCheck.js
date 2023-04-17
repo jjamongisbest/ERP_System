@@ -2,12 +2,14 @@
  * 
  */
 function checkValues(htmlForm) {
-	let url = "announcewrite?";
+	let url = "boardwrite?";
 
+	
+	
 	const title = document.getElementById("title").value;
 	const main = document.getElementById("main").value;
 	const categoryId = document.getElementById("categoryId").value;
-
+	
 
 	let check = true;
 
@@ -34,20 +36,20 @@ function checkValues(htmlForm) {
 }
 
 function boardCheckModify(htmlForm) {
-	let url = "boardmodify?";
 
 	const title = document.getElementById("title").value;
 	const main = document.getElementById("main").value;
 	const categoryId = document.getElementById("categoryId").value;
 	const id = document.getElementById("id").value;
 
+	let url = "boardmodify?id=" + id;
 
 	let check = true;
 
 	if (title !== "") { url += "&title=" + title; }
 	if (main !== "") { url += "&main=" + main; }
-	if (categoryId !== "") {}
-	if (id !== "") {}
+	if (categoryId !== "") { }
+
 
 	if (title === "") {
 		alert('제목 입력해주세요.');
@@ -65,19 +67,19 @@ function boardCheckModify(htmlForm) {
 		htmlForm.submit()
 	}
 }
-function boardCheckDelete(htmlForm){
-	
+function boardCheckDelete(htmlForm) {
+
 	const id = document.getElementById("id").value;
 	const categoryId = document.getElementById("categoryId").value;
-	
+
 	var UP;
 	UP = confirm("정말 삭제하시겠습니까?");
-	
-	if(UP){
+
+	if (UP) {
 		alert("삭제되었습니다.");
 		htmlForm.submit()
 	}
-	
-	
+
+
 }
 
