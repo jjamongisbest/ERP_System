@@ -8,7 +8,7 @@
 </head>
 <c:import url="header" />
 <body>
-	<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwCgJHYjahGUbGoTxda45yy-VwyECKbM_E2w&usqp=CAU">
+	<img src="${requestScope.targetProduct.getImageUrl()}">
 	<br>
 	<c:out value="상품 이름 : ${requestScope.targetProduct.getName() }" /><br>
 	<c:out value="상품 가격 : ${requestScope.targetProduct.getPrice() }" /><br>

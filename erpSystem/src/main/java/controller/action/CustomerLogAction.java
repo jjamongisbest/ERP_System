@@ -11,7 +11,6 @@ public class CustomerLogAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession();
 		
 	}
 

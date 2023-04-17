@@ -7,6 +7,7 @@ import controller.action.BoardDeleteAction;
 import controller.action.BoardModifyAction;
 import controller.action.CustomerLogAction;
 import controller.action.DropCustomerAction;
+import controller.action.DropItemAction;
 import controller.action.LoginAction;
 import controller.action.LogoutAction;
 import controller.action.OrderConfirmAction;
@@ -18,16 +19,22 @@ public enum ActionType {
 	
 	LOG_IN ("login",   new LoginAction()),
 	LOG_OUT("logout",  new LogoutAction()),
+	
 	REGIST ("regist",  new RegistAction()),
 	BASKET ("basket",  new BasketAction()),
+	
 	PRODUCT("product", new ProductAction()),
 	BOARD  ("board",   new BoardAction()),
+	
 	BOARD_MODIFY("boardModify",     new BoardModifyAction()),
 	BOARD_DELETE("boardDelete",     new BoardDeleteAction()),
+	
 	DROP_CUSTOMER("dropCustomer",   new DropCustomerAction()),
+	DROP_ITEM("dropitem", 			new DropItemAction()),
+	
+	CUSTOMER_LOG("customerlog",		new CustomerLogAction()),
 	PRODUCT_DETAIL("productDetail", new ProductDetailAction()),
-	ORDER_CONF("orderConfirmation", new OrderConfirmAction()),
-	CUSTOMER_LOG("customerlog",		new CustomerLogAction())
+	ORDER_CONF("orderConfirmation", new OrderConfirmAction())
 	;
 	
 	private String command;

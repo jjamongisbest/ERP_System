@@ -1,4 +1,3 @@
-<%@page import="util.MoneyManager"%>
 <%@page import="product.contoroller.ProductDAO"%>
 <%@page import="product.Product"%>
 <%@page import="java.util.ArrayList"%>

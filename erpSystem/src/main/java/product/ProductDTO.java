@@ -9,9 +9,10 @@ public class ProductDTO {
 	private String pipeLine;
 	private int price;
 	private int categoryId;
+	private String imageUrl;
 	
 	public ProductDTO(int id, String name, String memo, String handleDate, int stock, String pipeLine, int price,
-			int categoryId) {
+			int categoryId, String imageUrl) {
 		this.id = id;
 		this.name = name;
 		this.memo = memo;
@@ -20,6 +21,7 @@ public class ProductDTO {
 		this.pipeLine = pipeLine;
 		this.price = price;
 		this.categoryId = categoryId;
+		this.imageUrl = imageUrl;
 	}
 	
 	public ProductDTO(Product product) {
@@ -31,6 +33,7 @@ public class ProductDTO {
 		this.pipeLine = product.getPipeLine();
 		this.price = product.getPrice();
 		this.categoryId = product.getCategoryId();
+		this.imageUrl = product.getImageUrl();
 	}
 
 	public int getId() {
@@ -97,5 +100,12 @@ public class ProductDTO {
 		this.categoryId = categoryId;
 	}
 	
+	public String getImageUrl() {
+		return imageUrl;
+	}
+	
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
 	
 }

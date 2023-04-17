@@ -20,15 +20,21 @@
 	%>
 
 	<div class="container">
-		<%for (Product target : list) { %>
-		<div class="card">
-			<img src="../resources/images/noimage.jpg" width="200" height="200">
-			<h3>
-				<a href="../service?command=productDetail&productId=<%=target.getId() %>"><%= target.getName() %></a>
-			</h3>
-			<p><%= target.getPrice() %>원</p>
-			<p> 수량: <%= target.getStock() %> 개</p>		
+		<%
+		for (Product target : list) {
+		%>
+		<div class="card" onclick="location.href='../service?command=productDetail&productId=<%=target.getId()%>'">
+			<img src="<%=target.getImageUrl() %>" width="200" height="200">
+			<h3><%=target.getName()%></h3>
+			<p><%=target.getPrice()%>원</p>
+			<p>수량:<%=target.getStock()%>개</p>
 		</div>
+		<%
+		}
+		%>
+		<%if(list.size() < 1) {%>
+			<img src="../resources/images/TUNG.jpg">
+			<h1>품목이 없습니다 ㅇㅅㅇ</h1>
 		<%} %>
 	</div>
 

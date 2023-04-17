@@ -54,5 +54,7 @@ public class OrderAction implements Action {
 		orderDao.createSalesOrder(orderDto);
 		
 		basket = new HashMap<Integer, Integer>();
+		request.getRequestDispatcher("/").forward(request, response);
+		response.sendRedirect("/");
 	}
 }

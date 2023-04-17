@@ -39,10 +39,11 @@ public class ProductDAO {
 			this.pstmt.setString(2, productDto.getName());
 			this.pstmt.setString(3, productDto.getMemo());
 			this.pstmt.setString(4, productDto.getHandleDate());
-			this.pstmt.setInt(5, productDto.getStock());
+			this.pstmt.setInt(5, 	productDto.getStock());
 			this.pstmt.setString(6, productDto.getPipeLine());
-			this.pstmt.setInt(7, productDto.getPrice());
+			this.pstmt.setInt(7, 	productDto.getPrice());
 			this.pstmt.setInt(8, 	productDto.getCategoryId());
+			this.pstmt.setString(8, productDto.getImageUrl());
 
 			this.pstmt.execute();
 		} catch (SQLException e) {
@@ -77,7 +78,8 @@ public class ProductDAO {
 				String pipeLine	 =this.rs.getString(6);
 				int price		 =this.rs.getInt(7);
 				int categoryId	 =this.rs.getInt(8);
-				product = new Product(productId, name, memo, handleDate, stock, pipeLine, price, categoryId);
+				String imageUrl	 =this.rs.getString(9);
+				product = new Product(productId, name, memo, handleDate, stock, pipeLine, price, categoryId, imageUrl);
 			}
 
 		} catch (SQLException e) {
@@ -112,7 +114,8 @@ public class ProductDAO {
 				String pipeLine	 =this.rs.getString(6);
 				int price		 =this.rs.getInt(7);
 				int categoryId	 =this.rs.getInt(8);
-				list.add(new Product(productId, name, memo, handleDate, stock, pipeLine, price, categoryId));
+				String imageUrl	 =this.rs.getString(9);
+				list.add(new Product(productId, name, memo, handleDate, stock, pipeLine, price, categoryId, imageUrl));
 			}
 
 		} catch (SQLException e) {
@@ -144,8 +147,9 @@ public class ProductDAO {
 					int stock		 =this.rs.getInt(5);
 					String pipeLine	 =this.rs.getString(6);
 					int price	 	 =this.rs.getInt(7);
+					String imageUrl	 =this.rs.getString(9);
 					
-					Product product = new Product(productId, name, memo, handleDate, stock, pipeLine, price, cateId);
+					Product product = new Product(productId, name, memo, handleDate, stock, pipeLine, price, cateId, imageUrl);
 					list.add(product);
 				}
 			} catch (SQLException e) {
@@ -164,13 +168,14 @@ public class ProductDAO {
 		if(this.conn == null)
 			return;
 
-		String sql = "UPDATE product SET"+
-				"product_name=?, product_memo=?, product_handle_date=?, product_stock=?, product_pipe_line=?, product_price=?, product_category_id=?"+
+		String sql = "UPDATE product SET "+
+				"product_name=?, product_memo=?, product_handle_date=?, product_stock=?,"+
+				"product_pipe_line=?, product_price=?, product_category_id=?, product_img=?"+
 				"WHERE product_id=?";
 
 		try {
 			this.pstmt = this.conn.prepareStatement(sql);
-			System.out.println("asdasd");
+			
 			this.pstmt.setString(1, productDto.getName());
 			this.pstmt.setString(2, productDto.getMemo());
 			this.pstmt.setString(3, productDto.getHandleDate());
@@ -178,7 +183,8 @@ public class ProductDAO {
 			this.pstmt.setString(5, productDto.getPipeLine());
 			this.pstmt.setInt(6, 	productDto.getPrice());
 			this.pstmt.setInt(7, 	productDto.getCategoryId());
-			this.pstmt.setInt(8, 	productDto.getId());
+			this.pstmt.setString(8, productDto.getImageUrl());
+			this.pstmt.setInt(9, 	productDto.getId());
 
 			this.pstmt.execute();
 		} catch (SQLException e) {
