@@ -7,6 +7,7 @@ import controller.action.BoardDeleteAction;
 import controller.action.BoardModifyAction;
 import controller.action.CustomerLogAction;
 import controller.action.DropCustomerAction;
+import controller.action.GetSalesTotal;
 import controller.action.LoginAction;
 import controller.action.LogoutAction;
 import controller.action.OrderConfirmAction;
@@ -27,7 +28,8 @@ public enum ActionType {
 	DROP_CUSTOMER("dropCustomer",   new DropCustomerAction()),
 	PRODUCT_DETAIL("productDetail", new ProductDetailAction()),
 	ORDER_CONF("orderConfirmation", new OrderConfirmAction()),
-	CUSTOMER_LOG("customerlog",		new CustomerLogAction())
+	CUSTOMER_LOG("customerlog",		new CustomerLogAction()),
+	GET_SALES_TOTAL("salesTotal" , new GetSalesTotal())
 	;
 	
 	private String command;
