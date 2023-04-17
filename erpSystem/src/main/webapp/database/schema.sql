@@ -82,3 +82,10 @@ FOREIGN KEY (pre_grade_id) REFERENCES customer_grade(customer_grade_id),
 FOREIGN KEY (post_grade_id) REFERENCES customer_grade(customer_grade_id),
 PRIMARY KEY (change_date, change_log_id)
 );
+
+CREATE VIEW total_by_grade AS
+SELECT c.customer_id, cg.customer_grade, SUM(so.order_total_price) AS total_sales
+FROM customer c
+JOIN customer_grade cg ON c.customer_grade_id = cg.customer_grade_id
+JOIN sales_order so ON c.customer_id = so.customer_id
+GROUP BY c.customer_id, cg.customer_grade;

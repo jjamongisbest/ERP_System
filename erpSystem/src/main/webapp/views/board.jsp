@@ -10,6 +10,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="../resources/board.css">
 </head>
 <c:import url="header" />
 <body>
@@ -35,7 +36,7 @@
 	String category = boardCategoryDao.getCategoryNameById(categoryId);
 	%>
 
-	<section>
+	<section class="board">
 		<div class="notice-header">
 			<h1><%=category%></h1>
 			<%
@@ -80,7 +81,7 @@
 				%>
 			</tbody>
 		</table>
-		<div style="width: 600px; text-align: center; margin-top: 10px;">
+		<div style=" margin-top: 10px;" class="page">
 
 			<%
 			for (int i = 1; i <= lastPage; i++) {
@@ -95,6 +96,6 @@
 
 
 </body>
+<c:import url="footer" />
 
-</body>
 </html>
