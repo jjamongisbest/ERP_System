@@ -36,10 +36,11 @@ public class OrderAction implements Action {
 		// 주문 저장
 		SalesOrderDTO orderDto = new SalesOrderDTO(order);
 		orderDto.setTotal(order.getTotalPrice(list));
-		orderDto.setStatus(tempPayment() ? "Y" : "N");
+		
+		String status = tempPayment() ? "Y" : "N";
 		orderDao.createSalesOrder(orderDto);
 		
-		//잠깐 보류
+		
 		
 	}
 	

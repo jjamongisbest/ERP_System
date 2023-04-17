@@ -45,20 +45,22 @@ Product_stock VARCHAR(50) NOT NULL,
 product_pipe_line VARCHAR(50) NOT NULL,
 product_price VARCHAR(50) NOT NULL,
 product_category_id INT(6),
+product_img VARCHAR(150) NOT NULL,
 FOREIGN KEY (product_category_id) REFERENCES product_category(product_category_id)
 );
 
 CREATE TABLE sales_order(
-order_id INT(6) PRIMARY KEY,
+order_id INT(6) PRIMARY KEY AUTO_INCREMENT,
 customer_id INT(6),
 order_date DATE NOT NULL,
-order_total_price VARCHAR(50) NOT NULL,
+order_total_price INT(50) NOT NULL,
 order_status CHAR(2) NOT NULL,
 FOREIGN KEY (customer_id) REFERENCES customer(customer_id)
 );
+ALTER TABLE sales_order AUTO_INCREMENT=400000;
 
 CREATE TABLE order_product(
-order_details_id INT(6) PRIMARY KEY,
+order_details_id INT(6) PRIMARY KEY AUTO_INCREMENT,
 product_id INT(6),
 order_id INT(6),
 order_product VARCHAR(50) NOT NULL,
@@ -66,6 +68,7 @@ order_quantity VARCHAR(10) NOT NULL,
 FOREIGN KEY (product_id) REFERENCES product(product_id),
 FOREIGN KEY (order_id) REFERENCES sales_order(order_id)
 );
+ALTER TABLE order_product AUTO_INCREMENT=500000;
 
 CREATE TABLE customer_log(
 change_date DATE NOT NULL,
