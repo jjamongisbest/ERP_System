@@ -19,9 +19,11 @@ public class OrderConfirmAction implements Action{
 		
 		SalesOrderDAO salesOrderDao = SalesOrderDAO.getInstance();
 		
-		salesOrderDao.update(salesOrderId);
 		
-		response.sendRedirect("index.jsp");
+		
+		salesOrderDao.updateOrderSatatus(salesOrderId);
+		
+		response.sendRedirect("orderconfirmation");
 	}
 
 }

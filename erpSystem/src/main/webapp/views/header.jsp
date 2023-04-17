@@ -15,23 +15,16 @@
 
 	<%
 	Customer customer = (Customer) session.getAttribute("log");
-	
+
 	BoardCategoryDAO boardcateDao = BoardCategoryDAO.getInstance();
 	ArrayList<BoardCategory> list = boardcateDao.getBoardCategoryAll();
 	%>
 	<div class="container">
 		<div class="header">
-			<!-- <section class="logo">
-				<img src="../resources/images/banner2.jpg">
-			</section>
-			<section class="banner">
-				<img src="../resources/images/banner.jpg">
-			</section> -->
-			<a class="logo" href="index.jsp">
-				<img src="../resources/images/banner2.jpg">
-			</a>
-			<a class="banner" href="index.jsp">
-				<img src="../resources/images/banner.jpg">
+			<a class="logo" href="index.jsp"> <img
+				src="../resources/images/banner2.jpg">
+			</a> <a class="banner" href="index.jsp"> <img
+				src="../resources/images/banner.jpg">
 			</a>
 		</div>
 		<section class="nav-list">
@@ -43,14 +36,26 @@
 							<li><a id="login" href="login">로그인</a></li>
 						</c:when>
 						<c:otherwise>
-							<li><a id="mypage"
-								href="mypage?custid=<%=customer.getId()%>"> 마이페이지</a></li>
+							<c:choose>
+								<c:when test="${sessionScope.log.getId() != 99999 }">
+									<li><a id="mypage"
+										href="mypage?custid=<%=customer.getId()%>"> 마이페이지</a></li>
+								</c:when>
+								<c:otherwise>
+									<li><a id="adminpage"
+										href="adminpage"> 관리자페이지</a></li>
+								</c:otherwise>
+							</c:choose>
 							<li><a id="logout" onclick="sendCommand('logout')">로그아웃</a></li>
 						</c:otherwise>
 					</c:choose>
-					<% for(BoardCategory target : list) { %>
-						<li><a href="board?cate=<%=target.getId()%>"><%=target.getName() %></a></li>
-					<%} %>
+					<%
+					for (BoardCategory target : list) {
+					%>
+					<li><a href="board?cate=<%=target.getId()%>"><%=target.getName()%></a></li>
+					<%
+					}
+					%>
 					<li><form>
 							<section class="search-box">
 								<input type="text" placeholder="주문할 것 pickka!">

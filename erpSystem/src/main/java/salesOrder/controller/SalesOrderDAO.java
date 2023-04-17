@@ -224,7 +224,7 @@ public class SalesOrderDAO {
 		return max;
 	}
 
-	public void update(int id) {
+	public void updateOrderSatatus(int id) {
 
 		this.conn = DBManager.getConnection();
 		if (this.conn != null) {
@@ -234,6 +234,8 @@ public class SalesOrderDAO {
 				this.pstmt = this.conn.prepareStatement(sql);
 
 				this.pstmt.setInt(1, id);
+				
+				this.pstmt.execute();
 
 			} catch (SQLException e) {
 				e.printStackTrace();
