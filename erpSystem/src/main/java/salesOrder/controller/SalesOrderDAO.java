@@ -166,5 +166,32 @@ public class SalesOrderDAO {
 		}
 		return order;
 	}
+	
+	public int getTotalPriceByCustomerGrade(int grade) {
+	    int total = 0;
+
+	    this.conn = DBManager.getConnection();
+
+	    if (this.conn != null) {
+	        String sql = "SELECT total_sales FROM customer_total_sales WHERE customer_grade = ?";
+
+	        try {
+	            this.pstmt = this.conn.prepareStatement(sql);
+	            this.pstmt.setInt(1, grade);
+	            this.rs = this.pstmt.executeQuery();
+
+	            while (this.rs.next()) {
+	                total += this.rs.getInt("total_sales");
+	            }
+
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        } finally {
+	            DBManager.closeConnection(this.conn, this.pstmt, this.rs);
+	        }
+	    }
+
+	    return total;
+	}
 
 }
