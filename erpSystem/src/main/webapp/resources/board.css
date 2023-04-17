@@ -55,6 +55,10 @@ h1 {
 .title {
 	font-size: 14px;
 }
+.titles {
+	text-decoration: none;
+	color: black;
+}
 
 .main {
 	height: 500px;
@@ -72,6 +76,29 @@ h1 {
 }
 
 input {
-	background: #DDFFBB;
+	text-decoration: none;
+	background-color: #51FFA6;
+	color: maroon;
+	padding: 10px 15px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	padding-bottom: 10px;
 	border-color: #DDFFBB;
+}
+
+.write {
+	
+	text-decoration: none;
+	background-color: #51FFA6;
+	color: maroon;
+	padding: 10px 15px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	padding-bottom: 10px;
+}
+.notice-header{
+	display: flex;
+	justify-content: flex-end;
 }

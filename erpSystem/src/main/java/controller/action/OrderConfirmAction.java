@@ -14,14 +14,22 @@ public class OrderConfirmAction implements Action{
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		int salesOrderId = Integer.parseInt(request.getParameter("salesOrderId"));
+		String salesOrderStatus = request.getParameter("salesOrderStatus");
 		
-		System.out.println(salesOrderId);
 		
 		SalesOrderDAO salesOrderDao = SalesOrderDAO.getInstance();
 		
+
 		
+		if(salesOrderStatus.equals("N")) {
+			salesOrderStatus = "Y";
+		}
+		else if (salesOrderStatus.equals("Y")) {
+			salesOrderStatus = "D";
+		}
+	
 		
-		salesOrderDao.updateOrderSatatus(salesOrderId);
+		salesOrderDao.updateOrderSatatus(salesOrderId, salesOrderStatus);
 		
 		response.sendRedirect("orderconfirmation");
 	}

@@ -37,26 +37,7 @@
 	%>
 
 	<section class="board">
-		<div class="notice-header">
-			<h1><%=category%></h1>
-			<%
-			if (session.getAttribute("log") != null) {
-				Customer customer = (Customer) session.getAttribute("log");
-				if (categoryId == 11) {
-
-					if (customer.getId() == 99999) {
-			%>
-			<a href="boardwrite?categoryId=<%=categoryId%>">글쓰기</a>
-			<%
-			}
-			} else {
-			%>
-			<a href="boardwrite?categoryId=<%=categoryId%>">글쓰기</a>
-			<%
-			}
-			}
-			%>
-		</div>
+		<h1><%=category%></h1>
 		<table>
 			<thead>
 				<tr>
@@ -72,7 +53,7 @@
 				%>
 				<tr>
 					<td><%=board.getId()%></td>
-					<td><a href="boardview?id=<%=board.getId()%>"><%=board.getTitle()%></a></td>
+					<td><a href="boardview?id=<%=board.getId()%>" class="titles"><%=board.getTitle()%></a></td>
 					<td><%=board.getWriter()%></td>
 					<td><%=board.getReigisteredDate()%></td>
 				</tr>
@@ -91,6 +72,26 @@
 			}
 			%>
 
+		</div>
+		<div class="notice-header">
+			
+			<%
+			if (session.getAttribute("log") != null) {
+				Customer customer = (Customer) session.getAttribute("log");
+				if (categoryId == 11) {
+
+					if (customer.getId() == 99999) {
+			%>
+			<a href="boardwrite?categoryId=<%=categoryId%>" class="write">글쓰기</a>
+			<%
+			}
+			} else {
+			%>
+			<a href="boardwrite?categoryId=<%=categoryId%>" class="write">글쓰기</a>
+			<%
+			}
+			}
+			%>
 		</div>
 	</section>
 

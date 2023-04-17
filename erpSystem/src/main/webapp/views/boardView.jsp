@@ -84,4 +84,5 @@
 
 	<script src="resources/boardCheck.js"></script>
 </body>
+
 </html>

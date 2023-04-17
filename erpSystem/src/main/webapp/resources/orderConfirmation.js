@@ -1,19 +1,26 @@
 /**
  * 
  */
-function checkValues(orderId) {
-	
-	let url = `../service?command=orderConfirmation&salesOrderId=${orderId}`;
-	
-	
+function checkValues(orderId, orderStatus) {
+
+	let url = `../service?command=orderConfirmation&salesOrderId=${orderId}
+	&salesOrderStatus=${orderStatus}
+	`;
 
 
-	var UP;
-	UP = confirm("배송 처리 하시겠습니까?");
 
-
-	if (UP) {
-		location.href = url;
+	if (orderStatus === "D") {
+		alert("배송처리 상태입니다.");
 	}
-	
+	else {
+		var UP;
+		UP = confirm("주문상태를 처리 하시겠습니까?");
+
+		if (UP) {
+			location.href = url;
+		}
+
+	}
+
+
 }

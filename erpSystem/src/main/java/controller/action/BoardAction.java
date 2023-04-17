@@ -29,6 +29,7 @@ public class BoardAction implements Action {
 		int id = boardDao.getBoardId();
 		String title = request.getParameter("title");
 		String main = request.getParameter("main");
+		
 		String modifiedDate = date;
 		String registDate = date;
 		int writer = cus.getId();

@@ -251,16 +251,17 @@ public class SalesOrderDAO {
 		return max;
 	}
 
-	public void updateOrderSatatus(int id) {
+	public void updateOrderSatatus(int id, String status) {
 
 		this.conn = DBManager.getConnection();
 		if (this.conn != null) {
-			String sql = "UPDATE sales_order SET order_status='Y' WHERE order_id=? ";
+			String sql = "UPDATE sales_order SET order_status=? WHERE order_id=? ";
 
 			try {
 				this.pstmt = this.conn.prepareStatement(sql);
 
-				this.pstmt.setInt(1, id);
+				this.pstmt.setString(1, status);
+				this.pstmt.setInt(2, id);
 				
 				this.pstmt.execute();
 
