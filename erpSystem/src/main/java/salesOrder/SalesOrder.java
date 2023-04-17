@@ -4,19 +4,18 @@ import java.util.HashMap;
 import java.util.List;
 
 import product.Product;
-import util.MoneyManager;
 
 public class SalesOrder{
 
 	private int id;
 	private int customerId;
 	private String date;
-	private String total;
+	private int total;
 	private String status;
 	
 	public HashMap<Integer, Integer> basket = new HashMap<>();
 	
-	public SalesOrder(int id, int custId, String date, String total, String status) {
+	public SalesOrder(int id, int custId, String date, int total, String status) {
 		this.id = id;
 		this.customerId = custId;
 		this.date = date;
@@ -24,7 +23,7 @@ public class SalesOrder{
 		this.status = status;
 	}
 	
-	public SalesOrder(int custId, String date, String total, String status) {
+	public SalesOrder(int custId, String date, int total, String status) {
 		this.customerId = custId;
 		this.date = date;
 		this.total = total;
@@ -42,7 +41,7 @@ public class SalesOrder{
 	public int getId() {return id;}
 	public int getCustomerId() {return customerId;}
 	public String getDate() {return date;}
-	public String getTotal() {return total;}
+	public int getTotal() {return total;}
 	public String getStatus() {return status;}
 
 	public void insertBasket(int id, int quantity) {
@@ -57,15 +56,14 @@ public class SalesOrder{
 		return this.basket;
 	}
 	
-	public String getTotalPrice(List<Product> list) {
-		this.total = "$0.0";
+	public int getTotalPrice(List<Product> list) {
+		this.total = 0;
 		if(list == null)
-			return null;
+			return 0;
 		
 		for(Product product : list) {
 			int quantity = basket.get(product.getId());
-			String amount = MoneyManager.multipleMoney(product.getPrice(), quantity);	
-			this.total = MoneyManager.sumMoney(this.total, amount);	
+			this.total += product.getPrice() * quantity;	
 		}
 		return this.total;
 	}

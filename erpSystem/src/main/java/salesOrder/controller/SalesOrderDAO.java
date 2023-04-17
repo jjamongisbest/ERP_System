@@ -39,7 +39,7 @@ public class SalesOrderDAO {
 				this.pstmt.setInt(1, order.getId());
 				this.pstmt.setInt(2, order.getCustomerId());
 				this.pstmt.setString(3, order.getDate());
-				this.pstmt.setString(5, order.getTotal());
+				this.pstmt.setInt(5, order.getTotal());
 				this.pstmt.setString(6, order.getStatus());
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -88,7 +88,7 @@ public class SalesOrderDAO {
 				while (this.rs.next()) {
 					int custId = this.rs.getInt(2);
 					String date = this.rs.getString(3);
-					String total = this.rs.getString(4);
+					int total = this.rs.getInt(4);
 					String status = this.rs.getString(5);
 
 					order = new SalesOrder(id, custId, date, total, status);
@@ -119,7 +119,7 @@ public class SalesOrderDAO {
 				while (this.rs.next()) {
 					int orderId = this.rs.getInt(1);
 					String date = this.rs.getString(3);
-					String total = this.rs.getString(4);
+					int total = this.rs.getInt(4);
 					String status = this.rs.getString(5);
 
 					SalesOrder order = new SalesOrder(orderId, custId, date, total, status);
@@ -151,7 +151,7 @@ public class SalesOrderDAO {
 					int orderId = this.rs.getInt(1);
 					int custId = this.rs.getInt(2);
 					String date = this.rs.getString(3);
-					String total = this.rs.getString(4);
+					int total = this.rs.getInt(4);
 					String status = this.rs.getString(5);
 
 					SalesOrder order = new SalesOrder(orderId, custId, date, total, status);
@@ -184,7 +184,7 @@ public class SalesOrderDAO {
 				while (this.rs.next()) {
 					int orderId = this.rs.getInt(1);
 					String date = this.rs.getString(3);
-					String total = this.rs.getString(4);
+					int total = this.rs.getInt(4);
 					String status = this.rs.getString(5);
 
 					order = new SalesOrder(orderId, custId, date, total, status);

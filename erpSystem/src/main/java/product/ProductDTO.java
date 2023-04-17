@@ -5,12 +5,12 @@ public class ProductDTO {
 	private String name;
 	private String memo;
 	private String handleDate;
-	private String stock;
+	private int stock;
 	private String pipeLine;
-	private String price;
+	private int price;
 	private int categoryId;
 	
-	public ProductDTO(int id, String name, String memo, String handleDate, String stock, String pipeLine, String price,
+	public ProductDTO(int id, String name, String memo, String handleDate, int stock, String pipeLine, int price,
 			int categoryId) {
 		this.id = id;
 		this.name = name;
@@ -65,11 +65,11 @@ public class ProductDTO {
 		this.handleDate = handleDate;
 	}
 
-	public String getStock() {
+	public int getStock() {
 		return stock;
 	}
 
-	public void setStock(String stock) {
+	public void setStock(int stock) {
 		this.stock = stock;
 	}
 
@@ -81,11 +81,11 @@ public class ProductDTO {
 		this.pipeLine = pipeLine;
 	}
 
-	public String getPrice() {
+	public int getPrice() {
 		return price;
 	}
 
-	public void setPrice(String price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 

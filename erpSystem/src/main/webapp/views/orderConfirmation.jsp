@@ -25,7 +25,7 @@
 	int lastPage = (int) Math.ceil((double) total / 10);
 	%>
 	<section>
-		<formmethod="POST" action="../service">
+		<form method="POST" action="../service">
 			<table>
 				<tr>
 					<td>주문번호</td>

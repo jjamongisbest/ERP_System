@@ -5,9 +5,11 @@ public class OrderProductDTO {
 	private int productId;
 	private int orderId;
 	private String orderProduct;
-	private String quantity;
+	private int quantity;
 	
-	public OrderProductDTO(int detailsId, int productId, int orderId, String orderProduct, String quantity) {
+	public OrderProductDTO() {}
+	
+	public OrderProductDTO(int detailsId, int productId, int orderId, String orderProduct, int quantity) {
 		this.detailsId = detailsId;
 		this.productId = productId;
 		this.orderId = orderId;
@@ -48,11 +50,11 @@ public class OrderProductDTO {
 		this.orderProduct = orderProduct;
 	}
 
-	public String getQuantity() {
+	public int getQuantity() {
 		return quantity;
 	}
 
-	public void setQuantity(String quantity) {
+	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
 	

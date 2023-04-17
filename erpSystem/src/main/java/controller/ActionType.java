@@ -5,6 +5,7 @@ import controller.action.BasketAction;
 import controller.action.BoardAction;
 import controller.action.BoardDeleteAction;
 import controller.action.BoardModifyAction;
+import controller.action.CustomerLogAction;
 import controller.action.DropCustomerAction;
 import controller.action.LoginAction;
 import controller.action.LogoutAction;
@@ -25,7 +26,8 @@ public enum ActionType {
 	BOARD_DELETE("boardDelete",     new BoardDeleteAction()),
 	DROP_CUSTOMER("dropCustomer",   new DropCustomerAction()),
 	PRODUCT_DETAIL("productDetail", new ProductDetailAction()),
-	ORDER_CONF("orderConfirmation", new OrderConfirmAction())
+	ORDER_CONF("orderConfirmation", new OrderConfirmAction()),
+	CUSTOMER_LOG("customerlog",		new CustomerLogAction())
 	;
 	
 	private String command;

@@ -43,7 +43,7 @@ product_memo VARCHAR(4000),
 product_handle_date DATE,
 Product_stock VARCHAR(50) NOT NULL,
 product_pipe_line VARCHAR(50) NOT NULL,
-product_price VARCHAR(50) NOT NULL,
+product_price INT(50) NOT NULL,
 product_category_id INT(6),
 product_img VARCHAR(150) NOT NULL,
 FOREIGN KEY (product_category_id) REFERENCES product_category(product_category_id)

@@ -5,12 +5,12 @@ public class Product{
 	private String name;
 	private String memo;
 	private String handleDate;
-	private String stock;
+	private int stock;
 	private String pipeLine;
-	private String price;
+	private int price;
 	private int categoryId;
 	
-	public Product(int id, String name, String memo, String handleDate, String stock, String pipeLine, String price,
+	public Product(int id, String name, String memo, String handleDate, int stock, String pipeLine, int price,
 			int categoryId) {
 		this.id = id;
 		this.name = name;
@@ -30,11 +30,11 @@ public class Product{
 	
 	public String getHandleDate() {return handleDate;}
 	
-	public String getStock() {return stock;}
+	public int getStock() {return stock;}
 	
 	public String getPipeLine() {return pipeLine;}
 	
-	public String getPrice() {return price;}
+	public int getPrice() {return price;}
 
 	public int getCategoryId() {return categoryId;}
 	

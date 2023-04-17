@@ -5,9 +5,9 @@ public class OrderProduct {
 	private int productId;
 	private int orderId;
 	private String orderProduct;
-	private String quantity;
+	private int quantity;
 	
-	public OrderProduct(int detailsId, int productId, int orderId, String orderProduct, String quantity) {
+	public OrderProduct(int detailsId, int productId, int orderId, String orderProduct, int quantity) {
 		this.detailsId = detailsId;
 		this.productId = productId;
 		this.orderId = orderId;
@@ -15,7 +15,7 @@ public class OrderProduct {
 		this.quantity = quantity;
 	}
 	
-	public OrderProduct(int productId, int orderId, String orderProduct, String quantity) {
+	public OrderProduct(int productId, int orderId, String orderProduct, int quantity) {
 		this.productId = productId;
 		this.orderId = orderId;
 		this.orderProduct = orderProduct;
@@ -26,7 +26,7 @@ public class OrderProduct {
 	public int getProductId() 		{return productId;}
 	public int getOrderId() 		{return orderId;}
 	public String getOrderProduct() {return orderProduct;}
-	public String getQuantity() 	{return quantity;}
+	public int getQuantity() 		{return quantity;}
 	
 
 }

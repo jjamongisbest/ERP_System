@@ -57,7 +57,7 @@ public class LoginAction implements Action {
 		if(order == null) {
 			int customerId = customer.getId();
 			String date = String.valueOf(LocalDate.now());
-			String total ="$0.0";
+			int total = 0;
 			String status = "N";
 			order = new SalesOrder(customerId, date, total, status);
 		}

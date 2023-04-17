@@ -24,6 +24,7 @@
 	String name = "";
 	String address = "";
 	String phone = "";
+	String url = "regist";
 	
 	Customer customer = (Customer)session.getAttribute("log");
 	if(customer != null){
@@ -32,11 +33,12 @@
 		name = customer.getName();
 		address = customer.getAddress();
 		phone = customer.getPhone();
+		url = "customerlog";
 	}
 	%>
 	<section>
 		<form method="POST" action="../service">
-			<input type="hidden" name="command" value="regist"> <input
+			<input type="hidden" name="command" value="<%=url %>"> <input
 				type="hidden" id="gradeId" name="gradeId" value=<%=gradeId%>>
 
 			<div>

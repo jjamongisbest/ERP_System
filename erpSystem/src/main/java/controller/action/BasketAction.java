@@ -27,12 +27,12 @@ public class BasketAction implements Action {
 		Product product = (Product) session.getAttribute("product");
 		ProductCategory category = (ProductCategory) session.getAttribute("category");
 		
-		int totalStock = Integer.parseInt(product.getStock()) - count;
+		int totalStock = product.getStock() - count;
 		int lack = totalStock < 0 ? -1 : READY_TO_ORDER;
 
 		switch(lack) {
 		case READY_TO_ORDER :
-			updateProductStock(product, String.valueOf(totalStock));
+			updateProductStock(product, totalStock);
 			ServletContext application = request.getServletContext();
 			SalesOrder order = (SalesOrder) application.getAttribute("basket"); 
 			
@@ -55,11 +55,11 @@ public class BasketAction implements Action {
 		request.getRequestDispatcher(direct).forward(request, response);		
 	}
 	
-	private void updateProductStock(Product product, String totalStock) {
+	private void updateProductStock(Product product, int totalStock) {
 		ProductDAO productDao = ProductDAO.getInstance();
 		ProductDTO productDto = new ProductDTO(product);
-		
 		productDto.setStock(totalStock);
+		
 		productDao.setProduct(productDto);
 	}
 }

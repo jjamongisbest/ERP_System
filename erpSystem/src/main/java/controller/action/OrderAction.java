@@ -2,13 +2,14 @@ package controller.action;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Random;
+import java.util.HashMap;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import orderProduct.OrderProductDTO;
 import orderProduct.controller.OrderProductDAO;
 import product.Product;
 import product.contoroller.ProductDAO;
@@ -28,25 +29,30 @@ public class OrderAction implements Action {
 		SalesOrderDAO orderDao = SalesOrderDAO.getInstance();
 		OrderProductDAO orderProductDao = OrderProductDAO.getInstance();
 		
-		ArrayList<Product> list = new ArrayList<>(order.getBasket().size());
-
-		for(Integer id : order.getBasket().keySet())
-			list.add(productDao.getProductById(id));
+		HashMap<Integer, Integer> basket = order.getBasket();
+		ArrayList<Product> list = new ArrayList<>(basket.size());
+		
+		OrderProductDTO orderProductDto = null;
+		for(Integer id : basket.keySet()) {
+			Product product = productDao.getProductById(id);
+			list.add(product);
+			
+			orderProductDto = new OrderProductDTO();
+			orderProductDto.setProductId(product.getId());
+			orderProductDto.setOrderId(order.getId());
+			orderProductDto.setOrderProduct(product.getName());
+			orderProductDto.setQuantity(basket.get(id));
+			
+			orderProductDao.createOrderProduct(orderProductDto);
+		}
 		
 		// 주문 저장
 		SalesOrderDTO orderDto = new SalesOrderDTO(order);
 		orderDto.setTotal(order.getTotalPrice(list));
 		
-		String status = tempPayment() ? "Y" : "N";
+		orderDto.setStatus("Y");
 		orderDao.createSalesOrder(orderDto);
 		
-		
-		
-	}
-	
-	//테스트 결제 코드
-	private boolean tempPayment() {
-		Random random = new Random();
-		return random.nextInt(5) != 0 ? true : false;
+		basket = new HashMap<Integer, Integer>();
 	}
 }

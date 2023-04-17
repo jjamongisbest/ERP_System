@@ -5,10 +5,10 @@ public class SalesOrderDTO {
 	private int id;
 	private int customerId;
 	private String date;
-	private String total;
+	private int total;
 	private String status;
 	
-	public SalesOrderDTO(int id, int custId, String date, String total, String status) {
+	public SalesOrderDTO(int id, int custId, String date, int total, String status) {
 		this.id = id;
 		this.customerId = custId;
 		this.date = date;
@@ -49,11 +49,11 @@ public class SalesOrderDTO {
 		this.date = date;
 	}
 
-	public String getTotal() {
+	public int getTotal() {
 		return total;
 	}
 
-	public void setTotal(String total) {
+	public void setTotal(int total) {
 		this.total = total;
 	}
 

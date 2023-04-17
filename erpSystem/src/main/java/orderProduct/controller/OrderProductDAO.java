@@ -37,7 +37,7 @@ public class OrderProductDAO {
 			this.pstmt.setInt(2, 	orderProductDto.getProductId());
 			this.pstmt.setInt(3, 	orderProductDto.getOrderId());
 			this.pstmt.setString(4, orderProductDto.getOrderProduct());
-			this.pstmt.setString(5, orderProductDto.getQuantity());
+			this.pstmt.setInt(5, 	orderProductDto.getQuantity());
 			
 			this.pstmt.execute();
 			
@@ -68,7 +68,7 @@ public class OrderProductDAO {
 				int productId		 = this.rs.getInt(2);
 				int orderId			 = this.rs.getInt(3);
 				String product	  	 = this.rs.getString(4);
-				String quantity		 = this.rs.getString(5);
+				int quantity		 = this.rs.getInt(5);
 				orderProduct = new OrderProduct(detailsId, productId, orderId, product, quantity);
 			}
 
@@ -101,7 +101,7 @@ public class OrderProductDAO {
 				int productId		 = this.rs.getInt(2);
 				int orderId			 = this.rs.getInt(3);
 				String product	  	 = this.rs.getString(4);
-				String quantity		 = this.rs.getString(5);
+				int quantity		 = this.rs.getInt(5);
 				orderProduct = new OrderProduct(detailsId, productId, orderId, product, quantity);
 			}
 
@@ -131,7 +131,7 @@ public class OrderProductDAO {
 			this.pstmt.setInt(1, 	orderProductDto.getProductId());
 			this.pstmt.setInt(2, 	orderProductDto.getOrderId());
 			this.pstmt.setString(3, orderProductDto.getOrderProduct());
-			this.pstmt.setString(4, orderProductDto.getQuantity());
+			this.pstmt.setInt(4, 	orderProductDto.getQuantity());
 			this.pstmt.setInt(5, 	orderProductDto.getDetailsId());
 
 			this.pstmt.execute();
