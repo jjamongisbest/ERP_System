@@ -25,7 +25,7 @@
 			%>
 			<section class="box">
 				<div class="list">
-					<a href="productlist?code=<%=target.getId()%>"><%=target.getName()%></a>
+					<a href="../service?command=product&code=<%=target.getId()%>"><%=target.getName()%></a>
 				</div>
 			</section>
 			<%

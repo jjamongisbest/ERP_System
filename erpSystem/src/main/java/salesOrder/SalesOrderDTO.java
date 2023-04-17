@@ -16,6 +16,14 @@ public class SalesOrderDTO {
 		this.status = status;
 	}
 	
+	public SalesOrderDTO(SalesOrder order) {
+		this.id = order.getId();
+		this.customerId = order.getCustomerId();
+		this.date = order.getDate();
+		this.total = order.getTotal();
+		this.status = order.getStatus();
+	}
+	
 	
 	public int getId() {
 		return id;

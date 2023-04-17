@@ -17,6 +17,7 @@ public class ProductDetailAction implements Action{
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String tmp = request.getParameter("productId");
 		System.out.println(tmp);
+		System.out.println(tmp);
 		
 		if(tmp == null)
 			return;

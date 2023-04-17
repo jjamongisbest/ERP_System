@@ -1,15 +1,31 @@
 package controller;
 
 import controller.action.Action;
+import controller.action.BasketAction;
+import controller.action.BoardAction;
+import controller.action.BoardDeleteAction;
+import controller.action.BoardModifyAction;
+import controller.action.DropCustomerAction;
 import controller.action.LoginAction;
 import controller.action.LogoutAction;
+import controller.action.OrderConfirmationAction;
+import controller.action.ProductAction;
+import controller.action.ProductDetailAction;
 import controller.action.RegistAction;
 
 public enum ActionType {
 	
 	LOG_IN ("login",   new LoginAction()),
 	LOG_OUT("logout",  new LogoutAction()),
-	REGIST ("regist",  new RegistAction())
+	REGIST ("regist",  new RegistAction()),
+	BASKET ("basket",  new BasketAction()),
+	PRODUCT("product", new ProductAction()),
+	BOARD  ("board",   new BoardAction()),
+	BOARD_MODIFY("boardModify",     new BoardModifyAction()),
+	BOARD_DELETE("boardDelete",     new BoardDeleteAction()),
+	DROP_CUSTOMER("dropCustomer",   new DropCustomerAction()),
+	PRODUCT_DETAIL("productDetail", new ProductDetailAction()),
+	ORDER_CONF("orderConfirmation", new OrderConfirmationAction())
 	;
 	
 	private String command;

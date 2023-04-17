@@ -14,6 +14,7 @@ public class OrderProductDTO {
 		this.orderProduct = orderProduct;
 		this.quantity = quantity;
 	}
+	
 
 	public int getDetailsId() {
 		return detailsId;

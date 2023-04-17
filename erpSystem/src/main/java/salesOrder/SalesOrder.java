@@ -58,14 +58,14 @@ public class SalesOrder{
 	}
 	
 	public String getTotalPrice(List<Product> list) {
+		this.total = "$0.0";
 		if(list == null)
 			return null;
 		
-		for(int i = 0; i < list.size(); i++) {
-			Product product = list.get(i);
+		for(Product product : list) {
 			int quantity = basket.get(product.getId());
-			this.total = MoneyManager.sumMoney(this.total,
-						 MoneyManager.multipleMoney(product.getPrice(), quantity));
+			String amount = MoneyManager.multipleMoney(product.getPrice(), quantity);	
+			this.total = MoneyManager.sumMoney(this.total, amount);	
 		}
 		return this.total;
 	}

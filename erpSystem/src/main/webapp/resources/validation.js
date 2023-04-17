@@ -13,3 +13,8 @@ function send(page){
 	}
 	location.href = `/${page}`;
 }
+
+function dropItem(productId){
+	alert("삭제되었습니다.");
+	location.href=`../service?command=dropitem&target=${productId}`;
+}

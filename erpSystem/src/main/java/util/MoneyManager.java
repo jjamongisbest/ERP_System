@@ -1,16 +1,27 @@
 package util;
 
 public class MoneyManager {
+	private static StringBuffer stringBuffer; 
 
 	public static String sumMoney(String price1, String price2) {
-		double number1 = Double.parseDouble(price1.substring(1));
-		double number2 = Double.parseDouble(price2.substring(1));
-		return "$"+(number1 + number2);
+		int value1 = parseInteger(price1);
+		int value2 = parseInteger(price2);
+		return parseDollar(value1 + value2);
 	}
 	
 	public static String multipleMoney(String price, int count) {
-		double number =  Double.parseDouble(price.substring(1));
-		return "$" +(number * count);
+		int value = parseInteger(price);
+		return parseDollar(value * count);
 	}
 	
+	private static int parseInteger(String price) {
+		price = price.replaceAll("[^0-9]", "");
+		return Integer.parseInt(price);
+	}
+	
+	private static String parseDollar(int price) {
+		stringBuffer = new StringBuffer("$" + price);
+		int charIndex = stringBuffer.length() - 2;
+		return stringBuffer.insert(charIndex ,'.').toString();
+	}
 }

@@ -86,18 +86,6 @@
 		<servlet-name>dropCustomer</servlet-name>
 		<url-pattern>/dropcustomer</url-pattern>
 	</servlet-mapping>
-
-
-	<!--SearchProduct mapping -->
-	<servlet>
-		<servlet-name>searchProduct</servlet-name>
-		<jsp-file>/views/searchProduct.jsp</jsp-file>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>searchProduct</servlet-name>
-		<url-pattern>/searchproduct</url-pattern>
-	</servlet-mapping>
-	
 	
 		<!--ProductList mapping -->
 	<servlet>

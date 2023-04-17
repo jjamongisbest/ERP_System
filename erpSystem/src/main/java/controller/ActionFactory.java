@@ -6,11 +6,13 @@ import controller.action.BoardAction;
 import controller.action.BoardDeleteAction;
 import controller.action.BoardModifyAction;
 import controller.action.DropCustomerAction;
+import controller.action.DropItemAction;
 import controller.action.LoginAction;
 import controller.action.LogoutAction;
+import controller.action.OrderAction;
 import controller.action.OrderConfirmationAction;
-import controller.action.ProductDetailAction;
 import controller.action.ProductAction;
+import controller.action.ProductDetailAction;
 import controller.action.RegistAction;
 
 public class ActionFactory {
@@ -58,6 +60,12 @@ public class ActionFactory {
 		
 		else if (command.equals("orderConfirmation"))
 			action = new OrderConfirmationAction();
+		
+		else if (command.equals("dropitem"))
+			action = new DropItemAction();
+		
+		else if(command.equals("order"))
+			action = new OrderAction();
 		
 		
 		return action;

@@ -47,8 +47,12 @@ public class BasketAction implements Action {
 			
 			if(lack != READY_TO_ORDER)
 				request.setAttribute("message", "재고수량 부족!");
-		}			
-		request.getRequestDispatcher("productdetail").forward(request, response);		
+			
+		}
+		
+		String direct = request.getParameter("choose").equals("바로구매") ?
+						"order" : "productdetail";
+		request.getRequestDispatcher(direct).forward(request, response);		
 	}
 	
 	private void updateProductStock(Product product, String totalStock) {

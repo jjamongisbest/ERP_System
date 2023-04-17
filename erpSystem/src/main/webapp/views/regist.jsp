@@ -1,3 +1,4 @@
+<%@page import="customer.Customer"%>
 <%@page import="customerGrade.CustomerGrade"%>
 <%@page import="customerGrade.controller.CustomerGradeDAO"%>
 <%@page import="customer.controller.CustomerDAO"%>
@@ -14,19 +15,24 @@
 
 	<%
 	CustomerGradeDAO customerGradeDao = CustomerGradeDAO.getinstance();
-
 	CustomerGrade customerGrade = customerGradeDao.getCustomerGradeById(1);
-
 	int gradeId = customerGrade.getGradeId();
 
-	CustomerDAO customerDao = CustomerDAO.getinstnace();
+	CustomerDAO customerDao = CustomerDAO.getinstnace();	
 	int id = customerDao.getCustomerId();
-
-	String password = request.getParameter("password");
-	String name = request.getParameter("name");
-	String address = request.getParameter("address");
-	String phone = request.getParameter("phone");
+	String password = "";
+	String name = "";
+	String address = "";
+	String phone = "";
 	
+	Customer customer = (Customer)session.getAttribute("log");
+	if(customer != null){
+		id = customer.getId();
+		password = customer.getPassword();
+		name = customer.getName();
+		address = customer.getAddress();
+		phone = customer.getPhone();
+	}
 	%>
 	<section>
 		<form method="POST" action="../service">
@@ -74,6 +80,7 @@
 
 	</section>
 	<script src="resources/registCheck.js"></script>
+
 </body>
 <c:import url="footer" />
 </html>

@@ -14,16 +14,21 @@ import product.contoroller.ProductDAO;
 public class ProductAction implements Action{
 	
 	private String keyword;
+	private String code;
 	
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		this.keyword = request.getParameter("keyword");
+		this.code = request.getParameter("code");
 		
-		if(this.keyword == null)
+		if(this.keyword == null && this.code == null)
 			return;
 		
-		request.setAttribute("searchProduct", getSearchProduct());
-		request.getRequestDispatcher("/").forward(request, response);
+		List<Product> list = this.keyword != null ?
+							getSearchProduct() : getProductListByCategory();
+		
+		request.setAttribute("searchProduct", list);
+		request.getRequestDispatcher("productlist").forward(request, response);
 	}
 	
 	private List<Product> getSearchProduct() {
@@ -33,6 +38,12 @@ public class ProductAction implements Action{
 		return productList.stream()
 						  .filter(product -> product.getName().contains(this.keyword))
 						  .collect(Collectors.toList());
+	}
+	
+	private List<Product> getProductListByCategory(){
+		int categoryId = Integer.parseInt(this.code);
+		ProductDAO dao = ProductDAO.getInstance();
+		return dao.getProductsByCategory(categoryId);
 	}
 
 }
