@@ -8,7 +8,7 @@ import controller.action.BoardModifyAction;
 import controller.action.DropCustomerAction;
 import controller.action.LoginAction;
 import controller.action.LogoutAction;
-import controller.action.OrderConfirmationAction;
+import controller.action.OrderConfirmAction;
 import controller.action.ProductAction;
 import controller.action.ProductDetailAction;
 import controller.action.RegistAction;
@@ -25,7 +25,7 @@ public enum ActionType {
 	BOARD_DELETE("boardDelete",     new BoardDeleteAction()),
 	DROP_CUSTOMER("dropCustomer",   new DropCustomerAction()),
 	PRODUCT_DETAIL("productDetail", new ProductDetailAction()),
-	ORDER_CONF("orderConfirmation", new OrderConfirmationAction())
+	ORDER_CONF("orderConfirmation", new OrderConfirmAction())
 	;
 	
 	private String command;

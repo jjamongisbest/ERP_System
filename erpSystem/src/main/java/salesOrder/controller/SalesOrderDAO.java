@@ -44,31 +44,31 @@ public class SalesOrderDAO {
 			} catch (SQLException e) {
 				e.printStackTrace();
 			} finally {
-				DBManager.closeConnection(this.conn, this.pstmt);				
+				DBManager.closeConnection(this.conn, this.pstmt);
 			}
 		}
 	}
-	
+
 	public int getSalesOrderId() {
 		int salesOrderId = -1;
-		
-		this.conn=DBManager.getConnection();
-		if(this.conn != null) {
+
+		this.conn = DBManager.getConnection();
+		if (this.conn != null) {
 			String str = "SELECT MAX(customer_id) FROM sales_order";
-			
+
 			try {
 				this.pstmt = this.conn.prepareStatement(str);
 				this.rs = this.pstmt.executeQuery();
-				
-				while(this.rs.next()) {
-					salesOrderId = this.rs.getInt(1);					
+
+				while (this.rs.next()) {
+					salesOrderId = this.rs.getInt(1);
 				}
-				
+
 			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {
 				DBManager.closeConnection(conn, pstmt, rs);
-			}	
+			}
 		}
 		return salesOrderId + 1;
 	}
@@ -102,12 +102,12 @@ public class SalesOrderDAO {
 		}
 		return order;
 	}
-	
+
 	public ArrayList<SalesOrder> getSalesOrderByCustomerID(int custId) {
 		ArrayList<SalesOrder> list = new ArrayList<SalesOrder>();
-		
+
 		this.conn = DBManager.getConnection();
-		
+
 		if (this.conn != null) {
 			String sql = "SELECT * FROM sales_order WHERE customer_id=?";
 
@@ -134,30 +134,62 @@ public class SalesOrderDAO {
 		}
 		return list;
 	}
-	
-	//Read
+
+	public ArrayList<SalesOrder> getSalesOrderByCustomerID() {
+		ArrayList<SalesOrder> list = new ArrayList<SalesOrder>();
+
+		this.conn = DBManager.getConnection();
+
+		if (this.conn != null) {
+			String sql = "SELECT * FROM sales_order";
+
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.rs = this.pstmt.executeQuery();
+
+				while (this.rs.next()) {
+					int orderId = this.rs.getInt(1);
+					int custId = this.rs.getInt(2);
+					String date = this.rs.getString(3);
+					String total = this.rs.getString(4);
+					String status = this.rs.getString(5);
+
+					SalesOrder order = new SalesOrder(orderId, custId, date, total, status);
+					list.add(order);
+				}
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.closeConnection(this.conn, this.pstmt, this.rs);
+			}
+		}
+		return list;
+	}
+
+	// Read
 	public SalesOrder getOrderByNoStatusAndId(int custId) {
 		SalesOrder order = null;
-		
+
 		this.conn = DBManager.getConnection();
-		
+
 		if (this.conn != null) {
 			String sql = "SELECT * FROM sales_order WHERE order_status='N' AND customer_id=? ";
-			
+
 			try {
 				this.pstmt = this.conn.prepareStatement(sql);
 				this.pstmt.setInt(1, custId);
 				this.rs = this.pstmt.executeQuery();
-				
+
 				while (this.rs.next()) {
 					int orderId = this.rs.getInt(1);
 					String date = this.rs.getString(3);
 					String total = this.rs.getString(4);
 					String status = this.rs.getString(5);
-					
+
 					order = new SalesOrder(orderId, custId, date, total, status);
 				}
-				
+
 			} catch (SQLException e) {
 				e.printStackTrace();
 			} finally {
@@ -167,4 +199,48 @@ public class SalesOrderDAO {
 		return order;
 	}
 
+	public int getTotalCountByCategory() {
+		int max = 0;
+
+		this.conn = DBManager.getConnection();
+
+		if (this.conn != null) {
+			String sql = "SELECT COUNT(*) count FROM sales_order";
+
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.rs = this.pstmt.executeQuery();
+
+				if (this.rs.next()) {
+					max = this.rs.getInt("count");
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.closeConnection(this.conn, this.pstmt, this.rs);
+			}
+		}
+
+		return max;
+	}
+
+	public void update(int id) {
+
+		this.conn = DBManager.getConnection();
+		if (this.conn != null) {
+			String sql = "UPDATE sales_order SET order_status='Y' WHERE order_id=? ";
+
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+
+				this.pstmt.setInt(1, id);
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.closeConnection(this.conn, this.pstmt);
+			}
+		}
+
+	}
 }
