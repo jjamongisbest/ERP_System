@@ -1,26 +1,12 @@
 @charset "UTF-8";
 
 /* header css */
-.container {
-	display: grid;
-	grid-template-columns: auto;
-	grid-template-rows: auto;
-	grid-template-areas: "header header header" "nav nav nav";
-}
 
-.header {
-	display: flex;
-}
+.header { display: flex; margin-top:0.5px;}
 
-.logo img {
-	width: 80%;
-	height: 150px;
-}
+.banner{ margin: 0 1px; width: 100%; }
 
-.banner img {
-	width: 150%;
-	height: 150px;
-}
+.banner img { width: 100%; height: 140px;}
 
 
 .search-box {
@@ -30,8 +16,8 @@
 	margin-left: 20px;
 	background-color: #f0f0f0;
 	border-radius: 25px;
-	height: 40px;
-	width: 250px;
+	height: 30px;
+	width: 300px;
 	overflow: hidden;
 }
 
@@ -55,27 +41,29 @@
 	padding: 0px 5px;
 }
 
-.nav-list {
-	grid-area: nav;
+
+
+.nav-list-main {
+	
+	border-top : solid 2px #62cd23;
+	border-bottom: solid 1px #32CD32;
+	
+	height:40px;
 	background-color:#DDFFBB;
+	
+  	display: flex;
+  	flex-wrap: wrap;
+  	justify-content: center;
+  	align-items: center;
+  	list-style: none;
+
 }
 
-.nav-list ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-  margin: 0px;
-  padding: 0px;
-}
-
-.nav-list ul li {
-  margin: 0px 10px;
+.nav-list-main li {
   text-align: center;
 }
 
-.nav-list ul li a {
+.nav-list-main li a {
   text-decoration: none;
   font-size: 16px;
   color: #577D86;
@@ -84,7 +72,7 @@
   transition: all 0.2s ease-in-out;
 }
 
-.nav-list ul li a:hover {
+.nav-list-main li a:hover {
   background-color: white;
-  color: #333;
+  color: #333 !important;
 }

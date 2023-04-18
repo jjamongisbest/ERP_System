@@ -7,27 +7,24 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" href="../resources/main.css">
 </head>
-<c:import url="header" />
 <body>
-
+<title>Insert title here</title>
 	<%
 	ProductCategoryDAO dao = ProductCategoryDAO.getInstance();
 	ArrayList<ProductCategory> list = dao.getProductCategoryList();
 	%>
-
-	<div class="container">
-		<div class="category-list">
-			<c:import url="category"/>
-		</div>
-		<div class="main-banner">
-			<img id="img" src="../resources/images/salesBanner.jpg">
-			<%-- <c:import url="${requestScope.content }"/> --%>
-		</div>
+	<div class="category-list">
+		<%
+			for (ProductCategory target : list) {
+			%>
+		
+			<div class="list">
+				<a href="../service?command=product&code=<%=target.getId()%>"><%=target.getName()%></a>
+			</div>
+		<%
+			}
+			%>
 	</div>
-
 </body>
-<c:import url="footer"/>
 </html>
