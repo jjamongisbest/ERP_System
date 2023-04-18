@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div class="footer">
-		<p>Copyright 2021. DDRRDDDD All pictures cannot be copied without
+		<p id="footer">Copyright 2021. DDRRDDDD All pictures cannot be copied without
 			permission.</p>
 	</div>
 </body>

@@ -24,13 +24,20 @@
 			<img id="category-img" src="../resources/images/salesBanner.jpg">
 		</div>
 		<div class="main-banner">
-			<img id="event-banner" src="../resources/images/event-banner.jpg">
-			
-			<%-- <c:import url="${requestScope.content }"/> --%>
-			
+			<c:choose>
+				<c:when test="${not empty param.content }">
+					<c:import url="${param.content }"/>
+				</c:when>
+				<c:when test="${not empty requestScope.content }">
+					<c:import url="${requestScope.content }"/>
+				</c:when>
+				<c:otherwise>
+					<img id="event-banner" src="../resources/images/event-banner.jpg">
+				</c:otherwise>
+			</c:choose>
 		</div>
 	</div>
 
 </body>
-
+<c:import url="footer"/>
 </html>

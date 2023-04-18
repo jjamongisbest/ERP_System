@@ -12,7 +12,6 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="../resources/board.css">
 </head>
-<c:import url="header" />
 <body>
 
 	<%
@@ -53,7 +52,7 @@
 				%>
 				<tr>
 					<td><%=board.getId()%></td>
-					<td><a href="boardview?id=<%=board.getId()%>" class="titles"><%=board.getTitle()%></a></td>
+					<td><a href="?content=boardview&id=<%=board.getId()%>" class="titles"><%=board.getTitle()%></a></td>
 					<td><%=board.getWriter()%></td>
 					<td><%=board.getReigisteredDate()%></td>
 				</tr>
@@ -67,7 +66,7 @@
 			<%
 			for (int i = 1; i <= lastPage; i++) {
 			%>
-			<a href="board?vpage=<%=i%>&cate=<%=categoryId%>"><%=i%></a>
+			<a href="?content=board&vpage=<%=i%>&cate=<%=categoryId%>"><%=i%></a>
 			<%
 			}
 			%>
@@ -82,12 +81,12 @@
 
 					if (customer.getId() == 99999) {
 			%>
-			<a href="boardwrite?categoryId=<%=categoryId%>" class="write">글쓰기</a>
+			<a href="?content=boardwrite&categoryId=<%=categoryId%>" class="write">글쓰기</a>
 			<%
 			}
 			} else {
 			%>
-			<a href="boardwrite?categoryId=<%=categoryId%>" class="write">글쓰기</a>
+			<a href="?content=boardwrite&categoryId=<%=categoryId%>" class="write">글쓰기</a>
 			<%
 			}
 			}
@@ -97,6 +96,5 @@
 
 
 </body>
-<c:import url="footer" />
 
 </html>

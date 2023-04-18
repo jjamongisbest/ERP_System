@@ -11,7 +11,6 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="../resources/board.css">
 </head>
-<c:import url="header" />
 <body>
 
 
