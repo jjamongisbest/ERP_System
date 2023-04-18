@@ -6,8 +6,13 @@
   justify-content: center;
   align-items: center;
   position : relative;
-  min-height: 100vh;
+  margin-top : 80px;
  
+}
+
+#h1{
+	margin-bottom: 10px;
+	color: #395144;
 }
 
 table {
@@ -17,18 +22,19 @@ table {
 
 th, td {
   text-align: center;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  border-top: 1px solid #395144;
+  border-bottom: 1px solid #395144;
   padding: 8px;
 }
 
 thead{
-	background-color: #51FFA6;
+	background-color:rgb(240,246,244);
+	border-top: solid 2px #395144;
 }
 
 .titles {
   text-decoration: none;
-  color: black;
+  color:black;
 }
 
 .page a {
