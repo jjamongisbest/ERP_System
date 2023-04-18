@@ -25,6 +25,7 @@
 
 	String title = board.getTitle();
 	String main = board.getMain();
+	main = main.replace("<br>", "\r\n");
 
 	BoardCategoryDAO boardCategoryDao = BoardCategoryDAO.getInstance();
 
@@ -68,5 +69,5 @@
 	<script src="resources/boardCheck.js"></script>
 
 </body>
-<c:import url="footer" />
+
 </html>

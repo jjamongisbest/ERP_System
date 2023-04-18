@@ -29,7 +29,6 @@ public class RegistAction implements Action{
 		
 		customerDao.createCustomer(CustomerDto);
 		response.sendRedirect("/");
-		
 	}
 
 }
