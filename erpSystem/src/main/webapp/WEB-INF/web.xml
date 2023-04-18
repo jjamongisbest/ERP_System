@@ -142,7 +142,6 @@
 	</servlet-mapping>
 	
 
-
 	<!-- order mapping -->
 	<servlet>
 		<servlet-name>order</servlet-name>
@@ -220,5 +219,17 @@
 	</servlet-mapping>
 	
 	
+
+	<!-- totalSales mapping -->
+	<servlet>
+		<servlet-name>totalSales</servlet-name>
+		<jsp-file>/views/totalSales.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>totalSales</servlet-name>
+		<url-pattern>/totalsales</url-pattern>
+	</servlet-mapping>
+		
+
 	
 </web-app>

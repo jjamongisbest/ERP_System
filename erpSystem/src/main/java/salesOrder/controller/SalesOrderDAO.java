@@ -8,6 +8,8 @@ import java.util.ArrayList;
 
 import salesOrder.SalesOrder;
 import salesOrder.SalesOrderDTO;
+import salesView.MonthlySalesView;
+import salesView.SalesView;
 import util.DBManager;
 
 public class SalesOrderDAO {
@@ -200,33 +202,95 @@ public class SalesOrderDAO {
 		}
 		return order;
 	}
-	
+
+	// salesTotal
 	public int getTotalPriceByCustomerGrade(int grade) {
-	    int total = 0;
+		int total = 0;
 
-	    this.conn = DBManager.getConnection();
+		this.conn = DBManager.getConnection();
 
-	    if (this.conn != null) {
-	        String sql = "SELECT total_sales FROM customer_total_sales WHERE customer_grade = ?";
+		if (this.conn != null) {
+			String sql = "SELECT total_sales FROM customer_total_sales WHERE customer_grade = ?";
 
-	        try {
-	            this.pstmt = this.conn.prepareStatement(sql);
-	            this.pstmt.setInt(1, grade);
-	            this.rs = this.pstmt.executeQuery();
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.pstmt.setInt(1, grade);
+				this.rs = this.pstmt.executeQuery();
 
-	            while (this.rs.next()) {
-	                total += this.rs.getInt("total_sales");
-	            }
+				while (this.rs.next()) {
+					total += this.rs.getInt("total_sales");
+				}
 
-	        } catch (Exception e) {
-	            e.printStackTrace();
-	        } finally {
-	            DBManager.closeConnection(this.conn, this.pstmt, this.rs);
-	        }
-	    }
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.closeConnection(this.conn, this.pstmt, this.rs);
+			}
+		}
 
-	    return total;
+		return total;
 	}
+
+	// use in draw graph
+	public ArrayList<SalesView> getSalesTotal(){
+		ArrayList<SalesView> list = new ArrayList<SalesView>();
+		
+		this.conn = DBManager.getConnection();
+		
+		if(this.conn != null) {
+			String sql = "SELECT * FROM total_by_grade";
+			
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.rs = this.pstmt.executeQuery();
+				
+				while(this.rs.next()) {
+					String grade = this.rs.getString(1);
+					int total = this.rs.getInt(2);
+					
+					SalesView view = new SalesView(grade, total);
+					list.add(view);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.closeConnection(this.conn, this.pstmt, this.rs);
+			}
+		}
+		
+		return list;
+	}
+	
+	public ArrayList<MonthlySalesView> getMonthlySalesTotal(){
+		ArrayList<MonthlySalesView> list = new ArrayList<MonthlySalesView>();
+		
+		this.conn = DBManager.getConnection();
+		
+		if(this.conn != null) {
+			String sql = "SELECT * FROM monthly_sales_total";
+			
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.rs = this.pstmt.executeQuery();
+				
+				while(this.rs.next()) {
+					int month = this.rs.getInt(1);
+					int total = this.rs.getInt(2);
+					
+					MonthlySalesView temp = new MonthlySalesView(month, total);
+					list.add(temp);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.closeConnection(this.conn, this.pstmt, this.rs);
+			}
+		}
+		
+		return list;
+	}
+	
+	//////////// up to use in draw graph///////////////////
 
 	public int getTotalCountByCategory() {
 		int max = 0;
@@ -261,7 +325,6 @@ public class SalesOrderDAO {
 
 			try {
 				this.pstmt = this.conn.prepareStatement(sql);
-
 				this.pstmt.setString(1, status);
 				this.pstmt.setInt(2, id);
 				
@@ -293,7 +356,8 @@ public class SalesOrderDAO {
 				this.pstmt.setInt(3, 	orderDto.getTotal());
 				this.pstmt.setString(4, orderDto.getStatus());
 				this.pstmt.setInt(5, 	orderDto.getId());
-				
+				this.pstmt.setInt(6, 	orderDto.getId());
+
 				this.pstmt.execute();
 
 			} catch (SQLException e) {

@@ -7,6 +7,7 @@ import controller.action.BoardModifyAction;
 import controller.action.CartAction;
 import controller.action.DropCustomerAction;
 import controller.action.DropItemAction;
+import controller.action.GetMonthlySalesTotal;
 import controller.action.LoginAction;
 import controller.action.LogoutAction;
 import controller.action.OrderAction;
@@ -34,7 +35,8 @@ public enum ActionType {
 	DROP_ITEM("dropitem", 			new DropItemAction()),
 	
 	PRODUCT_DETAIL("productDetail", new ProductDetailAction()),
-	ORDER_CONF("orderConfirmation", new OrderConfirmAction())
+	ORDER_CONF("orderConfirmation", new OrderConfirmAction()),
+	GET_MONTH_SALES_TOTAL("monthlyTotal", new GetMonthlySalesTotal())
 	;
 	
 	private String command;
@@ -53,3 +55,5 @@ public enum ActionType {
 		return null;  
 	}
 }
+
+
