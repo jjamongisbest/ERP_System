@@ -12,7 +12,6 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="../resources/board.css">
 </head>
-<c:import url="header" />
 <body>
 
 	<%
@@ -39,7 +38,7 @@
 
 	<section class="board">
 		
-			<h1><%=category%></h1>
+			<h1 id="h1"><%=category%></h1>
 			<table>
 				<thead>
 					<tr>
