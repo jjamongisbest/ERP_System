@@ -21,16 +21,19 @@
 <body>
 
 	<%
-	int userId = Integer.parseInt(request.getParameter("custid"));
+	
+	Customer customer = (Customer)session.getAttribute("log");
 
+	int userId = customer.getId();
+	
 	CustomerDAO custdao = CustomerDAO.getinstnace();
 	BoardDAO boarddao = BoardDAO.getInstance();
 	OrderProductDAO orderdao = OrderProductDAO.getInstance();
 	SalesOrderDAO salesdao = SalesOrderDAO.getInstance();
 	BoardCategoryDAO catedao = BoardCategoryDAO.getInstance();
 
-	Customer customer = custdao.getCustomerById(userId);
-	Board board = boarddao.getBoardById(userId);
+	
+	
 	ArrayList<SalesOrder> list = salesdao.getSalesOrderByCustomerID(userId);
 	ArrayList<Board> blist = boarddao.getBoardByCustomerId(userId);
 	%>
@@ -72,11 +75,15 @@
 				<%
 				if (target.getStatus().equals("Y")) {
 				%>
-				배송완료
+				결제완료
 				<%
-				} else {
+				}else if(target.getStatus().equals("D")){
 				%>
 				배송중
+				<%
+				}else{
+				%>
+				결제 전
 				<%
 				}
 				%>
@@ -101,7 +108,7 @@
 			<div style="width: 15%">게시판</div>
 		</div>
 		<div class="board-tbody">
-			<% if(board != null) {%>
+			<% if(blist != null) {%>
 			<% for (Board target : blist) { %>
 			<div><%=target.getReigisteredDate() %></div>
 			<div><%=target.getTitle() %></div>
@@ -109,7 +116,7 @@
 			<%} %>
 			<%} else { %>
 			<div>작성 내역이 없습니다.</div>
-			<%} %>
+			<%}%>
 		</div>
 	</div>
 	
