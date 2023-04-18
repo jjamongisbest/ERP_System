@@ -11,7 +11,9 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="../resources/regist.css">
 </head>
+
 <body>
+
 	<%
 	CustomerGradeDAO customerGradeDao = CustomerGradeDAO.getinstance();
 	CustomerGrade customerGrade = customerGradeDao.getCustomerGradeById(1);
@@ -23,7 +25,7 @@
 	String name = request.getParameter("name");
 	String address = request.getParameter("address");
 	String phone = request.getParameter("phone");
-	String url = "regist";
+	String url = request.getParameter("url");
 
 	Customer customer = (Customer) session.getAttribute("log");
 	if (customer != null) {
@@ -37,7 +39,6 @@
 	%>
 	<section class="regist-box">
 		<form method="POST" action="../service">
-<<<<<<< HEAD
 			<h1 id="info-title">회원정보 입력</h1>
 			<input type="hidden" name="command" value="<%=url%>"> <input
 				type="hidden" id="gradeId" name="gradeId" value="<%=gradeId%>">
@@ -82,15 +83,6 @@
 			<div class="button">
 				<input type="button" value="등록" onclick="checkValues(form)"
 					class="regist">
-=======
-			<h1>회원정보 입력</h1>
-			<input type="hidden" name="command" value=<%=url %>> <input
-				type="hidden" id="gradeId" name="gradeId" value=<%=gradeId%>>
-
-			<div class="inform">
-				<p>아이디</p>
-				<input type="text" id="id" name="id" value=<%=id%> readonly>
->>>>>>> refs/remotes/origin/#03_WooJongguk
 			</div>
 		</form>
 	</section>
