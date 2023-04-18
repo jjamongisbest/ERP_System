@@ -8,6 +8,7 @@ import controller.action.CartAction;
 import controller.action.DropCustomerAction;
 import controller.action.DropItemAction;
 import controller.action.GetMonthlySalesTotal;
+import controller.action.GetSalesTotal;
 import controller.action.LoginAction;
 import controller.action.LogoutAction;
 import controller.action.OrderAction;
@@ -36,6 +37,7 @@ public enum ActionType {
 	
 	PRODUCT_DETAIL("productDetail", new ProductDetailAction()),
 	ORDER_CONF("orderConfirmation", new OrderConfirmAction()),
+	SALES_TOTAL("salesTotal", new GetSalesTotal()),
 	GET_MONTH_SALES_TOTAL("monthlyTotal", new GetMonthlySalesTotal())
 	;
 	
