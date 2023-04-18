@@ -15,10 +15,9 @@
 	ArrayList<ProductCategory> list = dao.getProductCategoryList();
 	%>
 	<div class="category-list">
-		<%
+			<%
 			for (ProductCategory target : list) {
 			%>
-		
 			<div class="list">
 				<a href="../service?command=product&code=<%=target.getId()%>"><%=target.getName()%></a>
 			</div>

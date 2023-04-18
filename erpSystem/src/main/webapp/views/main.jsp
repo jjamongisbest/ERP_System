@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="../resources/main.css">
 </head>
-<c:import url="header" />
+<c:import url="header"/>
 <body>
 
 	<%
@@ -21,13 +21,16 @@
 	<div class="container">
 		<div class="category-list">
 			<c:import url="category"/>
+			<img id="category-img" src="../resources/images/salesBanner.jpg">
 		</div>
 		<div class="main-banner">
-			<img id="img" src="../resources/images/salesBanner.jpg">
+			<img id="event-banner" src="../resources/images/event-banner.jpg">
+			
 			<%-- <c:import url="${requestScope.content }"/> --%>
+			
 		</div>
 	</div>
 
 </body>
-<c:import url="footer"/>
+
 </html>
