@@ -21,21 +21,22 @@ h1 {
 }
 
 #main {
-	margin-top: 10px; width : 500px;
+	margin-top: 10px; 
+	
 	height: 400px;
 	width: 600px;
 }
 
 .button {
-	width: 50px;
+	width: 165px;
 	height: 30px;
-	text-decoration: none;
 	background-color: #51FFA6;
 	color: maroon; text-align : center;
 	text-decoration: none;
 	display: inline-block;
 	border-color: #DDFFBB;
 	text-align: center;
+	margin-left: 500px; 
 }
 
 tr {
