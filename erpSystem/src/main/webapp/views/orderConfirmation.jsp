@@ -8,6 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="../resources/orderConfirm.css">
 </head>
 <c:import url="header" />
 <body>
@@ -28,40 +29,42 @@
 	
 	System.out.println(list);
 	%>
-	<section>
+	<section class="board">
 		<form method="POST" action="../service">
+		<h1>주문처리상태페이지</h1>
 			<table>
-				<tr>
-					<td>주문번호</td>
-					<td>구매아이디</td>
-					<td>결제금액</td>
-					<td>주문일자</td>
-					<td>결제상태</td>
-				</tr>
+				<thead>
+					<tr>
+						<td>주문번호</td>
+						<td>구매아이디</td>
+						<td>결제금액</td>
+						<td>주문일자</td>
+						<td>결제상태</td>
+					</tr>
+				</thead>
 				<%
 				for (SalesOrder salesOrder : list) {
 				%>
-				<tr>
-					<td><%=salesOrder.getId()%></td>
-					<td><%=salesOrder.getCustomerId()%></td>
-					<td><%=salesOrder.getTotal()%></td>
-					<td><%=salesOrder.getDate()%></td>
-					<td><a onclick="checkValues('<%=salesOrder.getId()%>','<%=salesOrder.getStatus() %>')">
-							<%
-					if(salesOrder.getStatus().equals("Y")){
-						%> 주문완료<%
-					}
-					else if(salesOrder.getStatus().equals("D")){
-						%> 배송중 <%
-					}
-					else{
-						%> 결제전 <%
-					}
-					
-					%>
-					</a></td>
-				</tr>
-
+				<tbody>
+					<tr>
+						<td><%=salesOrder.getId()%></td>
+						<td><%=salesOrder.getCustomerId()%></td>
+						<td><%=salesOrder.getTotal()%></td>
+						<td><%=salesOrder.getDate()%></td>
+						<td><a
+							onclick="checkValues('<%=salesOrder.getId()%>','<%=salesOrder.getStatus()%>')">
+								<%
+								if (salesOrder.getStatus().equals("Y")) {
+								%> 주문완료<%
+								} else if (salesOrder.getStatus().equals("D")) {
+								%> 배송중 <%
+								} else {
+								%> 결제전 <%
+								}
+								%>
+						</a></td>
+					</tr>
+				</tbody>
 				<%
 				}
 				%>

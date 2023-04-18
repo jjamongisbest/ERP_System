@@ -102,3 +102,6 @@ input {
 	display: flex;
 	justify-content: flex-end;
 }
+a:hover{
+	text-decoration: underline;
+}

@@ -21,11 +21,11 @@
 
 	CustomerDAO customerDao = CustomerDAO.getinstnace();
 	int id = customerDao.getCustomerId();
-	String password = "";
-	String name = "";
-	String address = "";
-	String phone = "";
-	String url = "regist";
+	String password = request.getParameter("password");
+	String name = request.getParameter("name");
+	String address = request.getParameter("address");
+	String phone = request.getParameter("phone");
+	String url = request.getParameter("url");
 
 	Customer customer = (Customer) session.getAttribute("log");
 	if (customer != null) {
@@ -34,14 +34,15 @@
 		name = customer.getName();
 		address = customer.getAddress();
 		phone = customer.getPhone();
+		url = "customerlog";
 	}
 	%>
 	<section>
-	
+
 		<form method="POST" action="../service">
-		<h1>회원정보 입력</h1>
-			<input type="hidden" name="command" value="<%=url%>"> 
-			<input type="hidden" id="gradeId" name="gradeId" value=<%=gradeId%>>
+			<h1>회원정보 입력</h1>
+			<input type="hidden" name="command" value="<%=url%>"> <input
+				type="hidden" id="gradeId" name="gradeId" value=<%=gradeId%>>
 
 			<div class="inform">
 				<p>아이디</p>
@@ -51,8 +52,7 @@
 				<p>비밀번호</p>
 				<input type="text" id="password" name="password"
 					value="<%=password != null ? password : ""%>"
-					<%=password == null ? "autofocus" : ""%>
-					>
+					<%=password == null ? "autofocus" : ""%>>
 			</div>
 			<div class="inform">
 				<p>이름</p>
@@ -79,7 +79,7 @@
 					<option value="Female">여자</option>
 				</select>
 			</div>
-			<input type="button" value="등록" onclick="checkValues(form)">
+			<input type="button" value="등록" onclick="checkValues(form)" class="regist">
 		</form>
 
 
