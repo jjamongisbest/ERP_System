@@ -28,8 +28,7 @@ public class RegistAction implements Action{
 		CustomerDAO customerDao = CustomerDAO.getinstnace();
 		
 		customerDao.createCustomer(CustomerDto);
-		response.sendRedirect("login");
-		
+		response.sendRedirect("/");
 	}
 
 }

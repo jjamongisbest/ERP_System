@@ -8,12 +8,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="../resources/orderConfirm.css">
 </head>
 <c:import url="header" />
 <body>
 	<%
 	SalesOrderDAO salesOrderDao = SalesOrderDAO.getInstance();
-	ArrayList<SalesOrder> list = salesOrderDao.getSalesOrderByCustomerID();
 
 	String vpage = request.getParameter("vpage");
 	if (vpage == null) {
@@ -21,42 +21,61 @@
 	}
 
 	int selPage = Integer.parseInt(vpage);
-	int total = salesOrderDao.getTotalCountByCategory();
+	int total = salesOrderDao.getTotalOrderCount();
+	
+	
+	ArrayList<SalesOrder> list = salesOrderDao.getOrdersPerPage(selPage);
 	int lastPage = (int) Math.ceil((double) total / 10);
+	
+	System.out.println(list);
 	%>
-	<section>
+	<section class="board">
 		<form method="POST" action="../service">
+		<h1>주문처리상태페이지</h1>
 			<table>
-				<tr>
-					<td>주문번호</td>
-					<td>구매아이디</td>
-					<td>결제금액</td>
-					<td>주문일자</td>
-					<td>결제상태</td>
-				</tr>
+				<thead>
+					<tr>
+						<td>주문번호</td>
+						<td>구매아이디</td>
+						<td>결제금액</td>
+						<td>주문일자</td>
+						<td>결제상태</td>
+					</tr>
+				</thead>
 				<%
 				for (SalesOrder salesOrder : list) {
 				%>
-				<tr>
-					<td><%=salesOrder.getId()%></td>
-					<td><%=salesOrder.getCustomerId()%></td>
-					<td><%=salesOrder.getTotal()%></td>
-					<td><%=salesOrder.getDate()%></td>
-					<td><a onclick="checkValues('<%=salesOrder.getId()%>','<%=salesOrder.getStatus() %>')"
-						><%=salesOrder.getStatus()%></a></td>
-				</tr>
-
+				<tbody>
+					<tr>
+						<td><%=salesOrder.getId()%></td>
+						<td><%=salesOrder.getCustomerId()%></td>
+						<td><%=salesOrder.getTotal()%></td>
+						<td><%=salesOrder.getDate()%></td>
+						<td><a
+							onclick="checkValues('<%=salesOrder.getId()%>','<%=salesOrder.getStatus()%>')">
+								<%
+								if (salesOrder.getStatus().equals("Y")) {
+								%> 주문완료<%
+								} else if (salesOrder.getStatus().equals("D")) {
+								%> 배송중 <%
+								} else {
+								%> 결제전 <%
+								}
+								%>
+						</a></td>
+					</tr>
+				</tbody>
 				<%
 				}
 				%>
 			</table>
 		</form>
-		<div style="width: 600px; text-align: center; margin-top: 10px;">
+		<div style="width: 600px; text-align: center; margin-top: 10px;" class = "number">
 
 			<%
 			for (int i = 1; i <= lastPage; i++) {
 			%>
-			<a href="orderConfirmation?vpage=<%=i%>"><%=i%></a>
+			<a href="orderconfirmation?vpage=<%=i%>"><%=i%></a>
 			<%
 			}
 			%>
@@ -66,5 +85,6 @@
 
 </body>
 <script src="resources/orderConfirmation.js"></script>
-<c:import url="footer" />
+
+
 </html>

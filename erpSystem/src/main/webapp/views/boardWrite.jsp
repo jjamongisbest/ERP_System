@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="../resources/boardWrite.css">
 </head>
-<c:import url="header" />
 <body>
 
 	<%
@@ -52,5 +51,4 @@
 
 	<script src="resources/boardCheck.js"></script>
 </body>
-<c:import url="footer" />
 </html>

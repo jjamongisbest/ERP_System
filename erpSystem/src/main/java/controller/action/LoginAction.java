@@ -18,8 +18,6 @@ public class LoginAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-	    request.setCharacterEncoding("UTF-8");
-
 	    int id = 0;
 	    String password = "";
 
@@ -28,7 +26,7 @@ public class LoginAction implements Action {
 	        password = request.getParameter("password");
 	    } catch (NumberFormatException e) {
 	        request.setAttribute("message", "ID는 숫자로 입력해주세요.");
-	        request.getRequestDispatcher("login").forward(request, response);
+	        request.getRequestDispatcher("/").forward(request, response);
 	        return;
 	    }
 
@@ -42,7 +40,7 @@ public class LoginAction implements Action {
 	        response.sendRedirect("/");
 	    } else {
 	        request.setAttribute("message", "회원 정보가 올바르지 않습니다.");
-	        request.getRequestDispatcher("login").forward(request, response);
+	        request.getRequestDispatcher("/").forward(request, response);
 	    }
 	}
 	
@@ -55,14 +53,11 @@ public class LoginAction implements Action {
 		SalesOrder order = orderDao.getOrderByNoStatusAndId(customer.getId());
 		
 		if(order == null) {
-			int customerId = customer.getId();
+			int newId = orderDao.getSalesOrderId();
 			String date = String.valueOf(LocalDate.now());
-			int total = 0;
-			String status = "N";
-			order = new SalesOrder(customerId, date, total, status);
+			order = new SalesOrder(newId, customer.getId(), date, 0, "N");
 		}
-		
-		request.getServletContext().setAttribute("basket", order);
+		request.getSession().setAttribute("cart", order);
 	}
 
 }

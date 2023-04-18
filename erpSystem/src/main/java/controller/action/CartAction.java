@@ -2,7 +2,6 @@ package controller.action;
 
 import java.io.IOException;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,7 +13,7 @@ import product.contoroller.ProductDAO;
 import productCategory.ProductCategory;
 import salesOrder.SalesOrder;
 
-public class BasketAction implements Action {
+public class CartAction implements Action {
 	
 	private final int READY_TO_ORDER = 1;
 
@@ -33,10 +32,9 @@ public class BasketAction implements Action {
 		switch(lack) {
 		case READY_TO_ORDER :
 			updateProductStock(product, totalStock);
-			ServletContext application = request.getServletContext();
-			SalesOrder order = (SalesOrder) application.getAttribute("basket"); 
+			SalesOrder order = (SalesOrder) session.getAttribute("cart"); 
 			
-			order.insertBasket(product.getId(), count);
+			order.insertCart(product.getId(), count);
 			
 		default :
 			session.removeAttribute("product");
@@ -47,7 +45,6 @@ public class BasketAction implements Action {
 			
 			if(lack != READY_TO_ORDER)
 				request.setAttribute("message", "재고수량 부족!");
-			
 		}
 		
 		String direct = request.getParameter("choose").equals("바로구매") ?

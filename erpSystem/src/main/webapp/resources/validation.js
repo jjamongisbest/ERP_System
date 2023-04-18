@@ -2,9 +2,9 @@ function sendCommand(command){
 	location.href = `../service?command=${command}`;
 }
 
-function insertBasket(){
+function insertCart(){
      alert("장바구니에 추가되었습니다.");
-  	location.href = '../service?command=basket';
+  	location.href = '../service?command=cart';
 }
 
 function send(page){

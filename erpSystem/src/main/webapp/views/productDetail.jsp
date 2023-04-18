@@ -27,7 +27,7 @@
 				<input type="button" value="바로구매" onclick="send('login')">
 			</c:when>
 			<c:otherwise>
-				<input type="submit" name="choose" value="장바구니 추가" onclick="insertBasket()">
+				<input type="submit" name="choose" value="장바구니 추가" onclick="insertCart()">
 				<input type="submit" name="choose" value="바로구매">
 			</c:otherwise>
 		</c:choose>

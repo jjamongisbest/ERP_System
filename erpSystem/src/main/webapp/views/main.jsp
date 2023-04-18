@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="../resources/main.css">
 </head>
-<c:import url="header" />
+<c:import url="header"/>
 <body>
 
 	<%
@@ -20,23 +20,24 @@
 
 	<div class="container">
 		<div class="category-list">
-			<%
-			for (ProductCategory target : list) {
-			%>
-			<section class="box">
-				<div class="list">
-					<a href="../service?command=product&code=<%=target.getId()%>"><%=target.getName()%></a>
-				</div>
-			</section>
-			<%
-			}
-			%>
+			<c:import url="category"/>
+			<img id="category-img" src="../resources/images/salesBanner.jpg">
 		</div>
-		<div class="banner">
-			<img src="../resources/images/salesBanner.jpg" width=100% height=600>
+		<div class="main-banner">
+			<c:choose>
+				<c:when test="${not empty param.content }">
+					<c:import url="${param.content }"/>
+				</c:when>
+				<c:when test="${not empty requestScope.content }">
+					<c:import url="${requestScope.content }"/>
+				</c:when>
+				<c:otherwise>
+					<img id="event-banner" src="../resources/images/event-banner.jpg">
+				</c:otherwise>
+			</c:choose>
 		</div>
-
 	</div>
 
 </body>
+<c:import url="footer"/>
 </html>

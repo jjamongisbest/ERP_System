@@ -1,15 +1,15 @@
 @charset "UTF-8";
 
 * {
-	padding : 0;
-	margin : 0;
+	padding: 0;
+	margin: 0;
 }
 
 .footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color : #51FFA6;
-  padding: 20px;
-  text-align: center;
+	margin-top: 100px;
+	width: 100%;
+	background-color: #F7EDDB;
+	text-align: center;
+	height: 80px;
+	line-height: 80px;
 }

@@ -19,58 +19,62 @@
 	BoardCategoryDAO boardcateDao = BoardCategoryDAO.getInstance();
 	ArrayList<BoardCategory> list = boardcateDao.getBoardCategoryAll();
 	%>
-	<div class="container">
-		<div class="header">
-			<a class="logo" href="index.jsp"> <img
-				src="../resources/images/banner2.jpg">
-			</a> <a class="banner" href="index.jsp"> <img
-				src="../resources/images/banner.jpg">
-			</a>
-		</div>
-		<section class="nav-list">
-			<nav>
-				<ul>
-					<c:choose>
-						<c:when test="${empty sessionScope.log}">
-							<li><a id="regist" href="regist">회원가입</a></li>
-							<li><a id="login" href="login">로그인</a></li>
-						</c:when>
-						<c:otherwise>
-							<c:choose>
-								<c:when test="${sessionScope.log.getId() != 99999 }">
-									<li><a id="mypage"
-										href="mypage?custid=<%=customer.getId()%>"> 마이페이지</a></li>
-								</c:when>
-								<c:otherwise>
-									<li><a id="adminpage"
-										href="adminpage"> 관리자페이지</a></li>
-								</c:otherwise>
-							</c:choose>
-							<li><a id="logout" onclick="sendCommand('logout')">로그아웃</a></li>
-							<li><a id="basket" onclick="send('order')">장바구니</a></li>
-						</c:otherwise>
-					</c:choose>
 
-					<%
+	<div class="header">
+		<a class="banner" href="index.jsp"> <img
+			src="../resources/images/banner.jpg">
+		</a>
+	</div>
+
+	<ul class="nav-list-main">
+		<c:choose>
+			<c:when test="${empty sessionScope.log}">
+				<li>
+					<a id="regist" href="?content=regist">회원가입</a>
+					
+				</li>
+				<li><a id="login" href="?content=login">로그인</a></li>
+			</c:when>
+			<c:otherwise>
+				<c:choose>
+					<c:when test="${sessionScope.log.getId() != 99999 }">
+						<li>
+						<a id="mypage"
+						 href="?content=mypage&custid=<%=customer.getId()%>">
+						 마이페이지</a>
+						</li>
+					</c:when>
+					<c:otherwise>
+						<li><a id="adminpage" href="?content=adminpage"> 관리자페이지</a></li>
+					</c:otherwise>
+				</c:choose>
+				<li><a id="logout" onclick="sendCommand('logout')">로그아웃</a></li>
+				<li><a id="basket" onclick="send('order')">장바구니</a></li>
+			</c:otherwise>
+		</c:choose>
+
+		<%
 					for (BoardCategory target : list) {
 					%>
-					<li><a href="board?cate=<%=target.getId()%>"><%=target.getName()%></a></li>
-					<%
+		<li>
+			<a href="?content=board&cate=<%=target.getId()%>"><%=target.getName()%></a>
+		</li>
+		<%
 					}
 					%>
-					<li><form method="POST" action="../service">
-							<input type="hidden" name="command" value="product">
-							<section class="search-box">
-								<input type="text" name="keyword" placeholder="주문할 것 pickka!">
-								<button type="submit">Search</button>
-							</section>
-						</form>
-					</li>
-				</ul>
-			</nav>
-		</section>
+		<li>
+			<form method="POST" action="../service">
+				<input type="hidden" name="command" value="product">
+				<section class="search-box">
+					<input type="text" name="keyword" placeholder="주문할 것 pickka!">
+					<button type="submit">Search</button>
+				</section>
+			</form>
+		</li>
+	</ul>
 
-	</div>
+
+
 
 	<script src="resources/validation.js"></script>
 </body>

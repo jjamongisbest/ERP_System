@@ -9,12 +9,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="../resources/order.css">
 <title>Insert title here</title>
 </head>
 <body>
 	<%
-	SalesOrder order = (SalesOrder) application.getAttribute("basket");
-	HashMap<Integer, Integer> map = order.getBasket();
+	SalesOrder order = (SalesOrder) session.getAttribute("cart");
+	HashMap<Integer, Integer> map = order.getCart();
 	ArrayList<Product> list = new ArrayList<>(map.size());
 	ProductDAO productDao = ProductDAO.getInstance();
 
@@ -23,7 +24,7 @@
 
 	int total = order.getTotalPrice(list);
 	%>
-	<c:import url="header" />
+	<c:import url="header"/>
 	<h3>
 		<c:out value="${sessionScope.log.getName() }" />
 		님의 장바구니

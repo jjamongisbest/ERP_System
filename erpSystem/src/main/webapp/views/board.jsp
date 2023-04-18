@@ -12,16 +12,15 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="../resources/board.css">
 </head>
-<c:import url="header" />
 <body>
 
 	<%
 	int categoryId = Integer.parseInt(request.getParameter("cate"));
 
 	String vpage = request.getParameter("vpage");
-	if (vpage == null) {
+	if (vpage == null)
 		vpage = "1";
-	}
+	
 
 	int selPage = Integer.parseInt(vpage);
 
@@ -36,67 +35,64 @@
 	String category = boardCategoryDao.getCategoryNameById(categoryId);
 	%>
 
+
 	<section class="board">
-		<h1><%=category%></h1>
-		<table>
-			<thead>
-				<tr>
-					<th>No.</th>
-					<th>Title</th>
-					<th>Name</th>
-					<th>Date</th>
-				</tr>
-			</thead>
-			<tbody>
+		
+			<h1 id="h1"><%=category%></h1>
+			<table>
+				<thead>
+					<tr>
+						<th>No.</th>
+						<th>Title</th>
+						<th>Name</th>
+						<th>Date</th>
+					</tr>
+				</thead>
+				<tbody>
+					<%
+					for (Board board : list) {
+					%>
+					<tr>
+						<td><%=board.getId()%></td>
+						<td><a href="boardview?id=<%=board.getId()%>" class="titles"><%=board.getTitle()%></a></td>
+						<td><%=board.getWriter()%></td>
+						<td><%=board.getReigisteredDate()%></td>
+					</tr>
+					<%
+					}
+					%>
+				</tbody>
+			</table>
+			<div style="margin-top: 10px;" class="page">
+
 				<%
-				for (Board board : list) {
+				for (int i = 1; i <= lastPage; i++) {
 				%>
-				<tr>
-					<td><%=board.getId()%></td>
-					<td><a href="boardview?id=<%=board.getId()%>" class="titles"><%=board.getTitle()%></a></td>
-					<td><%=board.getWriter()%></td>
-					<td><%=board.getReigisteredDate()%></td>
-				</tr>
+				<a href="board?vpage=<%=i%>&cate=<%=categoryId%>"><%=i%></a>
 				<%
 				}
 				%>
-			</tbody>
-		</table>
-		<div style=" margin-top: 10px;" class="page">
 
-			<%
-			for (int i = 1; i <= lastPage; i++) {
-			%>
-			<a href="board?vpage=<%=i%>&cate=<%=categoryId%>"><%=i%></a>
-			<%
-			}
-			%>
+			</div>
+			<div class="notice-header">
+				<%
+				if (session.getAttribute("log") != null) {
+					Customer customer = (Customer) session.getAttribute("log");
+					if (categoryId == 11) {
 
-		</div>
-		<div class="notice-header">
-			
-			<%
-			if (session.getAttribute("log") != null) {
-				Customer customer = (Customer) session.getAttribute("log");
-				if (categoryId == 11) {
-
-					if (customer.getId() == 99999) {
-			%>
-			<a href="boardwrite?categoryId=<%=categoryId%>" class="write">글쓰기</a>
-			<%
-			}
-			} else {
-			%>
-			<a href="boardwrite?categoryId=<%=categoryId%>" class="write">글쓰기</a>
-			<%
-			}
-			}
-			%>
-		</div>
+						if (customer.getId() == 99999) {
+				%>
+				<a href="boardwrite?categoryId=<%=categoryId%>" class="write">글쓰기</a>
+				<%
+				}
+				} else {
+				%>
+				<a href="boardwrite?categoryId=<%=categoryId%>" class="write">글쓰기</a>
+				<%
+				}
+				}
+				%>
+			</div>
 	</section>
-
-
 </body>
-<c:import url="footer" />
-
 </html>

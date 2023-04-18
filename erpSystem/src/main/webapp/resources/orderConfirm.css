@@ -1,0 +1,36 @@
+
+a:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+a{
+	text-decoration : none;
+}
+
+
+.board {
+  max-width: 960px; 
+  margin: 0 auto; 
+}
+
+.board h1 {
+  text-align: center; 
+}
+
+.board table {
+  width: 100%; 
+  border-collapse: collapse; 
+}
+
+.board td {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc; 
+  padding: 10px; 
+  text-align: center; 
+}
+thead{
+	background-color: #51FFA6;
+}
+.number {
+  margin : 0 auto;
+}

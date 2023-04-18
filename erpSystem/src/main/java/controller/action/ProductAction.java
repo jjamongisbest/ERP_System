@@ -28,6 +28,7 @@ public class ProductAction implements Action{
 							getSearchProduct() : getProductListByCategory();
 		
 		request.setAttribute("searchProduct", list);
+		
 		request.getRequestDispatcher("productlist").forward(request, response);
 	}
 	

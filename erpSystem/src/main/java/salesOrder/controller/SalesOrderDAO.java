@@ -8,6 +8,8 @@ import java.util.ArrayList;
 
 import salesOrder.SalesOrder;
 import salesOrder.SalesOrderDTO;
+import salesView.MonthlySalesView;
+import salesView.SalesView;
 import util.DBManager;
 
 public class SalesOrderDAO {
@@ -39,8 +41,10 @@ public class SalesOrderDAO {
 				this.pstmt.setInt(1, order.getId());
 				this.pstmt.setInt(2, order.getCustomerId());
 				this.pstmt.setString(3, order.getDate());
-				this.pstmt.setInt(5, order.getTotal());
-				this.pstmt.setString(6, order.getStatus());
+				this.pstmt.setInt(4, order.getTotal());
+				this.pstmt.setString(5, order.getStatus());
+
+				this.pstmt.execute();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			} finally {
@@ -60,9 +64,8 @@ public class SalesOrderDAO {
 				this.pstmt = this.conn.prepareStatement(str);
 				this.rs = this.pstmt.executeQuery();
 
-				while (this.rs.next()) {
+				while (this.rs.next())
 					salesOrderId = this.rs.getInt(1);
-				}
 
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -198,35 +201,97 @@ public class SalesOrderDAO {
 		}
 		return order;
 	}
-	
+
+	// salesTotal
 	public int getTotalPriceByCustomerGrade(int grade) {
-	    int total = 0;
+		int total = 0;
 
-	    this.conn = DBManager.getConnection();
+		this.conn = DBManager.getConnection();
 
-	    if (this.conn != null) {
-	        String sql = "SELECT total_sales FROM customer_total_sales WHERE customer_grade = ?";
+		if (this.conn != null) {
+			String sql = "SELECT total_sales FROM customer_total_sales WHERE customer_grade = ?";
 
-	        try {
-	            this.pstmt = this.conn.prepareStatement(sql);
-	            this.pstmt.setInt(1, grade);
-	            this.rs = this.pstmt.executeQuery();
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.pstmt.setInt(1, grade);
+				this.rs = this.pstmt.executeQuery();
 
-	            while (this.rs.next()) {
-	                total += this.rs.getInt("total_sales");
-	            }
+				while (this.rs.next()) {
+					total += this.rs.getInt("total_sales");
+				}
 
-	        } catch (Exception e) {
-	            e.printStackTrace();
-	        } finally {
-	            DBManager.closeConnection(this.conn, this.pstmt, this.rs);
-	        }
-	    }
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.closeConnection(this.conn, this.pstmt, this.rs);
+			}
+		}
 
-	    return total;
+		return total;
 	}
 
-	public int getTotalCountByCategory() {
+	// use in draw graph
+	public ArrayList<SalesView> getSalesTotal() {
+		ArrayList<SalesView> list = new ArrayList<SalesView>();
+
+		this.conn = DBManager.getConnection();
+
+		if (this.conn != null) {
+			String sql = "SELECT * FROM total_by_grade";
+
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.rs = this.pstmt.executeQuery();
+
+				while (this.rs.next()) {
+					String grade = this.rs.getString(1);
+					int total = this.rs.getInt(2);
+
+					SalesView view = new SalesView(grade, total);
+					list.add(view);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.closeConnection(this.conn, this.pstmt, this.rs);
+			}
+		}
+
+		return list;
+	}
+
+	public ArrayList<MonthlySalesView> getMonthlySalesTotal() {
+		ArrayList<MonthlySalesView> list = new ArrayList<MonthlySalesView>();
+
+		this.conn = DBManager.getConnection();
+
+		if (this.conn != null) {
+			String sql = "SELECT * FROM monthly_sales_total";
+
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.rs = this.pstmt.executeQuery();
+
+				while (this.rs.next()) {
+					int month = this.rs.getInt(1);
+					int total = this.rs.getInt(2);
+
+					MonthlySalesView temp = new MonthlySalesView(month, total);
+					list.add(temp);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.closeConnection(this.conn, this.pstmt, this.rs);
+			}
+		}
+
+		return list;
+	}
+
+	//////////// up to use in draw graph///////////////////
+
+	public int getTotalOrderCount() {
 		int max = 0;
 
 		this.conn = DBManager.getConnection();
@@ -251,6 +316,39 @@ public class SalesOrderDAO {
 		return max;
 	}
 
+	public ArrayList<SalesOrder> getOrdersPerPage(int selpage) {
+		ArrayList<SalesOrder> list = new ArrayList<SalesOrder>();
+
+		this.conn = DBManager.getConnection();
+
+		if (this.conn != null) {
+			String sql = "SELECT * FROM sales_order ORDER BY (CASE WHEN order_status = 'N' THEN 0 ELSE 1 END), order_date DESC LIMIT ?, 10;";
+
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.pstmt.setInt(1, (selpage - 1) * 10);
+				this.rs = this.pstmt.executeQuery();
+
+				while (this.rs.next()) {
+					int orderId = this.rs.getInt(1);
+					int custId = this.rs.getInt(2);
+					String date = this.rs.getString(3);
+					int total = this.rs.getInt(4);
+					String status = this.rs.getString(5);
+					
+					SalesOrder salesorder = new SalesOrder(orderId, custId, date, total, status);
+					list.add(salesorder);
+				}
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.closeConnection(this.conn, this.pstmt, this.rs);
+			}
+		}
+		return list;
+	}
+
 	public void updateOrderSatatus(int id, String status) {
 
 		this.conn = DBManager.getConnection();
@@ -259,10 +357,38 @@ public class SalesOrderDAO {
 
 			try {
 				this.pstmt = this.conn.prepareStatement(sql);
-
 				this.pstmt.setString(1, status);
 				this.pstmt.setInt(2, id);
-				
+
+				this.pstmt.execute();
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.closeConnection(this.conn, this.pstmt);
+			}
+		}
+
+	}
+
+	// UP
+	public void updateSalesOrder(SalesOrderDTO orderDto) {
+
+		this.conn = DBManager.getConnection();
+		if (this.conn != null) {
+			String sql = "UPDATE sales_order SET " + "customer_id=?, order_date=?, order_total_price=?, order_status=?"
+					+ " WHERE order_id=? ";
+
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+
+				this.pstmt.setInt(1, orderDto.getCustomerId());
+				this.pstmt.setString(2, orderDto.getDate());
+				this.pstmt.setInt(3, orderDto.getTotal());
+				this.pstmt.setString(4, orderDto.getStatus());
+				this.pstmt.setInt(5, orderDto.getId());
+				this.pstmt.setInt(6, orderDto.getId());
+
 				this.pstmt.execute();
 
 			} catch (SQLException e) {

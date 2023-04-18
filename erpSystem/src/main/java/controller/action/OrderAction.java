@@ -4,10 +4,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import orderProduct.OrderProductDTO;
 import orderProduct.controller.OrderProductDAO;
@@ -22,15 +22,23 @@ public class OrderAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		ServletContext application = request.getServletContext();
-		SalesOrder order = (SalesOrder) application.getAttribute("basket");
+		HttpSession session = request.getSession();
+		SalesOrder order = (SalesOrder) session.getAttribute("cart");
 		
 		ProductDAO productDao = ProductDAO.getInstance();
 		SalesOrderDAO orderDao = SalesOrderDAO.getInstance();
 		OrderProductDAO orderProductDao = OrderProductDAO.getInstance();
 		
-		HashMap<Integer, Integer> basket = order.getBasket();
+		HashMap<Integer, Integer> basket = order.getCart();
 		ArrayList<Product> list = new ArrayList<>(basket.size());
+		
+		SalesOrderDTO orderDto = new SalesOrderDTO(order);
+		orderDto.setTotal(order.getTotalPrice(list));
+		System.out.println(order.getTotalPrice(list));
+		orderDto.setStatus("Y");
+		
+		orderDao.updateSalesOrder(orderDto);
+//		orderDao.createSalesOrder(orderDto);
 		
 		OrderProductDTO orderProductDto = null;
 		for(Integer id : basket.keySet()) {
@@ -45,16 +53,8 @@ public class OrderAction implements Action {
 			
 			orderProductDao.createOrderProduct(orderProductDto);
 		}
-		
-		// 주문 저장
-		SalesOrderDTO orderDto = new SalesOrderDTO(order);
-		orderDto.setTotal(order.getTotalPrice(list));
-		
-		orderDto.setStatus("Y");
-		orderDao.createSalesOrder(orderDto);
-		
 		basket = new HashMap<Integer, Integer>();
-		request.getRequestDispatcher("/").forward(request, response);
+		
 		response.sendRedirect("/");
 	}
 }

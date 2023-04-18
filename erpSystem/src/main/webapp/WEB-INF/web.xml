@@ -118,105 +118,6 @@
 		<servlet-name>mypage</servlet-name>
 		<url-pattern>/mypage</url-pattern>
 	</servlet-mapping>
-
-
-	<!-- Announce mapping-->
-	<servlet>
-		<servlet-name>announce</servlet-name>
-		<jsp-file>/views/announce.jsp</jsp-file>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>announce</servlet-name>
-		<url-pattern>/announce</url-pattern>
-	</servlet-mapping>
-	
-	
-	<!-- AnnounceWrite mapping-->
-	<servlet>
-		<servlet-name>announceWrite</servlet-name>
-		<jsp-file>/views/announceWrite.jsp</jsp-file>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>announceWrite</servlet-name>
-		<url-pattern>/announcewrite</url-pattern>
-	</servlet-mapping>
-
-	
-	<!-- AnnounceDetail mapping-->
-	<servlet>
-		<servlet-name>announceDetail</servlet-name>
-		<jsp-file>/views/announceDetail.jsp</jsp-file>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>announceDetail</servlet-name>
-		<url-pattern>/announcedetail</url-pattern>
-	</servlet-mapping>
-
-
-	<!-- Inquiry mapping-->
-	<servlet>
-		<servlet-name>inquiry</servlet-name>
-		<jsp-file>/views/inquiry.jsp</jsp-file>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>inquiry</servlet-name>
-		<url-pattern>/inquiry</url-pattern>
-	</servlet-mapping>
-
-
-	<!-- InquiryWrite mapping-->
-	<servlet>
-		<servlet-name>inquiryWrite</servlet-name>
-		<jsp-file>/views/inquiryWrite.jsp</jsp-file>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>inquiryWrite</servlet-name>
-		<url-pattern>/inquirywrite</url-pattern>
-	</servlet-mapping>
-
-	
-	<!-- InquiryDetail mapping -->
-	<servlet>
-		<servlet-name>inquiryDetail</servlet-name>
-		<jsp-file>/views/inquiryDetail.jsp</jsp-file>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>inquiryDetail</servlet-name>
-		<url-pattern>/inquirydetail</url-pattern>
-	</servlet-mapping>
-
-
-	<!-- Review mapping -->
-	<servlet>
-		<servlet-name>review</servlet-name>
-		<jsp-file>/views/review.jsp</jsp-file>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>review</servlet-name>
-		<url-pattern>/review</url-pattern>
-	</servlet-mapping>
-
-
-	<!-- ReviewWrite  mapping-->
-	<servlet>
-		<servlet-name>reviewWrite</servlet-name>
-		<jsp-file>/views/reviewWrite.jsp</jsp-file>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>reviewWrite</servlet-name>
-		<url-pattern>/reviewwrite</url-pattern>
-	</servlet-mapping>
-
-	
-	<!-- ReviewDetail mapping -->
-	<servlet>
-		<servlet-name>reviewDetail</servlet-name>
-		<jsp-file>/views/reviewDetail.jsp</jsp-file>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>reviewDetail</servlet-name>
-		<url-pattern>/reviewdetail</url-pattern>
-	</servlet-mapping>
 	
 	
 	<!-- BoardModify mapping -->
@@ -241,7 +142,6 @@
 	</servlet-mapping>
 	
 
-
 	<!-- order mapping -->
 	<servlet>
 		<servlet-name>order</servlet-name>
@@ -251,6 +151,7 @@
 		<servlet-name>order</servlet-name>
 		<url-pattern>/order</url-pattern>
 	</servlet-mapping>
+	
 	
 		<!-- board mapping -->
 	<servlet>
@@ -308,5 +209,28 @@
 	</servlet-mapping>
 	
 	
+	<!-- Category mapping -->
+	<servlet>
+		<servlet-name>category</servlet-name>
+		<jsp-file>/views/category.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>category</servlet-name>
+		<url-pattern>/category</url-pattern>
+	</servlet-mapping>
+	
+	
+
+	<!-- totalSales mapping -->
+	<servlet>
+		<servlet-name>totalSales</servlet-name>
+		<jsp-file>/views/totalSales.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>totalSales</servlet-name>
+		<url-pattern>/totalsales</url-pattern>
+	</servlet-mapping>
+		
+
 	
 </web-app>
