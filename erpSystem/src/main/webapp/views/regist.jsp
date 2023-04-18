@@ -11,7 +11,6 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="../resources/regist.css">
 </head>
-
 <body>
 	<%
 	CustomerGradeDAO customerGradeDao = CustomerGradeDAO.getinstance();

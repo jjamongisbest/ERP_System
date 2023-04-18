@@ -65,9 +65,15 @@ function columnChart1(response1) {
 			titleTextStyle: {
 				color: 'black'
 			}
+		},
+
+		legend: 'none',
+
+		series: {
+			0: { color: '#FFB9B9' }
 		}
 	};
-	
+
 	// 차트를 그릴 영역인 div 객체를 가져옴
 
 	var objDiv = document.getElementById('column_chart_div1');
@@ -80,7 +86,7 @@ function columnChart1(response1) {
 
 	chart.draw(dataTable, options);
 
-} 
+}
 
 function columnChart2(response) {
 	var arr = [
@@ -96,19 +102,16 @@ function columnChart2(response) {
 	var dataTable = google.visualization.arrayToDataTable(arr);
 
 	var options = {
-
 		title: '전체 매출',
-
 		hAxis: {
-
 			title: '월별 매출',
-
 			titleTextStyle: {
-
 				color: 'black'
-
 			}
-
+		} ,
+		legend: 'none',
+		series: {
+			0: { color: '#CCD6A6' }
 		}
 
 	};
