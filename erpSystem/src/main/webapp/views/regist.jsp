@@ -11,7 +11,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="../resources/regist.css">
 </head>
-<c:import url="header" />
+
 <body>
 
 	<%
@@ -37,55 +37,58 @@
 		url = "customerlog";
 	}
 	%>
-	<section>
-
+	<section class="regist-box">
 		<form method="POST" action="../service">
-			<h1>회원정보 입력</h1>
+			<h1 id="info-title">회원정보 입력</h1>
 			<input type="hidden" name="command" value="<%=url%>"> <input
-				type="hidden" id="gradeId" name="gradeId" value=<%=gradeId%>>
-
-			<div class="inform">
-				<p>아이디</p>
-				<input type="text" id="id" name="id" value=<%=id%> readonly>
+				type="hidden" id="gradeId" name="gradeId" value="<%=gradeId%>">
+			<table class="table">
+				<tr>
+					<th id="th">성명</th>
+					<td id="td"><input type="text" id="id" name="id" value=<%=id%>
+						readonly></td>
+				</tr>
+				<tr>
+					<th id="th">비밀번호</th>
+					<td id="td"><input type="text" id="password" name="password"
+						value="<%=password != null ? password : ""%>"
+						<%=password == null ? "autofocus" : ""%>></td>
+				</tr>
+				<tr>
+					<th id="th">이름</th>
+					<td id="td"><input type="text" id="name" name="name"
+						value="<%=name != null ? name : ""%>"
+						<%=name == null ? "autofocus" : ""%>></td>
+				</tr>
+				<tr>
+					<th id="th">주소</th>
+					<td id="td"><input type="text" id="address" name="address"
+						value="<%=address != null ? address : ""%>"
+						<%=address == null ? "autofocus" : ""%>></td>
+				</tr>
+				<tr>
+					<th id="th">핸드폰 번호</th>
+					<td id="td"><input type="text" id="phone" name="phone"
+						value="<%=phone != null ? phone : ""%>"
+						<%=password == null ? "autofocus" : ""%>></td>
+				</tr>
+				<tr>
+					<th id="th">성별</th>
+					<td id="td"><select id="gender" name="gender">
+							<option value="Male">남자</option>
+							<option value="Female">여자</option>
+					</select></td>
+				</tr>
+			</table>
+			<div class="button">
+				<input type="button" value="등록" onclick="checkValues(form)"
+					class="regist">
 			</div>
-			<div class="inform">
-				<p>비밀번호</p>
-				<input type="text" id="password" name="password"
-					value="<%=password != null ? password : ""%>"
-					<%=password == null ? "autofocus" : ""%>>
-			</div>
-			<div class="inform">
-				<p>이름</p>
-				<input type="text" id="name" name="name"
-					value="<%=name != null ? name : ""%>"
-					<%=name == null ? "autofocus" : ""%>>
-			</div>
-			<div class="inform">
-				<p>주소</p>
-				<input type="text" id="address" name="address"
-					value="<%=address != null ? address : ""%>"
-					<%=address == null ? "autofocus" : ""%>>
-			</div>
-			<div class="inform">
-				<p>핸드폰 번호</p>
-				<input type="text" id="phone" name="phone"
-					value="<%=phone != null ? phone : ""%>"
-					<%=password == null ? "autofocus" : ""%>>
-			</div>
-			<div class="inform">
-				<p>성별</p>
-				<select id="gender" name="gender">
-					<option value="Male">남자</option>
-					<option value="Female">여자</option>
-				</select>
-			</div>
-			<input type="button" value="등록" onclick="checkValues(form)" class="regist">
 		</form>
-
-
 	</section>
+
 	<script src="resources/registCheck.js"></script>
 
 </body>
-<c:import url="footer" />
+
 </html>

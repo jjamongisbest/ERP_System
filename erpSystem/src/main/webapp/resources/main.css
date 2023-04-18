@@ -61,12 +61,3 @@
 .main-banner {
   	grid-area: banner;
 }
-
-.footer {
-	position: fixed;
-	bottom: 0;
-	height: 1;
-	background-color: #439A97;
-	padding: 20px;
-	text-align: center;
-}
