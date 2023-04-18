@@ -43,6 +43,10 @@
 	align-items: center;
 }
 
+.list:hover{
+	background-color: r
+}
+
 .list>a{
 	color: white;
 }

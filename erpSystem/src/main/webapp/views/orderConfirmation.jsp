@@ -42,8 +42,20 @@
 					<td><%=salesOrder.getCustomerId()%></td>
 					<td><%=salesOrder.getTotal()%></td>
 					<td><%=salesOrder.getDate()%></td>
-					<td><a onclick="checkValues('<%=salesOrder.getId()%>','<%=salesOrder.getStatus() %>')"
-						><%=salesOrder.getStatus()%></a></td>
+					<td><a onclick="checkValues('<%=salesOrder.getId()%>','<%=salesOrder.getStatus() %>')">
+							<%
+					if(salesOrder.getStatus().equals("Y")){
+						%> 주문완료<%
+					}
+					else if(salesOrder.getStatus().equals("D")){
+						%> 배송중 <%
+					}
+					else{
+						%> 결제전 <%
+					}
+					
+					%>
+					</a></td>
 				</tr>
 
 				<%

@@ -21,16 +21,19 @@
 <body>
 
 	<%
-	int userId = Integer.parseInt(request.getParameter("custid"));
+	
+	Customer customer = (Customer)session.getAttribute("log");
 
+	int userId = customer.getId();
+	
 	CustomerDAO custdao = CustomerDAO.getinstnace();
 	BoardDAO boarddao = BoardDAO.getInstance();
 	OrderProductDAO orderdao = OrderProductDAO.getInstance();
 	SalesOrderDAO salesdao = SalesOrderDAO.getInstance();
 	BoardCategoryDAO catedao = BoardCategoryDAO.getInstance();
 
-	Customer customer = custdao.getCustomerById(userId);
-	Board board = boarddao.getBoardById(userId);
+	
+	
 	ArrayList<SalesOrder> list = salesdao.getSalesOrderByCustomerID(userId);
 	ArrayList<Board> blist = boarddao.getBoardByCustomerId(userId);
 	%>
@@ -100,12 +103,12 @@
 
 	<div class="my-board">
 		<div class="board-thead">
-			<% if(board != null) {%>
 			<div style="width: 25%">등록일자</div>
 			<div style="width: 60%">제목</div>
 			<div style="width: 15%">게시판</div>
 		</div>
 		<div class="board-tbody">
+			<% if(blist != null) {%>
 			<% for (Board target : blist) { %>
 			<div><%=target.getReigisteredDate() %></div>
 			<div><%=target.getTitle() %></div>
@@ -113,7 +116,7 @@
 			<%} %>
 			<%} else { %>
 			<div>작성 내역이 없습니다.</div>
-			<%} %>
+			<%}%>
 		</div>
 	</div>
 	
