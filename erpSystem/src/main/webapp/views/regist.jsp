@@ -37,7 +37,7 @@
 	%>
 	<section class="regist-box">
 		<form method="POST" action="../service">
-<<<<<<< HEAD
+
 			<h1 id="info-title">회원정보 입력</h1>
 			<input type="hidden" name="command" value="<%=url%>"> <input
 				type="hidden" id="gradeId" name="gradeId" value="<%=gradeId%>">
@@ -82,7 +82,7 @@
 			<div class="button">
 				<input type="button" value="등록" onclick="checkValues(form)"
 					class="regist">
-=======
+
 			<h1>회원정보 입력</h1>
 			<input type="hidden" name="command" value=<%=url %>> <input
 				type="hidden" id="gradeId" name="gradeId" value=<%=gradeId%>>
@@ -90,7 +90,6 @@
 			<div class="inform">
 				<p>아이디</p>
 				<input type="text" id="id" name="id" value=<%=id%> readonly>
->>>>>>> refs/remotes/origin/#03_WooJongguk
 			</div>
 		</form>
 	</section>
