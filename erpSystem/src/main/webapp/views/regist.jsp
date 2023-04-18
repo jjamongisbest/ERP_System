@@ -25,7 +25,7 @@
 	String name = request.getParameter("name");
 	String address = request.getParameter("address");
 	String phone = request.getParameter("phone");
-	String url = request.getParameter("url");
+	String url = "regist";
 
 	Customer customer = (Customer) session.getAttribute("log");
 	if (customer != null) {
@@ -41,7 +41,7 @@
 
 		<form method="POST" action="../service">
 			<h1>회원정보 입력</h1>
-			<input type="hidden" name="command" value="<%=url%>"> <input
+			<input type="hidden" name="command" value=<%=url %>> <input
 				type="hidden" id="gradeId" name="gradeId" value=<%=gradeId%>>
 
 			<div class="inform">

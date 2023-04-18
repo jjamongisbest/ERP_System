@@ -70,7 +70,7 @@
 				%>
 			</table>
 		</form>
-		<div style="width: 600px; text-align: center; margin-top: 10px;">
+		<div style="width: 600px; text-align: center; margin-top: 10px;" class = "number">
 
 			<%
 			for (int i = 1; i <= lastPage; i++) {

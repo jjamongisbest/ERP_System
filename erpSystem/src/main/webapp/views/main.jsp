@@ -26,8 +26,7 @@
 		<div class="main-banner">
 			<img id="event-banner" src="../resources/images/event-banner.jpg">
 			
-			<%-- <c:import url="${requestScope.content }"/> --%>
-			
+			<%-- <c:import url="${requestScope.content }"/> --%>			
 		</div>
 	</div>
 

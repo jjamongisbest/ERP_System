@@ -30,6 +30,8 @@ public class BoardAction implements Action {
 		String title = request.getParameter("title");
 		String main = request.getParameter("main");
 		
+		main = main.replace("\r\n","<br>");
+		
 		String modifiedDate = date;
 		String registDate = date;
 		int writer = cus.getId();

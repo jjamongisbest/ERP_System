@@ -9,7 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../resources/board.css">
+<link rel="stylesheet" href="../resources/boardView.css">
 </head>
 <c:import url="header" />
 <body>
@@ -27,9 +27,9 @@
 	String category = boardCategoryDao.getCategoryNameById(board.getCategoryId());
 	%>
 
-	<h1><%=category%></h1>
 
 	<section class="board">
+		<h1><%=category%></h1>
 		<table>
 			<thead>
 				<tr>
@@ -57,7 +57,7 @@
 
 			if (customerId == customer.getId()) {
 		%>
-		<div class = "click">
+		<div class="click">
 			<form method="POST" action="boardmodify">
 				<input type="hidden" name="id" value=<%=boardId%>>
 				<div>

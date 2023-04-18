@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>AdminPage</title>
+<link rel="stylesheet" href="../resources/adminpage.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://www.gstatic.com/charts/loader.js"></script>
@@ -18,11 +19,11 @@
 		<div class="button-container">
 			<button type="button" id="btn">등급별 매출</button>
 			<button type="button" id="btn2">월별 매출</button>
+			<a href="orderconfirmation" class="sales">주문총확인</a>
 		</div>
+		
 		<div id="column_chart_div1" style="width: 900px; height: 500px;"></div>
-		<div>
-			<a href="orderconfirmation">주문총확인</a>
-		</div>
+		
 	</div>
 
 	<script src="../resources/drawGraph.js"></script>
