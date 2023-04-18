@@ -8,8 +8,8 @@
 <head>
 <meta charset="UTF-8">
 </head>
-<body>
 <title>Insert title here</title>
+<body>
 	<%
 	ProductCategoryDAO dao = ProductCategoryDAO.getInstance();
 	ArrayList<ProductCategory> list = dao.getProductCategoryList();
