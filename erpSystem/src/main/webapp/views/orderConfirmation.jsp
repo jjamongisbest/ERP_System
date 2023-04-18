@@ -13,7 +13,6 @@
 <body>
 	<%
 	SalesOrderDAO salesOrderDao = SalesOrderDAO.getInstance();
-	ArrayList<SalesOrder> list = salesOrderDao.getSalesOrderByCustomerID();
 
 	String vpage = request.getParameter("vpage");
 	if (vpage == null) {
@@ -21,8 +20,13 @@
 	}
 
 	int selPage = Integer.parseInt(vpage);
-	int total = salesOrderDao.getTotalCountByCategory();
+	int total = salesOrderDao.getTotalOrderCount();
+	
+	
+	ArrayList<SalesOrder> list = salesOrderDao.getOrdersPerPage(selPage);
 	int lastPage = (int) Math.ceil((double) total / 10);
+	
+	System.out.println(list);
 	%>
 	<section>
 		<form method="POST" action="../service">
@@ -68,7 +72,7 @@
 			<%
 			for (int i = 1; i <= lastPage; i++) {
 			%>
-			<a href="orderConfirmation?vpage=<%=i%>"><%=i%></a>
+			<a href="orderconfirmation?vpage=<%=i%>"><%=i%></a>
 			<%
 			}
 			%>
@@ -78,6 +82,6 @@
 
 </body>
 <script src="resources/orderConfirmation.js"></script>
-<c:import url="footer" />
+
 
 </html>
