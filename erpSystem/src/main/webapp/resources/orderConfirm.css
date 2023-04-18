@@ -5,6 +5,11 @@ a:hover {
 }
 a{
 	text-decoration : none;
+	color: black;
+	margin-top:10px;
+	margin-left: 10px;
+    margin-right: 10px;
+
 }
 
 
@@ -15,6 +20,9 @@ a{
 
 .board h1 {
   text-align: center; 
+  color: #395144;
+  margin-top : 50px;
+  margin-bottom : 50px;
 }
 
 .board table {
@@ -23,14 +31,16 @@ a{
 }
 
 .board td {
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc; 
+  border-top: 1px solid black;
+  border-bottom: 1px solid black; 
   padding: 10px; 
   text-align: center; 
 }
 thead{
-	background-color: #51FFA6;
+	background-color: rgb(240,246,244);
+	border-top: solid 2px #395144;
 }
 .number {
-  margin : 0 auto;
+  margin : auto;
 }
+

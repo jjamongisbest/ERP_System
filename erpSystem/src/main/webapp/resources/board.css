@@ -43,22 +43,23 @@ thead{
 
 .write {
   margin-top: 10px;
-  padding: 10px 20px;
-  background-color: #51FFA6;
-  color: black;
+  padding: 5px 10px;
+  background-color: rgb(240,246,244);
+  color: #395144;
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
+ 
 }
 
 .write:hover {
-  background-color: #9EF048	;
-  color : white;
+  background-color: #395144;
+  color : rgb(240,246,244);
 }
 a:hover{
 	text-decoration: underline;
 }
 .notice-header {
-  margin-top : 10px;
-
+  margin-top : 30px;
+  text-align: right;
 }

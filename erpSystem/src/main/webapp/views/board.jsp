@@ -82,6 +82,7 @@
 
 						if (customer.getId() == 99999) {
 				%>
+				
 				<a href="boardwrite?categoryId=<%=categoryId%>" class="write">글쓰기</a>
 				<%
 				}

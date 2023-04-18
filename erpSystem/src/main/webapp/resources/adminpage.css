@@ -1,11 +1,11 @@
-/* 전체 컨테이너 */
+
 .container {
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
 }
 
-/* 버튼 컨테이너 */
+
 .button-container {
   margin-bottom: 20px;
 }
