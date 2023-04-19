@@ -20,7 +20,7 @@
 
 	@SuppressWarnings("unchecked")
 	List<Product> list = (List<Product>) request.getAttribute("searchProduct");
-	int cnt = 0;
+
 	%>
 
 	<div class="product-list">
