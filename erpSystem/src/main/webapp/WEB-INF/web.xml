@@ -195,6 +195,7 @@
 		<servlet-name>adminpage</servlet-name>
 		<url-pattern>/adminpage</url-pattern>
 	</servlet-mapping>
+	
 
 	
 	<!-- orderConfirmation mapping -->

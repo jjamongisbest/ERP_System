@@ -30,7 +30,7 @@
 	%>
 	<section class="board">
 		<form method="POST" action="../service">
-		<h1>주문처리상태페이지</h1>
+			<h1>주문처리상태페이지</h1>
 			<table>
 				<thead>
 					<tr>
@@ -69,8 +69,8 @@
 				%>
 			</table>
 		</form>
-		<div style="width: 600px; text-align: center; margin-top: 10px;" class = "number">
-
+		<div style="width: 600px; text-align: center; margin-top: 30px;" class="number">
+			
 			<%
 			for (int i = 1; i <= lastPage; i++) {
 			%>
@@ -78,7 +78,7 @@
 			<%
 			}
 			%>
-
+			
 		</div>
 	</section>
 

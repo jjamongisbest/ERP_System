@@ -24,53 +24,59 @@
 
 	int total = order.getTotalPrice(list);
 	%>
-	<h3>
-		<c:out value="${sessionScope.log.getName() }" />
-		님의 장바구니
-	</h3>
-	<table>
 
-		<%
-		if (!list.isEmpty()) {
-		%>
-		<tr>
-			<td>no.</td>
-			<td>상품명</td>
-			<td>수량</td>
-			<td>가격</td>
-			<td>취소</td>
-		</tr>
+	<section>
+		<h3>
+			<c:out value="${sessionScope.log.getName() }" />
+			님의 장바구니
+		</h3>
+		<table>
+			<%
+			if (!list.isEmpty()) {
+			%>
+			<tr>
+				<td>no.</td>
+				<td>상품명</td>
+				<td>수량</td>
+				<td>가격</td>
+				<td>취소</td>
+			</tr>
 
-		<%
-		for (int i = 0; i < list.size(); i++) {
-			Product product = list.get(i);
-			int quantity = map.get(product.getId());
-		%>
-		<tr>
-			<td><%=i + 1%></td>
-			<td><%=product.getName()%></td>
-			<td><%=quantity%></td>
-			<td><%=product.getPrice() * quantity%></td>
-			<td>
-				<button onclick="dropItem('<%=product.getId()%>')">취소</button>
-			</td>
-		</tr>
+			<%
+			for (int i = 0; i < list.size(); i++) {
+				Product product = list.get(i);
+				int quantity = map.get(product.getId());
+			%>
+			<tr>
+				<td><%=i + 1%></td>
+				<td><%=product.getName()%></td>
+				<td><%=quantity%></td>
+				<td><%=product.getPrice() * quantity%></td>
+				<td>
+					<button onclick="dropItem('<%=product.getId()%>')">취소</button>
+				</td>
+			</tr>
+			<%
+			}
+			%>
 		</table>
 		<%
-			}
 		} else {
 		%>
 		<p>장바구니가 비어있습니다</p>
 		<%
 		}
 		%>
-	<h3>
-		총 결제 금액
-		<c:out value="<%=total%>" />
-	</h3>
-	<form method="POST" action="../service">
-		<input type="hidden" name="command" value="order"> <input
-			type="submit" value="주문하기">
-	</form>
+
+		<p class="total">
+			총 주문금액 :
+			<c:out value="<%=total%>" />
+		<p>
+		<form method="POST" action="../service">
+			<input type="hidden" name="command" value="order"> <input
+				type="submit" value="주문하기" class="button">
+		</form>
+	</section>
+
 </body>
 </html>
