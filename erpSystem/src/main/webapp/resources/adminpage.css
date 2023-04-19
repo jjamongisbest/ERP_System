@@ -1,13 +1,15 @@
 
-.container {
+.button-container {
+
+  margin-bottom: 20px;
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
+  
+ 
 }
-
-
-.button-container {
-  margin-bottom: 20px;
+#btn, #btn2{
+	margin-bottom : 20px;
 }
 
 
@@ -45,4 +47,7 @@
 
 a:hover {
   background-color: #FFB6C1	;
+}
+button:hover{
+	background-color: #FFB6C1	;
 }

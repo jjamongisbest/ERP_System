@@ -12,7 +12,7 @@
 <!-- jQuery 라이브러리 로드 -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
-<c:import url="header" />
+
 <body>
 
 	<div class="container">
@@ -28,5 +28,5 @@
 
 	<script src="../resources/drawGraph.js"></script>
 </body>
-<c:import url="footer" />
+
 </html>
