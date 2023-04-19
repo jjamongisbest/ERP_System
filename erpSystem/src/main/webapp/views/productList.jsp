@@ -16,10 +16,10 @@
 <body>
 
 	<%
-	String result = (String)request.getAttribute("result");
-	
 	@SuppressWarnings("unchecked")
 	List<Product> list = (List<Product>) request.getAttribute("searchProduct");
+	String result = (String)request.getAttribute("result");
+	
 	%>
 
 	<div class="product-list">

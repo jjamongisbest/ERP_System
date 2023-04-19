@@ -19,7 +19,7 @@ public class CustomerDAO {
 
 	private static CustomerDAO instance = new CustomerDAO();
 
-	public static CustomerDAO getinstnace() {
+	public static CustomerDAO getInstance() {
 		return instance;
 	}
 

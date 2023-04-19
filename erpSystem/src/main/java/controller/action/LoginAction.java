@@ -31,7 +31,7 @@ public class LoginAction implements Action {
 	        return;
 	    }
 
-	    CustomerDAO dao = CustomerDAO.getinstnace();
+	    CustomerDAO dao = CustomerDAO.getInstance();
 	    Customer cus = dao.getCustomerById(id);
 
 	    if (cus != null && password.equals(cus.getPassword())) {

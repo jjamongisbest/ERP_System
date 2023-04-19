@@ -1,3 +1,4 @@
+<%@page import="org.apache.jasper.tagplugins.jstl.core.Param"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="productCategory.controller.ProductCategoryDAO"%>
 <%@page import="productCategory.ProductCategory"%>

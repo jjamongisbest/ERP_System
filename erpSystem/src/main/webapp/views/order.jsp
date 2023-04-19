@@ -29,11 +29,11 @@
 			<c:out value="${sessionScope.log.getName() }" />
 			님의 장바구니
 		</h3>
-		<table class="tbl">
 
 			<%
 			if (!list.isEmpty()) {
 			%>
+		<table class="tbl">
 			<thead class="orderhead">
 				<tr>
 					<td>no.</td>

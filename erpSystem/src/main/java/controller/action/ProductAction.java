@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import product.Product;
 import product.contoroller.ProductDAO;
+import productCategory.controller.ProductCategoryDAO;
 
 public class ProductAction implements Action{
 	
@@ -25,7 +26,7 @@ public class ProductAction implements Action{
 			return;
 		
 		request.setAttribute("searchProduct", getSearchProduct());
-		request.setAttribute("result", "?");
+		request.setAttribute("result", getSearchResult());
 		request.getRequestDispatcher("/").forward(request, response);
 	}
 	
@@ -50,6 +51,19 @@ public class ProductAction implements Action{
 	private List<Product> getSearchProduct() {
 		return this.keyword != null ?
 				getProductListByKeyword() : getProductListByCategory();
+	}
+	
+	
+	private String getSearchResult() {
+		return this.keyword != null ? 
+				"'"+this.keyword+"'에 대한 검색 결과" : getCategoryByCode();		   
+	}
+	
+	
+	private String getCategoryByCode() {
+		int tagetCode = Integer.parseInt(this.code);
+		ProductCategoryDAO categoryDao = ProductCategoryDAO.getInstance();
+		return categoryDao.getCategroyNameById(tagetCode);
 	}
 
 }

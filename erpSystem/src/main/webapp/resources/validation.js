@@ -9,6 +9,7 @@ function insertCart() {
 function send(page) {
 	if (page === "login")
 		alert("로그인 후 이용가능");
+	
 	location.href = `../?content=${page}`;
 }
 
