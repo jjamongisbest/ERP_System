@@ -50,7 +50,7 @@
 						<td><%=salesOrder.getCustomerId()%></td>
 						<td><%=salesOrder.getTotal()%></td>
 						<td><%=salesOrder.getDate()%></td>
-						<td><a
+						<td><a id="check-values"
 							onclick="checkValues('<%=salesOrder.getId()%>','<%=salesOrder.getStatus()%>')">
 								<%
 								if (salesOrder.getStatus().equals("Y")) {

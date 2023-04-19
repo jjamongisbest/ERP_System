@@ -26,7 +26,7 @@
 	%>
 
 	<section>
-		<h3>
+		<h3 id="h3">
 			<c:out value="${sessionScope.log.getName() }" />
 			님의 장바구니
 		</h3>
