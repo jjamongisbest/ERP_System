@@ -23,6 +23,8 @@
 		list.add(productDao.getProductById(id));
 
 	int total = order.getTotalPrice(list);
+	
+	
 	%>
 	
 	<h3 class="titles">${sessionScope.log.name}님의장바구니</h3>

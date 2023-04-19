@@ -9,16 +9,16 @@ import javax.servlet.http.HttpServletResponse;
 import customer.CustomerDTO;
 import customer.controller.CustomerDAO;
 
-public class RegistAction implements Action{
-	
-		private int id;
-		private int gradeId;
-		private String name;
-		private String address;
-		private String phone;
-		private String gender;
-		private String password;
-	
+public class RegistAction implements Action {
+
+	private int id;
+	private int gradeId;
+	private String name;
+	private String address;
+	private String phone;
+	private String gender;
+	private String password;
+
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -29,24 +29,28 @@ public class RegistAction implements Action{
 		this.phone = request.getParameter("phone");
 		this.gender = request.getParameter("gender");
 		this.password = request.getParameter("password");
-		
-		
+
 		CustomerDTO CustomerDto = new CustomerDTO(id, gradeId, name, address, phone, gender, password);
-		
+
 		inputCustomerForDataBase(CustomerDto);
 		response.sendRedirect("/");
 	}
-	
-		
+
 	private void inputCustomerForDataBase(CustomerDTO customerDto) {
 		CustomerDAO customerDao = CustomerDAO.getInstance();
+
 		
-		//회원가입이면
-		if(customerDao.getCustomerId() == this.id) {
+		// 회원가입이면
+		if (customerDao.getCustomerId() == this.id) {
+			
+			System.out.println("111111");
 			customerDao.createCustomer(customerDto);
 			return;
+		} else {
+			customerDao.updateCustomer(customerDto);
+			System.out.println("222222");
+			
 		}
-		customerDao.updateCustomer(customerDto);
-		
+
 	}
 }

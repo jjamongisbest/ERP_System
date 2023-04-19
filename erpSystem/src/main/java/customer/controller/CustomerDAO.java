@@ -158,12 +158,12 @@ public class CustomerDAO {
 		this.conn = DBManager.getConnection();
 
 		if (this.conn != null) {
-			String str = "UPDATE customer SET customer_grade_id=?, customer_name=?,customer_address=?,customer_phone=?,customer_gender=? WHERE customer_id=?";
+			String str = "UPDATE customer SET customer_password=?, customer_name=?,customer_address=?,customer_phone=?,customer_gender=? WHERE customer_id=?";
 
 			try {
 				this.pstmt = conn.prepareStatement(str);
 
-				this.pstmt.setInt(1, customer.getGradeId());
+				this.pstmt.setString(1, customer.getPassword());
 				this.pstmt.setString(2, customer.getName());
 				this.pstmt.setString(3, customer.getAddress());
 				this.pstmt.setString(4, customer.getPhone());
