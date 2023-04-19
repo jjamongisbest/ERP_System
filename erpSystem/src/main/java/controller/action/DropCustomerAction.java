@@ -15,9 +15,6 @@ public class DropCustomerAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
-
-		
 		String password = request.getParameter("password");
 
 		
@@ -41,7 +38,6 @@ public class DropCustomerAction implements Action {
 		else {
 			request.setAttribute("message", "회원 정보가 올바르지 않습니다.");
 	        request.getRequestDispatcher("dropcustomer").forward(request, response);
-	        response.getWriter().close();
 		}
 	}
 }

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import product.Product;
 import product.contoroller.ProductDAO;
+import productCategory.ProductCategory;
 
 public class ProductAction implements Action{
 	
@@ -18,23 +19,19 @@ public class ProductAction implements Action{
 	
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		this.keyword = request.getParameter("keyword");
-		this.code = request.getParameter("code");
+		String keyword = request.getParameter("keyword");
+		String code = request.getParameter("code");
 		
 		if(this.keyword == null && this.code == null)
 			return;
 		
-		List<Product> list = this.keyword != null ?
-							getSearchProduct() : getProductListByCategory();
-		
-		request.setAttribute("searchProduct", list);
-		
+		request.setAttribute("searchProduct", getSearchProduct());
+		request.setAttribute("result", "?");
 		request.getRequestDispatcher("/").forward(request, response);
-		response.getWriter().close();
 	}
 	
 	
-	private List<Product> getSearchProduct() {
+	private List<Product> getProductListByKeyword() {
 		ProductDAO productDao = ProductDAO.getInstance();
 		List<Product> productList = productDao.getProductList();
 		
@@ -48,6 +45,12 @@ public class ProductAction implements Action{
 		int categoryId = Integer.parseInt(this.code);
 		ProductDAO dao = ProductDAO.getInstance();
 		return dao.getProductsByCategory(categoryId);
+	}
+	
+	
+	private List<Product> getSearchProduct() {
+		return this.keyword != null ?
+				getProductListByKeyword() : getProductListByCategory();
 	}
 
 }

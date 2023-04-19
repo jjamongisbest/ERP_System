@@ -74,7 +74,7 @@
 			<%
 			for (int i = 1; i <= lastPage; i++) {
 			%>
-			<a href="?content=orderconfirmation?vpage=<%=i%>"><%=i%></a>
+			<a href="../?content=orderconfirmation&vpage=<%=i%>"><%=i%></a>
 			<%
 			}
 			%>

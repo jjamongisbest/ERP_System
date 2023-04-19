@@ -120,8 +120,8 @@
 	</div>
 	
 	<div class="button">
-	<input type="button" value="정보수정" onclick="location.href='regist'">
-	<input type="button" value="회원탈퇴" onclick="location.href='dropcustomer'">
+	<input type="button" value="정보수정" onclick="location.href='../?content=regist'">
+	<input type="button" value="회원탈퇴" onclick="location.href='../?content=dropcustomer'">
 	</div>
 	
 	</div>

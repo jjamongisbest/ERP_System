@@ -2,7 +2,7 @@
  * 
  */
 function checkValues(htmlForm) {
-	let url = "?content=boardwrite";
+	let url = "../?content=boardwrite";
 
 	
 	

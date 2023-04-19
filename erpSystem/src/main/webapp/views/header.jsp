@@ -30,22 +30,22 @@
 		<c:choose>
 			<c:when test="${empty sessionScope.log}">
 				<li>
-					<a id="regist" href="?content=regist">회원가입</a>
+					<a id="regist" href="../?content=regist">회원가입</a>
 					
 				</li>
-				<li><a id="login" href="?content=login">로그인</a></li>
+				<li><a id="login" href="../?content=login">로그인</a></li>
 			</c:when>
 			<c:otherwise>
 				<c:choose>
 					<c:when test="${sessionScope.log.getId() != 99999 }">
 						<li>
 						<a id="mypage"
-						 href="?content=mypage&custid=<%=customer.getId()%>">
+						 href="../?content=mypage&custid=<%=customer.getId()%>">
 						 마이페이지</a>
 						</li>
 					</c:when>
 					<c:otherwise>
-						<li><a id="adminpage" href="?content=adminpage"> 관리자페이지</a></li>
+						<li><a id="adminpage" href="../?content=adminpage"> 관리자페이지</a></li>
 					</c:otherwise>
 				</c:choose>
 				<li><a id="logout" onclick="sendCommand('logout')">로그아웃</a></li>
@@ -57,7 +57,7 @@
 		for (BoardCategory target : list) {
 		%>
 		<li>
-			<a href="?content=board&cate=<%=target.getId()%>"><%=target.getName()%></a>
+			<a href="../?content=board&cate=<%=target.getId()%>"><%=target.getName()%></a>
 		</li>
 		<%
 		}

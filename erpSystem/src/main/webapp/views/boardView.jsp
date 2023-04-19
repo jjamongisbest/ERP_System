@@ -57,7 +57,7 @@
 			if (customerId == customer.getId()) {
 		%>
 		<div class="click">
-			<form method="POST" action="?content=boardmodify">
+			<form method="POST" action="../?content=boardmodify">
 				<input type="hidden" name="id" value=<%=boardId%>>
 				<div>
 					<input type="submit" value="수정하기">
