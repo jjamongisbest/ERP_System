@@ -18,7 +18,7 @@ public class DropCustomerAction implements Action {
 		String password = request.getParameter("password");
 
 		
-		CustomerDAO customerDao = CustomerDAO.getinstnace();
+		CustomerDAO customerDao = CustomerDAO.getInstance();
 		HttpSession session = request.getSession();
 		Customer customer = (Customer) session.getAttribute("log");
 		

@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 function checkValues(htmlForm) {
 	let url = "../?content=regist";
 

@@ -17,7 +17,7 @@
 	CustomerGrade customerGrade = customerGradeDao.getCustomerGradeById(1);
 	int gradeId = customerGrade.getGradeId();
 
-	CustomerDAO customerDao = CustomerDAO.getinstnace();
+	CustomerDAO customerDao = CustomerDAO.getInstance();
 	int id = customerDao.getCustomerId();
 	String password = request.getParameter("password");
 	String name = request.getParameter("name");

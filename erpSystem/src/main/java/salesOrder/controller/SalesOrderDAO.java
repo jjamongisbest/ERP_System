@@ -322,7 +322,7 @@ public class SalesOrderDAO {
 		this.conn = DBManager.getConnection();
 
 		if (this.conn != null) {
-			String sql = "SELECT * FROM sales_order ORDER BY (CASE WHEN order_status = 'N' THEN 0 WHEN order_status = 'Y' THEN 1 ELSE 2 END), order_date DESC LIMIT ?, 10";
+			String sql = "SELECT * FROM sales_order ORDER BY CASE order_status WHEN 'N' THEN 1 WHEN 'Y' THEN 2 WHEN 'D' THEN 3 ELSE 4 END DESC, order_date DESC LIMIT ?, 10";
 
 			try {
 				this.pstmt = this.conn.prepareStatement(sql);

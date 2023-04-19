@@ -19,19 +19,10 @@ public class OrderConfirmAction implements Action{
 		
 		SalesOrderDAO salesOrderDao = SalesOrderDAO.getInstance();
 		
-
-		
-		if(salesOrderStatus.equals("N")) {
-			salesOrderStatus = "Y";
-		}
-		else if (salesOrderStatus.equals("Y")) {
-			salesOrderStatus = "D";
-		}
-	
+		salesOrderStatus = salesOrderStatus.equals("N") ? "Y" : "D";
 		
 		salesOrderDao.updateOrderSatatus(salesOrderId, salesOrderStatus);
-		
-		response.sendRedirect("orderconfirmation");
+		request.getRequestDispatcher("/").forward(request, response);
 	}
 
 }

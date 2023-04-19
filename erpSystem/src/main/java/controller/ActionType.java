@@ -36,7 +36,7 @@ public enum ActionType {
 	DROP_ITEM("dropitem", 			new DropItemAction()),
 	
 	PRODUCT_DETAIL("productdetail", new ProductDetailAction()),
-	ORDER_CONF("orderConfirmation", new OrderConfirmAction()),
+	ORDER_CONF("orderconfirmation", new OrderConfirmAction()),
 	SALES_TOTAL("salesTotal", new GetSalesTotal()),
 	GET_MONTH_SALES_TOTAL("monthlyTotal", new GetMonthlySalesTotal())
 	;

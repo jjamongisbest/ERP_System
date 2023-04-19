@@ -9,9 +9,11 @@
 <link rel="stylesheet" href="../resources/main.css">
 <title>Insert title here</title>
 </head>
+
 <body>
-<div class="frame">
+<section class="frame">
 	<c:import url="main" />
-</div>
+</section>
 </body>
+
 </html>

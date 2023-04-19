@@ -24,7 +24,7 @@
 
 	int userId = customer.getId();
 
-	CustomerDAO custdao = CustomerDAO.getinstnace();
+	CustomerDAO custdao = CustomerDAO.getInstance();
 	BoardDAO boarddao = BoardDAO.getInstance();
 	OrderProductDAO orderdao = OrderProductDAO.getInstance();
 	SalesOrderDAO salesdao = SalesOrderDAO.getInstance();
@@ -36,102 +36,100 @@
 
 	<div class="container1">
 
+		<h2 class="pagename">MYPAGE</h2>
+
 		<div class="cust_info">
-			<section>
-				<h2><%=customer.getName()%>(<%=customer.getId()%>)님
-				</h2>
-				<p>
-					전화번호 :
-					<%=customer.getPhone()%></p>
-				<p>
-					이메일 :
-					<%=customer.getAddress()%></p>
-			</section>
+			<ul>
+				<li><h4 class="cust_name"><%=customer.getName()%>(<%=customer.getId()%>)님
+					</h4></li>
+				<li>전화번호 : <%=customer.getPhone()%></li>
+				<li>이메일 : <%=customer.getAddress()%></li>
+			</ul>
 		</div>
 
-
+		<h5>내 주문내역</h5>
 		<div class="my-order">
-			<div class="order-thead">
-				<div style="width: 25%">주문코드</div>
-				<div class="product-name" style="width: 25%">주문일자</div>
-				<div style="width: 25%">결제금액</div>
-				<div style="width: 25%">주문상세</div>
-			</div>
-			<div class="order-tbody">
-				<%
-				if (list != null) {
-				%>
-				<%
-				for (SalesOrder target : list) {
-				%>
-				<div><%=target.getId()%></div>
-				<div><%=target.getDate()%></div>
-				<div><%=target.getTotal()%></div>
-				<div>
+			<table>
+				<tr class="thead">
+					<td>주문코드</td>
+					<td>주문일자</td>
+					<td>결제금액</td>
+					<td>주문상세</td>
+				</tr>
+				
 					<%
-					if (target.getStatus().equals("Y")) {
+					if (list != null) {
 					%>
-					결제완료
 					<%
-					} else if (target.getStatus().equals("D")) {
+					for (SalesOrder target : list) {
 					%>
-					배송중
-					<%
-					} else {
-					%>
-					결제 전
+				<tr class="order-tbody">
+					<td><%=target.getId()%></td>
+					<td><%=target.getDate()%></td>
+					<td><%=target.getTotal()%></td>
+					<td>
+						<%
+						if (target.getStatus().equals("Y")) {
+						%> 결제완료 <%
+						} else if (target.getStatus().equals("D")) {
+						%> 배송중 <%
+						} else {
+						%> 결제 전 <%
+						}
+						%>
+					</td>
 					<%
 					}
 					%>
-				</div>
-				<%
-				}
-				%>
-				<%
-				} else {
-				%>
-				<div>주문 내역이 없습니다.</div>
-				<%
-				}
-				%>
-			</div>
+					<%
+					} else {
+					%>
+					<td>주문 내역이 없습니다.</td>
+					<%
+					}
+					%>
+				</tr>
+			</table>
 		</div>
 
+		<h5>등록 게시글</h5>
 		<div class="my-board">
-			<div class="board-thead">
-				<div style="width: 25%">등록일자</div>
-				<div style="width: 60%">제목</div>
-				<div style="width: 15%">게시판</div>
-			</div>
-			<div class="board-tbody">
-				<%
-				if (blist != null) {
-				%>
-				<%
-				for (Board target : blist) {
-				%>
-				<div><%=target.getReigisteredDate()%></div>
-				<div><%=target.getTitle()%></div>
-				<div><%=catedao.getCategoryNameById(target.getCategoryId())%></div>
-				<%
-				}
-				%>
-				<%
-				} else {
-				%>
-				<div>작성 내역이 없습니다.</div>
-				<%
-				}
-				%>
-			</div>
+			<table>
+				<tr class="thead">
+					<td>등록일자</td>
+					<td>제목</td>
+					<td>게시판</td>
+				</tr>
+					<%
+					if (blist != null) {
+					%>
+					<%
+					for (Board target : blist) {
+					%>
+				<tr class="board-tbody">
+					<td><%=target.getReigisteredDate()%></td>
+					<td><%=target.getTitle()%></td>
+					<td><%=catedao.getCategoryNameById(target.getCategoryId())%></td>
+					<%
+					}
+					%>
+					<%
+					} else {
+					%>
+					<td>작성 내역이 없습니다.</td>
+					<%
+					}
+					%>
+				</tr>
+			</table>
 		</div>
-	
-	<div class="button">
-		<input type="button" value="정보수정" onclick="location.href='../?content=regist'">
-		<input type="button" value="회원탈퇴" onclick="location.href='../?content=dropcustomer'">
+
+		<div class="button-container">
+			<input class = "button" type="button" value="정보수정" onclick="location.href='../?content=regist'">
+			<input class = "button" type="button" value="회원탈퇴" onclick="location.href='../?content=dropcustomer'">
+		</div>
 	</div>
-	
-	</div>
+
 
 </body>
 

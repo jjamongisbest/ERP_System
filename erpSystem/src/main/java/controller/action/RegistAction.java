@@ -10,25 +10,43 @@ import customer.CustomerDTO;
 import customer.controller.CustomerDAO;
 
 public class RegistAction implements Action{
-
+	
+		private int id;
+		private int gradeId;
+		private String name;
+		private String address;
+		private String phone;
+		private String gender;
+		private String password;
+	
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		int id = Integer.parseInt(request.getParameter("id"));
-		int gradeId = Integer.parseInt(request.getParameter("gradeId"));
-		String name = request.getParameter("name");
-		String address = request.getParameter("address");
-		String phone = request.getParameter("phone");
-		String gender = request.getParameter("gender");
-		String password = request.getParameter("password");
+		this.id = Integer.parseInt(request.getParameter("id"));
+		this.gradeId = Integer.parseInt(request.getParameter("gradeId"));
+		this.name = request.getParameter("name");
+		this.address = request.getParameter("address");
+		this.phone = request.getParameter("phone");
+		this.gender = request.getParameter("gender");
+		this.password = request.getParameter("password");
 		
 		
 		CustomerDTO CustomerDto = new CustomerDTO(id, gradeId, name, address, phone, gender, password);
 		
-		CustomerDAO customerDao = CustomerDAO.getinstnace();
-		
-		customerDao.createCustomer(CustomerDto);
+		inputCustomerForDataBase(CustomerDto);
 		response.sendRedirect("/");
 	}
-
+	
+		
+	private void inputCustomerForDataBase(CustomerDTO customerDto) {
+		CustomerDAO customerDao = CustomerDAO.getInstance();
+		
+		//회원가입이면
+		if(customerDao.getCustomerId() == this.id) {
+			customerDao.createCustomer(customerDto);
+			return;
+		}
+		customerDao.updateCustomer(customerDto);
+		
+	}
 }
