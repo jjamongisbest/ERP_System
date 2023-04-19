@@ -13,17 +13,18 @@
 	<%
 	ProductCategoryDAO dao = ProductCategoryDAO.getInstance();
 	ArrayList<ProductCategory> list = dao.getProductCategoryList();
+	
+	pageContext.setAttribute("list", list);
 	%>
 	<div class="category-list">
-			<%
-			for (ProductCategory target : list) {
-			%>
+
+		<c:forEach items="${pageScope.list}" var="target">
 			<div class="list">
-				<a href="../service?command=productlist&code=<%=target.getId()%>"><%=target.getName()%></a>
+				<a href="../service?command=productlist&code=${target.id}"><c:out
+						value="${target.name}" /></a>
 			</div>
-		<%
-			}
-			%>
+		</c:forEach>
 	</div>
+
 </body>
 </html>
