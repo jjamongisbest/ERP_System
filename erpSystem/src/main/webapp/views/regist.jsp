@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>regist</title>
 <link rel="stylesheet" href="../resources/regist.css">
 </head>
 <body>
@@ -24,7 +24,7 @@
 	String address = request.getParameter("address");
 	String phone = request.getParameter("phone");
 	String url = "regist";
-	
+
 	Customer customer = (Customer) session.getAttribute("log");
 	if (customer != null) {
 		id = customer.getId();
@@ -84,9 +84,6 @@
 			</div>
 		</form>
 	</section>
-
 	<script src="resources/registCheck.js"></script>
-
 </body>
-
 </html>

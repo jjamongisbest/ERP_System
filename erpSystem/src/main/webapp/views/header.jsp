@@ -21,8 +21,8 @@
 	%>
 
 	<div class="header">
-		<a class="banner" href="/"> <img
-			src="../resources/images/banner.jpg">
+		<a class="banner" href="index.jsp"> <img
+			src="../resources/images/My project-1.jpg">
 		</a>
 	</div>
 

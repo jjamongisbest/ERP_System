@@ -8,7 +8,7 @@
 }
 
 #info-title {
-	padding-bottom : 10px;
+	padding-bottom : 30px;
 	text-align: center;
 	color: #9DC08B;
 }
@@ -16,7 +16,7 @@
 .table {
 	margin: 0 auto;
 	border-collapse: collapse;
-	border-spacing: 10px
+	border-spacing: 10px;
 }
 
 .table #td {
