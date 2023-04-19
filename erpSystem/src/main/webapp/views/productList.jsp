@@ -1,3 +1,4 @@
+<%@page import="productCategory.controller.ProductCategoryDAO"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="product.contoroller.ProductDAO"%>
@@ -17,9 +18,17 @@
 	<%
 	@SuppressWarnings("unchecked")
 	List<Product> list = (List<Product>) request.getAttribute("searchProduct");
+	
+	int categoryCode = Integer.parseInt(request.getParameter("code"));
+	ProductCategoryDAO pcdao = ProductCategoryDAO.getInstance();
+	
+	String name = pcdao.getCategroyNameById(categoryCode);
+	
+	System.out.println(name);
 	%>
 
 	<div class="product-list">
+		<h2 id="name"><%=name %></h2>
 		<%
 		for (Product target : list) {
 		%>
@@ -33,7 +42,7 @@
 		}
 		%>
 		<%if(list.size() < 1) {%>
-			<img src="../resources/images/TUNG.jpg">
+			<img src="../resources/images/emptyCart.jpg">
 		<%} %>
 	</div>
 
