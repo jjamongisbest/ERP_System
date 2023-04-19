@@ -53,18 +53,21 @@ public class CustomerDAO {
 		}
 	}
 	public int getCustomerId() {
-		int customerId = -1;
+		int customerId = 100000;
 		
 		this.conn=DBManager.getConnection();
 		if(this.conn != null) {
-			String str = "SELECT MAX(customer_id) FROM customer";
+			String str = "SELECT customer_id FROM customer";
 			
 			try {
 				this.pstmt = this.conn.prepareStatement(str);
 				this.rs = this.pstmt.executeQuery();
 				
 				while(this.rs.next()) {
-					customerId = this.rs.getInt(1);					
+					int id = this.rs.getInt(1);		
+					if(customerId == id) {
+						customerId+=1;
+					}
 				}
 				
 			} catch (Exception e) {
@@ -72,11 +75,8 @@ public class CustomerDAO {
 			} finally {
 				DBManager.closeConnection(conn, pstmt, rs);
 			}
-			
-			
 		}
-		
-		return customerId + 1;
+		return customerId;
 	}
 	// R
 	public Customer getCustomerById(int customerId) {

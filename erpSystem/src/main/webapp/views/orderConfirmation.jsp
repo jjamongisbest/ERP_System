@@ -27,7 +27,7 @@
 	ArrayList<SalesOrder> list = salesOrderDao.getOrdersPerPage(selPage);
 	int lastPage = (int) Math.ceil((double) total / 10);
 	
-	System.out.println(list);
+	
 	%>
 	<section class="board">
 		<form method="POST" action="../service">
