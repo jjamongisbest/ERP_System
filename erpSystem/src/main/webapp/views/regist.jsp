@@ -8,12 +8,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>regist</title>
 <link rel="stylesheet" href="../resources/regist.css">
 </head>
-
 <body>
-
 	<%
 	CustomerGradeDAO customerGradeDao = CustomerGradeDAO.getinstance();
 	CustomerGrade customerGrade = customerGradeDao.getCustomerGradeById(1);
@@ -25,7 +23,7 @@
 	String name = request.getParameter("name");
 	String address = request.getParameter("address");
 	String phone = request.getParameter("phone");
-	String url = request.getParameter("url");
+	String url = "regist";
 
 	Customer customer = (Customer) session.getAttribute("log");
 	if (customer != null) {
@@ -86,9 +84,6 @@
 			</div>
 		</form>
 	</section>
-
 	<script src="resources/registCheck.js"></script>
-
 </body>
-
 </html>

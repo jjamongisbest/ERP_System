@@ -22,7 +22,7 @@
 
 	<div class="header">
 		<a class="banner" href="index.jsp"> <img
-			src="../resources/images/banner.jpg">
+			src="../resources/images/My project-1.jpg">
 		</a>
 	</div>
 
