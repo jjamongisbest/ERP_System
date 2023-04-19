@@ -8,7 +8,7 @@ public class Board {
 	private String title;
 	private String main;
 	private String modifiedDate;
-	private String reigisteredDate;
+	private String registeredDate;
 	private int writer;
 	private int categoryId;
 
@@ -17,7 +17,7 @@ public class Board {
 		this.title = title;
 		this.main = main;
 		this.modifiedDate = modi;
-		this.reigisteredDate = regi;
+		this.registeredDate = regi;
 		this.writer = writer;
 		this.categoryId = category;
 	}
@@ -27,7 +27,7 @@ public class Board {
 		this.title = dto.getTitle();
 		this.main = dto.getMain();
 		this.modifiedDate = dto.getModifiedDate();
-		this.reigisteredDate = dto.getReigisteredDate();
+		this.registeredDate = dto.getReigisteredDate();
 		this.writer = dto.getWriter();
 		this.categoryId = dto.getCategoryId();
 	}
@@ -52,8 +52,8 @@ public class Board {
 		return modifiedDate;
 	}
 
-	public String getReigisteredDate() {
-		return reigisteredDate;
+	public String getRegisteredDate() {
+		return registeredDate;
 	}
 
 	public int getCategoryId() {

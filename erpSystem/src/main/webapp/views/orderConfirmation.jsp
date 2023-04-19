@@ -21,12 +21,12 @@
 
 	int selPage = Integer.parseInt(vpage);
 	int total = salesOrderDao.getTotalOrderCount();
-	
-	
+
 	ArrayList<SalesOrder> list = salesOrderDao.getOrdersPerPage(selPage);
 	int lastPage = (int) Math.ceil((double) total / 10);
-	
-	
+
+	pageContext.setAttribute("list", list);
+	pageContext.setAttribute("lastPage", lastPage);
 	%>
 	<section class="board">
 		<form method="POST" action="../service">
@@ -41,44 +41,38 @@
 						<td>결제상태</td>
 					</tr>
 				</thead>
-				<%
-				for (SalesOrder salesOrder : list) {
-				%>
-				<tbody>
-					<tr>
-						<td><%=salesOrder.getId()%></td>
-						<td><%=salesOrder.getCustomerId()%></td>
-						<td><%=salesOrder.getTotal()%></td>
-						<td><%=salesOrder.getDate()%></td>
-						<td><a id="check-values"
-							onclick="checkValues('<%=salesOrder.getId()%>','<%=salesOrder.getStatus()%>')">
-								<%
-								if (salesOrder.getStatus().equals("Y")) {
-								%> 주문완료<%
-								} else if (salesOrder.getStatus().equals("D")) {
-								%> 배송중 <%
-								} else {
-								%> 결제전 <%
-								}
-								%>
-						</a></td>
-					</tr>
-				</tbody>
-				<%
-				}
-				%>
+
+				<c:forEach items="${list}" var="target">
+					<tbody>
+						<tr>
+							<td>${target.id}</td>
+							<td>${target.customerId}</td>
+							<td>${target.total}</td>
+							<td>${target.date}</td>
+							<td>
+							<a id="check-values" onclick="checkValues('${target.id}','${target.status}')"> 
+								<c:choose>
+										<c:when test="${target.status eq 'Y'}">주문완료</c:when>
+										<c:when test="${target.status eq 'D'}">배송중</c:when>
+										<c:otherwise>결제전</c:otherwise>
+								</c:choose>
+							</a>
+							</td>
+						</tr>
+					</tbody>
+				</c:forEach>
+
 			</table>
 		</form>
-		<div style="width: 600px; text-align: center; margin-top: 30px;" class="number">
-			
-			<%
-			for (int i = 1; i <= lastPage; i++) {
-			%>
-			<a href="../?content=orderconfirmation&vpage=<%=i%>"><%=i%></a>
-			<%
-			}
-			%>
-			
+		<div style="width: 600px; text-align: center; margin-top: 30px;"
+			class="number">
+
+	<c:forEach begin="1" end="${lastPage}" varStatus="info">
+				<a href="../?content=orderconfirmation&vpage=${info.index}">${info.index}</a>
+	</c:forEach>
+
+		
+
 		</div>
 	</section>
 

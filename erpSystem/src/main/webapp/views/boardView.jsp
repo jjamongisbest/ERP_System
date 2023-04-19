@@ -37,7 +37,7 @@
 			</thead>
 			<tbody>
 				<tr>
-					<th class="nav">글쓴이 : <%=board.getWriter()%>|등록일 : <%=board.getReigisteredDate()%>
+					<th class="nav">글쓴이 : <%=board.getWriter()%>|등록일 : <%=board.getRegisteredDate()%>
 					</th>
 				</tr>
 				<tr>
@@ -52,7 +52,7 @@
 		Customer customer = (Customer) session.getAttribute("log");
 
 		if (customer != null) {
-			int customerId = customer.getId();
+			int customerId = board.getWriter();
 
 			if (customerId == customer.getId()) {
 		%>

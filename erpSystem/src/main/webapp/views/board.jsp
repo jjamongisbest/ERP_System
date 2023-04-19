@@ -56,7 +56,7 @@
 						<td><%=board.getId()%></td>
 						<td><a href="../?content=boardview&id=<%=board.getId()%>" class="titles"><%=board.getTitle()%></a></td>
 						<td><%=board.getWriter()%></td>
-						<td><%=board.getReigisteredDate()%></td>
+						<td><%=board.getRegisteredDate()%></td>
 					</tr>
 					<%
 					}

@@ -32,6 +32,12 @@
 
 	ArrayList<SalesOrder> list = salesdao.getSalesOrderByCustomerID(userId);
 	ArrayList<Board> blist = boarddao.getBoardByCustomerId(userId);
+	
+	pageContext.setAttribute("list", list);
+	pageContext.setAttribute("blist", blist);
+	pageContext.setAttribute("catedao", catedao);
+	
+	
 	%>
 
 	<div class="container1">
@@ -56,39 +62,29 @@
 					<td>결제금액</td>
 					<td>주문상세</td>
 				</tr>
-				
-					<%
-					if (list != null) {
-					%>
-					<%
-					for (SalesOrder target : list) {
-					%>
-				<tr class="order-tbody">
-					<td><%=target.getId()%></td>
-					<td><%=target.getDate()%></td>
-					<td><%=target.getTotal()%></td>
-					<td>
-						<%
-						if (target.getStatus().equals("Y")) {
-						%> 결제완료 <%
-						} else if (target.getStatus().equals("D")) {
-						%> 배송중 <%
-						} else {
-						%> 결제 전 <%
-						}
-						%>
-					</td>
-					<%
-					}
-					%>
-					<%
-					} else {
-					%>
-					<td>주문 내역이 없습니다.</td>
-					<%
-					}
-					%>
-				</tr>
+				<c:choose>
+					<c:when test="${not empty list}">
+						<c:forEach items="${list}" var="target">
+							<tr class="order-tbody">
+								<td>${target.id}</td>
+								<td>${target.date}</td>
+								<td>${target.total}</td>
+								<td><c:choose>
+										<c:when test="${target.status eq 'Y'}">결제완료</c:when>
+										<c:when test="${target.status eq 'D'}">배송중</c:when>
+										<c:otherwise>결제 전</c:otherwise>
+									</c:choose></td>
+							</tr>
+						</c:forEach>
+
+					</c:when>
+					<c:otherwise>
+						<td>주문 내역이 없습니다.</td>
+					</c:otherwise>
+
+				</c:choose>
+
+
 			</table>
 		</div>
 
@@ -100,33 +96,46 @@
 					<td>제목</td>
 					<td>게시판</td>
 				</tr>
-					<%
-					if (blist != null) {
-					%>
-					<%
-					for (Board target : blist) {
-					%>
-				<tr class="board-tbody">
-					<td><%=target.getReigisteredDate()%></td>
-					<td><%=target.getTitle()%></td>
-					<td><%=catedao.getCategoryNameById(target.getCategoryId())%></td>
-					<%
-					}
-					%>
-					<%
-					} else {
-					%>
-					<td>작성 내역이 없습니다.</td>
-					<%
-					}
-					%>
-				</tr>
+
+				<c:choose>
+					<c:when test="${not empty list}">
+						<c:forEach items="${blist}" var="targets">
+							<tr class="order-tbody">
+								<td>${targets.registeredDate}</td>
+								<td>${targets.title}</td>
+								<c:choose>
+
+									<c:when test="${targets.categoryId eq 11}">
+										<td>NOTICE</td>
+									</c:when>
+									<c:when test="${targets.categoryId eq 12}">
+										<td>REVIEW</td>
+									</c:when>
+									<c:otherwise>
+										<td>Q&A</td>
+									</c:otherwise>
+
+								</c:choose>
+							</tr>
+
+						</c:forEach>
+
+
+					</c:when>
+					<c:otherwise>
+						<td>주문 내역이 없습니다.</td>
+					</c:otherwise>
+
+				</c:choose>
+
 			</table>
 		</div>
 
 		<div class="button-container">
-			<input class = "button" type="button" value="정보수정" onclick="location.href='../?content=regist'">
-			<input class = "button" type="button" value="회원탈퇴" onclick="location.href='../?content=dropcustomer'">
+			<input class="button" type="button" value="정보수정"
+				onclick="location.href='../?content=regist'"> <input
+				class="button" type="button" value="회원탈퇴"
+				onclick="location.href='../?content=dropcustomer'">
 		</div>
 	</div>
 
