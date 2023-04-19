@@ -32,7 +32,6 @@
 		name = customer.getName();
 		address = customer.getAddress();
 		phone = customer.getPhone();
-		url = "customerlog";
 	}
 	%>
 	<section class="regist-box">

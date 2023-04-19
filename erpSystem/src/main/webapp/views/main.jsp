@@ -27,9 +27,11 @@
 			<c:choose>
 				<c:when test="${not empty param.content }">
 					<c:import url="${param.content }"/>
+					
 				</c:when>
 				<c:when test="${not empty requestScope.content }">
 					<c:import url="${requestScope.content }"/>
+					
 				</c:when>
 				<c:otherwise>
 					<img id="event-banner" src="../resources/images/event-banner.jpg">

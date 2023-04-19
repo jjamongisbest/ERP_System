@@ -38,7 +38,7 @@ public class BoardModifyAction implements Action {
 
 		boardDao.updateBoard(boardDto);
 
-		response.sendRedirect("/");
+		response.sendRedirect("../?content=board&cate="+categoryId);
 
 	}
 
