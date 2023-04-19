@@ -15,13 +15,12 @@
 		<label for="id">아이디:</label> <input type="text" id="id" name="id">
 		<label for="password">비밀번호:</label> <input type="password" id="password" name="password"> 
 		<input type="submit" value="로그인" onclick="checkValues(form)">
-		<%
-		if (request.getAttribute("message") != null) {
-		%>
-		<p style="color:#AC7088;">${message}</p>
-		<%
-		}
-		%>
+		
+		<c:set var="message" value="${requestScope.message }"/>
+		<c:if test="${not empty message}">
+			<p style="color:#AC7088;">${message}</p>		
+		</c:if>
+		
 	</form>
 
 	<script src="../resources/loginCheck.js"></script>

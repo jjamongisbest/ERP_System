@@ -10,7 +10,6 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="../resources/main.css">
 </head>
-
 <c:import url="header" />
 <body>
 

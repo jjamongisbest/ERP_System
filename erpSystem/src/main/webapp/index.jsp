@@ -6,13 +6,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="../resources/main.css">
 <title>Insert title here</title>
 </head>
-
 <body>
 <section class="frame">
-	<c:import url="main" />
+	<c:import url="main"/>
 </section>
 </body>
 

@@ -21,43 +21,40 @@
 	@SuppressWarnings("unchecked")
 	List<Product> list = (List<Product>) request.getAttribute("searchProduct");
 
+	pageContext.setAttribute("list", list);
+	pageContext.setAttribute("result", result);
 	%>
-
+	<c:set var="list" value="${pageScope.list }" />
 	<div class="product-list">
-		<h2 id="name"><%=result%></h2>
-		<div class="lists">
-				<%
-					for (Product target : list) {
-					%>
-				
-				<div class="cards">
+	<h2 id="name">
+		<c:out value="${pageScope.result }"/>
+	</h2>
+	<c:choose>
+		<c:when test="${not empty list  }">		
+			<div class="lists">
+				<c:set var="target" value="${list }" />
+
+				<c:forEach items="${list}" var="target">
+					<div class="cards">
 						<div class="card"
-							onclick="location.href='../service?command=productdetail&productId=<%=target.getId()%>'">
-							<img src="<%=target.getImageUrl()%>" width="200" height="200">
+							onclick="location.href='../service?command=productdetail&productId=${target.id}'">
+							<img src="${target.imageUrl}" width="200" height="200">
 						</div>
 						<div class="inform">
-							<a href='../service?command=productdetail&productId=<%=target.getId()%>' class="product">
-							<%=target.getName()%></a>
-							<p><%=target.getPrice()%>원
-							</p>
-							<p>
-								수량:<%=target.getStock()%>개
-							</p>
-						</div>	
-				</div>
-				<%
-					}
-					%>		
-		</div>
-		<%
-		if (list.size() < 1) {
-		%>
-		<img src="../resources/images/emptyCart.jpg">
-		<%
-		}
-		%>
+							<a href='../service?command=productdetail&productId=${target.id}'
+								class="product"> ${target.name}</a>
+							<p>${target.price}원</p>
+							<p>수량:${target.stock}개</p>
+						</div>
+					</div>
+				</c:forEach>
+			</div>
+		</c:when>
+		<c:otherwise>
+			<img src="../resources/images/emptyCart.jpg">
+		</c:otherwise>
+	</c:choose>
 	</div>
-
 </body>
 
 </html>

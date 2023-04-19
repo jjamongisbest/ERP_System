@@ -19,14 +19,15 @@ public class ProductAction implements Action{
 	
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		this.keyword = request.getParameter("keyword");
 		this.code = request.getParameter("code");
 		
-		if(this.keyword == null && this.code == null)
-			return;
+		if(this.code != null || !this.keyword.equals("")) {	
+			request.setAttribute("searchProduct", getSearchProduct());
+			request.setAttribute("result", getSearchResult());
+		}
 		
-		request.setAttribute("searchProduct", getSearchProduct());
-		request.setAttribute("result", getSearchResult());
 		request.getRequestDispatcher("/").forward(request, response);
 	}
 	

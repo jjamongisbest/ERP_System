@@ -18,6 +18,8 @@
 
 	BoardCategoryDAO boardcateDao = BoardCategoryDAO.getInstance();
 	ArrayList<BoardCategory> list = boardcateDao.getBoardCategoryAll();
+	
+	pageContext.setAttribute("list", list);
 	%>
 
 	<div class="header">
@@ -52,18 +54,16 @@
 				<li><a id="basket" onclick="send('order')">장바구니</a></li>
 			</c:otherwise>
 		</c:choose>
-
-		<%
-		for (BoardCategory target : list) {
-		%>
+		
+		<c:set var="list" value="${pageScope.list }"/>
+		<c:forEach items="${list}" var="target">		
+			<li>
+				<a href="../?content=board&cate=${target.id }">${target.name }</a>
+			</li>
+		</c:forEach>
+		
 		<li>
-			<a href="../?content=board&cate=<%=target.getId()%>"><%=target.getName()%></a>
-		</li>
-		<%
-		}
-		%>
-		<li>
-			<form method="POST" action="../service">
+			<form method="POST" action="../service" name="search">
 				<input type="hidden" name="command" value="productlist">
 				<section class="search-box">
 					<input type="text" name="keyword" placeholder="주문할 것 pickka!">
@@ -71,11 +71,8 @@
 				</section>
 			</form>
 		</li>
+		
 	</ul>
-
-
-
-
 	<script src="resources/validation.js"></script>
 </body>
 </html>

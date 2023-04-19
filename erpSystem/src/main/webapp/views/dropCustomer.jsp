@@ -19,13 +19,12 @@
 			<label for="password">비밀번호:</label>
 			<input type="text" id="password"name="password">
 			<input type="button" value="탈퇴" onclick="checkValues(form)">
-			<%
-			if (request.getAttribute("message") != null) {
-			%>
-			<p>${message}</p>
-			<%
-			}
-			%>
+			
+			<c:set var="message" value="${requestScope.message }"/>
+			<c:if test="${message }">
+				<p>${message}</p>				
+			</c:if>
+			
 		</form>
 	</section>
 	<script src="resources/dropCustomer.js"></script>

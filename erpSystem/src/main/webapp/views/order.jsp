@@ -23,10 +23,14 @@
 		list.add(productDao.getProductById(id));
 
 	int total = order.getTotalPrice(list);
+	
+	pageContext.setAttribute("list", list);
+	pageContext.setAttribute("total", total);
 	%>
 	
 	<h3 class="titles">${sessionScope.log.name}님의장바구니</h3>
-
+	
+	<c:set var="list" value="${pageScope.list }"/>
 	<c:choose>
 		<c:when test="${not empty list}">
 			<table class="tbl">
@@ -53,20 +57,21 @@
 					</c:forEach>
 				</tbody>
 			</table>
+			
+			<p class="total">총 주문금액 : ${pageScope.total}</p>
+			<form method="POST" action="../service" class="ord">
+				<input type="hidden" name="command" value="order">
+				<div class="but">
+					<input type="submit" value="주문하기" class="button">
+				</div>
+			</form>
+			
 		</c:when>
 		<c:otherwise>
 			<img src="../resources/images/emptyJang.jpg" class="tung"></img>
 		</c:otherwise>
 	</c:choose>
 
-	<p class="total">총 주문금액 : ${total}</p>
-
-	<form method="POST" action="../service" class="ord">
-		<input type="hidden" name="command" value="order">
-		<div class="but">
-			<input type="submit" value="주문하기" class="button">
-		</div>
-	</form>
 
 	<script src="../resources/validation.js"></script>
 </body>
