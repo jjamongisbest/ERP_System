@@ -66,7 +66,7 @@
 						<td><a href="../?content=boardview&id=${target.id}"
 							class="titles">${target.getTitle()}</a></td>
 						<td>${target.getWriter()}</td>
-						<td>${target.getReigisteredDate()}</td>
+						<td>${target.getRegisteredDate()}</td>
 					</tr>
 				</c:forEach>
 			</tbody>
