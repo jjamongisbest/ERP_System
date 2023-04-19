@@ -47,8 +47,8 @@
 					</form>
 					<form method="POST" action="../service">
 						<input type="hidden" name="command" value="boardDelete" />
-						<input type="hidden" name="id" value="${boardId}" />
-						<input type="hidden" name="categoryId" value="${categoryId}" />
+						<input type="hidden" id=id name="id" value="${boardId}" />
+						<input type="hidden" id="categoryId" name="categoryId" value="${categoryId}" />
 						<div>
 							<input type="button" value="삭제하기" onclick="boardCheckDelete(form)" />
 						</div>
