@@ -35,7 +35,6 @@
 				</tr>
 			</tbody>
 		</table>
-
 		<c:if test="${not empty sessionScope.log}">
 			<c:set var="customerId" value="${sessionScope.log.id}" />
 			<c:if test="${customerId == board.writer}">

@@ -41,7 +41,7 @@ public class BoardDAO {
 				this.pstmt.setString(2, board.getTitle());
 				this.pstmt.setString(3, board.getMain());
 				this.pstmt.setString(4, board.getModifiedDate());
-				this.pstmt.setString(5, board.getReigisteredDate());
+				this.pstmt.setString(5, board.getRegisteredDate());
 				this.pstmt.setInt(6, board.getWriter());
 				this.pstmt.setInt(7, board.getCategoryId());
 

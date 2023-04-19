@@ -60,7 +60,6 @@
 				</tr>
 			</thead>
 			<tbody>
-
 				<c:forEach items="${pageScope.list}" var="target">
 					<tr>
 						<td>${target.id}</td>
@@ -69,9 +68,7 @@
 						<td>${target.getWriter()}</td>
 						<td>${target.getReigisteredDate()}</td>
 					</tr>
-
 				</c:forEach>
-
 			</tbody>
 		</table>
 		<div style="margin-top: 10px;" class="page">
