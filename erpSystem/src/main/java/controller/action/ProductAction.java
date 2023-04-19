@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import product.Product;
 import product.contoroller.ProductDAO;
-import productCategory.ProductCategory;
 
 public class ProductAction implements Action{
 	
@@ -19,8 +18,8 @@ public class ProductAction implements Action{
 	
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String keyword = request.getParameter("keyword");
-		String code = request.getParameter("code");
+		this.keyword = request.getParameter("keyword");
+		this.code = request.getParameter("code");
 		
 		if(this.keyword == null && this.code == null)
 			return;

@@ -16,19 +16,14 @@
 <body>
 
 	<%
+	String result = (String)request.getAttribute("result");
+	
 	@SuppressWarnings("unchecked")
 	List<Product> list = (List<Product>) request.getAttribute("searchProduct");
-	
-	int categoryCode = Integer.parseInt(request.getParameter("code"));
-	ProductCategoryDAO pcdao = ProductCategoryDAO.getInstance();
-	
-	String name = pcdao.getCategroyNameById(categoryCode);
-	
-	System.out.println(name);
 	%>
 
 	<div class="product-list">
-		<h2 id="name"><%=name %></h2>
+		<h2 id="name"><%=result %></h2>
 		<%
 		for (Product target : list) {
 		%>
