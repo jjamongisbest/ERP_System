@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="../resources/dropCustomer.css">
 </head>
-<c:import url="header" />
+
 <body>
 	<section>
 		<form action="../service" method="POST" class="login">
@@ -30,5 +30,5 @@
 	</section>
 	<script src="resources/dropCustomer.js"></script>
 </body>
-<c:import url="footer" />
+
 </html>

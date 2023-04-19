@@ -15,11 +15,11 @@
 
 <body>
 
-	<div class="container">
+	<div class="admin-container">
 		<div class="button-container">
 			<button type="button" id="btn">등급별 매출</button>
 			<button type="button" id="btn2">월별 매출</button>
-			<a href="orderconfirmation" class="sales">주문총확인</a>
+			<a id="total-check" href="../?content=orderconfirmation" class="sales">주문총확인</a>
 		</div>
 
 		<div id="column_chart_div1" style="width: 900px; height: 500px;"></div>
@@ -28,5 +28,4 @@
 
 	<script src="../resources/drawGraph.js"></script>
 </body>
-
 </html>

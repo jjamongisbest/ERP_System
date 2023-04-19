@@ -15,9 +15,6 @@ public class DropCustomerAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
-
-		
 		String password = request.getParameter("password");
 
 		

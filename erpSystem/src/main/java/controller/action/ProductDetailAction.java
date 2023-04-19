@@ -29,13 +29,16 @@ public class ProductDetailAction implements Action{
 		
 		request.setAttribute("targetProduct", product);
 		request.setAttribute("productCategory", category);
-		request.getRequestDispatcher("/productdetail").forward(request, response);
+		request.getRequestDispatcher("/").forward(request, response);
+		response.getWriter().close();
 	}
+	
 	
 	private Product getTargetProductById(int id) {
 		ProductDAO productDao = ProductDAO.getInstance();
 		return productDao.getProductById(id);
 	}
+	
 	
 	private ProductCategory getCategoryOfProduct(Product product) {
 		ProductCategoryDAO categoryDao = ProductCategoryDAO.getInstance();

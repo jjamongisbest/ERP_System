@@ -1,9 +1,9 @@
 
-a:hover {
+#check-values:hover {
 	text-decoration: underline;
 	cursor: pointer;
 }
-a{
+#check-values{
 	text-decoration : none;
 	color: black;
 	margin-top:10px;
@@ -16,13 +16,14 @@ a{
 .board {
   max-width: 960px; 
   margin: 0 auto; 
+  
 }
 
 .board h1 {
   text-align: center; 
   color: #395144;
-  margin-top : 50px;
-  margin-bottom : 50px;
+  margin-top : 30px;
+  margin-bottom : 30px;
 }
 
 .board table {

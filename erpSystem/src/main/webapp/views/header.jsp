@@ -22,7 +22,7 @@
 
 	<div class="header">
 		<a class="banner" href="index.jsp"> <img
-			src="../resources/images/banner.jpg">
+			src="../resources/images/My project-1.jpg">
 		</a>
 	</div>
 
@@ -30,22 +30,22 @@
 		<c:choose>
 			<c:when test="${empty sessionScope.log}">
 				<li>
-					<a id="regist" href="?content=regist">회원가입</a>
+					<a id="regist" href="../?content=regist">회원가입</a>
 					
 				</li>
-				<li><a id="login" href="?content=login">로그인</a></li>
+				<li><a id="login" href="../?content=login">로그인</a></li>
 			</c:when>
 			<c:otherwise>
 				<c:choose>
 					<c:when test="${sessionScope.log.getId() != 99999 }">
 						<li>
 						<a id="mypage"
-						 href="?content=mypage&custid=<%=customer.getId()%>">
+						 href="../?content=mypage&custid=<%=customer.getId()%>">
 						 마이페이지</a>
 						</li>
 					</c:when>
 					<c:otherwise>
-						<li><a id="adminpage" href="?content=adminpage"> 관리자페이지</a></li>
+						<li><a id="adminpage" href="../?content=adminpage"> 관리자페이지</a></li>
 					</c:otherwise>
 				</c:choose>
 				<li><a id="logout" onclick="sendCommand('logout')">로그아웃</a></li>
@@ -54,17 +54,17 @@
 		</c:choose>
 
 		<%
-					for (BoardCategory target : list) {
-					%>
+		for (BoardCategory target : list) {
+		%>
 		<li>
-			<a href="?content=board&cate=<%=target.getId()%>"><%=target.getName()%></a>
+			<a href="../?content=board&cate=<%=target.getId()%>"><%=target.getName()%></a>
 		</li>
 		<%
-					}
-					%>
+		}
+		%>
 		<li>
 			<form method="POST" action="../service">
-				<input type="hidden" name="command" value="product">
+				<input type="hidden" name="command" value="productlist">
 				<section class="search-box">
 					<input type="text" name="keyword" placeholder="주문할 것 pickka!">
 					<button type="submit">Search</button>

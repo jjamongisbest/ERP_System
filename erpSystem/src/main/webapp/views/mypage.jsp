@@ -17,7 +17,6 @@
 <title>Mypage</title>
 </head>
 <link rel="stylesheet" href="../resources/mypage.css">
-
 <body>
 
 	<%
@@ -126,13 +125,12 @@
 				%>
 			</div>
 		</div>
-
-		<div class="button">
-			<input type="button" value="정보수정" onclick="location.href='regist'">
-			<input type="button" value="회원탈퇴"
-				onclick="location.href='dropcustomer'">
-		</div>
-
+	
+	<div class="button">
+		<input type="button" value="정보수정" onclick="location.href='../?content=regist'">
+		<input type="button" value="회원탈퇴" onclick="location.href='../?content=dropcustomer'">
+	</div>
+	
 	</div>
 
 </body>

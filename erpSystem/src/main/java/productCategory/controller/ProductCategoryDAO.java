@@ -74,6 +74,32 @@ public class ProductCategoryDAO {
 
 		return productCategory;
 	}
+	
+	public String getCategroyNameById(int code) {
+		String name = "";
+		
+		this.conn = DBManager.getConnection();
+		
+		if(this.conn != null) {
+			String sql = "SELECT product_category_name FROM product_category WHERE product_category_id = ?";
+			
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.pstmt.setInt(1, code);
+				this.rs = this.pstmt.executeQuery();
+				
+				while(this.rs.next()) {
+					name = this.rs.getString(1);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.closeConnection(this.conn, this.pstmt, this.rs);
+			}
+		}
+		
+		return name;
+	}
 
 	public ArrayList<ProductCategory> getProductCategoryList() {
 		ArrayList<ProductCategory> list = new ArrayList<>();

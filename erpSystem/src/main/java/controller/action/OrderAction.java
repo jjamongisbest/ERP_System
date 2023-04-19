@@ -37,8 +37,10 @@ public class OrderAction implements Action {
 		System.out.println(order.getTotalPrice(list));
 		orderDto.setStatus("Y");
 		
-		orderDao.updateSalesOrder(orderDto);
-//		orderDao.createSalesOrder(orderDto);
+		if(request.getSession().getAttribute("new") == null)
+			orderDao.updateSalesOrder(orderDto);
+		else
+			orderDao.createSalesOrder(orderDto);
 		
 		OrderProductDTO orderProductDto = null;
 		for(Integer id : basket.keySet()) {

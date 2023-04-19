@@ -22,7 +22,7 @@ public class DropItemAction implements Action{
 		String target = request.getParameter("target");
 		int productId = Integer.parseInt(target);
 		order.getCart().remove(productId);
-		response.sendRedirect("order");
+		response.sendRedirect("../");
 	}
 
 }

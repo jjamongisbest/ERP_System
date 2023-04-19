@@ -10,7 +10,6 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="../resources/orderConfirm.css">
 </head>
-<c:import url="header" />
 <body>
 	<%
 	SalesOrderDAO salesOrderDao = SalesOrderDAO.getInstance();
@@ -51,7 +50,7 @@
 						<td><%=salesOrder.getCustomerId()%></td>
 						<td><%=salesOrder.getTotal()%></td>
 						<td><%=salesOrder.getDate()%></td>
-						<td><a
+						<td><a id="check-values"
 							onclick="checkValues('<%=salesOrder.getId()%>','<%=salesOrder.getStatus()%>')">
 								<%
 								if (salesOrder.getStatus().equals("Y")) {
@@ -74,7 +73,9 @@
 			
 			<%
 			for (int i = 1; i <= lastPage; i++) {
-			%> <a href="orderconfirmation?vpage=<%=i%>"><%=i%></a> <%
+			%>
+			<a href="../?content=orderconfirmation&vpage=<%=i%>"><%=i%></a>
+			<%
 			}
 			%>
 			
@@ -83,6 +84,4 @@
 
 </body>
 <script src="resources/orderConfirmation.js"></script>
-
-
 </html>

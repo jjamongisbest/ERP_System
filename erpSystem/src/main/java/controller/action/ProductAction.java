@@ -24,15 +24,13 @@ public class ProductAction implements Action{
 		if(this.keyword == null && this.code == null)
 			return;
 		
-		List<Product> list = this.keyword != null ?
-							getSearchProduct() : getProductListByCategory();
-		
-		request.setAttribute("searchProduct", list);
-		
-		request.getRequestDispatcher("productlist").forward(request, response);
+		request.setAttribute("searchProduct", getSearchProduct());
+		request.setAttribute("result", "?");
+		request.getRequestDispatcher("/").forward(request, response);
 	}
 	
-	private List<Product> getSearchProduct() {
+	
+	private List<Product> getProductListByKeyword() {
 		ProductDAO productDao = ProductDAO.getInstance();
 		List<Product> productList = productDao.getProductList();
 		
@@ -41,10 +39,17 @@ public class ProductAction implements Action{
 						  .collect(Collectors.toList());
 	}
 	
+	
 	private List<Product> getProductListByCategory(){
 		int categoryId = Integer.parseInt(this.code);
 		ProductDAO dao = ProductDAO.getInstance();
 		return dao.getProductsByCategory(categoryId);
+	}
+	
+	
+	private List<Product> getSearchProduct() {
+		return this.keyword != null ?
+				getProductListByKeyword() : getProductListByCategory();
 	}
 
 }

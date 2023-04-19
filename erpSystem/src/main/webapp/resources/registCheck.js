@@ -2,7 +2,7 @@
  * 
  */
 function checkValues(htmlForm) {
-	let url = "?content=regist";
+	let url = "../?content=regist";
 
 	const id = document.getElementById("id").value;
 	const password = document.getElementById("password").value;

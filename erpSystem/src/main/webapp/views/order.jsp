@@ -24,7 +24,6 @@
 
 	int total = order.getTotalPrice(list);
 	%>
-	<c:import url="header" />
 	<section class="order">
 		<h3 class="titles">
 			<c:out value="${sessionScope.log.getName() }" />
@@ -78,10 +77,12 @@
 			<c:out value="<%=total%>" />
 		<p>
 		<form method="POST" action="../service" class="ord">
-			<input type="hidden" name="command" value="order"> 
-			<div class="but"><input type="submit" value="주문하기" class="button"></div>
+			<input type="hidden" name="command" value="order">
+			<div class="but">
+				<input type="submit" value="주문하기" class="button">
+			</div>
 		</form>
 	</section>
-
+<script src="../resources/validation.js"></script>
 </body>
 </html>

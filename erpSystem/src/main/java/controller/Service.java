@@ -26,8 +26,9 @@ public class Service extends HttpServlet {
 		
 		request.setAttribute("content", command);
 		
-		if(action != null)
+		if(action != null) 
 			action.execute(request, response);
+		
 	}
 
 	

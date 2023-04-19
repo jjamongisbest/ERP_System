@@ -38,7 +38,7 @@ public class BoardModifyAction implements Action {
 
 		boardDao.updateBoard(boardDto);
 
-		response.sendRedirect("index.jsp");
+		response.sendRedirect("/");
 
 	}
 
