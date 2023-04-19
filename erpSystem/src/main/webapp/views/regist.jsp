@@ -42,7 +42,7 @@
 				type="hidden" id="gradeId" name="gradeId" value="<%=gradeId%>">
 			<table class="table">
 				<tr>
-					<th id="th">성명</th>
+					<th id="th">아이디</th>
 					<td id="td"><input type="text" id="id" name="id" value=<%=id%>
 						readonly></td>
 				</tr>
