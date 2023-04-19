@@ -19,7 +19,7 @@
 			for (ProductCategory target : list) {
 			%>
 			<div class="list">
-				<a href="../service?command=product&code=<%=target.getId()%>"><%=target.getName()%></a>
+				<a href="../service?command=productlist&code=<%=target.getId()%>"><%=target.getName()%></a>
 			</div>
 		<%
 			}

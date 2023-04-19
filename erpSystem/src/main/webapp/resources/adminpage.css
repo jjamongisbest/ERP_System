@@ -1,9 +1,9 @@
 /* 전체 컨테이너 */
-.container {
+.admin-container {
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #f5f5f5;
+  /* background-color: #f5f5f5; */
 }
 
 /* 버튼 컨테이너 */
@@ -43,6 +43,6 @@
   font-size: 16px;
 }
 
-a:hover {
+#total-check:hover {
   background-color: #0069d9;
 }

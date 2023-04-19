@@ -63,7 +63,9 @@ public class SalesOrder{
 		
 		for(Product product : list) {
 			int quantity = cart.get(product.getId());
-			this.total += product.getPrice() * quantity;	
+			System.out.println("수량 : " + quantity);
+			this.total += product.getPrice() * quantity;
+			System.out.println("토탈 : " + this.total);
 		}
 		return this.total;
 	}

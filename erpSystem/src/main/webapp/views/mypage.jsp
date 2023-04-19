@@ -17,7 +17,6 @@
 <title>Mypage</title>
 </head>
 <link rel="stylesheet" href="../resources/mypage.css">
-<c:import url="header" />
 <body>
 
 	<%
@@ -128,5 +127,4 @@
 	</div>
 
 </body>
-<c:import url="footer" />
 </html>

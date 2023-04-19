@@ -47,9 +47,12 @@ public class CartAction implements Action {
 				request.setAttribute("message", "재고수량 부족!");
 		}
 		
-		String direct = request.getParameter("choose").equals("바로구매") ?
+		String content = request.getParameter("choose").equals("바로구매") ?
 						"order" : "productdetail";
-		request.getRequestDispatcher(direct).forward(request, response);		
+		
+		request.setAttribute("content", content);
+		request.getRequestDispatcher("/").forward(request, response);	
+		response.getWriter().close();
 	}
 	
 	private void updateProductStock(Product product, int totalStock) {

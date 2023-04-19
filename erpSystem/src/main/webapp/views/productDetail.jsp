@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<c:import url="header" />
+
 <body>
 	<img src="${requestScope.targetProduct.getImageUrl()}">
 	<br>
@@ -34,5 +34,5 @@
 	</form>
 	<script src="../resources/validation.js"></script>
 </body>
-<c:import url="footer" />
+
 </html>

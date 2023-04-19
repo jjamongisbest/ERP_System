@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<c:import url="header" />
+
 <body>
 	<section>
 		<form action="../service" method="POST">
@@ -28,5 +28,5 @@
 	</section>
 	<script src="resources/dropCustomer.js"></script>
 </body>
-<c:import url="footer" />
+
 </html>

@@ -15,6 +15,7 @@
 .container {
 	border-top: solid 2px #32CD32;
 	margin-top: 3px;
+	
 	display:grid;
   	grid-template-columns: 15% 85%;
   	grid-template-areas: "cate banner";

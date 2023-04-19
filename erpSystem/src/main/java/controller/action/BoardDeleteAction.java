@@ -17,7 +17,7 @@ public class BoardDeleteAction implements Action {
 		int id = Integer.valueOf(request.getParameter("id"));
 
 		boardDao.deleteBoard(id);
-		response.sendRedirect("index.jsp");
+		response.sendRedirect("/");
 	}
 
 }

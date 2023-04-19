@@ -24,7 +24,6 @@
 
 	int total = order.getTotalPrice(list);
 	%>
-	<c:import url="header"/>
 	<h3>
 		<c:out value="${sessionScope.log.getName() }" />
 		님의 장바구니

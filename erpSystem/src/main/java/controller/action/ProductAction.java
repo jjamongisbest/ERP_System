@@ -29,8 +29,10 @@ public class ProductAction implements Action{
 		
 		request.setAttribute("searchProduct", list);
 		
-		request.getRequestDispatcher("productlist").forward(request, response);
+		request.getRequestDispatcher("/").forward(request, response);
+		response.getWriter().close();
 	}
+	
 	
 	private List<Product> getSearchProduct() {
 		ProductDAO productDao = ProductDAO.getInstance();
@@ -40,6 +42,7 @@ public class ProductAction implements Action{
 						  .filter(product -> product.getName().contains(this.keyword))
 						  .collect(Collectors.toList());
 	}
+	
 	
 	private List<Product> getProductListByCategory(){
 		int categoryId = Integer.parseInt(this.code);

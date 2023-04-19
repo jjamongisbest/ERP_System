@@ -23,8 +23,8 @@
 	String name = request.getParameter("name");
 	String address = request.getParameter("address");
 	String phone = request.getParameter("phone");
-	String url = request.getParameter("url");
-
+	String url = "regist";
+	
 	Customer customer = (Customer) session.getAttribute("log");
 	if (customer != null) {
 		id = customer.getId();

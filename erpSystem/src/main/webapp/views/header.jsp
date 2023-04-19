@@ -21,7 +21,7 @@
 	%>
 
 	<div class="header">
-		<a class="banner" href="index.jsp"> <img
+		<a class="banner" href="/"> <img
 			src="../resources/images/banner.jpg">
 		</a>
 	</div>
@@ -54,17 +54,17 @@
 		</c:choose>
 
 		<%
-					for (BoardCategory target : list) {
-					%>
+		for (BoardCategory target : list) {
+		%>
 		<li>
 			<a href="?content=board&cate=<%=target.getId()%>"><%=target.getName()%></a>
 		</li>
 		<%
-					}
-					%>
+		}
+		%>
 		<li>
 			<form method="POST" action="../service">
-				<input type="hidden" name="command" value="product">
+				<input type="hidden" name="command" value="productlist">
 				<section class="search-box">
 					<input type="text" name="keyword" placeholder="주문할 것 pickka!">
 					<button type="submit">Search</button>

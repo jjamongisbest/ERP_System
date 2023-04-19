@@ -25,7 +25,7 @@ public enum ActionType {
 	REGIST ("regist",  new RegistAction()),
 	BASKET ("basket",  new CartAction()),
 	
-	PRODUCT("product", new ProductAction()),
+	PRODUCT("productlist", new ProductAction()),
 	BOARD  ("board",   new BoardAction()),
 	ORDER  ("order",   new OrderAction()),
 	
@@ -35,7 +35,7 @@ public enum ActionType {
 	DROP_CUSTOMER("dropCustomer",   new DropCustomerAction()),
 	DROP_ITEM("dropitem", 			new DropItemAction()),
 	
-	PRODUCT_DETAIL("productDetail", new ProductDetailAction()),
+	PRODUCT_DETAIL("productdetail", new ProductDetailAction()),
 	ORDER_CONF("orderConfirmation", new OrderConfirmAction()),
 	SALES_TOTAL("salesTotal", new GetSalesTotal()),
 	GET_MONTH_SALES_TOTAL("monthlyTotal", new GetMonthlySalesTotal())

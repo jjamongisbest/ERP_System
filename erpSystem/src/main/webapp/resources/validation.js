@@ -8,10 +8,9 @@ function insertCart(){
 }
 
 function send(page){
-	if(page === "login"){
+	if(page === "login")
 		alert("로그인 후 이용가능");	
-	}
-	location.href = `/${page}`;
+	location.href = `?content=${page}`;
 }
 
 function dropItem(productId){
