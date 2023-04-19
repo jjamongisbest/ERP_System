@@ -8,6 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="../resources/dropCustomer.css">
 </head>
 <c:import url="header" />
 <body>
