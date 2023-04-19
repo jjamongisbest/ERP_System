@@ -24,65 +24,51 @@
 
 	int total = order.getTotalPrice(list);
 	%>
-	<section class="order">
-		<h3 class="titles">
-			<c:out value="${sessionScope.log.getName() }" />
-			님의 장바구니
-		</h3>
-		<table class="tbl">
+	
+	<h3 class="titles">${sessionScope.log.name}님의장바구니</h3>
 
-			<%
-			if (!list.isEmpty()) {
-			%>
-			<thead class="orderhead">
-				<tr>
-					<td>no.</td>
-					<td>상품명</td>
-					<td>수량</td>
-					<td>가격</td>
-					<td>취소</td>
-				</tr>
-			</thead>
-			<tbody>
-				<%
-				for (int i = 0; i < list.size(); i++) {
-					Product product = list.get(i);
-					int quantity = map.get(product.getId());
-				%>
+	<c:choose>
+		<c:when test="${not empty list}">
+			<table class="tbl">
+				<thead class="orderhead">
+					<tr>
+						<td>no.</td>
+						<td>상품명</td>
+						<td>수량</td>
+						<td>가격</td>
+						<td>취소</td>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach var="product" items="${list}" varStatus="status">
+						<tr>
+							<td>${status.index + 1}</td>
+							<td>${product.name}</td>
+							<td>${map[product.id]}</td>
+							<td>${product.price * map[product.id]}</td>
+							<td>
+								<button onclick="dropItem('${product.id}')" class="drop">취소</button>
+							</td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</c:when>
+		<c:otherwise>
+			<img src="../resources/images/emptyJang.jpg" class="tung"></img>
+		</c:otherwise>
+	</c:choose>
 
-				<tr>
-					<td><%=i + 1%></td>
-					<td><%=product.getName()%></td>
-					<td><%=quantity%></td>
-					<td><%=product.getPrice() * quantity%></td>
-					<td>
-						<button onclick="dropItem('<%=product.getId()%>')" class="drop">취소</button>
-					</td>
-				</tr>
-				<%
-				}
-				%>
-			</tbody>
-		</table>
-		<%
-		} else {
-		%>
-		<p class="tung">장바구니가 비어있습니다</p>
-		<%
-		}
-		%>
+	<p class="total">총 주문금액 : ${total}</p>
 
-		<p class="total">
-			총 주문금액 :
-			<c:out value="<%=total%>" />
-		<p>
-		<form method="POST" action="../service" class="ord">
-			<input type="hidden" name="command" value="order">
-			<div class="but">
-				<input type="submit" value="주문하기" class="button">
-			</div>
-		</form>
-	</section>
-<script src="../resources/validation.js"></script>
+	<form method="POST" action="../service" class="ord">
+		<input type="hidden" name="command" value="order">
+		<div class="but">
+			<input type="submit" value="주문하기" class="button">
+		</div>
+	</form>
+
+	<script src="../resources/validation.js"></script>
 </body>
+
 </html>

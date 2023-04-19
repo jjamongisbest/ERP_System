@@ -51,9 +51,8 @@ tr {
 }
 
 .tung {
-	color: #395144;
-	font-weight: bold;
 	text-align: center;
+	margin-left: 10px;
 }
 
 .total {
