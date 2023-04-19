@@ -14,10 +14,11 @@ public class BoardDeleteAction implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		BoardDAO boardDao = BoardDAO.getInstance();
 
-		int id = Integer.valueOf(request.getParameter("id"));
+		int id = Integer.parseInt(request.getParameter("id"));
+		int categoryId = Integer.parseInt(request.getParameter("categoryId"));
 
 		boardDao.deleteBoard(id);
-		response.sendRedirect("/");
+		response.sendRedirect("../?content=board&cate="+categoryId);
 	}
 
 }

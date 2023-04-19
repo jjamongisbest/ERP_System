@@ -41,7 +41,7 @@ public class BoardAction implements Action {
 
 		boardDao.createBoard(boardDto);
 
-		response.sendRedirect("/");
+		response.sendRedirect("../?content=board&cate="+categoryId);
 
 	}
 
