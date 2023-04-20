@@ -47,7 +47,7 @@
 		<div class="notice-header">
 			<c:if test="${not empty sessionScope.log}">
 				<c:if test="${requestScope.categoryId == 11}" test="${customer.getId() == 99999}">
-					<c:if test="${customer.getId() == 99999}">
+					<c:if test="${custome.id == 99999}">
 						<a
 							href="../?content=boardwrite&categoryId=${requestScope.categoryId}"
 							class="write">글쓰기</a>

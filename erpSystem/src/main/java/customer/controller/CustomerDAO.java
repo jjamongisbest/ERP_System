@@ -42,7 +42,7 @@ public class CustomerDAO {
 				this.pstmt.setString(5, customer.getPhone());
 				this.pstmt.setString(6, customer.getGender());
 				this.pstmt.setString(7, customer.getPassword());
-				
+
 				this.pstmt.execute();
 
 			} catch (Exception e) {
@@ -54,22 +54,22 @@ public class CustomerDAO {
 	}
 	public int getCustomerId() {
 		int customerId = 100000;
-		
+
 		this.conn=DBManager.getConnection();
 		if(this.conn != null) {
 			String str = "SELECT customer_id FROM customer";
-			
+
 			try {
 				this.pstmt = this.conn.prepareStatement(str);
 				this.rs = this.pstmt.executeQuery();
-				
+
 				while(this.rs.next()) {
 					int id = this.rs.getInt(1);		
 					if(customerId == id) {
 						customerId+=1;
 					}
 				}
-				
+
 			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {
@@ -81,7 +81,7 @@ public class CustomerDAO {
 	// R
 	public Customer getCustomerById(int customerId) {
 		Customer customer = null;
-		
+
 		this.conn = DBManager.getConnection();
 
 		if (this.conn != null) {
@@ -89,10 +89,10 @@ public class CustomerDAO {
 
 			try {
 				this.pstmt = conn.prepareStatement(str);
-				
+
 				this.pstmt.setInt(1, customerId);
 				this.rs = this.pstmt.executeQuery();
-				
+
 				while(this.rs.next()) {
 					int gradeId = this.rs.getInt(2);
 					String name = this.rs.getString(3);
@@ -100,7 +100,7 @@ public class CustomerDAO {
 					String phone = this.rs.getString(5);
 					String gender = this.rs.getString(6);
 					String password = this.rs.getString(7);
-					
+
 					customer = new Customer(customerId, gradeId, name, address, phone, gender,password);				
 				}
 
@@ -110,13 +110,13 @@ public class CustomerDAO {
 				DBManager.closeConnection(conn, pstmt, rs);
 			}
 		}
-		
+
 		return customer;
 	}
-	
+
 	public ArrayList<Customer> getCustomer() {
 		ArrayList<Customer> list = new ArrayList<Customer>();
-		
+
 		this.conn = DBManager.getConnection();
 
 		if (this.conn != null) {
@@ -124,8 +124,8 @@ public class CustomerDAO {
 
 			try {
 				this.pstmt = conn.prepareStatement(str);
-				
-			
+
+
 				this.rs = this.pstmt.executeQuery();
 				while(this.rs.next()) {
 					int id = this.rs.getInt(1);
@@ -135,21 +135,21 @@ public class CustomerDAO {
 					String phone = this.rs.getString(5);
 					String gender = this.rs.getString(6);
 					String password = this.rs.getString(7);
-					
-								
+
+
 					list.add(new Customer(id, gradeId, name, address, phone, gender,password));
 				}
-					
+
 			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {
 				DBManager.closeConnection(conn, pstmt, rs);
 			}
 		}
-		
+
 		return list;
 	}
-	
+
 
 	// U
 	public void updateCustomer(CustomerDTO CustomerDto) {
@@ -179,7 +179,33 @@ public class CustomerDAO {
 			}
 		}
 	}
-	
+
+	//오버로드
+	public void deleteCustomer(CustomerDTO CustomerDto) {
+		Customer customer = new Customer(CustomerDto);
+
+		this.conn = DBManager.getConnection();
+
+		if (this.conn != null) {
+			String str = "DELETE FROM customer WHERE customer_id=?";
+
+			try {
+				this.pstmt = conn.prepareStatement(str);				
+				this.pstmt.setInt(1, customer.getId());
+
+
+				this.pstmt.execute();
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.closeConnection(conn, pstmt);
+			}
+		}
+	}
+
+
+
 	public void deleteCustomer(int customerId) {
 		this.conn = DBManager.getConnection();
 
@@ -198,27 +224,5 @@ public class CustomerDAO {
 		}
 		DBManager.closeConnection(this.conn, this.pstmt);
 	}
-	
-	public void deleteCustomerToAll(int customerId) {
-		this.conn = DBManager.getConnection();
 
-		if (this.conn == null)
-			return;
-
-		String query ="DELETE customer, sales_order, order_product, board FROM customer "+
-					  "LEFT JOIN board ON customer.customer_id = board.board_writer_id "+
-					  "LEFT JOIN sales_order ON customer.customer_id = sales_order.customer_id "+
-					  "LEFT JOIN order_product ON sales_order.order_id = order_product.order_id "+
-					  "WHERE customer.customer_id=?";
-
-		try {
-			this.pstmt = conn.prepareStatement(query);				
-			this.pstmt.setInt(1, customerId);
-
-			this.pstmt.execute();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		DBManager.closeConnection(this.conn, this.pstmt);
-	}
 }

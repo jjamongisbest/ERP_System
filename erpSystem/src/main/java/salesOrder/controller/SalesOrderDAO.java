@@ -399,8 +399,8 @@ public class SalesOrderDAO {
 
 	}
 	
-	public void deleteSalesOrderById(int customerId) {
-		
+	//DELETE
+	public void deleteSalesOrderByCustomerId(int id) {
 		this.conn = DBManager.getConnection();
 		if (this.conn != null) {
 			String sql = "DELETE FROM sales_order WHERE customer_id =?";
@@ -408,7 +408,7 @@ public class SalesOrderDAO {
 			try {
 				this.pstmt = this.conn.prepareStatement(sql);
 
-				this.pstmt.setInt(1, customerId);
+				this.pstmt.setInt(1, id);
 
 				this.pstmt.execute();
 			} catch (SQLException e) {
