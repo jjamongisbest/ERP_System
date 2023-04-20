@@ -25,6 +25,7 @@
 	int total = order.getTotalPrice(list);
 	
 	pageContext.setAttribute("list", list);
+	pageContext.setAttribute("map", map);
 	pageContext.setAttribute("total", total);
 	%>
 	
@@ -68,7 +69,9 @@
 			
 		</c:when>
 		<c:otherwise>
-			<img src="../resources/images/emptyJang.jpg" class="tung"></img>
+		<div class="tung">
+			<img src="../resources/images/emptyJang.jpg" />
+		</div >
 		</c:otherwise>
 	</c:choose>
 

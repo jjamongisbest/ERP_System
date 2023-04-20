@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import board.controller.BoardDAO;
 import customer.Customer;
 import customer.CustomerDTO;
 import customer.controller.CustomerDAO;
@@ -20,7 +19,7 @@ public class DropCustomerAction implements Action {
 
 		
 		CustomerDAO customerDao = CustomerDAO.getInstance();
-		BoardDAO boardDao = BoardDAO.getInstance();
+		
 		HttpSession session = request.getSession();
 		Customer customer = (Customer) session.getAttribute("log");
 		
@@ -34,7 +33,7 @@ public class DropCustomerAction implements Action {
 			
 			CustomerDTO customerDto = new CustomerDTO(id, gradeId, name, address, phone, gender, password);
 			
-			boardDao.deleteBoardByWriterId(id);
+			
 			customerDao.deleteCustomer(customerDto);
 			session.removeAttribute("log");
 			response.sendRedirect("/");
