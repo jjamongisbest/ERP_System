@@ -10,7 +10,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="../resources/main.css">
 </head>
-<c:import url="header" />
+<c:import url="header"/>
 <body>
 
 	<%
@@ -38,6 +38,7 @@
 			</c:choose>
 		</div>
 	</div>
+	<script src="../resources/validation.js"></script>
 </body>
 <c:import url="footer" />
 </html>

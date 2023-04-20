@@ -11,6 +11,8 @@ public class ProductDTO {
 	private int categoryId;
 	private String imageUrl;
 	
+	public ProductDTO() {}
+	
 	public ProductDTO(int id, String name, String memo, String handleDate, int stock, String pipeLine, int price,
 			int categoryId, String imageUrl) {
 		this.id = id;

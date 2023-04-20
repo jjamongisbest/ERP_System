@@ -96,7 +96,6 @@
 								<td>${targets.registeredDate}</td>
 								<td>${targets.title}</td>
 								<c:choose>
-
 									<c:when test="${targets.categoryId eq 11}">
 										<td>NOTICE</td>
 									</c:when>

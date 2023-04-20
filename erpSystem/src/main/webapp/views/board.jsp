@@ -14,44 +14,9 @@
 </head>
 <body>
 
-	<%
-	int categoryId = Integer.parseInt(request.getParameter("cate"));
-	
-	String vpage = request.getParameter("vpage");
-	if (vpage == null)
-		vpage = "1";
-
-	int selPage = Integer.parseInt(vpage);
-
-	BoardDAO boardDao = BoardDAO.getInstance();
-	int total = boardDao.getTotalCountByCategory(categoryId);
-
-	ArrayList<Board> list = boardDao.getPostsPerPage(categoryId, selPage);
-
-	pageContext.setAttribute("list", list);
-	%>
-	
-	<c:set var="categoryId" value="${param.cate}" />
-	<c:set var="vpage" value="${param.vpage}" />
-	<c:if test="${empty vpage}">
-		<c:set var="vpage" value="1" />
-	</c:if>
-	<c:set var="boardDao"
-		value="<%=board.controller.BoardDAO.getInstance()%>" />
-		
-	<c:set var="total"
-		value="${boardDao.getTotalCountByCategory(categoryId)}" />
-	<c:set var="lastPage" value="${Math.ceil(total/10)}" />
-	
-	<c:set var="boardCategoryDao"
-		value="<%=boardCategory.controller.BoardCategoryDAO.getInstance()%>" />
-	<c:set var="category"
-		value="${boardCategoryDao.getCategoryNameById(categoryId)}" />
 	<c:set var="customer" value="${sessionScope.log}" />
-
 	<section class="board">
-
-		<h1 id="h1">${category}</h1>
+		<h1 id="h1">${requestScope.category}</h1>
 		<table>
 			<thead>
 				<tr>
@@ -62,36 +27,40 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${pageScope.list}" var="target">
+				<c:forEach items="${requestScope.boards}" var="board">
 					<tr>
-						<td>${target.id}</td>
-						<td><a href="../?content=boardview&id=${target.id}"
-							class="titles">${target.getTitle()}</a></td>
-						<td>${target.getWriter()}</td>
-						<td>${target.getRegisteredDate()}</td>
+						<td>${board.id}</td>
+						<td><a href="../?content=boardview&id=${board.id}"
+							class="titles">${board.title}</a></td>
+						<td>${board.writer}</td>
+						<td>${board.registeredDate}</td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
 		<div style="margin-top: 10px;" class="page">
-			<c:forEach begin="1" end="${lastPage}" var="page">
-				<a href="../?content=board&vpage=${page}&cate=${categoryId}">${page}</a>
+			<c:forEach begin="1" end="${requestScope.lastPage}" var="page">
+				<a
+					href="../?content=board&vpage=${page}&cate=${requestScope.categoryId}">${page}</a>
 			</c:forEach>
 		</div>
 		<div class="notice-header">
 			<c:if test="${not empty sessionScope.log}">
-				<c:if test="${categoryId == 11}">
+				<c:if test="${requestScope.categoryId == 11}" test="${customer.getId() == 99999}">
 					<c:if test="${customer.getId() == 99999}">
-						<a href="../?content=boardwrite&categoryId=${categoryId}"
+						<a
+							href="../?content=boardwrite&categoryId=${requestScope.categoryId}"
 							class="write">글쓰기</a>
 					</c:if>
 				</c:if>
-				<c:if test="${categoryId != 11}">
-					<a href="../?content=boardwrite&categoryId=${categoryId}"
+				<c:if test="${requestScope.categoryId != 11}">
+					<a
+						href="../?content=boardwrite&categoryId=${requestScope.categoryId}"
 						class="write">글쓰기</a>
 				</c:if>
 			</c:if>
 		</div>
 	</section>
+
 </body>
 </html>
