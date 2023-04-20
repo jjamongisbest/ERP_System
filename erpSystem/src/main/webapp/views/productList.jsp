@@ -16,18 +16,14 @@
 <body>
 
 	<%
-	String result = (String) request.getAttribute("result");
-
-	@SuppressWarnings("unchecked")
-	List<Product> list = (List<Product>) request.getAttribute("searchProduct");
-
-	pageContext.setAttribute("list", list);
-	pageContext.setAttribute("result", result);
+	//@SuppressWarnings("unchecked")
+	//List<Product> list = (List<Product>) request.getAttribute("searchProduct");
 	%>
-	<c:set var="list" value="${pageScope.list }" />
+	
+	<c:set var="list" value="${list }" />
 	<div class="product-list">
 	<h2 id="name">
-		<c:out value="${pageScope.result }"/>
+		<c:out value="${result }"/>
 	</h2>
 	<c:choose>
 		<c:when test="${not empty list  }">		

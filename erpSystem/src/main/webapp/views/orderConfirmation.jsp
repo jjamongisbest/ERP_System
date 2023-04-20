@@ -11,23 +11,7 @@
 <link rel="stylesheet" href="../resources/orderConfirm.css">
 </head>
 <body>
-	<%
-	SalesOrderDAO salesOrderDao = SalesOrderDAO.getInstance();
 
-	String vpage = request.getParameter("vpage");
-	if (vpage == null) {
-		vpage = "1";
-	}
-
-	int selPage = Integer.parseInt(vpage);
-	int total = salesOrderDao.getTotalOrderCount();
-
-	ArrayList<SalesOrder> list = salesOrderDao.getOrdersPerPage(selPage);
-	int lastPage = (int) Math.ceil((double) total / 10);
-
-	pageContext.setAttribute("list", list);
-	pageContext.setAttribute("lastPage", lastPage);
-	%>
 	<section class="board">
 		<form method="POST" action="../service">
 			<h1>주문처리상태페이지</h1>
@@ -68,7 +52,7 @@
 			class="number">
 
 	<c:forEach begin="1" end="${lastPage}" varStatus="info">
-				<a href="../?content=orderconfirmation&vpage=${info.index}">${info.index}</a>
+				<a href="../service?command=getorderconfirmation&vpage=${info.index}">${info.index}</a>
 	</c:forEach>
 
 		

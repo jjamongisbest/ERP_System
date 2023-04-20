@@ -18,6 +18,7 @@ function checkValues(htmlForm) {
 	if (address !== "") {url += "&address=" + address;}
 	if (phone !== "") {url += "&phone=" + phone;}
 	if (gender!== "") {url += "&gender=" + gender;}
+	if (gradeId!== "") {url += "&gender=" + gradeId;}
 	
 	if (id === "") {
 		alert('아이디를 입력해주세요.');

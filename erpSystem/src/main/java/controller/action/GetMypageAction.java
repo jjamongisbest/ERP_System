@@ -11,7 +11,10 @@ import javax.servlet.http.HttpSession;
 
 import board.Board;
 import board.controller.BoardDAO;
+import boardCategory.controller.BoardCategoryDAO;
 import customer.Customer;
+import customer.controller.CustomerDAO;
+import orderProduct.controller.OrderProductDAO;
 import salesOrder.SalesOrder;
 import salesOrder.controller.SalesOrderDAO;
 
@@ -24,17 +27,22 @@ public class GetMypageAction implements Action {
 		Customer customer = (Customer) session.getAttribute("log");
 
 		int userId = customer.getId();
-
+		
 		BoardDAO boarddao = BoardDAO.getInstance();
-
 		SalesOrderDAO salesdao = SalesOrderDAO.getInstance();
-
+		
 		ArrayList<SalesOrder> list = salesdao.getSalesOrderByCustomerID(userId);
 		ArrayList<Board> blist = boarddao.getBoardByCustomerId(userId);
-		request.setAttribute("list", list);
 		
-//		RequestDispatcher dispatcher = request.getRequestDispatcher("?content=mypage&custid=" + userId);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("?custid=" + userId);
+		
+		request.setAttribute("list", list);
+		request.setAttribute("blist", blist);
+		request.setAttribute("customer", customer);
+		
+		
+		
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("?content=mypage&custid=" + userId);		
 		dispatcher.forward(request, response);
 	}
 

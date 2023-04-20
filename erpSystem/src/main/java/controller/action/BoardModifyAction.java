@@ -33,6 +33,8 @@ public class BoardModifyAction implements Action {
 		String registDate = date;
 		int writer = cus.getId();
 		int categoryId = Integer.valueOf(request.getParameter("categoryId"));
+		
+		main = main.replace("\r\n","<br>");
 
 		BoardDTO boardDto = new BoardDTO(id, title, main, modifiedDate, registDate, writer, categoryId);
 
