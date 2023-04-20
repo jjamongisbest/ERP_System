@@ -26,6 +26,7 @@
 	
 	pageContext.setAttribute("map", map);
 	pageContext.setAttribute("list", list);
+	pageContext.setAttribute("map", map);
 	pageContext.setAttribute("total", total);
 	%>
 
@@ -70,8 +71,8 @@
 		</c:when>
 		<c:otherwise>
 			<div class="tung">
-				<img src="../resources/images/emptyJang.jpg"/>
-			</div>
+				<img src="../resources/images/emptyJang.jpg" />
+			</div >
 		</c:otherwise>
 	</c:choose>
 

@@ -35,6 +35,7 @@
 	pageContext.setAttribute("list", list);
 	pageContext.setAttribute("blist", blist);
 	pageContext.setAttribute("catedao", catedao);
+	pageContext.setAttribute("customer", customer);
 	%>
 
 	<div class="container1">
@@ -103,7 +104,7 @@
 										<td>REVIEW</td>
 									</c:when>
 									<c:otherwise>
-										<td>Q&A</td>
+										<td><c:out value="Q&A"/></td>
 									</c:otherwise>
 								</c:choose>
 							</tr>

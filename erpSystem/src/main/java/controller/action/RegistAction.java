@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import customer.CustomerDTO;
 import customer.controller.CustomerDAO;
@@ -32,17 +33,22 @@ public class RegistAction implements Action {
 
 		CustomerDTO CustomerDto = new CustomerDTO(id, gradeId, name, address, phone, gender, password);
 
-		inputCustomerForDataBase(CustomerDto);
+		inputCustomerForDataBase(request,CustomerDto);
+
 		response.sendRedirect("/");
 	}
 
-	private void inputCustomerForDataBase(CustomerDTO customerDto) {
+	private void inputCustomerForDataBase(HttpServletRequest request,CustomerDTO customerDto) {
 		CustomerDAO customerDao = CustomerDAO.getInstance();
+		HttpSession session = request.getSession();
 
-		// 회원가입이면
-		if (customerDao.getCustomerId() == this.id)
+		if (customerDao.getCustomerId() == this.id) 
 			customerDao.createCustomer(customerDto);
-		else
+		else {
 			customerDao.updateCustomer(customerDto);
+			session.removeAttribute("log");
+		}
+
+
 	}
 }

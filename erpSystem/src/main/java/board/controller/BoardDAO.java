@@ -175,7 +175,7 @@ public class BoardDAO {
 	}
 
 	// D
-	public void deleteBoard(int id) {
+	public void deleteBoardByboardId(int id) {
 		this.conn = DBManager.getConnection();
 		if (this.conn != null) {
 			String sql = "DELETE FROM board WHERE board_id =?";
