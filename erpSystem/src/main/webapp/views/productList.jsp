@@ -24,15 +24,16 @@
 	pageContext.setAttribute("list", list);
 	pageContext.setAttribute("result", result);
 	%>
-	<c:set var="list" value="${pageScope.list }" />
+	
+	<c:set var="list" value="${pageScope.list}" />
 	<div class="product-list">
 		<h2 id="name">
-			<c:out value="${pageScope.result }" />
+			<c:out value="${pageScope.result}" />
 		</h2>
 		<c:choose>
-			<c:when test="${not empty list  }">
+			<c:when test="${not empty list}">
 				<div class="lists">
-					<c:set var="target" value="${list }" />
+					<c:set var="target" value="${list}" />
 					<c:forEach items="${list}" var="target">
 						<div class="cards">
 							<div class="card"
@@ -56,4 +57,5 @@
 		</c:choose>
 	</div>
 </body>
+
 </html>
