@@ -399,4 +399,25 @@ public class SalesOrderDAO {
 		}
 
 	}
+	//DELETE
+
+	public void deleteSalesOrderByCustomerId(int id) {
+		this.conn = DBManager.getConnection();
+		if (this.conn != null) {
+			String sql = "DELETE FROM sales_order WHERE customer_id =?";
+
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+
+				this.pstmt.setInt(1, id);
+
+				this.pstmt.execute();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.closeConnection(this.conn, this.pstmt);
+			}
+		}
+
+	}
 }

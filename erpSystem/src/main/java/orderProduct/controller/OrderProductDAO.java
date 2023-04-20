@@ -162,4 +162,22 @@ public class OrderProductDAO {
 		}
 		DBManager.closeConnection(this.conn, this.pstmt);
 	}
+	public void removeOrderProductByOrderId(int id) {
+		this.conn = DBManager.getConnection();
+
+		if(this.conn == null)
+			return;
+
+		String sql = "DELETE FROM order_product WHERE order_id=?";
+
+		try {
+			this.pstmt = this.conn.prepareStatement(sql);
+			this.pstmt.setInt(1, id);
+			this.pstmt.execute();
+		} catch (SQLException e) {
+			System.out.println("error by DELETE");
+			e.printStackTrace();
+		}
+		DBManager.closeConnection(this.conn, this.pstmt);
+	}
 }
