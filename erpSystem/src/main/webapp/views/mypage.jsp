@@ -38,7 +38,6 @@
 	pageContext.setAttribute("catedao", catedao);
 	pageContext.setAttribute("customer", customer);
 	
-	
 	%>
 
 	<div class="container1">

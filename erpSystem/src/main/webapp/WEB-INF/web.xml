@@ -230,6 +230,8 @@
 		<servlet-name>totalSales</servlet-name>
 		<url-pattern>/totalsales</url-pattern>
 	</servlet-mapping>
+	
+	
 		
 
 	
