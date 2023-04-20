@@ -39,18 +39,10 @@ public class RegistAction implements Action {
 	private void inputCustomerForDataBase(CustomerDTO customerDto) {
 		CustomerDAO customerDao = CustomerDAO.getInstance();
 
-		
 		// 회원가입이면
-		if (customerDao.getCustomerId() == this.id) {
-			
-			System.out.println("111111");
+		if (customerDao.getCustomerId() == this.id)
 			customerDao.createCustomer(customerDto);
-			return;
-		} else {
+		else
 			customerDao.updateCustomer(customerDto);
-			System.out.println("222222");
-			
-		}
-
 	}
 }

@@ -194,6 +194,27 @@ public class BoardDAO {
 		}
 
 	}
+	
+	public void deleteBoardByFK(int customerId) {
+		this.conn = DBManager.getConnection();
+		
+		if (this.conn != null) {
+			String sql = "DELETE FROM board WHERE board_writer_id =?";
+			
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+				
+				this.pstmt.setInt(1, customerId);
+				
+				this.pstmt.execute();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.closeConnection(this.conn, this.pstmt);
+			}
+		}
+		
+	}
 
 	public ArrayList<Board> getBoardByCustomerId(int custId) {
 		ArrayList<Board> list = new ArrayList<Board>();

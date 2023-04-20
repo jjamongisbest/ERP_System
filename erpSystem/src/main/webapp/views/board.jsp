@@ -16,7 +16,7 @@
 
 	<%
 	int categoryId = Integer.parseInt(request.getParameter("cate"));
-
+	
 	String vpage = request.getParameter("vpage");
 	if (vpage == null)
 		vpage = "1";
@@ -30,7 +30,7 @@
 
 	pageContext.setAttribute("list", list);
 	%>
-
+	
 	<c:set var="categoryId" value="${param.cate}" />
 	<c:set var="vpage" value="${param.vpage}" />
 	<c:if test="${empty vpage}">
@@ -66,7 +66,7 @@
 						<td><a href="../?content=boardview&id=${target.id}"
 							class="titles">${target.getTitle()}</a></td>
 						<td>${target.getWriter()}</td>
-						<td>${target.getReigisteredDate()}</td>
+						<td>${target.getRegisteredDate()}</td>
 					</tr>
 				</c:forEach>
 			</tbody>

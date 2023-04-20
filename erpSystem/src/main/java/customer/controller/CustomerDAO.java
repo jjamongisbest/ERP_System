@@ -179,29 +179,46 @@ public class CustomerDAO {
 			}
 		}
 	}
-
-	// D
-	public void deleteCustomer(CustomerDTO CustomerDto) {
-		Customer customer = new Customer(CustomerDto);
-
+	
+	public void deleteCustomer(int customerId) {
 		this.conn = DBManager.getConnection();
 
-		if (this.conn != null) {
-			String str = "DELETE FROM customer WHERE customer_id=?";
+		if (this.conn == null)
+			return;
 
-			try {
-				this.pstmt = conn.prepareStatement(str);				
-				this.pstmt.setInt(1, customer.getId());
-				
+		String str = "DELETE FROM customer WHERE customer_id=?";
 
-				this.pstmt.execute();
+		try {
+			this.pstmt = conn.prepareStatement(str);				
+			this.pstmt.setInt(1, customerId);
 
-			} catch (Exception e) {
-				e.printStackTrace();
-			} finally {
-				DBManager.closeConnection(conn, pstmt);
-			}
+			this.pstmt.execute();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
+		DBManager.closeConnection(this.conn, this.pstmt);
 	}
+	
+	public void deleteCustomerToAll(int customerId) {
+		this.conn = DBManager.getConnection();
 
+		if (this.conn == null)
+			return;
+
+		String query ="DELETE customer, sales_order, order_product, board FROM customer "+
+					  "LEFT JOIN board ON customer.customer_id = board.board_writer_id "+
+					  "LEFT JOIN sales_order ON customer.customer_id = sales_order.customer_id "+
+					  "LEFT JOIN order_product ON sales_order.order_id = order_product.order_id "+
+					  "WHERE customer.customer_id=?";
+
+		try {
+			this.pstmt = conn.prepareStatement(query);				
+			this.pstmt.setInt(1, customerId);
+
+			this.pstmt.execute();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		DBManager.closeConnection(this.conn, this.pstmt);
+	}
 }
