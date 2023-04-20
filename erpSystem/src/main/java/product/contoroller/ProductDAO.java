@@ -193,6 +193,28 @@ public class ProductDAO {
 		}
 		DBManager.closeConnection(this.conn, this.pstmt);
 	}
+	
+	
+	public void setProductStock(ProductDTO productDto) {
+		this.conn = DBManager.getConnection();
+		
+		if(this.conn == null)
+			return;
+		
+		String sql = "UPDATE product SET product_stock=? WHERE product_id=?";
+		
+		try {
+			this.pstmt = this.conn.prepareStatement(sql);
+			this.pstmt.setInt(1, productDto.getStock());
+			this.pstmt.setInt(2, productDto.getId());
+			
+			this.pstmt.execute();
+		} catch (SQLException e) {
+			System.out.println("error by UPDATE");
+			e.printStackTrace();
+		}
+		DBManager.closeConnection(this.conn, this.pstmt);
+	}
 
 	//Delete
 	public void removeProductById(int id) {

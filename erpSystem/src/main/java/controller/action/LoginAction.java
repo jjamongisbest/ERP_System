@@ -27,7 +27,6 @@ public class LoginAction implements Action {
 	    } catch (NumberFormatException e) {
 	        request.setAttribute("message", "ID는 숫자로 입력해주세요.");
 	        request.getRequestDispatcher("/").forward(request, response);
-	        response.getWriter().close();
 	        return;
 	    }
 
@@ -42,7 +41,6 @@ public class LoginAction implements Action {
 	    } else {
 	        request.setAttribute("message", "회원 정보가 올바르지 않습니다.");
 	        request.getRequestDispatcher("/").forward(request, response);
-	        response.getWriter().close();
 	    }
 	}
 	

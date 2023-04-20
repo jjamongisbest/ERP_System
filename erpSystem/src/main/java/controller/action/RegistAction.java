@@ -1,14 +1,11 @@
 package controller.action;
 
 import java.io.IOException;
-import java.net.http.HttpResponse;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import com.mysql.cj.Session;
 
 import customer.CustomerDTO;
 import customer.controller.CustomerDAO;
@@ -26,8 +23,6 @@ public class RegistAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		
-		
 		this.id = Integer.parseInt(request.getParameter("id"));
 		this.gradeId = Integer.parseInt(request.getParameter("gradeId"));
 		this.name = request.getParameter("name");
@@ -39,7 +34,7 @@ public class RegistAction implements Action {
 		CustomerDTO CustomerDto = new CustomerDTO(id, gradeId, name, address, phone, gender, password);
 
 		inputCustomerForDataBase(request,CustomerDto);
-	
+
 		response.sendRedirect("/");
 	}
 
@@ -47,16 +42,13 @@ public class RegistAction implements Action {
 		CustomerDAO customerDao = CustomerDAO.getInstance();
 		HttpSession session = request.getSession();
 
-		
-	
-		// 회원가입이면
-		if (customerDao.getCustomerId() == this.id) {
+		if (customerDao.getCustomerId() == this.id) 
 			customerDao.createCustomer(customerDto);
-			return;
-		} else {
+		else {
 			customerDao.updateCustomer(customerDto);
 			session.removeAttribute("log");
 		}
+
 
 	}
 }

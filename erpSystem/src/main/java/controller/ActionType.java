@@ -7,6 +7,7 @@ import controller.action.BoardModifyAction;
 import controller.action.CartAction;
 import controller.action.DropCustomerAction;
 import controller.action.DropItemAction;
+import controller.action.GetBoardListAction;
 import controller.action.GetMonthlySalesTotal;
 import controller.action.GetMypageAction;
 import controller.action.GetSalesTotal;
@@ -27,8 +28,8 @@ public enum ActionType {
 	BASKET ("basket",  new CartAction()),
 	
 	PRODUCT("productlist", new ProductAction()),
-	BOARD  ("board",   new BoardAction()),
-	ORDER  ("order",   new OrderAction()),
+	BOARD  ("board",  	   new BoardAction()),
+	ORDER  ("order",   	   new OrderAction()),
 	
 	BOARD_MODIFY("boardModify",     new BoardModifyAction()),
 	BOARD_DELETE("boardDelete",     new BoardDeleteAction()),
@@ -36,11 +37,14 @@ public enum ActionType {
 	DROP_CUSTOMER("dropCustomer",   new DropCustomerAction()),
 	DROP_ITEM("dropitem", 			new DropItemAction()),
 	
-	PRODUCT_DETAIL("productdetail", new ProductDetailAction()),
-	ORDER_CONF("orderconfirmation", new OrderConfirmAction()),
-	SALES_TOTAL("salesTotal", new GetSalesTotal()),
+	PRODUCT_DETAIL("productdetail", 	  new ProductDetailAction()),
+	ORDER_CONF("orderconfirmation", 	  new OrderConfirmAction()),
+	SALES_TOTAL("salesTotal", 			  new GetSalesTotal()),
+	
 	GET_MONTH_SALES_TOTAL("monthlyTotal", new GetMonthlySalesTotal()),
-	GET_MYPAGE("getmypage", new GetMypageAction())
+	GET_BOARD_LIST("boardlist",			  new GetBoardListAction()),
+	GET_MYPAGE("getmypage", 			  new GetMypageAction())
+
 	;
 	
 	private String command;

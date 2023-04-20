@@ -21,18 +21,17 @@
 
 	<%
 	Customer customer = (Customer) session.getAttribute("log");
-
 	int userId = customer.getId();
-
+	
 	CustomerDAO custdao = CustomerDAO.getInstance();
 	BoardDAO boarddao = BoardDAO.getInstance();
 	OrderProductDAO orderdao = OrderProductDAO.getInstance();
 	SalesOrderDAO salesdao = SalesOrderDAO.getInstance();
 	BoardCategoryDAO catedao = BoardCategoryDAO.getInstance();
-
+	
 	ArrayList<SalesOrder> list = salesdao.getSalesOrderByCustomerID(userId);
 	ArrayList<Board> blist = boarddao.getBoardByCustomerId(userId);
-	
+
 	pageContext.setAttribute("list", list);
 	pageContext.setAttribute("blist", blist);
 	pageContext.setAttribute("catedao", catedao);
@@ -40,9 +39,7 @@
 	%>
 
 	<div class="container1">
-
 		<h2 class="pagename">MYPAGE</h2>
-
 		<div class="cust_info">
 			<ul>
 				<li><h4 class="cust_name"><%=customer.getName()%>(<%=customer.getId()%>)님
@@ -75,15 +72,11 @@
 									</c:choose></td>
 							</tr>
 						</c:forEach>
-
 					</c:when>
 					<c:otherwise>
 						<td>주문 내역이 없습니다.</td>
 					</c:otherwise>
-
 				</c:choose>
-
-
 			</table>
 		</div>
 
@@ -103,7 +96,6 @@
 								<td>${targets.registeredDate}</td>
 								<td>${targets.title}</td>
 								<c:choose>
-
 									<c:when test="${targets.categoryId eq 11}">
 										<td>NOTICE</td>
 									</c:when>
@@ -111,22 +103,16 @@
 										<td>REVIEW</td>
 									</c:when>
 									<c:otherwise>
-										<td>Q&A</td>
+										<td><c:out value="Q&A"/></td>
 									</c:otherwise>
-
 								</c:choose>
 							</tr>
-
 						</c:forEach>
-
-
 					</c:when>
 					<c:otherwise>
 						<td>주문 내역이 없습니다.</td>
 					</c:otherwise>
-
 				</c:choose>
-
 			</table>
 		</div>
 

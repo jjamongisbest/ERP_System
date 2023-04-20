@@ -33,7 +33,6 @@ public class GetMypageAction implements Action {
 		ArrayList<Board> blist = boarddao.getBoardByCustomerId(userId);
 		request.setAttribute("list", list);
 		
-//		RequestDispatcher dispatcher = request.getRequestDispatcher("?content=mypage&custid=" + userId);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("?custid=" + userId);
 		dispatcher.forward(request, response);
 	}

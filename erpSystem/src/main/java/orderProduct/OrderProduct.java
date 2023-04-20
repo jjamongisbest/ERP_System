@@ -21,6 +21,13 @@ public class OrderProduct {
 		this.orderProduct = orderProduct;
 		this.quantity = quantity;
 	}
+	
+	public OrderProduct(OrderProduct orderProduct) {
+		this.productId = orderProduct.productId;
+		this.orderId = orderProduct.orderId;
+		this.orderProduct = orderProduct.orderProduct;
+		this.quantity = orderProduct.quantity;
+	}
 
 	public int getDetailsId() 		{return detailsId;}
 	public int getProductId() 		{return productId;}

@@ -24,14 +24,15 @@
 
 	int total = order.getTotalPrice(list);
 	
+	pageContext.setAttribute("map", map);
 	pageContext.setAttribute("list", list);
 	pageContext.setAttribute("map", map);
 	pageContext.setAttribute("total", total);
 	%>
-	
+
 	<h3 class="titles">${sessionScope.log.name}님의장바구니</h3>
-	
-	<c:set var="list" value="${pageScope.list }"/>
+
+	<c:set var="list" value="${pageScope.list }" />
 	<c:choose>
 		<c:when test="${not empty list}">
 			<table class="tbl">
@@ -58,7 +59,7 @@
 					</c:forEach>
 				</tbody>
 			</table>
-			
+
 			<p class="total">총 주문금액 : ${pageScope.total}</p>
 			<form method="POST" action="../service" class="ord">
 				<input type="hidden" name="command" value="order">
@@ -66,12 +67,12 @@
 					<input type="submit" value="주문하기" class="button">
 				</div>
 			</form>
-			
+
 		</c:when>
 		<c:otherwise>
-		<div class="tung">
-			<img src="../resources/images/emptyJang.jpg" />
-		</div >
+			<div class="tung">
+				<img src="../resources/images/emptyJang.jpg" />
+			</div >
 		</c:otherwise>
 	</c:choose>
 

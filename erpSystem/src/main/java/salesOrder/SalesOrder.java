@@ -30,12 +30,12 @@ public class SalesOrder{
 		this.status = status;
 	}
 	
-	public SalesOrder(SalesOrderDTO dto) {
-		this.id = dto.getId();
-		this.customerId = dto.getCustomerId();
-		this.date = dto.getDate();
-		this.total = dto.getTotal();
-		this.status = dto.getStatus();
+	public SalesOrder(SalesOrder salesOrder) {
+		this.id = salesOrder.getId();
+		this.customerId = salesOrder.getCustomerId();
+		this.date = salesOrder.getDate();
+		this.total = salesOrder.getTotal();
+		this.status = salesOrder.getStatus();
 	}
 
 	public int getId() {return id;}

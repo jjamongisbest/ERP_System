@@ -194,7 +194,7 @@ public class BoardDAO {
 		}
 
 	}
-	
+
 	public void deleteBoardByWriterId(int id) {
 		this.conn = DBManager.getConnection();
 		if (this.conn != null) {
@@ -214,8 +214,6 @@ public class BoardDAO {
 		}
 
 	}
-	
-	
 
 	public ArrayList<Board> getBoardByCustomerId(int custId) {
 		ArrayList<Board> list = new ArrayList<Board>();

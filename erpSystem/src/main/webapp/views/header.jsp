@@ -58,7 +58,7 @@
 		<c:set var="list" value="${pageScope.list }"/>
 		<c:forEach items="${list}" var="target">		
 			<li>
-				<a href="../?content=board&cate=${target.id}">${target.name}</a>
+				<a href="../service?command=boardlist&cate=${target.id }">${target.name }</a>
 			</li>
 		</c:forEach>
 		
