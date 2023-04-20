@@ -38,9 +38,11 @@
 	</c:if>
 	<c:set var="boardDao"
 		value="<%=board.controller.BoardDAO.getInstance()%>" />
+		
 	<c:set var="total"
 		value="${boardDao.getTotalCountByCategory(categoryId)}" />
 	<c:set var="lastPage" value="${Math.ceil(total/10)}" />
+	
 	<c:set var="boardCategoryDao"
 		value="<%=boardCategory.controller.BoardCategoryDAO.getInstance()%>" />
 	<c:set var="category"
@@ -66,7 +68,7 @@
 						<td><a href="../?content=boardview&id=${target.id}"
 							class="titles">${target.getTitle()}</a></td>
 						<td>${target.getWriter()}</td>
-						<td>${target.getReigisteredDate()}</td>
+						<td>${target.getRegisteredDate()}</td>
 					</tr>
 				</c:forEach>
 			</tbody>
