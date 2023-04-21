@@ -9,13 +9,28 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
 <link rel="stylesheet" href="../resources/board.css">
 </head>
 <body>
+	<!--<c:redirect url="/?content=boardlist"/>-->
 
+<<<<<<< HEAD
+
+	<c:if test="${empty requestScope.boards}">
+		<c:import url="/service">
+			<c:param name="command" value="boardlist" />
+		</c:import>
+	</c:if>
+
+
+=======
+>>>>>>> refs/remotes/origin/main
 	<c:set var="customer" value="${sessionScope.log}" />
 	<section class="board">
+<<<<<<< HEAD
+
+=======
+>>>>>>> refs/remotes/origin/main
 		<h1 id="h1">${requestScope.category}</h1>
 		<table>
 			<thead>
@@ -46,8 +61,13 @@
 		</div>
 		<div class="notice-header">
 			<c:if test="${not empty sessionScope.log}">
+<<<<<<< HEAD
+				<c:if test="${requestScope.categoryId == 11}">
+					<c:if test="${customer.getId() == 99999}">
+=======
 				<c:if test="${requestScope.categoryId == 11}" test="${customer.getId() == 99999}">
 					<c:if test="${custome.id == 99999}">
+>>>>>>> refs/remotes/origin/main
 						<a
 							href="../?content=boardwrite&categoryId=${requestScope.categoryId}"
 							class="write">글쓰기</a>

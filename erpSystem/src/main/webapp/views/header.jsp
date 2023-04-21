@@ -58,7 +58,11 @@
 		<c:set var="list" value="${pageScope.list }"/>
 		<c:forEach items="${list}" var="target">		
 			<li>
+<<<<<<< HEAD
+				<a href="../?content=board&cate=${target.id}">${target.name}</a>
+=======
 				<a href="../service?command=boardlist&cate=${target.id }">${target.name }</a>
+>>>>>>> refs/remotes/origin/main
 			</li>
 		</c:forEach>
 		

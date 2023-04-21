@@ -5,7 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="../resources/productDetail.css">
-<title>Insert title here</title>
 </head>
 
 <body>
@@ -49,6 +48,7 @@
 					</c:otherwise>
 				</c:choose>
 			</form>
+
 		</div>
 	</div>
 	<script src="../resources/validation.js"></script>

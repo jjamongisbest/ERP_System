@@ -63,5 +63,3 @@ public enum ActionType {
 		return null;  
 	}
 }
-
-
