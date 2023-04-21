@@ -7,6 +7,7 @@ import controller.action.BoardModifyAction;
 import controller.action.CartAction;
 import controller.action.DropCustomerAction;
 import controller.action.DropItemAction;
+
 import controller.action.GetMonthlySalesTotal;
 import controller.action.GetMypageAction;
 import controller.action.GetOrderConfirmation;
@@ -43,6 +44,7 @@ public enum ActionType {
 	SALES_TOTAL("salesTotal", 			  new GetSalesTotal()),
 	
 	GET_MONTH_SALES_TOTAL("monthlyTotal", new GetMonthlySalesTotal()),
+
 	GET_MYPAGE("getmypage", 			  new GetMypageAction()),
 
 
