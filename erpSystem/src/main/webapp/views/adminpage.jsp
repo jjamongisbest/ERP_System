@@ -19,7 +19,7 @@
 		<div class="button-container">
 			<button type="button" id="btn">등급별 매출</button>
 			<button type="button" id="btn2">월별 매출</button>
-			<a id="total-check" href="../?content=orderconfirmation" class="sales">주문총확인</a>
+			<a id="total-check" href="../service?command=getorderconfirmation" class="sales">주문총확인</a>
 		</div>
 
 		<div id="column_chart_div1" style="width: 900px; height: 500px; border: 1px solid #ccc; margin-left: 20px;"></div>

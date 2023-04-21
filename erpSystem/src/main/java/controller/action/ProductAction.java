@@ -23,8 +23,10 @@ public class ProductAction implements Action{
 		this.keyword = request.getParameter("keyword");
 		this.code = request.getParameter("code");
 		
+		List<Product> list = getSearchProduct();
+		
 		if(this.code != null || !this.keyword.equals("")) {	
-			request.setAttribute("searchProduct", getSearchProduct());
+			request.setAttribute("list",list);
 			request.setAttribute("result", getSearchResult());
 		}
 		
