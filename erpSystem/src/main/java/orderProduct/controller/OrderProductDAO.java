@@ -163,6 +163,9 @@ public class OrderProductDAO {
 		DBManager.closeConnection(this.conn, this.pstmt);
 	}
 	
+
+	// Under method use in shopping cart
+
 	public void removeOrderProductByOrderId(int id) {
 		this.conn = DBManager.getConnection();
 
@@ -181,6 +184,7 @@ public class OrderProductDAO {
 		}
 		DBManager.closeConnection(this.conn, this.pstmt);
 	}
+
 	
 }
 

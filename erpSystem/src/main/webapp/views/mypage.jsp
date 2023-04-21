@@ -18,9 +18,6 @@
 </head>
 <link rel="stylesheet" href="../resources/mypage.css">
 <body>
-
-
-	
 	<div class="container1">
 
 		<h2 class="pagename">MYPAGE</h2>
@@ -93,7 +90,7 @@
 										<td>REVIEW</td>
 									</c:when>
 									<c:otherwise>
-										<td>Q&A</td>
+										<td><c:out value="Q&A"/></td>
 									</c:otherwise>
 
 								</c:choose>
