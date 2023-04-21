@@ -1,12 +1,16 @@
 package controller;
 
 import controller.action.Action;
+import controller.action.AddCartAction;
 import controller.action.BoardAction;
 import controller.action.BoardDeleteAction;
 import controller.action.BoardModifyAction;
 import controller.action.CartAction;
+import controller.action.ClearCartAction;
+import controller.action.DeleteCartAction;
 import controller.action.DropCustomerAction;
 import controller.action.DropItemAction;
+import controller.action.GetCartListAction;
 import controller.action.GetMonthlySalesTotal;
 import controller.action.GetMypageAction;
 import controller.action.GetOrderConfirmation;
@@ -45,9 +49,13 @@ public enum ActionType {
 	GET_MONTH_SALES_TOTAL("monthlyTotal", new GetMonthlySalesTotal()),
 	GET_MYPAGE("getmypage", 			  new GetMypageAction()),
 
-
 	GET_REGIST("getregist", new GetRegistAction()),
-	GET_orderconfirmation("getorderconfirmation", new GetOrderConfirmation())
+	GET_orderconfirmation("getorderconfirmation", new GetOrderConfirmation()),
+	
+	ADD_CART("addcart", new AddCartAction()),
+	GET_CART_LIST("getcartlist", new GetCartListAction()),
+	DELETE_CART("deletecart", new DeleteCartAction()),
+	CLEAR_CART("clearcart", new ClearCartAction())
 
 	;
 	

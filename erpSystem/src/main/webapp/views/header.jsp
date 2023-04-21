@@ -51,7 +51,7 @@
 					</c:otherwise>
 				</c:choose>
 				<li><a id="logout" onclick="sendCommand('logout')">로그아웃</a></li>
-				<li><a id="basket" onclick="send('order')">장바구니</a></li>
+				<li><a id="basket" onclick="send('getcartlist')">장바구니</a></li>
 			</c:otherwise>
 		</c:choose>
 		
