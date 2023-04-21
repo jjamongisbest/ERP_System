@@ -7,10 +7,13 @@ function insertCart() {
 }
 
 function send(page) {
-	if (page === "login")
+	if (page === "login"){
 		alert("로그인 후 이용가능");
-
 	location.href = `../?content=${page}`;
+	}
+	else{
+	location.href = `../service?command=${page}`;		
+	}
 }
 
 function dropItem(productId) {
@@ -25,7 +28,6 @@ document.querySelector('form').addEventListener('submit', function(e) {
 		alert('검색어를 입력하세요');
 	}
 });
-
 
 // 이하 장바구니 기능 
 function addToCart() {
