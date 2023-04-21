@@ -61,6 +61,6 @@
 		</li>
 
 	</ul>
-	<script src="resources/validation.js"></script>
+	<script src="../resources/validation.js"></script>
 </body>
 </html>

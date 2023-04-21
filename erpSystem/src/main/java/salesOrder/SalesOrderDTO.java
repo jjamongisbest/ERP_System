@@ -24,6 +24,13 @@ public class SalesOrderDTO {
 		this.status = order.getStatus();
 	}
 	
+	public SalesOrderDTO(int custId, String date, int total, String status) {
+		this.customerId = custId;
+		this.date = date;
+		this.total = total;
+		this.status = status;
+	}
+	
 	
 	public int getId() {
 		return id;

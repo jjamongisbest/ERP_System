@@ -172,7 +172,7 @@ public class CartDAO {
 			try {
 				this.pstmt = this.conn.prepareStatement(sql);
 				this.pstmt.setInt(1, customerId);
-				this.pstmt.executeQuery();
+				this.pstmt.executeUpdate(); // executeUpdate() 메소드를 사용합니다.
 			} catch (SQLException e) {
 				e.printStackTrace();
 			} finally {
@@ -180,6 +180,7 @@ public class CartDAO {
 			}
 		}
 	}
+
 
 	public void deleteCartByProductId(int productId) {
 		this.conn = DBManager.getConnection();

@@ -14,7 +14,9 @@ import controller.action.Action;
 public class Service extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    public Service() {super();}
+    public Service() {
+    	super();
+    }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -23,8 +25,6 @@ public class Service extends HttpServlet {
 		
 		
 		
-		System.out.println("command : " + command);
-		
 		ActionFactory factory = ActionFactory.getInstance();
 		Action action = factory.getAction(command);
 		
@@ -32,7 +32,7 @@ public class Service extends HttpServlet {
 		
 		if(action != null) 
 			action.execute(request, response);
-		
+
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

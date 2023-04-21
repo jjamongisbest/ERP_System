@@ -7,8 +7,6 @@
 </head>
 <body>
 
-
-
 	<c:set var="customer" value="${sessionScope.log}" scope="session" />
 
 	<h3 class="titles">${sessionScope.log.name}님의장바구니</h3>
@@ -32,7 +30,7 @@
 								<td>${cart.price}</td>
 								<td>${cart.quantity}</td>
 								<td>
-									<a href="../service?command=deletecart&product=${cart.pruductId}&cust=${sessionScope.log.id}">취소</a>
+									<a href="../service?command=deletecart&product=${cart.pruductId}&cust=${sessionScope.log.id}&count=${cart.quantity}">취소</a>
 								</td>
 							</tr>
 						</c:forEach>
@@ -48,7 +46,7 @@
 	</div>
 	<div class="purchase">
 		<p>총 금액 : ${total} 원</p>
-		<a href="../service?command=clearcart">주문하기</a>
+		<a href="../service?command=clearcart&total=${total}">주문하기</a>
 	</div>
 
 	<script src="resources/validation.js"></script>

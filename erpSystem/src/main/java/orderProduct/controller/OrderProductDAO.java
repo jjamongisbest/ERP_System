@@ -24,28 +24,29 @@ public class OrderProductDAO {
 	
 	//Create
 	public void createOrderProduct(OrderProductDTO orderProductDto) {
-		this.conn = DBManager.getConnection();
+	    this.conn = DBManager.getConnection();
 
-		if(this.conn == null)
-			return;
+	    if (this.conn == null) {
+	        return;
+	    }
 
-		String sql = "INSERT INTO order_product VALUES (?, ?, ?, ?, ?)";
+	    String sql = "INSERT INTO order_product (product_id, order_id, order_product, order_quantity) VALUES (?, ?, ?, ?)";
 
-		try {
-			this.pstmt = this.conn.prepareStatement(sql);
-			this.pstmt.setInt(1, 	orderProductDto.getDetailsId());
-			this.pstmt.setInt(2, 	orderProductDto.getProductId());
-			this.pstmt.setInt(3, 	orderProductDto.getOrderId());
-			this.pstmt.setString(4, orderProductDto.getOrderProduct());
-			this.pstmt.setInt(5, 	orderProductDto.getQuantity());
-			
-			this.pstmt.execute();
-			
-		} catch (SQLException e) {
-			System.out.println("error by CREATE");
-			e.printStackTrace();
-		}
-		DBManager.closeConnection(this.conn, this.pstmt);
+	    try {
+	        this.pstmt = this.conn.prepareStatement(sql);
+	        this.pstmt.setInt(1, orderProductDto.getProductId());
+	        this.pstmt.setInt(2, orderProductDto.getOrderId());
+	        this.pstmt.setString(3, orderProductDto.getOrderProduct());
+	        this.pstmt.setInt(4, orderProductDto.getQuantity());
+
+	        this.pstmt.executeUpdate();
+
+	    } catch (SQLException e) {
+	        System.out.println("Error by CREATE");
+	        e.printStackTrace();
+	    } finally {
+	        DBManager.closeConnection(this.conn, this.pstmt);
+	    }
 	}
 
 	//Read

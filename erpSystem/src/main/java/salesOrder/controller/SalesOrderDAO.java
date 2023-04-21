@@ -32,18 +32,17 @@ public class SalesOrderDAO {
 
 		this.conn = DBManager.getConnection();
 		if (this.conn != null) {
-			String sql = "INSERT INTO sales_order VALUES(?,?,?,?,?)";
+			String sql = "INSERT INTO sales_order (customer_id, order_date, order_total_price, order_status) VALUES (?,?,?,?)";
 
 			try {
 				this.pstmt = this.conn.prepareStatement(sql);
 
-				this.pstmt.setInt(1, dto.getId());
-				this.pstmt.setInt(2, dto.getCustomerId());
-				this.pstmt.setString(3, dto.getDate());
-				this.pstmt.setInt(4, dto.getTotal());
-				this.pstmt.setString(5, dto.getStatus());
+				this.pstmt.setInt(1, dto.getCustomerId());
+				this.pstmt.setString(2, dto.getDate());
+				this.pstmt.setInt(3, dto.getTotal());
+				this.pstmt.setString(4, dto.getStatus());
 
-				this.pstmt.execute();
+				this.pstmt.executeUpdate();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			} finally {
@@ -398,7 +397,6 @@ public class SalesOrderDAO {
 		}
 	}
 
-
 	// Update
 	public void updateOrderStatusToComplete(int orderId) {
 
@@ -419,8 +417,7 @@ public class SalesOrderDAO {
 		}
 	}
 
-	
-	//DELETE
+	// DELETE
 	public void deleteSalesOrderByCustomerId(int id) {
 		this.conn = DBManager.getConnection();
 		if (this.conn != null) {

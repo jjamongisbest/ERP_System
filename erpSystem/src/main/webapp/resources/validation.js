@@ -29,16 +29,5 @@ document.querySelector('form').addEventListener('submit', function(e) {
 	}
 });
 
-// 이하 장바구니 기능 
-function addToCart() {
-	const myForm = document.getElementById("cartForm");
-	const product = myForm.product.value;
-	const category = myForm.category.value;
-	const count = myForm.count.value;
 
-	const cookieValue = product + "|" + category + "|" + count;
-	document.cookie = "cart=" + cookieValue;
-
-	alert("장바구니에 추가되었습니다.");
-}
 
