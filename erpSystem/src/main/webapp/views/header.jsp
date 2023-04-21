@@ -32,7 +32,7 @@
 		<c:choose>
 			<c:when test="${empty sessionScope.log}">
 				<li>
-					<a id="regist" href="../?content=regist">회원가입</a>
+					<a id="regist" href="../service?command=getregist">회원가입</a>
 					
 				</li>
 				<li><a id="login" href="../?content=login">로그인</a></li>
@@ -42,7 +42,7 @@
 					<c:when test="${sessionScope.log.getId() != 99999 }">
 						<li>
 						<a id="mypage"
-						 href="../?content=mypage&custid=<%=customer.getId()%>">
+						 href="../service?command=getmypage&custid=<%=customer.getId()%>">
 						 마이페이지</a>
 						</li>
 					</c:when>
