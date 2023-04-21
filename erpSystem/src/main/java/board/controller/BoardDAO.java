@@ -55,18 +55,21 @@ public class BoardDAO {
 		}
 	}
 	public int getBoardId() {
-		int boardrId = -1;
+		int boardId = 1;
 		
 		this.conn=DBManager.getConnection();
 		if(this.conn != null) {
-			String str = "SELECT MAX(board_id) FROM board";
+			String str = "SELECT board_id FROM board ORDER BY board_id";
 			
 			try {
 				this.pstmt = this.conn.prepareStatement(str);
 				this.rs = this.pstmt.executeQuery();
 				
 				while(this.rs.next()) {
-					boardrId = this.rs.getInt(1);					
+					int id = this.rs.getInt(1);		
+					if(boardId == id) {
+						boardId+=1;
+					}				
 				}
 				
 			} catch (Exception e) {
@@ -78,7 +81,7 @@ public class BoardDAO {
 			
 		}
 		
-		return boardrId + 1;
+		return boardId;
 	}
 
 	// R

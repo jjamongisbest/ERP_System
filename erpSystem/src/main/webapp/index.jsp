@@ -9,9 +9,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-<section class="frame">
-	<c:import url="main"/>
-</section>
+	<section class="frame">
+		<c:choose>
+			<c:when test="${empty sessionScope.init}">
+				<c:import url="/service">
+					<c:param name="command" value="getmain" />
+				</c:import>
+			</c:when>
+			<c:otherwise>
+				<c:import url="main" />
+			</c:otherwise>
+		</c:choose>
+	</section>
 </body>
-
 </html>

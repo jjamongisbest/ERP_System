@@ -30,6 +30,7 @@
 
 	String name = boardCategoryDao.getCategoryNameById(categoryId);
 	%>
+	
 	<section>
 
 		<h1><%=name%>

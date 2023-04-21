@@ -57,7 +57,7 @@ public class CustomerDAO {
 
 		this.conn=DBManager.getConnection();
 		if(this.conn != null) {
-			String str = "SELECT customer_id FROM customer";
+			String str = "SELECT customer_id FROM customer ORDER BY customer_id";
 
 			try {
 				this.pstmt = this.conn.prepareStatement(str);

@@ -12,16 +12,7 @@
 <link rel="stylesheet" href="../resources/header.css">
 </head>
 <body>
-
-	<%
-	Customer customer = (Customer) session.getAttribute("log");
-
-	BoardCategoryDAO boardcateDao = BoardCategoryDAO.getInstance();
-	ArrayList<BoardCategory> list = boardcateDao.getBoardCategoryAll();
-	
-	pageContext.setAttribute("list", list);
-	%>
-
+	<c:set var="customer" value="${sessionScope.log}"/>
 	<div class="header">
 		<a class="banner" href="index.jsp"> <img
 			src="../resources/images/My project-1.jpg">
@@ -31,37 +22,34 @@
 	<ul class="nav-list-main">
 		<c:choose>
 			<c:when test="${empty sessionScope.log}">
-				<li>
-					<a id="regist" href="../service?command=getregist">회원가입</a>
-					
+				<li><a id="regist" href="../service?command=getregist">회원가입</a>
+
 				</li>
 				<li><a id="login" href="../?content=login">로그인</a></li>
 			</c:when>
 			<c:otherwise>
 				<c:choose>
 					<c:when test="${sessionScope.log.getId() != 99999 }">
-						<li>
-						<a id="mypage"
-						 href="../service?command=getmypage&custid=<%=customer.getId()%>">
-						 마이페이지</a>
-						</li>
+						<li><a id="mypage"
+							href="../service?command=getmypage&custid=${customer.id}">
+								마이페이지</a></li>
 					</c:when>
 					<c:otherwise>
-						<li><a id="adminpage" href="../?content=adminpage"> 관리자페이지</a></li>
+						<li><a id="adminpage" href="../?content=adminpage">
+								관리자페이지</a></li>
 					</c:otherwise>
 				</c:choose>
 				<li><a id="logout" onclick="sendCommand('logout')">로그아웃</a></li>
 				<li><a id="basket" onclick="send('order')">장바구니</a></li>
 			</c:otherwise>
 		</c:choose>
-		
-		<c:set var="list" value="${pageScope.list }"/>
-		<c:forEach items="${list}" var="target">		
-			<li>
-				<a href="../service?command=boardlist&cate=${target.id }">${target.name }</a>
+
+		<c:set var="list" value="${sessionScope.list }" />
+		<c:forEach items="${list}" var="target">
+			<li><a href="../?content=board&cate=${target.id }">${target.name }</a>
 			</li>
 		</c:forEach>
-		
+
 		<li>
 			<form method="POST" action="../service" name="search">
 				<input type="hidden" name="command" value="productlist">
@@ -71,7 +59,7 @@
 				</section>
 			</form>
 		</li>
-		
+
 	</ul>
 	<script src="resources/validation.js"></script>
 </body>

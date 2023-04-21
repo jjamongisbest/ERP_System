@@ -13,12 +13,14 @@ import controller.action.Action;
 
 public class Service extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+    
+	
     public Service() {super();}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String command = request.getParameter("command");
+		
 		
 		System.out.println("command : " + command);
 		
@@ -26,6 +28,7 @@ public class Service extends HttpServlet {
 		Action action = factory.getAction(command);
 		
 		request.setAttribute("content", command);
+		
 		
 		if(action != null) 
 			action.execute(request, response);

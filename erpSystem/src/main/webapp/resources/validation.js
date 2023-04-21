@@ -7,10 +7,14 @@ function insertCart() {
 }
 
 function send(page) {
-	if (page === "login")
+	if (page === "login"){
 		alert("로그인 후 이용가능");
-
 	location.href = `../?content=${page}`;
+	}
+	else{
+	location.href = `../service?command=${page}`;		
+	}
+	
 }
 
 function dropItem(productId) {
@@ -41,48 +45,4 @@ function addToCart() {
 	alert("장바구니에 추가되었습니다.");
 }
 
-// SalesOrderDTO 클래스 정의
-export class SalesOrderDTO {
-	constructor(product, category, count) {
-		this.product = product;
-		this.category = category;
-		this.count = count;
-	}
-}
-
-// SalesOrderDAO 클래스 정의
-class SalesOrderDAO {
-	static getInstance() {
-		if (!SalesOrderDAO.instance) {
-			SalesOrderDAO.instance = new SalesOrderDAO();
-		}
-		return SalesOrderDAO.instance;
-	}
-
-	createSalesOrder(salesOrderDTO, callback) {
-		callback(true);
-		 callback(false);
-	}
-}
-
-export default SalesOrderDAO;
-
-
-function buyNow() {
-	const myForm = document.getElementById("cartForm");
-	const product = myForm.product.value;
-	const category = myForm.category.value;
-	const count = myForm.count.value;
-
-	const salesOrderDTO = new SalesOrderDTO(product, category, count);
-
-	salesOrderDAO.createSalesOrder(salesOrderDTO, function(result) {
-		if (result) {
-			console.log("주문이 완료되었습니다.");
-		} else {
-			console.log("주문 처리에 실패했습니다.");
-
-		}
-	});
-}
 

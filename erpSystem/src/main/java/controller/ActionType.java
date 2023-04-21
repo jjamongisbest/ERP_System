@@ -7,9 +7,10 @@ import controller.action.BoardModifyAction;
 import controller.action.CartAction;
 import controller.action.DropCustomerAction;
 import controller.action.DropItemAction;
-
+import controller.action.GetMainAction;
 import controller.action.GetMonthlySalesTotal;
 import controller.action.GetMypageAction;
+import controller.action.GetOrderAction;
 import controller.action.GetOrderConfirmation;
 import controller.action.GetRegistAction;
 import controller.action.GetSalesTotal;
@@ -49,8 +50,9 @@ public enum ActionType {
 
 
 	GET_REGIST("getregist", new GetRegistAction()),
-	GET_orderconfirmation("getorderconfirmation", new GetOrderConfirmation())
-
+	GET_ORDERCONFIRMATION("getorderconfirmation", new GetOrderConfirmation()),
+	GET_ORDER("getorder", new GetOrderAction()),
+	GET_MAIN("getmain", new GetMainAction())
 	;
 	
 	private String command;
