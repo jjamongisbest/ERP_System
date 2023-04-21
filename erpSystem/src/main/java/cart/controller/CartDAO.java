@@ -155,7 +155,6 @@ public class CartDAO {
 				this.pstmt.setInt(1, dto.getQuantity());
 				this.pstmt.setInt(2, dto.getCustomerId());
 				this.pstmt.setInt(3, dto.getProductId());
-				this.rs = this.pstmt.executeQuery();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			} finally {

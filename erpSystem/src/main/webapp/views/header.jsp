@@ -46,7 +46,7 @@
 		</c:choose>
 		<c:set var="list" value="${sessionScope.list }" />
 		<c:forEach items="${list}" var="target">
-			<li><a href="../?content=board&cate=${target.id }">${target.name }</a>
+			<li><a href="../service?command=boardlist&categoryId=${target.id }">${target.name }</a>
 
 			</li>
 		</c:forEach>

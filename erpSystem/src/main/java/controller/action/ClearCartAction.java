@@ -22,8 +22,6 @@ public class ClearCartAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		System.out.println("오긴왔음");
-		
 		Customer customer = (Customer) request.getSession().getAttribute("log");
 
 		int customerId = customer.getId();
@@ -56,7 +54,7 @@ public class ClearCartAction implements Action {
 		// 카트비우기
 		
 		cartDao.deleteCartByCustomerId(customerId);
-
+		request.removeAttribute("content");
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/");
 		dispatcher.forward(request, response);
 	}

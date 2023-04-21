@@ -22,7 +22,7 @@ public class OrderConfirmAction implements Action{
 		salesOrderStatus = salesOrderStatus.equals("N") ? "Y" : "D";
 		
 		salesOrderDao.updateOrderSatatus(salesOrderId, salesOrderStatus);
-		request.getRequestDispatcher("/").forward(request, response);
+		request.getRequestDispatcher("/service?command=getorderconfirmation").forward(request, response);
 	}
 
 }

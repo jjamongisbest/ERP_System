@@ -26,13 +26,13 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${pageScope.list}" var="target">
+				<c:forEach items="${requestScope.boards}" var="target">
 					<tr>
 						<td>${target.id}</td>
 						<td><a href="../?content=boardview&id=${target.id}"
-							class="titles">${target.getTitle()}</a></td>
-						<td>${target.getWriter()}</td>
-						<td>${target.getRegisteredDate()}</td>
+							class="titles">${target.title}</a></td>
+						<td>${target.writer}</td>
+						<td>${target.registeredDate}</td>
 					</tr>
 				</c:forEach>
 			</tbody>
