@@ -47,17 +47,17 @@
 		<div class="notice-header">
 			<c:if test="${not empty sessionScope.log}">
 				<c:if test="${requestScope.categoryId == 11}">
-					<c:if test="${custome.id == 99999}">
+					<c:if test="${customer.id == 99999}">
 						<a
 							href="../?content=boardwrite&categoryId=${requestScope.categoryId}"
 							class="write">글쓰기</a>
 					</c:if>
-					</c:if>
-					<c:if test="${categoryId != 11}">
-						<a href="../?content=boardwrite&categoryId=${categoryId}"
-							class="write">글쓰기</a>
-					</c:if>
 				</c:if>
+				<c:if test="${categoryId != 11}">
+					<a href="../?content=boardwrite&categoryId=${categoryId}"
+						class="write">글쓰기</a>
+				</c:if>
+			</c:if>
 		</div>
 	</section>
 </body>
