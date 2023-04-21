@@ -335,7 +335,7 @@ public class SalesOrderDAO {
 					String date = this.rs.getString(3);
 					int total = this.rs.getInt(4);
 					String status = this.rs.getString(5);
-					
+
 					SalesOrder salesorder = new SalesOrder(orderId, custId, date, total, status);
 					list.add(salesorder);
 				}
@@ -397,6 +397,26 @@ public class SalesOrderDAO {
 				DBManager.closeConnection(this.conn, this.pstmt);
 			}
 		}
-
 	}
+
+	// Update
+	public void updateOrderStatusToComplete(int orderId) {
+
+		this.conn = DBManager.getConnection();
+		if (this.conn != null) {
+			try {
+				String sql = "UPDATE sales_order SET order_status = ? WHERE order_id = ?";
+				PreparedStatement pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, "Y");
+				pstmt.setInt(2, orderId);
+				pstmt.executeUpdate();
+				pstmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.closeConnection(this.conn, this.pstmt);
+			}
+		}
+	}
+
 }
