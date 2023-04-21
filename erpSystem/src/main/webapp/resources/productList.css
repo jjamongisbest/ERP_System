@@ -8,8 +8,9 @@
 }
 
 #name {
-	align-content: center;
 	margin-bottom : 20px;
+	text-align: center;
+	width: 100%;
 }
 
 .product-list {
@@ -17,8 +18,9 @@
 	flex-wrap: wrap;
 	margin-top: 50px;
 	justify-content: space-evenly;
-
+	text-align: center;
 }
+
 .cards{
 	display: flex;
 	flex-direction: column;
@@ -55,3 +57,8 @@
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	width : 100%;
 }
+
+.product-box{
+	text-align:center;
+}
+

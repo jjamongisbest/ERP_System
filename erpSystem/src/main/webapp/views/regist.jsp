@@ -34,6 +34,7 @@
 		phone = customer.getPhone();
 	}
 	%>
+	
 	<section class="regist-box">
 		<form method="POST" action="../service">
 			<h1 id="info-title">회원정보 입력</h1>

@@ -5,14 +5,24 @@ public class CustomerDTO {
 	private int id,gradeId;
 	private String password, name,address,phone,gender;
 	
-	public CustomerDTO(int id, int graderId, String name, String address, String phone, String gender, String password) {
+	public CustomerDTO(int id, int gradeId, String name, String address, String phone, String gender, String password) {
 		this.id = id;
-		this.gradeId = graderId;
+		this.gradeId = gradeId;
 		this.name = name;
 		this.address = address;
 		this.phone = phone;
 		this.gender = gender;
 		this.password = password;
+	}
+	
+	public CustomerDTO(Customer customer) {
+		this.id = customer.getId();
+		this.gradeId = customer.getGradeId();
+		this.name = customer.getName();
+		this.address = customer.getAddress();
+		this.phone = customer.getPhone();
+		this.gender = customer.getGender();
+		this.password = customer.getPassword();
 	}
 
 	public String getPassword() {

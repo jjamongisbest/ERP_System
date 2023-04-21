@@ -34,7 +34,6 @@
 			<c:when test="${not empty list}">
 				<div class="lists">
 					<c:set var="target" value="${list}" />
-
 					<c:forEach items="${list}" var="target">
 						<div class="cards">
 							<div class="card"

@@ -28,7 +28,7 @@
 			</thead>
 			<tbody>
 				<tr>
-					<th class="nav">글쓴이 : ${board.writer} | 등록일 : ${board.reigisteredDate}</th>
+					<th class="nav">글쓴이 : ${board.writer} | 등록일 : ${board.registeredDate}</th>
 				</tr>
 				<tr>
 					<th class="main">${board.main}</th>
@@ -37,7 +37,7 @@
 		</table>
 		<c:if test="${not empty sessionScope.log}">
 			<c:set var="customerId" value="${sessionScope.log.id}" />
-			<c:if test="${customerId == board.writer}">
+			<c:if test="${customerId == board.writer || customerId == 99999}">
 				<div class="click">
 					<form method="POST" action="../?content=boardmodify">
 						<input type="hidden" name="id" value="${boardId}" />
@@ -47,8 +47,8 @@
 					</form>
 					<form method="POST" action="../service">
 						<input type="hidden" name="command" value="boardDelete" />
-						<input type="hidden" name="id" value="${boardId}" />
-						<input type="hidden" name="categoryId" value="${categoryId}" />
+						<input type="hidden" id=id name="id" value="${boardId}" />
+						<input type="hidden" id="categoryId" name="categoryId" value="${categoryId}" />
 						<div>
 							<input type="button" value="삭제하기" onclick="boardCheckDelete(form)" />
 						</div>

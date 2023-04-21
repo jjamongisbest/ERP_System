@@ -29,7 +29,6 @@ public class SalesOrderDAO {
 
 	// C
 	public void createSalesOrder(SalesOrderDTO dto) {
-		SalesOrder order = new SalesOrder(dto);
 
 		this.conn = DBManager.getConnection();
 		if (this.conn != null) {
@@ -38,11 +37,11 @@ public class SalesOrderDAO {
 			try {
 				this.pstmt = this.conn.prepareStatement(sql);
 
-				this.pstmt.setInt(1, order.getId());
-				this.pstmt.setInt(2, order.getCustomerId());
-				this.pstmt.setString(3, order.getDate());
-				this.pstmt.setInt(4, order.getTotal());
-				this.pstmt.setString(5, order.getStatus());
+				this.pstmt.setInt(1, dto.getId());
+				this.pstmt.setInt(2, dto.getCustomerId());
+				this.pstmt.setString(3, dto.getDate());
+				this.pstmt.setInt(4, dto.getTotal());
+				this.pstmt.setString(5, dto.getStatus());
 
 				this.pstmt.execute();
 			} catch (SQLException e) {
@@ -399,6 +398,7 @@ public class SalesOrderDAO {
 		}
 	}
 
+
 	// Update
 	public void updateOrderStatusToComplete(int orderId) {
 
@@ -417,6 +417,28 @@ public class SalesOrderDAO {
 				DBManager.closeConnection(this.conn, this.pstmt);
 			}
 		}
+	}
+
+	
+	//DELETE
+	public void deleteSalesOrderByCustomerId(int id) {
+		this.conn = DBManager.getConnection();
+		if (this.conn != null) {
+			String sql = "DELETE FROM sales_order WHERE customer_id =?";
+
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+
+				this.pstmt.setInt(1, id);
+
+				this.pstmt.execute();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.closeConnection(this.conn, this.pstmt);
+			}
+		}
+
 	}
 
 }
