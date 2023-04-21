@@ -26,7 +26,6 @@ public class GetRegistAction implements Action{
 		request.setAttribute("id", id);
 		request.setAttribute("gradeId", gradeId);
 		
-		System.out.println("get");
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("?content=regist");		
 		dispatcher.forward(request, response);

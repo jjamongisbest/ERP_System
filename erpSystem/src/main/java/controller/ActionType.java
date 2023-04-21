@@ -13,8 +13,10 @@ import controller.action.DropItemAction;
 import controller.action.GetBoardListAction;
 import controller.action.GetBoardModifyAction;
 import controller.action.GetCartListAction;
+import controller.action.GetMainAction;
 import controller.action.GetMonthlySalesTotal;
 import controller.action.GetMypageAction;
+import controller.action.GetOrderAction;
 import controller.action.GetOrderConfirmation;
 import controller.action.GetRegistAction;
 import controller.action.GetSalesTotal;
@@ -49,6 +51,7 @@ public enum ActionType {
 	SALES_TOTAL("salesTotal", 			  new GetSalesTotal()),
 	
 	GET_MONTH_SALES_TOTAL("monthlyTotal", new GetMonthlySalesTotal()),
+
 	GET_MYPAGE("getmypage", 			  new GetMypageAction()),
 	GET_BOARD_LIST("boardlist",			  new GetBoardListAction()),
 	GET_BOARD_MODIFY("getboardmodify",	  new GetBoardModifyAction()),
@@ -59,7 +62,11 @@ public enum ActionType {
 	ADD_CART("addcart", new AddCartAction()),
 	GET_CART_LIST("getcartlist", new GetCartListAction()),
 	DELETE_CART("deletecart", new DeleteCartAction()),
-	CLEAR_CART("clearcart", new ClearCartAction())
+	CLEAR_CART("clearcart", new ClearCartAction()),
+
+	
+	GET_ORDER("getorder", new GetOrderAction()),
+	GET_MAIN("getmain", new GetMainAction())
 
 	;
 	

@@ -13,22 +13,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%
-	SalesOrder order = (SalesOrder) session.getAttribute("cart");
-	HashMap<Integer, Integer> map = order.getCart();
-	ArrayList<Product> list = new ArrayList<>(map.size());
-	ProductDAO productDao = ProductDAO.getInstance();
-
-	for (Integer id : map.keySet())
-		list.add(productDao.getProductById(id));
-
-	int total = order.getTotalPrice(list);
 	
-	pageContext.setAttribute("map", map);
-	pageContext.setAttribute("list", list);
-	pageContext.setAttribute("map", map);
-	pageContext.setAttribute("total", total);
-	%>
 
 	<h3 class="titles">${sessionScope.log.name}님의장바구니</h3>
 
@@ -60,7 +45,7 @@
 				</tbody>
 			</table>
 
-			<p class="total">총 주문금액 : ${pageScope.total}</p>
+			<p class="total">총 주문금액 : ${total}</p>
 			<form method="POST" action="../service" class="ord">
 				<input type="hidden" name="command" value="order">
 				<div class="but">

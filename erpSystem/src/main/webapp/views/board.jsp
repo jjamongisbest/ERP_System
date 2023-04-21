@@ -13,7 +13,6 @@
 <link rel="stylesheet" href="../resources/board.css">
 </head>
 <body>
-
 	<c:set var="customer" value="${sessionScope.log}" />
 	<section class="board">
 		<h1 id="h1">${requestScope.category}</h1>
@@ -27,13 +26,13 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${requestScope.boards}" var="board">
+				<c:forEach items="${pageScope.list}" var="target">
 					<tr>
-						<td>${board.id}</td>
-						<td><a href="../?content=boardview&id=${board.id}"
-							class="titles">${board.title}</a></td>
-						<td>${board.writer}</td>
-						<td>${board.registeredDate}</td>
+						<td>${target.id}</td>
+						<td><a href="../?content=boardview&id=${target.id}"
+							class="titles">${target.getTitle()}</a></td>
+						<td>${target.getWriter()}</td>
+						<td>${target.getRegisteredDate()}</td>
 					</tr>
 				</c:forEach>
 			</tbody>
@@ -42,6 +41,7 @@
 			<c:forEach begin="1" end="${requestScope.lastPage}" var="page">
 				<a
 					href="../service?command=boardlist&vpage=${page}&categoryId=${requestScope.categoryId}">${page}</a>
+
 			</c:forEach>
 		</div>
 		<div class="notice-header">
@@ -52,15 +52,13 @@
 							href="../?content=boardwrite&categoryId=${requestScope.categoryId}"
 							class="write">글쓰기</a>
 					</c:if>
+					</c:if>
+					<c:if test="${categoryId != 11}">
+						<a href="../?content=boardwrite&categoryId=${categoryId}"
+							class="write">글쓰기</a>
+					</c:if>
 				</c:if>
-				<c:if test="${requestScope.categoryId != 11}">
-					<a
-						href="../?content=boardwrite&categoryId=${requestScope.categoryId}"
-						class="write">글쓰기</a>
-				</c:if>
-			</c:if>
 		</div>
 	</section>
-
 </body>
 </html>

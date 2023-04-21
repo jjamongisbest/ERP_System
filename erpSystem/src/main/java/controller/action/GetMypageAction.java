@@ -38,8 +38,7 @@ public class GetMypageAction implements Action {
 		
 		
 		
-		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("?content=mypage&custid=" + userId);		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("?content=mypage" );		
 		dispatcher.forward(request, response);
 	}
 

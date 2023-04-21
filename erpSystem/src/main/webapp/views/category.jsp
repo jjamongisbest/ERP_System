@@ -11,7 +11,7 @@
 <title>Insert title here</title>
 <body>
 	<div class="category-list">
-		<c:forEach items="${requestScope.catelist}" var="target">
+		<c:forEach items="${sessionScope.catelist}" var="target">
 			<div class="list">
 				<a href="../service?command=productlist&code=${target.id}"><c:out
 						value="${target.name}" /></a>
