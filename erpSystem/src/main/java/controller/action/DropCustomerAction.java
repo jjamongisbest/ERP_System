@@ -40,16 +40,15 @@ public class DropCustomerAction implements Action {
 			
 			delete(session);
 			customerDao.deleteCustomer(customerDto);
-			
-			
 			session.removeAttribute("log");
 			response.sendRedirect("/");
 		}
 		else {
 			request.setAttribute("message", "회원 정보가 올바르지 않습니다.");
-	        request.getRequestDispatcher("dropcustomer").forward(request, response);
+	        request.getRequestDispatcher("/").forward(request, response);
 		}
 	}
+	
 	private void delete(HttpSession session) {
 		Customer customer = (Customer)session.getAttribute("log");
 		

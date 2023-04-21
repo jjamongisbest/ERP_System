@@ -10,15 +10,8 @@
 </head>
 <title>Insert title here</title>
 <body>
-	<%
-	ProductCategoryDAO dao = ProductCategoryDAO.getInstance();
-	ArrayList<ProductCategory> list = dao.getProductCategoryList();
-	
-	pageContext.setAttribute("list", list);
-	%>
 	<div class="category-list">
-
-		<c:forEach items="${pageScope.list}" var="target">
+		<c:forEach items="${requestScope.catelist}" var="target">
 			<div class="list">
 				<a href="../service?command=productlist&code=${target.id}"><c:out
 						value="${target.name}" /></a>

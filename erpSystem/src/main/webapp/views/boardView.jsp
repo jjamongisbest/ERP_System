@@ -36,10 +36,11 @@
 			</tbody>
 		</table>
 		<c:if test="${not empty sessionScope.log}">
-			<c:set var="customerId" value="${sessionScope.log.id}" />
+			<c:set var="customerId" value="${sessionScope.log.id}"/>
 			<c:if test="${customerId == board.writer || customerId == 99999}">
 				<div class="click">
-					<form method="POST" action="../?content=boardmodify">
+					<form method="POST" action="../service">
+						<input type="hidden" name="command" value="getboardmodify"/>
 						<input type="hidden" name="id" value="${boardId}" />
 						<div>
 							<input type="submit" value="수정하기" />

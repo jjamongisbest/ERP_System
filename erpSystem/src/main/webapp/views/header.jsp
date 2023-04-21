@@ -12,7 +12,6 @@
 <link rel="stylesheet" href="../resources/header.css">
 </head>
 <body>
-
 	<%
 	Customer customer = (Customer) session.getAttribute("log");
 
@@ -58,7 +57,7 @@
 		<c:set var="list" value="${pageScope.list }"/>
 		<c:forEach items="${list}" var="target">		
 			<li>
-				<a href="../service?command=boardlist&cate=${target.id }">${target.name }</a>
+				<a href="../service?command=boardlist&categoryId=${target.id }">${target.name }</a>
 			</li>
 		</c:forEach>
 		

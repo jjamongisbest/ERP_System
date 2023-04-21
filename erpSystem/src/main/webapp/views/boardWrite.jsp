@@ -10,6 +10,7 @@
 <body>
 
 	<%
+	System.out.println("board write page 입니다");
 	String title = request.getParameter("title");
 	String main = request.getParameter("main");
 	if (main == null) {

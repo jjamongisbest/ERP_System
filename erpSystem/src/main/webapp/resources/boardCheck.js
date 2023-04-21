@@ -41,8 +41,9 @@ function boardCheckModify(htmlForm) {
 	const main = document.getElementById("main").value;
 	const categoryId = document.getElementById("categoryId").value;
 	const id = document.getElementById("id").value;
-
-	let url = "boardmodify?id=" + id;
+	
+	// 다시 수정하세요
+	let url = "../service?command=getboardmodify?id=" + id;
 
 	let check = true;
 
@@ -64,7 +65,7 @@ function boardCheckModify(htmlForm) {
 		location.href = url;
 	}
 	else {
-		htmlForm.submit()
+		htmlForm.submit();
 	}
 }
 function boardCheckDelete(htmlForm) {

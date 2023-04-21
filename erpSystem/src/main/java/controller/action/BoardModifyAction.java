@@ -40,8 +40,7 @@ public class BoardModifyAction implements Action {
 
 		boardDao.updateBoard(boardDto);
 
-		response.sendRedirect("../?content=board&cate="+categoryId);
-
+		request.getRequestDispatcher("/service?command=boardlist").forward(request, response);
 	}
 
 }

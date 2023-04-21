@@ -33,15 +33,13 @@
 							<td>${target.customerId}</td>
 							<td>${target.total}</td>
 							<td>${target.date}</td>
-							<td>
-							<a id="check-values" onclick="checkValues('${target.id}','${target.status}')"> 
-								<c:choose>
+							<td><a id="check-values"
+								onclick="checkValues('${target.id}','${target.status}')"> <c:choose>
 										<c:when test="${target.status eq 'Y'}">주문완료</c:when>
 										<c:when test="${target.status eq 'D'}">배송중</c:when>
 										<c:otherwise>결제전</c:otherwise>
-								</c:choose>
-							</a>
-							</td>
+									</c:choose>
+							</a></td>
 						</tr>
 					</tbody>
 				</c:forEach>
@@ -51,12 +49,10 @@
 		<div style="width: 600px; text-align: center; margin-top: 30px;"
 			class="number">
 
-	<c:forEach begin="1" end="${lastPage}" varStatus="info">
-				<a href="../service?command=getorderconfirmation&vpage=${info.index}">${info.index}</a>
-	</c:forEach>
-
-		
-
+			<c:forEach begin="1" end="${lastPage}" varStatus="info">
+				<a
+					href="../service?command=getorderconfirmation&vpage=${info.index}">${info.index}</a>
+			</c:forEach>
 		</div>
 	</section>
 

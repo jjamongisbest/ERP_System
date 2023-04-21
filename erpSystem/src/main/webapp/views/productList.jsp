@@ -12,21 +12,14 @@
 <link rel="stylesheet" href="../resources/productList.css">
 <title>productList</title>
 </head>
-
 <body>
-
-	<%
-	//@SuppressWarnings("unchecked")
-	//List<Product> list = (List<Product>) request.getAttribute("searchProduct");
-	%>
-	
 	<c:set var="list" value="${list }" />
 	<div class="product-list">
 	<h2 id="name">
 		<c:out value="${result }"/>
 	</h2>
 	<c:choose>
-		<c:when test="${not empty list  }">		
+		<c:when test="${not empty list}">		
 			<div class="lists">
 				<c:set var="target" value="${list }" />
 

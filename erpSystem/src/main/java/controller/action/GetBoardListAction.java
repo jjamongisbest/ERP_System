@@ -15,12 +15,12 @@ public class GetBoardListAction implements Action {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int categoryId = Integer.parseInt(request.getParameter("cate"));
-
+        int categoryId = Integer.parseInt(request.getParameter("categoryId"));
         BoardDAO boardDao = BoardDAO.getInstance();
         int total = boardDao.getTotalCountByCategory(categoryId);
         int lastPage = (int) Math.ceil((double) total / 10);
-
+        
+        System.out.println("insert me!");
         String vpage = request.getParameter("vpage");
 
         if (vpage == null)

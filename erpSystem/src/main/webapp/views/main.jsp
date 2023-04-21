@@ -1,3 +1,6 @@
+<%@page import="boardCategory.BoardCategory"%>
+<%@page import="boardCategory.controller.BoardCategoryDAO"%>
+<%@page import="customer.Customer"%>
 <%@page import="org.apache.jasper.tagplugins.jstl.core.Param"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="productCategory.controller.ProductCategoryDAO"%>
@@ -12,12 +15,21 @@
 </head>
 <c:import url="header"/>
 <body>
-
 	<%
+	// 카테고리
 	ProductCategoryDAO dao = ProductCategoryDAO.getInstance();
 	ArrayList<ProductCategory> list = dao.getProductCategoryList();
-	%>
+	
+	Customer customer = (Customer) session.getAttribute("log");
+	
+	// 헤더
+	BoardCategoryDAO boardcateDao = BoardCategoryDAO.getInstance();
+	ArrayList<BoardCategory> alist = boardcateDao.getBoardCategoryAll();
+	
+	request.setAttribute("catelist", list);
 
+	pageContext.setAttribute("list", alist);
+	%>
 	<div class="container">
 		<div class="category-list">
 			<c:import url="category" />

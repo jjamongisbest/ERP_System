@@ -48,10 +48,8 @@
 					</c:otherwise>
 				</c:choose>
 			</form>
-
 		</div>
 	</div>
 	<script src="../resources/validation.js"></script>
 </body>
-
 </html>

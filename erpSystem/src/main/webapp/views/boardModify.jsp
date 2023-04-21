@@ -12,47 +12,31 @@
 <link rel="stylesheet" href="../resources/boardWrite.css">
 </head>
 <body>
-
-	<%
-	int id = Integer.valueOf(request.getParameter("id"));
-
-	BoardDAO boardDao = BoardDAO.getInstance();
-
-	Board board = boardDao.getBoardById(id);
-
-	int categoryId = board.getCategoryId();
-
-	String title = board.getTitle();
-	String main = board.getMain();
-	main = main.replace("<br>", "\r\n");
-
-	BoardCategoryDAO boardCategoryDao = BoardCategoryDAO.getInstance();
-
-	String name = boardCategoryDao.getCategoryNameById(categoryId);
-	%>
+	<c:set var="title" value="${requestScope.title}" />
+	<c:set var="autofocus" value="" />
+	<c:if test="${empty title}">
+		<c:set var="title" value="" />
+		<c:set var="autofocus" value="autofocus" />
+	</c:if>
+	
 	<section>
-
-		<h1><%=name%>
-			수정
-		</h1>
-
+		<h1>${requestScope.name}수정</h1>
 		<form method="POST" action="../service">
 			<div class="write">
 				<input type="hidden" name="command" value="boardModify"> <input
 					type="hidden" name="categoryId" id="categoryId"
-					value=<%=categoryId%>> <input type="hidden" name="id"
-					id="id" value=<%=id%>>
+					value="${requestScope.categoryId}"> <input type="hidden"
+					name="id" id="id" value="${requestScope.id}">
 
 				<table>
 					<tr>
 						<th>Title</th>
 						<td><input type="text" id="title" name="title"
-							value="<%=title != null ? title : ""%>"
-							<%=title == null ? "autofocus" : ""%>></td>
+							value="${title}"></td>
 					</tr>
 					<tr>
 						<th>Content</th>
-						<td><textarea id="main" name="main"><%=main%></textarea></td>
+						<td><textarea id="main" name="main">${requestScope.main}</textarea></td>
 					</tr>
 
 				</table>

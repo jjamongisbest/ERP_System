@@ -40,8 +40,9 @@ public class BoardAction implements Action {
 		BoardDTO boardDto = new BoardDTO(id, title, main, modifiedDate, registDate, writer, categoryId);
 
 		boardDao.createBoard(boardDto);
-
-		response.sendRedirect("../?content=board&cate="+categoryId);
+		
+		request.setAttribute("command", "boardlist");
+		response.sendRedirect("../service?categroyId="+categoryId);
 
 	}
 
