@@ -23,15 +23,9 @@
 		<div class="main-banner">
 			<c:choose>
 				<c:when test="${not empty param.content }">
-					<%
-					System.out.println("파라미터 임");
-					%>
 					<c:import url="${param.content }" />
 				</c:when>
 				<c:when test="${not empty requestScope.content }">
-					<%
-					System.out.println("리쿠ㅐ스트임");
-					%>
 					<c:import url="${requestScope.content }" />
 				</c:when>
 				<c:otherwise>

@@ -14,6 +14,9 @@ import cartView.CartView;
 import customer.Customer;
 import orderProduct.OrderProductDTO;
 import orderProduct.controller.OrderProductDAO;
+import product.Product;
+import product.ProductDTO;
+import product.contoroller.ProductDAO;
 import salesOrder.SalesOrderDTO;
 import salesOrder.controller.SalesOrderDAO;
 
@@ -33,7 +36,6 @@ public class ClearCartAction implements Action {
 		ArrayList<CartView> list = cartDao.getCartViewTableByCustomerId(customerId);
 
 		// 주문을 하고
-
 		SalesOrderDAO salesOrderDao = SalesOrderDAO.getInstance();
 		SalesOrderDTO salesOrderDto = new SalesOrderDTO(customerId, date, total, status);
 		salesOrderDao.createSalesOrder(salesOrderDto);
@@ -41,21 +43,34 @@ public class ClearCartAction implements Action {
 		int salesOrderId = salesOrderDao.getSalesOrderId();
 
 		OrderProductDAO opDao = OrderProductDAO.getInstance();
+		ProductDAO productDao = ProductDAO.getInstance();
 
 		for (CartView target : list) {
 			int productId = target.getPruductId();
 			String product = target.getProductName();
 			int quantity = target.getQuantity();
 
+			// 상품 전체 수량 변경
+			Product productFlag = productDao.getProductById(productId);
+			int stock = productFlag.getStock();
+			int updateStock = stock - quantity;
+			ProductDTO productDto = new ProductDTO(productFlag, updateStock);
+			productDao.setProductStock(productDto);
+			
 			OrderProductDTO opDto = new OrderProductDTO(productId, salesOrderId, product, quantity);
 			opDao.createOrderProduct(opDto);
 		}
-
+	
 		// 카트비우기
-		
 		cartDao.deleteCartByCustomerId(customerId);
-		request.removeAttribute("content");
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/");
+		
+//		request.removeAttribute("content");
+//		RequestDispatcher dispatcher = request.getRequestDispatcher("/");
+//		dispatcher.forward(request, response);
+		request.setAttribute("list", list);
+		request.setAttribute("total", total);
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("?content=ordersuccess");
 		dispatcher.forward(request, response);
 	}
 

@@ -79,7 +79,7 @@
 					<c:when test="${not empty list}">
 						<c:forEach items="${blist}" var="targets">
 							<tr class="order-tbody">
-								<td>${targets.registeredDate}</td>
+								<!-- <td>${targets.registeredDate}</td> -->
 								<td>${targets.title}</td>
 								<c:choose>
 

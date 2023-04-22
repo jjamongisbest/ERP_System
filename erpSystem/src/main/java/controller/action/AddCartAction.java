@@ -1,6 +1,7 @@
 package controller.action;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -26,9 +27,6 @@ public class AddCartAction implements Action {
 		int customerId = customer.getId();
 		int productId = Integer.parseInt(request.getParameter("product"));
 		int count = Integer.parseInt(request.getParameter("count"));
-		
-		System.out.println("productId : " + productId);
-		System.out.println("count : " + count);
 		
 		Product product = productDao.getProductById(productId);
 		int price = product.getPrice();
@@ -59,7 +57,5 @@ public class AddCartAction implements Action {
 		}
 		
 		response.sendRedirect("/");
-
 	}
-
 }
