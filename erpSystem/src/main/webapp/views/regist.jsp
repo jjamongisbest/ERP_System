@@ -43,26 +43,28 @@
 				<tr>
 					<th id="th">비밀번호</th>
 					<td id="td"><input type="text" id="password" name="password"
-						value="${not empty param.password ? param.password : ''}"
-						${empty param.password ? 'autofocus' : ''}></td>
+						placeholder="비밀번호를 입력해주세요"></td>
 				</tr>
 				<tr>
 					<th id="th">이름</th>
 					<td id="td"><input type="text" id="name" name="name"
-						value="${not empty param.name ? param.name : ''}"
-						${empty param.name ? 'autofocus' : ''}></td>
+						placeholder="이름을 입력해주세요"></td>
 				</tr>
 				<tr>
 					<th id="th">주소</th>
-					<td id="td"><input type="text" id="address" name="address"
-						value="${not empty param.address ? param.address : ''}"
-						${empty param.address ? 'autofocus' : ''}></td>
+					<td id="td">
+						<div class="address">
+							<input type="text" id="address" name="address"
+								placeholder="주소를 입력하세요" readonly>
+							<button type="button" id="addressSearch" onclick="findAddr()">주소검색</button>
+						</div>
+					</td>
+
 				</tr>
 				<tr>
 					<th id="th">핸드폰 번호</th>
 					<td id="td"><input type="text" id="phone" name="phone"
-						value="${not empty param.phone ? param.phone : ''}"
-						${empty param.phone ? 'autofocus' : ''}></td>
+						placeholder="번호를 입력해주세요"></td>
 				</tr>
 				<tr>
 					<th id="th">성별</th>
@@ -76,8 +78,15 @@
 				<input type="button" value="등록" onclick="checkValues(form)"
 					class="regist">
 			</div>
+
 		</form>
 	</section>
+
 	<script src="resources/registCheck.js"></script>
+	<script
+		src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
 </body>
 </html>
