@@ -41,7 +41,7 @@
 		<div id="mask"></div>
 		<div class="popup-box">
 			<div class="popup">
-				<h2>약관 동의</h2>
+				<h2>약관 내용</h2>
 				<div class="text">
 				가. 개인정보의 수집 및 이용 목적
  

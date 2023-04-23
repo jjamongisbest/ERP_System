@@ -73,12 +73,12 @@ function findAddr() {
      	}).open();
 }
 function checkBox() {
-	// 체크박스 전체 선택
+	
 	$(".checkbox").on("click", "#checkall", function() {
 		$(this).parents(".checkbox").find('input').prop("checked", $(this).is(":checked"));
 	});
 
-	// 체크박스 개별 선택
+	
 	$(".checkbox").on("click", ".check", function() {
 		var is_checked = true;
 

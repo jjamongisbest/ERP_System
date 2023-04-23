@@ -41,8 +41,8 @@ public class BoardAction implements Action {
 
 		boardDao.createBoard(boardDto);
 		
-		request.setAttribute("command", "boardlist");
-		response.sendRedirect("../service?categroyId="+categoryId);
+		
+		response.sendRedirect("../service?command=boardlist&categroyId="+categoryId);
 
 	}
 

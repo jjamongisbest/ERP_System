@@ -18,7 +18,7 @@ public class BoardDeleteAction implements Action {
 		int categoryId = Integer.parseInt(request.getParameter("categoryId"));
 
 		boardDao.deleteBoardByboardId(id);
-		response.sendRedirect("../service?conmmand=boardlist&cate="+categoryId);
+		response.sendRedirect("../service?command=boardlist&categoryId="+categoryId);
 	}
 
 }
