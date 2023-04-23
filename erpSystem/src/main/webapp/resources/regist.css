@@ -66,3 +66,26 @@
 input {
 	outline : none;
 }
+.address{
+	 display: flex;
+}
+.address input[type=text] {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #f39c12;
+  width: 100%;
+  color: #34495e;
+}
+
+.address button[type=button] {
+  background-color: #7D8F69;
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  }
+.address button[type=button]:hover {
+  background-color: #4E6C50;
+  }

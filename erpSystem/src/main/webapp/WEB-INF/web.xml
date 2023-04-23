@@ -231,7 +231,7 @@
 		<url-pattern>/totalsales</url-pattern>
 	</servlet-mapping>
 	
-		<!-- totalSales mapping -->
+		<!-- cartListmapping -->
 	<servlet>
 		<servlet-name>cartList</servlet-name>
 		<jsp-file>/views/cartList.jsp</jsp-file>
@@ -239,6 +239,16 @@
 	<servlet-mapping>
 		<servlet-name>cartList</servlet-name>
 		<url-pattern>/cartlist</url-pattern>
+	</servlet-mapping>
+	
+		<!-- registTermsOfUse mapping -->
+	<servlet>
+		<servlet-name>registTermsOfUse</servlet-name>
+		<jsp-file>/views/registTermsOfUse.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>registTermsOfUse</servlet-name>
+		<url-pattern>/registTermsOfUse</url-pattern>
 	</servlet-mapping>
 	
 		

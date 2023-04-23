@@ -30,6 +30,8 @@ public class RegistAction implements Action {
 		this.phone = request.getParameter("phone");
 		this.gender = request.getParameter("gender");
 		this.password = request.getParameter("password");
+		
+		
 
 		CustomerDTO CustomerDto = new CustomerDTO(id, gradeId, name, address, phone, gender, password);
 

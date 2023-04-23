@@ -37,9 +37,10 @@ public class GetRegistAction implements Action{
 		
 		request.setAttribute("id", id);
 		request.setAttribute("gradeId", gradeId);
-		
+
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
+
 	}
 	
 	private int getNewCustomerId() {

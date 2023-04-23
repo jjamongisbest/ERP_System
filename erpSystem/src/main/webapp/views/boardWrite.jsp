@@ -9,34 +9,22 @@
 </head>
 <body>
 	
-	<%
-	System.out.println("board write page 입니다");
-	String title = request.getParameter("title");
-	String main = request.getParameter("main");
-	if (main == null)
-		main = "";
-	
-	int categoryId = Integer.parseInt(request.getParameter("categoryId"));
-	%>
-	
 	<section>
 		<h1>글쓰기</h1>
 		<form method="POST" action="../service">
 			<div class="write">
-				<input type="hidden" name="command" value="board">
-				<input type="hidden" name="categoryId" id="categoryId"
-					value=<%=categoryId%>>
-
+				<input type="hidden" name="command" value="board"> <input
+					type="hidden" name="categoryId" id="categoryId"
+					value="${categoryId}">
 				<table>
 					<tr>
 						<th>Title</th>
 						<td><input type="text" id="title" name="title"
-							value="<%=title != null ? title : ""%>"
-							<%=title == null ? "autofocus" : ""%>></td>
+							value="${param.title}"></td>
 					</tr>
 					<tr>
 						<th>Content</th>
-						<td><textarea id="main" name="main"><%=main%></textarea></td>
+						<td><textarea id="main" name="main">${param.title}</textarea></td>
 					</tr>
 				</table>
 			</div>

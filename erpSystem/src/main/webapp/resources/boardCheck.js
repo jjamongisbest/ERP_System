@@ -20,10 +20,7 @@ function checkValues(htmlForm) {
 		check = false;
 	}
 
-	if (check === false) {
-		location.href = url;
-	}
-	else {
+	if (check === true) {
 		htmlForm.submit()
 	}
 }
