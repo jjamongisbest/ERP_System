@@ -1,7 +1,5 @@
 package customerLog;
 
-
-
 public class CustomerLog {
 	private int logId, customerId, preGradeId, postGradeId;
 	String changeDate;

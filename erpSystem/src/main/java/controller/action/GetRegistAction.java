@@ -7,28 +7,43 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import customer.Customer;
 import customer.controller.CustomerDAO;
-import customerGrade.CustomerGrade;
-import customerGrade.controller.CustomerGradeDAO;
 
 public class GetRegistAction implements Action{
-
+	
+	private final int BRONZE = 1;
+	
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
 		
-		CustomerDAO customerDao = CustomerDAO.getInstance();
-		int id = customerDao.getCustomerId();
+		Customer client = (Customer) request.getSession().getAttribute("log"); 
 		
-		CustomerGradeDAO customerGradeDao = CustomerGradeDAO.getinstance();
-		CustomerGrade customerGrade = customerGradeDao.getCustomerGradeById(1);
-		int gradeId = customerGrade.getGradeId();
-	
+		String url = "?content=regist";
+		int id = client == null ? getNewCustomerId() : client.getId();
+		int gradeId = BRONZE;
+		
+		if(client != null) {
+			id 		= client.getId();
+			gradeId = client.getGradeId();
+			
+			url += "&password=" + client.getPassword();
+			url += "&name="	   + client.getName();
+			url += "&address="  + client.getAddress();
+			url += "&phone="    + client.getPhone();
+			url += "&gender="   + client.getGender();
+		}
+		
 		request.setAttribute("id", id);
 		request.setAttribute("gradeId", gradeId);
 		
-		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("?content=regist");		
+		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
 	}
-
+	
+	private int getNewCustomerId() {
+		CustomerDAO customerDao = CustomerDAO.getInstance();
+		return customerDao.getCustomerId();
+	}
 }

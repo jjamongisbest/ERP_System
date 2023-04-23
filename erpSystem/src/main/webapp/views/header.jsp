@@ -12,8 +12,8 @@
 <link rel="stylesheet" href="../resources/header.css">
 </head>
 <body>
+	<c:set var="main" value="${applicationScope.main}"/>
 	<c:set var="customer" value="${sessionScope.log}"/>
-
 	<div class="header">
 		<a class="banner" href="index.jsp"> <img
 			src="../resources/images/My project-1.jpg">
@@ -44,7 +44,7 @@
 				<li><a id="basket" onclick="send('getcartlist')">장바구니</a></li>
 			</c:otherwise>
 		</c:choose>
-		<c:set var="list" value="${sessionScope.list }" />
+		<c:set var="list" value="${main.boardList}"/>
 		<c:forEach items="${list}" var="target">
 			<li><a href="../service?command=boardlist&categoryId=${target.id }">${target.name }</a>
 
@@ -59,8 +59,6 @@
 				</section>
 			</form>
 		</li>
-
 	</ul>
-	<script src="../resources/validation.js"></script>
 </body>
 </html>

@@ -10,8 +10,9 @@
 </head>
 <title>Insert title here</title>
 <body>
+	<c:set var="main" value="${applicationScope.main}"/>
 	<div class="category-list">
-		<c:forEach items="${sessionScope.catelist}" var="target">
+		<c:forEach items="${main.cateList}" var="target">
 			<div class="list">
 				<a href="../service?command=productlist&code=${target.id}"><c:out
 						value="${target.name}" /></a>

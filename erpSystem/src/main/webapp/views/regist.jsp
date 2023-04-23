@@ -12,7 +12,6 @@
 <link rel="stylesheet" href="../resources/regist.css">
 </head>
 <body>
-
 	<section class="regist-box">
 		<form method="POST" action="../service">
 			<h1 id="info-title">회원정보 입력</h1>
@@ -20,7 +19,6 @@
 			<c:choose>
 				<c:when test="${not empty gradeId}">
 					<input type="hidden" id="gradeId" name="gradeId" value="${gradeId}">
-
 				</c:when>
 				<c:otherwise>
 					<input type="hidden" id="gradeId" name="gradeId"

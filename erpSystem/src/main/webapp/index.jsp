@@ -4,20 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>main page</title>
 </head>
 <body>
 	<section class="frame">
-		<c:choose>
-			<c:when test="${empty sessionScope.init}">
-				<c:import url="/service">
-					<c:param name="command" value="getmain" />
-				</c:import>
-			</c:when>
-			<c:otherwise>
-				<c:import url="main" />
-			</c:otherwise>
-		</c:choose>
+			<c:import url="main" />
 	</section>
 </body>
 </html>

@@ -9,8 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import controller.action.Action;
 
-//../Service
-
 public class Service extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -22,8 +20,7 @@ public class Service extends HttpServlet {
 		
 		String command = request.getParameter("command");
 		request.setAttribute("content", command);
-		
-		
+		System.out.println("command : " + command);
 		
 		ActionFactory factory = ActionFactory.getInstance();
 		Action action = factory.getAction(command);

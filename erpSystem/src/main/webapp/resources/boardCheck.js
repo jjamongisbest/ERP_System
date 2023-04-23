@@ -1,22 +1,15 @@
-/**
- * 
- */
 function checkValues(htmlForm) {
 	let url = "../?content=boardwrite";
 
-	
-	
 	const title = document.getElementById("title").value;
 	const main = document.getElementById("main").value;
 	const categoryId = document.getElementById("categoryId").value;
 	
-
 	let check = true;
 
 	if (title !== "") { url += "&title=" + title; }
 	if (main !== "") { url += "&main=" + main; }
 	if (categoryId !== "") { url += "&categoryId=" + categoryId; }
-
 
 	if (title === "") {
 		alert('제목을 입력해주세요.');

@@ -13,7 +13,6 @@ import controller.action.DropItemAction;
 import controller.action.GetBoardListAction;
 import controller.action.GetBoardModifyAction;
 import controller.action.GetCartListAction;
-import controller.action.GetMainAction;
 import controller.action.GetMonthlySalesTotal;
 import controller.action.GetMypageAction;
 import controller.action.GetOrderAction;
@@ -64,10 +63,7 @@ public enum ActionType {
 	DELETE_CART("deletecart", new DeleteCartAction()),
 	CLEAR_CART("clearcart", new ClearCartAction()),
 
-	
-	GET_ORDER("getorder", new GetOrderAction()),
-	GET_MAIN("getmain", new GetMainAction())
-
+	GET_ORDER("getorder", new GetOrderAction())
 	;
 	
 	private String command;

@@ -111,7 +111,7 @@
 
 		<div class="button-container">
 			<input class="button" type="button" value="정보수정"
-				onclick="location.href='../?content=regist'"> <input
+				onclick="location.href='../service?command=getregist'"> <input
 				class="button" type="button" value="회원탈퇴"
 				onclick="location.href='../?content=dropcustomer'">
 		</div>

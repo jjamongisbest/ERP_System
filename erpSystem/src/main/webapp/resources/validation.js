@@ -27,7 +27,7 @@ document.querySelector('form').addEventListener('submit', function(e) {
 		e.preventDefault();
 		alert('검색어를 입력하세요');
 	}
-});
+}, { once: true });
 
 
 

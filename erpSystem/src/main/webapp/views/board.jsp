@@ -1,8 +1,3 @@
-<%@page import="boardCategory.controller.BoardCategoryDAO"%>
-<%@page import="customer.Customer"%>
-<%@page import="board.Board"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="board.controller.BoardDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
