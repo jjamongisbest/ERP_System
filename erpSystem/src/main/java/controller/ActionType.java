@@ -12,6 +12,7 @@ import controller.action.DropCustomerAction;
 import controller.action.DropItemAction;
 import controller.action.GetBoardListAction;
 import controller.action.GetBoardModifyAction;
+import controller.action.GetBoardWrite;
 import controller.action.GetCartListAction;
 import controller.action.GetMainAction;
 import controller.action.GetMonthlySalesTotal;
@@ -66,7 +67,8 @@ public enum ActionType {
 
 	
 	GET_ORDER("getorder", new GetOrderAction()),
-	GET_MAIN("getmain", new GetMainAction())
+	GET_MAIN("getmain", new GetMainAction()),
+	GET_BOARDWRITE("getboardwrite",new GetBoardWrite())
 
 	;
 	

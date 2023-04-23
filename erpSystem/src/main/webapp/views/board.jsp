@@ -41,7 +41,6 @@
 			<c:forEach begin="1" end="${requestScope.lastPage}" var="page">
 				<a
 					href="../service?command=boardlist&vpage=${page}&categoryId=${requestScope.categoryId}">${page}</a>
-
 			</c:forEach>
 		</div>
 		<div class="notice-header">
@@ -49,7 +48,7 @@
 				<c:if test="${requestScope.categoryId == 11}">
 					<c:if test="${customer.id == 99999}">
 						<a
-							href="../?content=boardwrite&categoryId=${requestScope.categoryId}"
+							href="../service?command=getboardwrite&categoryId=${requestScope.categoryId}"
 							class="write">글쓰기</a>
 					</c:if>
 				</c:if>

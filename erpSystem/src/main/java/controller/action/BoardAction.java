@@ -42,7 +42,7 @@ public class BoardAction implements Action {
 		boardDao.createBoard(boardDto);
 		
 		
-		response.sendRedirect("../service?command=boardlist&categroyId="+categoryId);
+		request.getRequestDispatcher("/service?command=boardlist").forward(request, response);
 
 	}
 
