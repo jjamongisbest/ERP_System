@@ -21,11 +21,8 @@ function checkValues(htmlForm) {
 	if (gender !== "") { url += "&gender=" + gender; }
 	if (gradeId !== "") { url += "&gradeId=" + gradeId; }
 
-	if (id === "") {
-		alert('아이디를 입력해주세요.');
-		check = false;
-	}
-	else if (password === "") {
+	
+	if (password === "") {
 		alert('비밀번호를 입력해주세요.');
 		check = false;
 	}
@@ -41,10 +38,6 @@ function checkValues(htmlForm) {
 		alert('번호를 입력해주세요.');
 		check = false;
 	}
-	else if (gender === "") {
-		alert('성별을 입력해주세요.');
-		check = false;
-	}
 
 	if (check === true) {
 		htmlForm.submit();	
@@ -54,17 +47,14 @@ function checkValues(htmlForm) {
 function findAddr() {
 		new daum.Postcode({
         	oncomplete: function(data) {
-            	//주소를 받아올 변수를 정의한다.
+            	
                 var addr = '';
-                
-                //선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                            
                 if (data.userSelectedType === 'R') { // 도로명 주소를 선택했을 경우(R)
                     addr = data.roadAddress;
                 } else { // 지번 주소를 선택했을 경우(J)
                     addr = data.jibunAddress;
                 }
-                
-                // 부모창의 주소칸에 받아온 주소를 넣는다.
                 
 
                 $("#address").val(addr);
