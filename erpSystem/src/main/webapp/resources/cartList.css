@@ -34,8 +34,12 @@ a {
 	border-top: 1px solid black;
 }
 
+.cart-table-body tr td {
+	height: 50px;
+}
+
 .cart-table tr td {
-	padding: 5px 5px;
+	padding: 5px;
 	margin: 20px;
 }
 

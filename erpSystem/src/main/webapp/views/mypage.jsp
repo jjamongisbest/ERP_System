@@ -46,7 +46,7 @@
 							<tr class="order-tbody">
 								<td>${target.id}</td>
 								<td>${target.date}</td>
-								<td>${target.total}</td>
+								<td>${target.total}원</td>
 								<td><c:choose>
 										<c:when test="${target.status eq 'Y'}">결제완료</c:when>
 										<c:when test="${target.status eq 'D'}">배송중</c:when>
@@ -54,18 +54,13 @@
 									</c:choose></td>
 							</tr>
 						</c:forEach>
-
 					</c:when>
 					<c:otherwise>
 						<td>주문 내역이 없습니다.</td>
 					</c:otherwise>
-
 				</c:choose>
-
-
 			</table>
 		</div>
-
 		<h5>등록 게시글</h5>
 		<div class="my-board">
 			<table>
@@ -79,7 +74,7 @@
 					<c:when test="${not empty list}">
 						<c:forEach items="${blist}" var="targets">
 							<tr class="order-tbody">
-								<!-- <td>${targets.registeredDate}</td> -->
+								<td>${targets.registeredDate}</td>
 								<td>${targets.title}</td>
 								<c:choose>
 
@@ -90,22 +85,16 @@
 										<td>REVIEW</td>
 									</c:when>
 									<c:otherwise>
-										<td><c:out value="Q&A"/></td>
+										<td><c:out value="Q&A" /></td>
 									</c:otherwise>
-
 								</c:choose>
 							</tr>
-
 						</c:forEach>
-
-
 					</c:when>
 					<c:otherwise>
 						<td>주문 내역이 없습니다.</td>
 					</c:otherwise>
-
 				</c:choose>
-
 			</table>
 		</div>
 

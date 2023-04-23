@@ -10,7 +10,7 @@
 
 	<h2 class="message">주문이 성공적으로 완료되었습니다!</h2>
 
-	<div class="container">
+	<div class="quiz-box">
 		<table class="cart-table">
 			<thead class="cart-table-head">
 				<tr>
@@ -31,8 +31,8 @@
 		</table>
 	</div>
 	<div class="info">
-		<p>총 금액 : ${total}</p>
-		<p>총알 배송! 항상 신선한 FRESH PICK-KA! 주문해주셔서 감사합니다</p>
+		<p id="info-total">총 금액 : ${total}</p>
+		<p id="info-message">총알 배송! 항상 신선한 FRESH PICK-KA! 주문해주셔서 감사합니다</p>
 	</div>
 	<div class="button">
 		<a href="/">확인</a>

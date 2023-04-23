@@ -9,7 +9,7 @@ a {
 	color: black;
 }
 
-.title {
+.message {
 	margin: 20px;
 	text-align: center;
 	font-size: 24px;
@@ -17,7 +17,7 @@ a {
 
 .cart-table {
 	table-layout: fixed;
-	width: 100%;
+	width: 90%;
 	margin: 0 auto;
 	text-align: center;
 }
@@ -39,6 +39,17 @@ a {
 	margin: 20px;
 }
 
+.info {
+	padding-bottom: 20px;
+	text-align: right;
+	width: 95%;
+}
+
+.button {
+	margin-top: 10px;
+	text-align: center;
+}
+
 .button a {
 	background-color: rgb(240, 246, 244);
 	color: black;
@@ -50,7 +61,18 @@ a {
 	border-radius: 5px;
 }
 
-.botton a:hover {
+.button a:hover {
 	background-color: #395144;
 	color: rgb(240, 246, 244);
 }
+
+#info-total {
+	font-size: 1.2em;
+}
+
+#info-message {
+	font-size: 1.2em;
+	text-align: center;
+}
+
+

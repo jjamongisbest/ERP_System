@@ -23,7 +23,6 @@ public class AddCartAction implements Action {
 		Customer customer = (Customer) request.getSession().getAttribute("log");
 		ProductDAO productDao = ProductDAO.getInstance();
 		
-		
 		int customerId = customer.getId();
 		int productId = Integer.parseInt(request.getParameter("product"));
 		int count = Integer.parseInt(request.getParameter("count"));

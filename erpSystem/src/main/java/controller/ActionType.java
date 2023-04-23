@@ -8,6 +8,7 @@ import controller.action.BoardModifyAction;
 import controller.action.CartAction;
 import controller.action.ClearCartAction;
 import controller.action.DeleteCartAction;
+import controller.action.DirectOrderAction;
 import controller.action.DropCustomerAction;
 import controller.action.DropItemAction;
 import controller.action.GetBoardListAction;
@@ -63,6 +64,7 @@ public enum ActionType {
 	GET_CART_LIST("getcartlist", new GetCartListAction()),
 	DELETE_CART("deletecart", new DeleteCartAction()),
 	CLEAR_CART("clearcart", new ClearCartAction()),
+	DIRECT_ORDER("directorder", new DirectOrderAction()),
 
 	
 	GET_ORDER("getorder", new GetOrderAction()),

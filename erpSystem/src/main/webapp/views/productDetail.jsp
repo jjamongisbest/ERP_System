@@ -29,10 +29,10 @@
 					value="분류 : ${requestScope.productCategory.getName() }" />
 			</span>
 			<form method="POST" action="<c:url value='../service'/>">
-				<input type="hidden" name="command" value="addcart"> 
-				<input type="hidden" name="product" value="${product.id}">
-				<input type="hidden" name="category" value="${category.id}">
-				<input type="number" name="count" value="1" min="0" max="${max}" required>
+				<input type="hidden" name="command" value="addcart"> <input
+					type="hidden" name="product" value="${product.id}"> <input
+					type="hidden" name="category" value="${category.id}"> <input
+					type="number" name="count" value="1" min="0" max="${max}" required>
 				<c:choose>
 					<c:when test="${empty sessionScope.log }">
 						<input type="button" value="장바구니 추가" onclick="send('login')">
@@ -41,7 +41,8 @@
 					<c:otherwise>
 						<input type="submit" name="choose" value="장바구니 추가"
 							onclick="insertCart()">
-						<input type="submit" name="choose" value="바로구매">
+						<input type="button" name="choose" value="바로구매"
+							onclick="purchase(${total})">
 					</c:otherwise>
 				</c:choose>
 			</form>
