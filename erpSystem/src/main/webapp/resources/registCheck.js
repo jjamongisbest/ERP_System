@@ -54,13 +54,13 @@ function checkValues(htmlForm) {
 function findAddr() {
 		new daum.Postcode({
         	oncomplete: function(data) {
-            	// 사용자 주소를 받아올 변수를 정의한다.
+            	//주소를 받아올 변수를 정의한다.
                 var addr = '';
                 
-                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
-                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우(R)
+                //선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                if (data.userSelectedType === 'R') { // 도로명 주소를 선택했을 경우(R)
                     addr = data.roadAddress;
-                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                } else { // 지번 주소를 선택했을 경우(J)
                     addr = data.jibunAddress;
                 }
                 
@@ -71,6 +71,46 @@ function findAddr() {
                 
         	}
      	}).open();
-	}
+}
+function checkBox() {
+	// 체크박스 전체 선택
+	$(".checkbox").on("click", "#checkall", function() {
+		$(this).parents(".checkbox").find('input').prop("checked", $(this).is(":checked"));
+	});
+
+	// 체크박스 개별 선택
+	$(".checkbox").on("click", ".check", function() {
+		var is_checked = true;
+
+		$(".checkbox .check").each(function() {
+			is_checked = is_checked && $(this).is(":checked");
+		});
+
+		$("#checkall").prop("checked", is_checked);
+	});
+
+}
+function checkPopUp() {
+
+	$(document).ready(function() {
+		$(".button-open").click(function() {
+			$(".popup-box").show();
+			$("#mask").fadeIn(100);
+		});
+		$(".button-close").click(function() {
+			$(".popup-box").hide();
+			$("#mask").fadeOut(100);
+		});
+
+		// 팝업 중앙 정렬
+		var $layerPopup = $(".popup-box");
+		var left = ($(window).scrollLeft() + ($(window).width() - $layerPopup.width()) / 2);
+		var top = ($(window).scrollTop() + ($(window).height() - $layerPopup.height()) / 2);
+		$layerPopup.css({ "left": left, "top": top, "position": "absolute" });
+		$("body").css("position", "relative").append($layerPopup);
+	});
+
+
+}
 	
 	

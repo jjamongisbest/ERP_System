@@ -23,7 +23,7 @@
 	<ul class="nav-list-main">
 		<c:choose>
 			<c:when test="${empty sessionScope.log}">
-				<li><a id="regist" href="../service?command=getregist">회원가입</a>
+				<li><a id="regist" href="../?content=registTermsOfUse">회원가입</a>
 
 				</li>
 				<li><a id="login" href="../?content=login">로그인</a></li>
