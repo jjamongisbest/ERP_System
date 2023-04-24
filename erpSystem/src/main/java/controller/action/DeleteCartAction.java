@@ -20,7 +20,6 @@ public class DeleteCartAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int productId = Integer.parseInt(request.getParameter("product"));
-		int custId = Integer.parseInt(request.getParameter("cust"));
 		int count = Integer.parseInt(request.getParameter("count"));
 
 		Customer customer = (Customer) request.getSession().getAttribute("log");

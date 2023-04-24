@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="../resources/main.css">
-<jsp:useBean id="main" class="controller.MainVariables" scope="application"/>
+<jsp:useBean id="main" class="model.MainVariables" scope="application"/>
 <c:set var="main" value="${applicationScope.main}"/>
 </head>
 <c:import url="header" />

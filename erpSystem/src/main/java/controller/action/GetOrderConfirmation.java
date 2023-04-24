@@ -18,18 +18,14 @@ public class GetOrderConfirmation implements Action{
 		SalesOrderDAO salesOrderDao = SalesOrderDAO.getInstance();
 
 		String vpage = request.getParameter("vpage");
-		if (vpage == null) {
+		if (vpage == null)
 			vpage = "1";
-		}
-		System.out.println(vpage);
 
 		int selPage = Integer.parseInt(vpage);
 		int total = salesOrderDao.getTotalOrderCount();
 
 		ArrayList<SalesOrder> list = salesOrderDao.getOrdersPerPage(selPage);
 		int lastPage = (int) Math.ceil((double) total / 10);
-
-	
 		
 		request.setAttribute("list", list);
 		request.setAttribute("lastPage", lastPage);

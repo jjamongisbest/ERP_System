@@ -20,13 +20,12 @@ public class Service extends HttpServlet {
 		
 		String command = request.getParameter("command");
 		request.setAttribute("content", command);
-		System.out.println("command : " + command);
 		
 		ActionFactory factory = ActionFactory.getInstance();
 		Action action = factory.getAction(command);
 		
-		
-		
+
+		System.out.println("command : " + command);
 		if(action != null) 
 			action.execute(request, response);
 

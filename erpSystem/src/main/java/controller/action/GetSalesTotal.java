@@ -21,7 +21,6 @@ public class GetSalesTotal implements Action{
 		
 		// DAO 메소드를 호출하여 데이터를 가져옴
 		ArrayList<SalesView> list = SalesOrderDAO.getInstance().getSalesTotal();
-		System.out.println("list.size() : " + list.size());
 		
 		// JSONArray 객체 생성
 		JSONArray jsonArray = new JSONArray(list);

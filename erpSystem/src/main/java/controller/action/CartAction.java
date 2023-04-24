@@ -25,13 +25,6 @@ public class CartAction implements Action {
 		HttpSession session = request.getSession();
 		Product product = (Product) session.getAttribute("product");
 		ProductCategory category = (ProductCategory) session.getAttribute("category");
-
-		//orderProduct 로 가공해서 주어라??
-		//오 orderProduct <= product ( 이름/count/코드)받아와라
-		
-		
-		
-		
 		
 		int totalStock = product.getStock() - count;
 		int lack = totalStock < 0 ? -1 : READY_TO_ORDER;

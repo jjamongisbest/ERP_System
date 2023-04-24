@@ -6,6 +6,8 @@
 <meta charset="UTF-8">
 <title>regist</title>
 <link rel="stylesheet" href="../resources/regist.css">
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 	<section class="regist-box">
@@ -77,9 +79,5 @@
 	</section>
 
 	<script src="resources/registCheck.js"></script>
-	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-
 </body>
 </html>

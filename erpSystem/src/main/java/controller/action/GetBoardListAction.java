@@ -20,7 +20,6 @@ public class GetBoardListAction implements Action {
         int total = boardDao.getTotalCountByCategory(categoryId);
         int lastPage = (int) Math.ceil((double) total / 10);
         
-        System.out.println("in board list");
         String vpage = request.getParameter("vpage");
 
         if (vpage == null)
