@@ -1,8 +1,3 @@
-<%@page import="product.contoroller.ProductDAO"%>
-<%@page import="product.Product"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="salesOrder.SalesOrder"%>
-<%@page import="java.util.HashMap"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>

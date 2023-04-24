@@ -22,7 +22,7 @@
 			<a id="total-check" href="../service?command=getorderconfirmation" class="sales">주문총확인</a>
 		</div>
 
-		<div id="column_chart_div1" style="width: 900px; height: 500px; border: 1px solid #ccc; margin-left: 20px;"></div>
+		<div class="drawbox" id="column_chart_div1"></div>
 	</div>
 
 	<script src="../resources/drawGraph.js"></script>

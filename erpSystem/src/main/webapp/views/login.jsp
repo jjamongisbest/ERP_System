@@ -20,7 +20,6 @@
 		<c:if test="${not empty message}">
 			<p style="color:#AC7088;">${message}</p>		
 		</c:if>
-		
 	</form>
 
 	<script src="../resources/loginCheck.js"></script>

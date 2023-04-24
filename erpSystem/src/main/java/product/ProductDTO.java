@@ -37,6 +37,19 @@ public class ProductDTO {
 		this.categoryId = product.getCategoryId();
 		this.imageUrl = product.getImageUrl();
 	}
+	
+	public ProductDTO(Product product, int updatedStock) {
+	    this.id = product.getId();
+	    this.name = product.getName();
+	    this.memo = product.getMemo();
+	    this.handleDate = product.getHandleDate();
+	    this.stock = updatedStock;  // 변경된 수량
+	    this.pipeLine = product.getPipeLine();
+	    this.price = product.getPrice();
+	    this.categoryId = product.getCategoryId();
+	    this.imageUrl = product.getImageUrl();
+	}
+
 
 	public int getId() {
 		return id;

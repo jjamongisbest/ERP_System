@@ -1,6 +1,3 @@
-<%@page import="customerGrade.CustomerGrade"%>
-<%@page import="customerGrade.controller.CustomerGradeDAO"%>
-<%@page import="customer.controller.CustomerDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>

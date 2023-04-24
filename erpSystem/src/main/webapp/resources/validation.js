@@ -6,6 +6,16 @@ function insertCart() {
 	alert("장바구니에 추가되었습니다.");
 }
 
+function orderComplete(total) {
+	alert("주문이 완료되었습니다.");
+	location.href = `../service?command=clearcart&total=${total}`;
+}
+
+function purchase(total){
+	alert("주문이 완료되었습니다.");
+	location.href = `../service?command=directorder&total=${total}`;
+}
+
 function send(page) {
 	if (page === "login"){
 		alert("로그인 후 이용가능");
@@ -28,6 +38,3 @@ document.querySelector('form').addEventListener('submit', function(e) {
 		alert('검색어를 입력하세요');
 	}
 }, { once: true });
-
-
-

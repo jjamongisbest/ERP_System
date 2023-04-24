@@ -171,7 +171,7 @@ public class CartDAO {
 			try {
 				this.pstmt = this.conn.prepareStatement(sql);
 				this.pstmt.setInt(1, customerId);
-				this.pstmt.executeUpdate(); // executeUpdate() 메소드를 사용합니다.
+				this.pstmt.execute(); 
 			} catch (SQLException e) {
 				e.printStackTrace();
 			} finally {
@@ -190,7 +190,7 @@ public class CartDAO {
 			try {
 				this.pstmt = this.conn.prepareStatement(sql);
 				this.pstmt.setInt(1, productId);
-				this.pstmt.executeQuery();
+				this.pstmt.execute();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			} finally {

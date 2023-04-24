@@ -1,7 +1,3 @@
-<%@page import="boardCategory.controller.BoardCategoryDAO"%>
-<%@page import="boardCategory.BoardCategory"%>
-<%@page import="board.Board"%>
-<%@page import="board.controller.BoardDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>

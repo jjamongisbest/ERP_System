@@ -1,13 +1,3 @@
-<%@page import="boardCategory.controller.BoardCategoryDAO"%>
-<%@page import="customer.controller.CustomerDAO"%>
-<%@page import="customer.Customer"%>
-<%@page import="salesOrder.SalesOrder"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="salesOrder.controller.SalesOrderDAO"%>
-<%@page import="orderProduct.OrderProduct"%>
-<%@page import="board.Board"%>
-<%@page import="orderProduct.controller.OrderProductDAO"%>
-<%@page import="board.controller.BoardDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -46,7 +36,7 @@
 							<tr class="order-tbody">
 								<td>${target.id}</td>
 								<td>${target.date}</td>
-								<td>${target.total}</td>
+								<td>${target.total}원</td>
 								<td><c:choose>
 										<c:when test="${target.status eq 'Y'}">결제완료</c:when>
 										<c:when test="${target.status eq 'D'}">배송중</c:when>
@@ -54,18 +44,13 @@
 									</c:choose></td>
 							</tr>
 						</c:forEach>
-
 					</c:when>
 					<c:otherwise>
 						<td>주문 내역이 없습니다.</td>
 					</c:otherwise>
-
 				</c:choose>
-
-
 			</table>
 		</div>
-
 		<h5>등록 게시글</h5>
 		<div class="my-board">
 			<table>
@@ -90,22 +75,16 @@
 										<td>REVIEW</td>
 									</c:when>
 									<c:otherwise>
-										<td><c:out value="Q&A"/></td>
+										<td><c:out value="Q&A" /></td>
 									</c:otherwise>
-
 								</c:choose>
 							</tr>
-
 						</c:forEach>
-
-
 					</c:when>
 					<c:otherwise>
 						<td>주문 내역이 없습니다.</td>
 					</c:otherwise>
-
 				</c:choose>
-
 			</table>
 		</div>
 

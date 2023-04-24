@@ -250,6 +250,15 @@
 		<servlet-name>registTermsOfUse</servlet-name>
 		<url-pattern>/registTermsOfUse</url-pattern>
 	</servlet-mapping>
+		
+	<servlet>
+		<servlet-name>orderSuccess</servlet-name>
+		<jsp-file>/views/orderSuccess.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>orderSuccess</servlet-name>
+		<url-pattern>/ordersuccess</url-pattern>
+	</servlet-mapping>
 	
 		
 
